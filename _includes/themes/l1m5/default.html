@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>{{ page.title }}</title>
+   <meta name="author" content="{{ site.author.name }}" />
+   <link href="http://feeds.feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="your title" type="application/atom+xml" />
+
+   <!--<link rel="stylesheet" href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.2.2.2.min.css" />-->
+   <link rel="stylesheet" href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-journal.min.css" />
+   <link rel="stylesheet" href="{{ ASSET_PATH }}/css/screen.css" type="text/css" media="screen, projection" />
+</head>
+<body>
+
+  <div class="site">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="{{ HOME_PATH }}">{{ site.author.name }}</a>
+          <ul class="nav">
+            <li class="active"><a href="{{ HOME_PATH }}">Home</a>
+            <li>
+              <a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
+            </li>
+            <li>
+              <a href="{{ BASE_PATH }}{{ site.JB.pages_path }}">Pages</a>
+            </li>
+            <li>
+              <a href="{{ BASE_PATH }}{{ site.JB.categories_path }}">Categories</a>
+            </li>
+            <li>
+              <a href="{{ BASE_PATH }}{{ site.JB.tags_path }}">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    {{ content }}
+  
+    <div class="footer">
+      <div class="contact">
+        <p>
+          {{ site.author.name }}<br />
+          {{ site.tagline }}<br />
+          <a href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a>
+        </p>
+      </div>
+      <div class="contact">
+        <p>
+          <a href="http://github.com/{{ site.author.github }}/">github.com/{{ site.author.github }}</a><br />
+          <a href="http://twitter.com/{{ site.author.twitter }}/">twitter.com/{{ site.author.twitter }}</a><br />
+        </p>
+      </div>
+      <div class="rss">
+        <a href="http://feeds.feedburner.com/{{ site.author.feedburner }}">
+          <img src="{{ ASSET_PATH }}/images/rss.png" alt="Subscribe to RSS Feed" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {% include JB/analytics %}
+</body>
+</html>
