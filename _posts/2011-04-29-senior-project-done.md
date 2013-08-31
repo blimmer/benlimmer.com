@@ -1,0 +1,28 @@
+---
+layout: post
+title: 'Senior Project: DONE!'
+tags:
+- computer science
+- cu boulder
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  image: ''
+  seo_follow: 'false'
+  seo_noindex: 'false'
+---
+I still cannot believe that today is my last day of college. Time seriously flies. I thought I would update you all real quick on how our senior project ended up. 
+
+First, a little background. I've been working with [Gold Systems](http://www.goldsys.com), a local telecommunications company on an intelligent call handling system we've code-named Waldo. We were working with a bunch of interesting technologies I previously did not have experience with, so it was a crazy learning experience. We were required to use an entirely Microsoft-centric stack, including [C&#35;](http://en.wikipedia.org/wiki/C_Sharp_(programming_language)), [Visual Studio 2010](http://www.microsoft.com/visualstudio/en-us/products/2010-editions), [ASP.NET](http://www.asp.net/), [WCF](http://msdn.microsoft.com/en-us/netframework/aa663324), [Lync Server](http://www.microsoft.com/communicationsserver/), and the [Microsoft Unified Communications Managed API (UCMA) 3.0](http://msdn.microsoft.com/en-us/library/gg421023.aspx). So, even though there were some challenges for the entire team getting used to the new technologies associated with the project, we ended up with an awesome final result that won several awards including the senior project class award and 1st place at the [ITLL Design Expo](http://itll.colorado.edu/index.php/design_expo).
+
+I've uploaded our [final presentation](http://www.l1m5.com/wp-content/uploads/2011/04/FinalDemo.pdf) in PDF format if you want to find out more about the project. The [presentation](http://www.l1m5.com/wp-content/uploads/2011/04/FinalDemo.pdf) includes some interesting architecture diagrams and screenshots so you can get an idea about what we've completed.
+
+I'm officially a [CU](http://www.colorado.edu) alum in less than 72 hours! I'll keep you all up to date with what I'll be doing. Also if you have my old colorado.edu email address, my new email is ben at benlimmer.com. Update your address books!
+
+Cheers!
+
+UPDATE: Here's a photo of our team from after our final presentation.
+
+<div class="center"><img src="http://www.l1m5.com/wp-content/uploads/2011/04/WaldoFinalPicture.jpg" /></div>

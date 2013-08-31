@@ -1,0 +1,38 @@
+---
+layout: post
+title: 'Domino Award: Call for Entries'
+tags:
+- computer science
+- cu boulder
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+Just wanted to give those CU readers some information about an amazing opportunity called the Domino Award. The award is coupled with a $500 cash award and the opportunity to meet influential names in technology from around Colorado and the nation. For those who are interested, entries are due by Friday, April 8th. The submissions must only be 500-800 words! Here are the instructions:
+
+**2010 Domino Award:**
+Entries Due Friday, April 8
+Computer Scientists Setting Big Things In Motion
+
+One Thing Leads to Another...
+
+Throughout history our greatest achievements have started with one small act that set in motion profound change.
+*  Like Dominos:
+** One domino tips and sets off a large, complex topple
+** Small dominos can tip larger dominos, and each domino falls with massively more energy than the previous domino.
+
+**The Domino Award**: Inspire students to “think big” by seeing how computer scientists have significantly impacted modern society.
+*  $500 cash award.
+*  Meet influential technologists from around Colorado and the US.
+*  Get free pizza (now we’re talking).
+*  All participants receive a commemorative Domino and join an online “Topple” where people work together to “Set Big Things in Motion.”
+*  Started in 2002 by Herb Morreale (CS alum 1991) and Professor Clayton Lewis
+*  Supported in-part by Topplers, a local non-profit with a mission to inspire, motivate, and educate people to Set Big Things In Motion.
+
+**How to Enter**
+*  Write a 500-800 word essay honoring someone from the field of computer science. Essays will be judged for their ability to clearly communicate how the honoree’s work set in motion a “series of dominos” that changed the world.
+*  Send your essay to clayton.lewis@colorado.edu by 5PM April 8.
+
+Questions? email clayton.lewis@colorado.edu or 2010 winner [Doug Stillings](mailto:Douglas.Stillings@Colorado.EDU)
