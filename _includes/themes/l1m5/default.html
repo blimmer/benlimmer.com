@@ -20,13 +20,13 @@
           <ul class="nav">
             <li class="active"><a href="{{ HOME_PATH }}">Home</a>
             <li>
-              <a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
+              <a href="{{ BASE_PATH }}/about.html">About Me</a>
             </li>
             <li>
-              <a href="{{ BASE_PATH }}{{ site.JB.pages_path }}">Pages</a>
+              <a href="{{ BASE_PATH }}/experience.html">Experience & Education</a>
             </li>
             <li>
-              <a href="{{ BASE_PATH }}{{ site.JB.categories_path }}">Categories</a>
+              <a href="{{ BASE_PATH }}/portfolio.html">Portfolio</a>
             </li>
             <li>
               <a href="{{ BASE_PATH }}{{ site.JB.tags_path }}">Tags</a>
@@ -35,7 +35,8 @@
         </div>
       </div>
     </div>
-  
+    <h1>{{ page.title }}</h1>
+
     {{ content }}
   
     <div class="footer">
@@ -59,7 +60,6 @@
       </div>
     </div>
   </div>
-
   {% include JB/analytics %}
 </body>
 </html>

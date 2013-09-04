@@ -20,13 +20,17 @@ body {
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
+h1 {
+  font-size: 150%;
+  margin-bottom: 1em;
 }
 
-h1 {
+h2 {
   font-size: 130%;
-  margin-bottom: 1em;
+}
+
+h3, h4, h5, h6 {
+  font-size: 100%;
 }
 
 p {
@@ -42,7 +46,7 @@ a:hover {
 }
 
 a:visited {
-  color: gray;
+  color: black;
 }
 
 table {
@@ -143,6 +147,18 @@ ul.posts {
 
 .center {
   text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
 /*****************************************************************************/
 /*
