@@ -27,6 +27,6 @@ This year's startups2students event was the biggest and best yet! We had a huge 
 # Staying Involved
 After finishing with the events and job search, I dedicated time to determining how I can stay involved after graduation. I worked specifically with Dirk Grunwald and John Black and the Computer Science advisory board to discuss the future of entrepreneurship and the CU Computer Science department. I hope to be invited to future advisory board meetings to stay involved with CU Computer Science.
 
-You can find my final presentation [here](http://www.l1m5.com/wp-content/uploads/2011/05/hccpd_final_sp11.pdf), though it's not very interesting without hearing my actual presentation. It shows a series of photos that represent what I've done over the semester. Additionally, you can see my weekly writeups on our [Google Site](https://sites.google.com/site/hccpdforum/spring-2011-updates/ben-limmer-s-updates).
+You can find my final presentation [here](/assets/attachments/2011/05/hccpd_final_sp11.pdf), though it's not very interesting without hearing my actual presentation. It shows a series of photos that represent what I've done over the semester. Additionally, you can see my weekly writeups on our [Google Site](https://sites.google.com/site/hccpdforum/spring-2011-updates/ben-limmer-s-updates).
 
 Welp, I'm officially done with college! w00t!
