@@ -38,15 +38,11 @@ p {
 }
 
 a {
-  color: #00a;
-}
-
-a:hover {
   color: black;
 }
 
 a:visited {
-  color: black;
+  color: gray;
 }
 
 table {
@@ -145,21 +141,20 @@ ul.posts {
         border: 0;
       }
 
-.center {
-  text-align: center;
-}
+/*****************************************************************************/
+/*
+/* Content
+/*
+/*****************************************************************************/
 
-.underline {
-  text-decoration: underline;
-}
+  .content {
 
-.hide {
-  display: none;
-}
+  }
+    .content a {
+      text-decoration: none;
+      border-bottom: 1px dotted;
+    }
 
-.show {
-  display: block;
-}
 /*****************************************************************************/
 /*
 /* Posts
@@ -213,3 +208,24 @@ ul.posts {
   #related h2 {
     margin-bottom: 1em;
   }
+
+/*****************************************************************************/
+/*
+/* Utility Classes
+/*
+/*****************************************************************************/
+.center {
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
