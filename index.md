@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Ben Limmer | Keepin' it Real
 tagline: Keepin' it Real
 ---
