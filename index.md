@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Ben Limmer | Keepin' it Real
-tagline: Keepin' it Real
+title: Home
+tagline: Ben Limmer | Keepin' it Real
+group: navigation
+weight: 0
 ---
 {% include JB/setup %}
 

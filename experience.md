@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Experience & Education
-header: Experience
 group: navigation
+weight: 2
 ---
 {% include JB/setup %}
 

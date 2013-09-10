@@ -3,6 +3,7 @@ layout: page
 title: About Me
 header: About Me
 group: navigation
+weight: 1
 ---
 {% include JB/setup %}
 

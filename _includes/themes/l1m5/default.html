@@ -2,7 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>{{ page.title }}</title>
+   <title>{% if page.tagline != null %}
+            {{ page.tagline }}
+          {% else %}
+            {{ page.title }}
+          {% endif %}
+  </title>
    <meta name="author" content="{{ site.author.name }}" />
    <link href="http://feeds.feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="your title" type="application/atom+xml" />
 
@@ -27,19 +32,9 @@
         <div class="container">
           <a class="brand" href="{{ HOME_PATH }}">{{ site.author.name }}</a>
           <ul class="nav">
-            <li class="active"><a href="{{ HOME_PATH }}">Home</a>
-            <li>
-              <a href="{{ BASE_PATH }}/about.html">About Me</a>
-            </li>
-            <li>
-              <a href="{{ BASE_PATH }}/experience.html">Experience & Education</a>
-            </li>
-            <li>
-              <a href="{{ BASE_PATH }}/portfolio.html">Portfolio</a>
-            </li>
-            <li>
-              <a href="{{ BASE_PATH }}/archive.html">Blog Archive</a>
-            </li>
+            {% assign pages_list = site.weighted_pages %}
+            {% assign group = 'navigation' %}
+            {% include JB/pages_list %}
           </ul>
         </div>
       </div>
