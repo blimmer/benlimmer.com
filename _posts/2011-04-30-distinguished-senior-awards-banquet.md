@@ -12,7 +12,7 @@ meta:
 Last night I was presented with the award for distinguished senior graduate in Computer Science. It was an awesome event where I got to network with other outstanding graduates from the CU College of Engineering and lots of alumni from the College of Engineering. Here's a picture of me with [Xiao-Chuan Cai](http://www.cs.colorado.edu/people/xiao_chuan_cai.html), the chair of the Computer Science department. 
 
 <div class="center">
-	<img src="/assets/images/posts/2011/04/distinguised_senior.jpg" />
+	<img src="/assets/images/posts/2011/04/distinguised_senior.jpg" width="406" height="480" alt="Picture of Ben Limmer and Xiao-Chuan Cai, head of the CU Boulder Computer Science Department" />
 </div>
 
 It was an awesome night and I am honored to receive the award.

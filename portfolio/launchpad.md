@@ -12,8 +12,8 @@ Since the project was done for a class focusing on object oriented design and im
 Here are a few screenshots of the bus and calendar widgets from the final application.
 
 <div class='center'>
-	<img src='/assets/images/pages/portfolio/LaunchpadBus.png' alt="LaunchpadBus" />
-	<img src='/assets/images/pages/portfolio/LaunchpadCalendar.png' alt="LaunchpadCalendar" />
+	<img src='/assets/images/pages/portfolio/LaunchpadBus.png' width="159" height="300" alt="Screenshots of iPhone with LaunchPad Bus Schedule" />
+	<img src='/assets/images/pages/portfolio/LaunchpadCalendar.png' width="159" height="300" alt="Screenshots of iPhone with LaunchPad Calendar" />
 </div>
 
 Like what you see? Check out our code, hosted on [GitHub](https://github.com/spyyddir/launchpad).

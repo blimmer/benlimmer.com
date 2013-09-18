@@ -28,7 +28,7 @@ This rule also reminded me of my perception of the usefulness of ubiquitous tech
 [Cameron Moll](https://twitter.com/cameronmoll) showed a profound photo in his talk "Creative Authenticity", that demonstrated how quickly technology has infiltrated our lives.
 
 <div class="center">
-	<img src="/assets/images/posts/2013/09/PopeCameraPhone.png" alt="2005 vs. 2013 and cameraphones during the Papal inaugration" />
+	<img src="/assets/images/posts/2013/09/PopeCameraPhone.png" width="550" height="338" alt="2005 vs. 2013 and cameraphones during the Papal inaugration" />
 </div>
 
 It's amazing that even as recently as 2005, people weren't behind screens all the time. In 2013, we're stuck behind screens more and more. With more and more wearable tech, this trend doesn't seem to be slowing down.
