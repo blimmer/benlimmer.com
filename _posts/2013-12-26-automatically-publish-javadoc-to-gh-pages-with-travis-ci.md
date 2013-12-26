@@ -65,7 +65,7 @@ Since people will clone this script when they fork the repo, we don't want them 
 ```[ "$TRAVIS_BRANCH" == "master" ]```  
 4. If it's merged to master, we want to publish Javadoc for it.
 
-### The Meat of the Script
+## The Meat of the Script
 	# Get to the Travis build directory, configure git and clone the repo
 	cd $HOME
   	git config --global user.email "travis@travis-ci.org"
