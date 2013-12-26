@@ -7,8 +7,6 @@ weight: 0
 ---
 {% include JB/setup %}
 
-You've stumbled upon a lovely little blog about all things geeky. Don't forget to follow me on [Twitter](http://www.twitter.com/l1m5/)!
-
 <h2>Recent Blog Posts</h2>
 <ul class="posts">
   {% for post in site.posts limit:5 %}
