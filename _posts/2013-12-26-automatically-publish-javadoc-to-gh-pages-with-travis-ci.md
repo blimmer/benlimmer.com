@@ -25,7 +25,8 @@ This will create a gh-pages branch on your GitHub project. Checking out and auto
 Travis is neat. In most use cases, it just works with your build system. It also has the ability to encrypt 'secret' data (in our case, the token to allow Travis to push to our gh-pages branch).  
 
 3. [Create a GitHub Access Token](https://github.com/settings/applications) for Travis.  
-As I mentioned, this will allow Travis to push to our gh-pages branch.  
+As I mentioned, this will allow Travis to push to our gh-pages branch. 
+<div class="center"><img src="/assets/images/posts/2013/12/GhAccessToken.png" width="800" height="146" alt="GitHub Create New Personal Access Token" /></div> 
 
 4. [Encrypt](http://about.travis-ci.org/docs/user/encryption-keys/) your access token.
 You'll need to install the Travis gem with ```gem install travis```. Then you'll run  
