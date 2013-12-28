@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Startup Communities"
-description: "Description of writeup in startup communities book"
+description: "Description of Ben Limmer's section in Startup Communities by Brad Feld"
 ---
 {% include JB/setup %}
 

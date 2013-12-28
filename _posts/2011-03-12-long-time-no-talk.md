@@ -6,11 +6,9 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  _edit_last: '1'
-  _wp_old_slug: ''
+description: "A blog post by Ben Limmer about projects being worked in March, 2011 at CU Boulder"
 ---
-Wow! It's been a long time since I've posted an update on my blog, so here's an update with what I've been up to. This semester has been absolutely crazy for me, but a ton of fun! I am currently taking five Computer Science classes to graduate which is hectic, but also fun because I get to practice organizing doing lots of things all at once. Here are the projects I'm currently working on:
+Wow! It's been a long time since I've posted an update on my blog, so here's an update with what I've been up to. This semester has been absolutely crazy for me, but a ton of fun! I am currently taking five Computer Science classes to graduate which is hectic, but also fun because I get to practice organizing lots of things all at once. Here are the projects I'm currently working on:
 
 * **Senior Project**: Our Find a Person software "Waldo" is almost feature complete! Last week was a big push trying to get our API and VXML working properly. We are excited with how the system is coming along and even more excited to show our final product to our sponsors. I'll be posting more information about the project as we continue making progress.
 * **iOS web app**: For a final project for my [Object Oriented Analysis and Design](http://www.cs.colorado.edu/~kena/classes/5448/s11/) class a friend of mine, [Zac](http://zacclark.com/), and I are working on an iOS web app written in Ruby on Rails. We were inspired by the [Panic Status Board](http://www.panic.com/blog/2010/03/the-panic-status-board/) and wanted to bring this same idea over to iOS. We spent this week in our analysis and design phase deciding how to implement our project in a way that's easily expandable. I'll post updates on the project as we progress.

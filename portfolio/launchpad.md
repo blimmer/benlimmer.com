@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "LaunchPad"
-description: "A writeup about the launchpad app from CU Boulder"
+description: "A writeup about Ben Limmer and Zac Clark's launchpad app developed at CU Boulder"
 ---
 {% include JB/setup %}
 

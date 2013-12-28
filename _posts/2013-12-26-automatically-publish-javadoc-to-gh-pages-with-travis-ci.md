@@ -7,6 +7,7 @@ tags:
 - github pages
 - javadoc
 - automatic publish javadoc
+description: "How to automatically publish Javadoc documentation to a GitHub Pages (gh-pages) site using Travis-CI, custom scripts and secret environment variables"
 ---
 
 I hate doing the same thing more than once. Like, a lot. The more things that are automated, better.

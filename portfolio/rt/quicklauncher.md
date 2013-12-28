@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "ReadyTalk Quick Launcher"
-description: "A description of the ReadyTalk QuickLauncher Product"
+description: "A description of Ben Limmer's involvement in developing the ReadyTalk QuickLauncher Product"
 ---
 
 One of our constant goals at ReadyTalk is to get our users into their conferences as quickly as possible. To better facilitate this, we introduced a small daemon called the QuickLauncher.

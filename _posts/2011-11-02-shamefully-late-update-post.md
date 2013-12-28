@@ -7,11 +7,6 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  seo_follow: 'false'
-  image: ''
-  _edit_last: '1'
-  seo_noindex: 'false'
 ---
 Hi readers,
 

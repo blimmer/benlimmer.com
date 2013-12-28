@@ -6,9 +6,6 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  _edit_last: '1'
-  _wp_old_slug: ''
 ---
 Over the past week I've been looking into "snazzing" up my website and I've found one of the best ways to do this is through the addition of some Javascript. I want to point you in the direction of a few really good tools to get you started working with Javascript.
 

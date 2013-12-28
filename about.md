@@ -2,6 +2,7 @@
 layout: page
 title: About Me
 header: About Me
+description: "A short bio about Ben Limmer, software developer in Denver, Colorado, USA."
 group: navigation
 weight: 1
 ---

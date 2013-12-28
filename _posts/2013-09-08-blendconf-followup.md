@@ -4,6 +4,7 @@ title: BlendConf 2013 Follow-Up
 tags: 
 - conferences
 - blendconf 2013
+description: "A follow-up about the 2013 BlendConf in Charlotte, North Carolina, USA"
 ---
 
 ## Something Out of the Ordinary

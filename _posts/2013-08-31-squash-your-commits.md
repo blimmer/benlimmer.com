@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Squash Your Commits
+description: "Why you should squash your in-between development commits in Git before pushing them to master"
 ---
 
 There's been quite a shakeup around the ReadyTalk offices lately, and I've been switched to a new team and project. Exciting stuff, huh?

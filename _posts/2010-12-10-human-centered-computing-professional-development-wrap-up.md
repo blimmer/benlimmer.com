@@ -6,9 +6,6 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  _edit_last: '1'
-  _wp_old_slug: ''
 ---
 As the semester winds down, I'd like to recap what I've done over the past fifteen weeks of the Human Centered Computing: Professional Development (HCCPD) course. I've gone from having no experience with web programming to creating the website you're viewing right now. Though the backend utilizes the Wordpress engine, the styling of the site was built from the ground up (thanks to help from several Computer Science undergraduates and graduates). 
 

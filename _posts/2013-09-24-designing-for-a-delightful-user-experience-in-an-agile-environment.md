@@ -5,6 +5,7 @@ tags:
 - ux
 - lean ux
 - blendconf 2013
+description: "A guide to building a delightful user experience while in an agile environment. This article was inspired by presentations Ben Limmer saw at BlendConf 2013, Lean UX, and his experience at ReadyTalk."
 ---
 
 One of the most influential talks I saw during my time at BlendConf was a presentation by [Garren DiPasquale](https://twitter.com/aduroguy) about Lean UX. The presentation was based off of the [recently published book](http://shop.oreilly.com/product/0636920021827.do) by [Jeff Gothelf](https://twitter.com/jboogie) and Garren's experience in applying these principles.

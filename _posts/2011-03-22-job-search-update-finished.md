@@ -6,8 +6,7 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  _edit_last: '1'
+description: "A blog post by Ben Limmer updating readers about his acceptance of a job at ReadyTalk in Denver, Colorado, USA"
 ---
 Hello lovely people!
 

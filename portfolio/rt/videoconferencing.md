@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "ReadyTalk: Video Conferencing"
-description: "A description of the ReadyTalk Video Conferencing Product"
+description: "A description of Ben Limmer's invovlement in developing the ReadyTalk Video Conferencing Product"
 ---
 
 <div class="center">

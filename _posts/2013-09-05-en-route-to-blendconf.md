@@ -2,6 +2,7 @@
 layout: post
 title: En Route to BlendConf 2013
 tags: conferences
+description: "A description of Ben Limmer's trip to BlendConf 2013 in Charlotte, North Carolina, USA"
 ---
 
 At [ReadyTalk](http://www.readytalk.com), we're provided with an annual budget to spend on conferences that pique our interest. I'm really happy that they've introduced this new budget (though it might need a few tweaks here and there) in the spirit of continued education and professional development. There's also a great requirement that you give a Lunch & Learn after you return to share what you've learned with your colleagues. Pretty cool idea, huh? Since this new budget was recently introduced, I was looking for an interesting event to attend before the end of the year.

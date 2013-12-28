@@ -7,8 +7,7 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  _edit_last: '1'
+description: "A call for Boulder, Colorado, USA technology companies to get more involved with the CU Boulder Computer Science program"
 ---
 Hey Readers!
 

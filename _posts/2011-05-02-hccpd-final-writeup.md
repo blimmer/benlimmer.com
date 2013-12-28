@@ -7,8 +7,6 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  _edit_last: '1'
 ---
 It's finally here! Today I'm officially done with college. My last requirement is to post my portfolio page which describes the work I've done in my Human Centered Computing Professional Development (HCCPD) over the past semester.
 

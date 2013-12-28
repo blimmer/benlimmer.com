@@ -1,6 +1,7 @@
 ---
 layout: post
 title: New Jekyll Bootstrap Website
+description: "A description of Ben Limmer's new website written using Jekyll Bootstrap."
 ---
 
 How time flies... I can't believe it has been two full years since I last revamped the visual design of my website. 

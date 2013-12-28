@@ -6,12 +6,7 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  _edit_last: '1'
-  image: ''
-  seo_follow: 'false'
-  seo_noindex: 'false'
-  _wpas_done_all: '1'
+description: "A write-up of Ben Limmer's hosts project to block pop-ups, banner ads, tracking cookies, spyware and more. Available on Ben Limmer's GitHub page."
 ---
 Let's face it - sometimes the Internet sucks.
 Pop ups, pop unders, banner-ads, tracking cookies, spyware, drive-by attacks... they all drive us to drink.  

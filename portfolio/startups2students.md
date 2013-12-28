@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Startups2Students"
-description: "Description of startups2students event"
+description: "Description of Ben Limmer's involvement in starting the startups2students event at CU Boulder"
 ---
 {% include JB/setup %}
 

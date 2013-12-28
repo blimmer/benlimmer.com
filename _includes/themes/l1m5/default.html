@@ -5,10 +5,13 @@
    <title>{% if page.tagline != null %}
             {{ page.tagline }}
           {% else %}
-            {{ page.title }}
+            {{page.title }} | Ben Limmer
           {% endif %}
   </title>
    <meta name="author" content="{{ site.author.name }}" />
+   {% if page.description %}
+   <meta name="description" content="{{ page.description }}">
+   {% endif %}
    <link type="text/plain" rel="author" href="http://benlimmer.com/humans.txt" />
    <link href="http://feeds.feedburner.com/{{ site.author.feedburner }}" rel="alternate" title="your title" type="application/atom+xml" />
 

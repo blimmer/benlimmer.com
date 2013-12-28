@@ -6,8 +6,7 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  _edit_last: '1'
+description: "A call for applicants for 2011 ReadyTalk summer interns"
 ---
 Hey everybody!
 

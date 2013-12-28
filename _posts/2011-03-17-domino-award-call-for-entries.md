@@ -7,12 +7,11 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  _edit_last: '1'
+description: "A call for entries for the 2011 Domino Award at CU Boulder"
 ---
 Just wanted to give those CU readers some information about an amazing opportunity called the Domino Award. The award is coupled with a $500 cash award and the opportunity to meet influential names in technology from around Colorado and the nation. For those who are interested, entries are due by Friday, April 8th. The submissions must only be 500-800 words! Here are the instructions:
 
-**2010 Domino Award:**
+**2011 Domino Award:**
 Entries Due Friday, April 8
 Computer Scientists Setting Big Things In Motion
 

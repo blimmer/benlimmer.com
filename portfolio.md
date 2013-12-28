@@ -2,6 +2,7 @@
 layout: page
 title: Portfolio
 header: Portfolio
+description: "A showcase of Ben Limmer's work at ReadyTalk and at CU Boulder."
 group: navigation
 weight: 4
 ---

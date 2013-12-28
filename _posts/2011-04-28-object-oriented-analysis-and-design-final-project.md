@@ -7,8 +7,7 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  _edit_last: '1'
+description: "A showcase of LaunchPad, a Ruby on Rails project completed for an Object Oriented Analysis and Design course at CU Boulder. The project was worked by Ben Limmer and Zac Clark"
 ---
 Hi Readers!
 

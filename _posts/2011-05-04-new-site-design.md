@@ -6,11 +6,6 @@ tags:
 status: publish
 type: post
 published: true
-meta:
-  _edit_last: '1'
-  image: ''
-  seo_follow: 'false'
-  seo_noindex: 'false'
 ---
 I've moved away from my first blog design, opting for something a bit more representative of my taste than my previous design. Let me give you a little background. My original site design was for a class at CU Boulder. I decided that I needed a better web presence, so I jumped into learning about Wordpress. Though my original design wasn't terrible, it was largely the product of me randomly slapping things together as I read tutorials, so I didn't really like the overall look, feel and usability of the site. Here's what it used to look like:
 

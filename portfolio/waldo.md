@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Waldo: Intelligent Call Handler"
-description: "Description of Senior Project: Waldo"
+description: "Description of Ben Limmer's Senior Project, Waldo, at CU Boulder"
 ---
 {% include JB/setup %}
 

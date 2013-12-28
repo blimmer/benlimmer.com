@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Experience & Education
+description: "An informational list about Ben Limmer's professional experience and educational background"
 group: navigation
 weight: 2
 ---

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "In the News"
-description: "Posts I've been featured in or written"
+description: "Posts Ben Limmer has written or been featured in"
 ---
 {% include JB/setup %}
 
