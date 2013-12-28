@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Home
-tagline: Ben Limmer | Keepin' it Real
+tagline: Ben Limmer | Software Developer in Denver, Colorado, USA
 description: "A blog about a myriad of technology topics written by Ben Limmer, software developer in Denver, Colorado, USA."
 group: navigation
 weight: 0

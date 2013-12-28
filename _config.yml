@@ -9,7 +9,7 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : Ben Limmer
-tagline: Keepin' it Real
+tagline: "Software Developer in Denver, Colorado, USA"
 author :
   name : Ben Limmer
   email : hello@benlimmer.com

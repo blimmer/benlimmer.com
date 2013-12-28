@@ -2,12 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>{% if page.tagline != null %}
-            {{ page.tagline }}
-          {% else %}
-            {{page.title }} | Ben Limmer
-          {% endif %}
-  </title>
+  {% if page.tagline != null %}
+  <title>{{ page.tagline }}</title>
+  {% else %}
+  <title>{{page.title }} | Ben Limmer</title>
+  {% endif %}
    <meta name="author" content="{{ site.author.name }}" />
    {% if page.description %}
    <meta name="description" content="{{ page.description }}">
