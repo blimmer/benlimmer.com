@@ -5,7 +5,7 @@ tags:
 - github
 - gist
 - os x mavericks
-description: "Having issues with Mac OS X Maverick (10.9) and dropping packets when screen sharing or SSH'd? This is an interesting issue, mainly affecting corporate networks and can be worked around using this script."
+description: "Having issues with Mac OS X Maverick (10.9) and dropping packets when screen sharing or SSH'd? This is an interesting issue, mainly affecting corporate networks and can be worked around using this script. It works by adjusting the net.link.ether.inet.arp_unicast_lim setting, which tells OS X to send the ARP request the first time it doesn't find a route to host."
 ---
 
 At [ReadyTalk](http://www.readytalk.com), we recently uncovered an interesting issue related to how [OS X Mavericks](http://en.wikipedia.org/wiki/OS_X_Mavericks) handles caching ARP responses.
