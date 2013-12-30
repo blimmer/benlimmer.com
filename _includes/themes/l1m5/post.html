@@ -7,14 +7,8 @@
   {{ content }}
 </div>
 
-<!-- 
-This can be umcommented when a few issues are fixed.
-	1. There's something weird with the layout with the fixed navbar.
-		I need to figure out how to position things correctly so when I use a #tag
-		it will actually scroll to the right place
-	2. Figure out some logic for what to do when we have multiple tags on one post.
 <div id="related">
-  <h3><a href="/tags.html#{{ page.tags }}-ref">Related Posts</a></h3>
-</div> -->
+  <h3><a href="/tags.html#{{ page.tags[0] }}-ref">Related Posts</a></h3>
+</div>
 
 {% include JB/comments %}

@@ -248,3 +248,8 @@ ul.posts {
 .small {
   font-size: 80%;
 }
+
+.anchor-fix {
+  padding-top: 65px;
+  margin-top: -65px;
+}
