@@ -4,9 +4,6 @@ title: Shamefully Overdue Update Post
 tags:
 - computer science
 - cu boulder
-status: publish
-type: post
-published: true
 ---
 Hi readers,
 

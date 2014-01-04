@@ -4,9 +4,6 @@ title: 'Senior Project: DONE!'
 tags:
 - computer science
 - cu boulder
-status: publish
-type: post
-published: true
 description: "A blog post about Ben Limmer completing his senior project at CU Boulder, done in conjunction with Gold Systems in Boulder, Colorado, USA."
 ---
 I still cannot believe that today is my last day of college. Time seriously flies. I thought I would update you all real quick on how our senior project ended up. 

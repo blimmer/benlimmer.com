@@ -3,9 +3,6 @@ layout: post
 title: 'Job Search Update: Finished!'
 tags:
 - job search
-status: publish
-type: post
-published: true
 description: "A blog post by Ben Limmer updating readers about his acceptance of a job at ReadyTalk in Denver, Colorado, USA"
 ---
 Hello lovely people!

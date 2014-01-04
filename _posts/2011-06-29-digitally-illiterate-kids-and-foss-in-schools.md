@@ -4,9 +4,6 @@ title: Digitally illiterate kids and FOSS in schools
 tags:
 - computer science
 - FOSS
-status: publish
-type: post
-published: true
 description: "A blog post about Ben Limmer's report on why public schools in the United States should adopt Free and Open Source (FOSS) software to save money while producing digitally literate students."
 ---
 I just finished reading this interesting [BBC News](http://news.bbc.co.uk/2/hi/programmes/click_online/9503255.stm) article asking if our children are becoming digitally illiterate. The TL;DR version of the article is that children are some of the biggest consumers of technology between video games and cell phones, but asks whether the technology curricula in schools is adequate to help fill the demand in the workforce for high-tech jobs.

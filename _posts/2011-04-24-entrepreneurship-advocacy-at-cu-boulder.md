@@ -4,9 +4,6 @@ title: Entrepreneurship Advocacy at CU Boulder
 tags:
 - cu boulder
 - Entrepreneurship
-status: publish
-type: post
-published: true
 description: "A call for Boulder, Colorado, USA technology companies to get more involved with the CU Boulder Computer Science program"
 ---
 Hey Readers!

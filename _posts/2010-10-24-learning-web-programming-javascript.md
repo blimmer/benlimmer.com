@@ -3,9 +3,6 @@ layout: post
 title: 'Learning Web Programming: Javascript'
 tags:
 - web programming
-status: publish
-type: post
-published: true
 ---
 Over the past week I've been looking into "snazzing" up my website and I've found one of the best ways to do this is through the addition of some Javascript. I want to point you in the direction of a few really good tools to get you started working with Javascript.
 

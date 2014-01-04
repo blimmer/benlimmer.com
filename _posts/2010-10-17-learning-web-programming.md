@@ -3,9 +3,6 @@ layout: post
 title: 'Learning Web Programming: Getting Started'
 tags:
 - web programming
-status: publish
-type: post
-published: true
 ---
 Over the past month it has been my goal to learn more about web programming. The journey so far has involved lots of trial and error, so in the interest of helping other people get started with web design, I'll post a few resources and hints here to get you started.
 

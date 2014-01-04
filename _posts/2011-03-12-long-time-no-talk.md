@@ -3,9 +3,6 @@ layout: post
 title: Long time, no talk!
 tags:
 - computer science
-status: publish
-type: post
-published: true
 description: "A blog post by Ben Limmer about projects being worked in March, 2011 at CU Boulder"
 ---
 Wow! It's been a long time since I've posted an update on my blog, so here's an update with what I've been up to. This semester has been absolutely crazy for me, but a ton of fun! I am currently taking five Computer Science classes to graduate which is hectic, but also fun because I get to practice organizing lots of things all at once. Here are the projects I'm currently working on:

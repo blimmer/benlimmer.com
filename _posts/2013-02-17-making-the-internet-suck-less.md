@@ -3,9 +3,6 @@ layout: post
 title: Making the Internet Suck Less
 tags:
 - side projects
-status: publish
-type: post
-published: true
 description: "A write-up of Ben Limmer's hosts project to block pop-ups, banner ads, tracking cookies, spyware and more. Available on Ben Limmer's GitHub page."
 ---
 Let's face it - sometimes the Internet sucks.

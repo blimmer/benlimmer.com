@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Squash Your Commits
+tags:
+- git
 description: "Why you should squash your in-between development commits in Git before pushing them to master"
 ---
 

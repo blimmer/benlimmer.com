@@ -4,9 +4,6 @@ title: HCCPD Final Writeup
 tags:
 - computer science
 - cu boulder
-status: publish
-type: post
-published: true
 ---
 It's finally here! Today I'm officially done with college. My last requirement is to post my portfolio page which describes the work I've done in my Human Centered Computing Professional Development (HCCPD) over the past semester.
 

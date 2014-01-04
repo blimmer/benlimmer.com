@@ -1,7 +1,8 @@
 ---
 layout: post
 title: En Route to BlendConf 2013
-tags: conferences
+tags: 
+- conferences
 description: "A description of Ben Limmer's trip to BlendConf 2013 in Charlotte, North Carolina, USA"
 ---
 

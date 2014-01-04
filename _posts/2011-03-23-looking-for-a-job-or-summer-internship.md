@@ -3,9 +3,6 @@ layout: post
 title: Looking for a job or summer internship?
 tags:
 - job search
-status: publish
-type: post
-published: true
 description: "A call for applicants for 2011 ReadyTalk summer interns"
 ---
 Hey everybody!

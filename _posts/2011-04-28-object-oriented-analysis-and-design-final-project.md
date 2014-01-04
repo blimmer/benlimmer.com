@@ -4,9 +4,6 @@ title: Object Oriented Analysis and Design Final Project
 tags:
 - computer science
 - cu boulder
-status: publish
-type: post
-published: true
 description: "A showcase of LaunchPad, a Ruby on Rails project completed for an Object Oriented Analysis and Design course at CU Boulder. The project was worked by Ben Limmer and Zac Clark"
 ---
 Hi Readers!
