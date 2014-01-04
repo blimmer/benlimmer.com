@@ -34,7 +34,7 @@ You'll need to install the Travis gem with ```gem install travis```. Then you'll
 
 		travis encrypt GH_PAGES=your token from step 4
 
-    Don't forget to place this in your ```.travis.yml``` configuration in your repo in a ```secret``` block.
+    Don't forget to place this in your ```.travis.yml``` configuration in your repo in a ```secure``` block.
 
 5. Create a script that you'll have Travis run.
 On [swt-bling](https://github.com/ReadyTalk/swt-bling), I created a [```.utility```](https://github.com/ReadyTalk/swt-bling/tree/master/.utility) folder in the root of the repo that contains our Travis shell scripts. You can start off [with ours](https://github.com/ReadyTalk/swt-bling/blob/master/.utility/push-javadoc-to-gh-pages.sh) as a sample. I'll explain the script below, if you're craving more details.  

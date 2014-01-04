@@ -13,3 +13,4 @@ Working on this project has taken my understanding of SWT to a whole new level. 
 
 I've also written a number of posts about skills I've learned working with swt-bling, check them out:
 * [Automatically Publish Javadoc to GitHub Pages with Travis CI]({% post_url 2013-12-26-automatically-publish-javadoc-to-gh-pages-with-travis-ci %})
+* [Automatically Publish to Sonatype with Gradle and Travis CI]({% post_url 2014-01-04-automatically-publish-to-sonatype-with-gradle-and-travis-ci %})
