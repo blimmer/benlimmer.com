@@ -5,7 +5,7 @@
   {% if page.tagline != null %}
   <title>{{ page.tagline }}</title>
   {% else %}
-  <title>{{page.title }} | Ben Limmer</title>
+  <title>{{ page.title }} | Ben Limmer</title>
   {% endif %}
    <meta name="author" content="{{ site.author.name }}" />
    {% if page.description %}
@@ -57,7 +57,11 @@
         <p>
           <a href="http://github.com/{{ site.author.github }}/">github.com/{{ site.author.github }}</a><br />
           <a href="http://twitter.com/{{ site.author.twitter }}/">twitter.com/{{ site.author.twitter }}</a><br />
+          {% if page.type == 'post' %}
           <a href="https://plus.google.com/{{ site.author.googleplus }}?rel=author">google.com/{{ site.author.googleplus }}</a><br/>
+          {% else %}
+          <a href="https://plus.google.com/{{ site.author.googleplus }}">google.com/{{ site.author.googleplus }}</a><br/>
+          {% endif %}
         </p>
       </div>
       <div class="rss">
