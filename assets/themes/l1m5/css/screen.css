@@ -183,7 +183,7 @@ ul.posts {
 
   #post pre {
     border: 1px solid #ddd;
-    background-color: #eef;
+    background-color: #e8e8e8;
     padding: 0 .4em;
   }
 
@@ -194,7 +194,7 @@ ul.posts {
 
   #post code {
     border: 1px solid #ddd;
-    background-color: #eef;
+    background-color: #e8e8e8;
     color: #777;
     font-size: 85%;
     padding: 0 .2em;

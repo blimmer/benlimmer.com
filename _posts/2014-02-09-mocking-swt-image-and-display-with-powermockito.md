@@ -16,14 +16,15 @@ A co-worker of mine, [David](https://twitter.com/waterprinciple) refers to Power
 
 # Setup
 Anytime you're utilizing PowerMockito, you're going to need a class level annotation telling JUnit that we're going to be doing some heavy lifting with PowerMock. Your test class should look something like this
+{% highlight java %}
+import org.junit.runner.RunWith;
+import org.powermock.modules.junit4.PowerMockRunner;
 
-	import org.junit.runner.RunWith;
-	import org.powermock.modules.junit4.PowerMockRunner;
-
-	@RunWith(PowerMockRunner.class)
-	public class SWTTestClass {
-		...
-	}
+@RunWith(PowerMockRunner.class)
+public class SWTTestClass {
+	...
+}
+{% endhighlight %}
 
 If you don't specify the PowerMockRunner, you'll notice that all your other calls to mock out objects will not work. You get errors like  
 
@@ -35,42 +36,46 @@ Now that you have your class marked with the ```@PowerMockRunner``` annotation, 
 
 First, you need to tell PowerMock that we're going to mock the Image class. Use the ```@PrepareForTest``` class-level annotation for Image.
 
-	import org.eclipse.swt.graphics.Image;
-	import org.junit.runner.RunWith;
-	import org.powermock.core.classloader.annotations.PrepareForTest;
-	import org.powermock.modules.junit4.PowerMockRunner;
+{% highlight java %}
+import org.eclipse.swt.graphics.Image;
+import org.junit.runner.RunWith;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
-	@RunWith(PowerMockRunner.class)
-	@PrepareForTest(Image.class)
-	public class SWTTestClass {
-		...
-	}
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(Image.class)
+public class SWTTestClass {
+	...
+}
+{% endhighlight %}
 
 Now you can mock calls in your tests. For instance, if you wanted to mock the ```Image.getBounds()``` call, you use the ```when``` pattern to return an SWT ```Rectangle```.
 
-	import org.eclipse.swt.graphics.Image;
-	import org.eclipse.swt.graphics.Rectangle;
-	import org.junit.Test;
-	import org.junit.runner.RunWith;
-	import org.powermock.api.mockito.PowerMockito;
-	import org.powermock.core.classloader.annotations.PrepareForTest;
-	import org.powermock.modules.junit4.PowerMockRunner;
+{% highlight java %}
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.Rectangle;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
-	import static junit.framework.Assert.assertEquals;
-	import static org.mockito.Mockito.when;
+import static junit.framework.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
-	@RunWith(PowerMockRunner.class)
-	@PrepareForTest(Image.class)
-	public class SWTTestClass {
- 	  @Test
- 	  public void imageMockReturnsDefinedRectangle() {
- 	    Image image = PowerMockito.mock(Image.class);
- 	    Rectangle rectangle = new Rectangle(0, 0, 10, 10);
- 	    when(image.getBounds()).thenReturn(rectangle);
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(Image.class)
+public class SWTTestClass {
+  @Test
+  public void imageMockReturnsDefinedRectangle() {
+	Image image = PowerMockito.mock(Image.class);
+	Rectangle rectangle = new Rectangle(0, 0, 10, 10);
+ 	when(image.getBounds()).thenReturn(rectangle);
 
- 	    assertEquals(rectangle, image.getBounds());
- 	  }
-	}
+    assertEquals(rectangle, image.getBounds());
+  }
+}
+{% endhighlight %}
 
 It's as easy as that. Rinse and repeat for mocking other calls to ```Image```.
 
@@ -79,42 +84,46 @@ Mocking the SWT ```Display``` object with [Mockito](https://code.google.com/p/mo
 
 Similar to what we did with ```Image```, we need to prepare the ```Display``` with the ```@PrepareForTest``` class-level annotation.
 
-	import org.eclipse.swt.widgets.Display;
-	import org.junit.runner.RunWith;
-	import org.powermock.core.classloader.annotations.PrepareForTest;
-	import org.powermock.modules.junit4.PowerMockRunner;
+{% highlight java %}
+import org.eclipse.swt.widgets.Display;
+import org.junit.runner.RunWith;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
-	@RunWith(PowerMockRunner.class)
-	@PrepareForTest(Display.class)
-	public class SWTTestClass {
-		...
-	}
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(Display.class)
+public class SWTTestClass {
+	...
+}
+{% endhighlight %}
 
 Now, we can mock out the static calls to ```Display``` to return another mock object. For instance, you might want to make sure some method returns the current Display.
 
-	import org.eclipse.swt.widgets.Display;
-	import org.junit.Test;
-	import org.junit.runner.RunWith;
-	import org.powermock.api.mockito.PowerMockito;
-	import org.powermock.core.classloader.annotations.PrepareForTest;
-	import org.powermock.modules.junit4.PowerMockRunner;
+{% highlight java %}
+import org.eclipse.swt.widgets.Display;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
-	import static junit.framework.Assert.assertEquals;
-	import static org.mockito.Mockito.mock;
-	import static org.mockito.Mockito.when;
+import static junit.framework.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-	@RunWith(PowerMockRunner.class)
-	@PrepareForTest(Display.class)
-	public class SWTTestClass {
- 	  @Test
- 	  public void getCurrentDisplayReturnsMockDisplay() {
- 	  	Display mockDisplay = mock(Display.class);
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(Display.class)
+public class SWTTestClass {
+  @Test
+  public void getCurrentDisplayReturnsMockDisplay() {
+  	Display mockDisplay = mock(Display.class);
 
- 	  	PowerMockito.mockStatic(Display.class);
-    	when(Display.getCurrent()).thenReturn(mockDisplay);
+  	PowerMockito.mockStatic(Display.class);
+   	when(Display.getCurrent()).thenReturn(mockDisplay);
 
-    	assertEquals(mockDisplay, Display.getCurrent());
- 	  }
-	}
+   	assertEquals(mockDisplay, Display.getCurrent());
+  }
+}
+{% endhighlight %}
 
 It's as simple as that. Happy testing!
