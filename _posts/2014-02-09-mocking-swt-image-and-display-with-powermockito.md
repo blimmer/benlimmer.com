@@ -12,7 +12,7 @@ description: "How to mock SWT Image and Display classes using JUnit and PowerMoc
 
 I've been working in [SWT](http://www.eclipse.org/swt/) quite a bit during my career at [ReadyTalk](http://www.readytalk.com). In many cases, I'll need to mock out two common SWT classes, [```Image```](http://help.eclipse.org/helios/ntopic/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/graphics/Image.html) and [```Display```](http://help.eclipse.org/helios/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fswt%2Fwidgets%2FDisplay.html). Unfortunately, mocking out these classes (or static calls to these classes) is a bit difficult. This is where [PowerMockito](https://code.google.com/p/powermock/wiki/MockitoUsage13) comes in handy.
 
-A co-worker of mine, [David](https://twitter.com/waterprinciple) refers to PowerMock as the "circular saw in your kitchen". 99 times out of 100 you won't need to use it, but it does have its uses.
+A co-worker of mine, [David](https://twitter.com/waterprinciple), refers to PowerMock as the "circular saw in your kitchen". 99 times out of 100 you won't need to use it, but it does have its uses.
 
 # Setup
 Anytime you're utilizing PowerMockito, you're going to need a class level annotation telling JUnit that we're going to be doing some heavy lifting with PowerMock. Your test class should look something like this
