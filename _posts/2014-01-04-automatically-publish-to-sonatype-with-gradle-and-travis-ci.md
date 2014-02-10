@@ -82,7 +82,7 @@ Alright, enough background. How do you do this with your project?
 
 	The meat of the script is:  
 
-		- 	A conditional to only publish when certain prerequisites are met, including: only publishing from the ReadyTalk fork, not publishing pull-requests and only publishing items in the master branch.  
+	-   A conditional to only publish when certain prerequisites are met, including: only publishing from the ReadyTalk fork, not publishing pull-requests and only publishing items in the master branch.  
 
 	- 	Invoking the Gradle command if the prerequisites are met. You'll need to remember to pass in the encrypted username and password variables we created above with the Travis gem. You'll end up with something like:
 
