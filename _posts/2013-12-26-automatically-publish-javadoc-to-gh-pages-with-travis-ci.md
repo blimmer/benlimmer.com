@@ -32,7 +32,7 @@ As I mentioned, this will allow Travis to push to our gh-pages branch.
 4. [Encrypt](http://about.travis-ci.org/docs/user/encryption-keys/) your access token.
 You'll need to install the Travis gem with ```gem install travis```. Then you'll run  
 
-		travis encrypt GH_PAGES=your token from step 4
+		travis encrypt GH_TOKEN=your token from step 4
 
     Don't forget to place this in your ```.travis.yml``` configuration in your repo in a ```secure``` block.
 
@@ -56,7 +56,7 @@ If you tell Travis to publish ```after_success```, it will run on a ton of build
 
 ```[ "$TRAVIS_REPO_SLUG" == "ReadyTalk/swt-bling" ]```  
 1. We want this to only happen from our repo, not forks.  
-Since people will clone this script when they fork the repo, we don't want them to be able to publish Javadoc if they set up Travis. Luckily, our secret ```GH_PAGES``` variable will not work for their fork, but we might as well bail from the script if it's not our repo.
+Since people will clone this script when they fork the repo, we don't want them to be able to publish Javadoc if they set up Travis. Luckily, our secret ```GH_TOKEN``` variable will not work for their fork, but we might as well bail from the script if it's not our repo.
 
 ```[ "$TRAVIS_JDK_VERSION" == "oraclejdk7" ]```  
 2. swt-bling is built against OpenJDK 6 and Oracle JDK 7. JDK 6 has pretty old-school looking documentation, so we specify that we only want Javadoc built by JDK 7 to be pushed out.
