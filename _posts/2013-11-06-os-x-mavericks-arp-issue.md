@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Working Around Mac OS X Mavericks ARP Issue
-tags: 
+tags:
 - github
 - gist
 - os x mavericks
@@ -48,7 +48,7 @@ Essentially, you need to tell OS X that it should reach out as soon as it couldn
 
 The folks over at [MacMiniVault](https://github.com/MacMiniVault) provided a script that fixes the issue by writing out an ```/etc/sysctl.conf``` file, which sets the kernal parameter on startup. Since we are confident that Apple will provide a fix in a coming update, we wanted a way to set this variable that did not survive a reboot.
 
-So, I wrote a [shell script](https://gist.github.com/l1m5/7242676) that does just that. It sets the kernal parameter, but it does not survive a reboot.
+So, I wrote a [shell script](https://gist.github.com/blimmer/7242676) that does just that. It sets the kernal parameter, but it does not survive a reboot.
 
 For what it's worth, Cisco has provided [a fix](https://supportforums.cisco.com/thread/2247235) for AnyConnect for Mac which also resolves the issue.
 

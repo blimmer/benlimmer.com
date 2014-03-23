@@ -20,11 +20,11 @@ As you can see, it takes requests to resolve the IP addresses for these sites an
 
 It had been a few months since I updated my hosts file, so I went on over to Github to see if anyone had already figured out a good resolution to this problem of keeping third-party hosts projects up-to-date. I stumbled upon [Steven Black](https://github.com/StevenBlack)'s [hosts project](https://github.com/StevenBlack/hosts). It was an interesting project concatenating several third party hosts files, including Dan Pollock's, into one. Unfortunately, there wasn't anything provided in his repository to keep these files up-to-date. I think our Canuck friend, Steven, was either manually concatenating all of these hosts files in a text editor, or was keeping his script secret.
 
-In either case, I [forked](https://github.com/l1m5/hosts) his project and added a handy [Python script](https://github.com/l1m5/hosts/blob/master/updateHostsFile.py) to concatenate all of the sources into one file and remove duplicates. I added the ability to automatically go out to the sources and download their most up-to-date source files to keep things current. It also has the ability to leave out certain domains that you want to still be able to access. I added this functionality because, as a Hulu Plus subscriber, I noticed the hosts files blocked access to Hulu ads which prevented video from streaming.
+In either case, I [forked](https://github.com/blimmer/hosts) his project and added a handy [Python script](https://github.com/blimmer/hosts/blob/master/updateHostsFile.py) to concatenate all of the sources into one file and remove duplicates. I added the ability to automatically go out to the sources and download their most up-to-date source files to keep things current. It also has the ability to leave out certain domains that you want to still be able to access. I added this functionality because, as a Hulu Plus subscriber, I noticed the hosts files blocked access to Hulu ads which prevented video from streaming.
 
 All in all, it's a very cool project inspired by one of our neighbors to the North. I submitted a pull request in to Steven and hopefully the script will end up in his mainline repository soon. In the meantime, if you want to make the Internet suck less, you can clone my project and get yourself a shiny new hosts file. Here's how to do it:
 
-	git clone https://github.com/l1m5/hosts.git
+	git clone https://github.com/blimmer/hosts.git
 	python updateHostsFile.py
 	Do you want to update all data sources? [Y/n] y
 	Updating source malwaredomainlist.com from http://www.malwaredomainlist.com/hostslist/hosts.txt
@@ -43,7 +43,7 @@ This places your new hosts file in the directory you checked out the project in.
 	sudo cp hosts /etc/hosts
 	dscacheutil -flushcache
 
-The dscacheutil command flushes your DNS cache so you can start enjoying your new hosts file right away. For instructions on where to move the file and how to flush DNS on other platforms, check out the [README](https://github.com/l1m5/hosts/blob/master/readme.md). Happy browsing!
+The dscacheutil command flushes your DNS cache so you can start enjoying your new hosts file right away. For instructions on where to move the file and how to flush DNS on other platforms, check out the [README](https://github.com/blimmer/hosts/blob/master/readme.md). Happy browsing!
 
 **UPDATE:**
 I've had a couple of questions on Facebook and Twitter about what all this means. Here's the (not-so) quick answer to what this all means. When you type in a web address into your browser, you computer does what's called a "DNS lookup" to figure out where that content is hosted. Think of it like making a phone call. When you first meet someone, they give your their 10 digit phone number and you add that into your phone book. From then on, your phone knows when you want to call John Doe, that his number is 303-555-5555 for example. Think of the mapping of John Doe as the domain and his phone number as his IP address. Now you don't have to remember John's number, you just know that you want to "call John".
