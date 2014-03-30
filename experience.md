@@ -14,7 +14,9 @@ I graduated from [CU Boulder](http://www.colorado.edu) in May 2011, with a Bache
 
 
 ## Work Experience
-[ReadyTalk](http://www.readytalk.com/), Software Developer & UX/UI Designer _(July 2011 - Present)_
+[Ibotta](http://www.ibotta.com/), Software Engineer _(March 2014 - Present)_
+
+[ReadyTalk](http://www.readytalk.com/), Software Developer & UX/UI Designer _(July 2011 - March 2014)_
 * Successfully started & completed high-profile projects including [Video Conferencing](http://www.readytalk.com/products-services/video), [Mac JVM Browser Plugin](http://www.readytalk.com/support-training/downloads#mac-plugin), Conference Controls interface overhaul, and [Quick Conference Launcher](http://www.readytalk.com/support-training/downloads#quick-launcher)
 * Worked closely with users and talented [UX engineers](http://en.wikipedia.org/wiki/User_experience) to provide industry-leading user experience interactions.
 * Executed team lead role in company initiatives, including frequent interaction with executive staff.
@@ -70,7 +72,7 @@ I graduated with over a 3.8 cumulative GPA (3.9+ major) and magna cum laude. In 
 * [Linear Algebra for Computer Science Applications](http://www.cs.colorado.edu/courses/csci2830linear.html)
 * [Digital and Social Systems: Foundations](http://www.cs.colorado.edu/courses/csci3002.html)
 * [Algorithms](http://www.cs.colorado.edu/courses/csci3104.html)
-* [DSS: Professional Development](http://www.cs.colorado.edu/courses/csci3112.html) 
+* [DSS: Professional Development](http://www.cs.colorado.edu/courses/csci3112.html)
 * [Portfolio: Spring 2009](http://groups.google.com/group/dsspd/web/ben-limmers-weekly-update?pli=1) & [Portfolio: Fall 2010](https://sites.google.com/site/hccpdforum/home/ben-limmer-s-updates)
 * [Principles of Programming Languages](http://www.cs.colorado.edu/courses/csci3155.html)
 * [Introduction to Artificial Intelligence](http://www.cs.colorado.edu/courses/csci3202.html)
