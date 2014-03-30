@@ -9,6 +9,7 @@ weight: 4
 {% include JB/setup %}
 
 ## ReadyTalk
+- [Conference Controls Redesign](/portfolio/rt/controlsredesign.html)
 - [swt-bling](/portfolio/swt-bling.html)
 - [Video Conferencing](/portfolio/rt/videoconferencing.html)
 - [QuickLauncher](/portfolio/rt/quicklauncher.html)
