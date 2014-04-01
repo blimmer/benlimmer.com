@@ -1,0 +1,33 @@
+---
+layout: post
+title: Guard + Pry + Mac OS X = :-(
+tags:
+- ruby
+description: "If you hit a pry breakpoint within Guard on OS X and it's eating your characters, here's how you fix it."
+---
+
+Debugging is critical, especially when you're learning a new system. At Ibotta, we're using [pry](http://pryrepl.org/) for debugging. Today, I ran into an issue where I had [Guard](https://github.com/guard/guard) running to automatically run my tests as I made changes. I need a breakpoint, so I set a ```binding.pry``` in a model I wanted to inspect. Upon hitting the breakpoint, I noticed that what I was typing was not being echoed to the screen. I could still execute commands, but I couldn't see what I was typing. Pretty annoying!
+
+# How to Fix It
+The reason behind this problem turns out to be the version of Ruby I built using [rbenv](https://github.com/sstephenson/rbenv) and [ruby-build](https://github.com/sstephenson/ruby-build). It uses the ```libedit``` instead of readline. There are a few ways to fix this problem detailed [on Guard's wiki](https://github.com/guard/guard/wiki/Add-Readline-support-to-Ruby-on-Mac-OS-X).
+
+## The Easy Way
+The easy way for me turned out to be adding [rb-readline](https://github.com/luislavena/rb-readline) to my Gemfile, like this:
+
+    group :development do
+      gem 'rb-readline'
+    end
+
+## The Harder Way
+But, of course, I did it the hard way first. I rebuild Ruby with the readline version I had installed on my Mac.
+
+First, install readline:  
+
+    brew install readline
+
+Then, reinstall the version of Ruby you're using:  
+
+    RUBY_CONFIGURE_OPTS=--with-readline-dir=`brew --prefix readline` rbenv install 1.9.3-p286
+
+# Conclusion
+All of these options are actually defined on the [Guard Wiki](https://github.com/guard/guard/wiki/Add-Readline-support-to-Ruby-on-Mac-OS-X), so check that out if you're still having problems.
