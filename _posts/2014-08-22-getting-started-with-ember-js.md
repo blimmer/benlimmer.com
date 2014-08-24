@@ -7,6 +7,8 @@ tags:
 description: "Key EmberJS concepts to help you get up to speed with the framework. Topics include Handlebars, Ember computed properties not firing, Ember Observers and general advice when looking for help."
 ---
 
+<div class="center"><img src="/assets/images/posts/2014/08/tomster.png" width="324" height="308" alt="Tomster: The EmberJS Mascot" /></div>  
+
 I was posed with a very free-form project after I got my feet wet in the [Ibotta](http://www.ibotta.com) Ruby on Rails codebase. The task: create a kick-ass [Single-Page Application](http://en.wikipedia.org/wiki/Single-page_application) to replace the minimal Rails front-end website. It needed to communicate with the existing RoR API and needed to be released within a few months.  
 
 # Choosing a Framework
