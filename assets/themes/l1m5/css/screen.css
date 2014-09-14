@@ -162,7 +162,7 @@ ul.posts {
 /*****************************************************************************/
 
   .content {
-
+    min-height: 400px;
   }
     .content a {
       text-decoration: none;
