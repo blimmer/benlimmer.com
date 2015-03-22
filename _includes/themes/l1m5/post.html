@@ -1,14 +1,20 @@
-<h1>{{ page.title }}</h1>
-<div id="post">
+<div id="post" itemscope itemType="http://schema.org/BlogPosting">
+  <meta itemprop="inLanguage" content="en-US"/>
+  <h1 itemprop="headline">{{ page.title }}</h1>
   <p class="meta">
-    {{ page.date | date_to_long_string }} 
+    Posted on <span itemprop="datePublished" content={{ page.date | date_to_xmlschema }}> {{ page.date | date_to_long_string }}<span> by {{ site.author.name }} <br/>
     {% if page.location %}{{ page.location }}{% endif %}
   </p>
-  {{ content }}
+  <div itemprop="articleBody">
+    {{ content }}
+  </div>
 </div>
 
 <div id="related">
   <h3><a href="/tags.html#{{ page.tags[0] }}-ref">Related Posts</a></h3>
+  <p class="meta">
+    {{ page.tags | array_to_sentence_string }}
+  </p>
 </div>
 
 {% include JB/comments %}

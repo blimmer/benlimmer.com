@@ -31,7 +31,7 @@
 </head>
 <body>
 
-  <div class="site">
+  <div class="site" itemscope itemtype="http://schema.org/Blog">
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -48,11 +48,11 @@
       {{ content }}
     </div>
     <div class="footer">
-      <div class="contact">
+      <div class="contact" itemscope itemprop="author" itemtype="http://schema.org/Person">
         <p>
-          {{ site.author.name }}<br />
-          {{ site.tagline }}<br />
-          <a href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a>
+          <span itemprop="name">{{ site.author.name }}</span><br />
+          <span itemprop="jobtitle">{{ site.tagline }}</span><br />
+          <span itemprop="email"><a href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a></span>
         </p>
       </div>
       <div class="contact">
