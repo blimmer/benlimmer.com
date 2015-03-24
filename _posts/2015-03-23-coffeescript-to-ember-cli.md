@@ -17,7 +17,7 @@ adopters who didn't choose what the community has standardized on?
 
 We chose to rewrite our Rails marketing app as an Ember app in March of 2014.
 Back then, there weren't obvious choices for how to write, build and deploy
-Ember applications. [Ibotta.com](https://ibotta.com) has been in production for
+Ember applications. [Ibotta.com](https://ibotta.com/r/ndynlq) has been in production for
 almost a year and uses a build, test and deployment system that highly varies
 from the choices made by the Ember community.
 
