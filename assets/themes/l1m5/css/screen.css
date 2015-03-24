@@ -209,6 +209,27 @@ ul.posts {
       border: none;
     }
 
+/* mobile */
+@media (max-width: 749px) {
+  #post {
+    font-size: 1.2em;
+    max-width: 600px;
+  }
+}
+
+@media only screen and (max-device-width: 667px) {
+  .site {
+    max-width: 650px;
+    font-size: 2.5em;
+    line-height: 2em;
+  }
+
+  .site li {
+    line-height: 2em;
+  }
+}
+
+
   /* terminal */
 
   #post pre.terminal {
