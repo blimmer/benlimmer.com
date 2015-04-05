@@ -19,6 +19,19 @@ img {
 
 h1 {
   margin-bottom: 1em;
+  font-size: 150%;
+}
+
+h1.headline {
+  font-size: 170%;
+}
+
+h2 {
+  font-size: 130%;
+}
+
+h3 {
+  font-size: 120%;
 }
 
 .page-content {
@@ -75,6 +88,10 @@ footer {
 
 footer hr {
   width: 80%;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+  background-color: gray;
 }
 
 /* Syntax */
