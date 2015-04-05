@@ -35,6 +35,10 @@ h3 {
   font-size: 120%;
 }
 
+code {
+  color: inherit;
+}
+
 .page-content {
   min-height: 500px;
 }
@@ -78,6 +82,11 @@ h3 {
 
 .post article {
   margin-top: 25px;
+}
+
+.post article a {
+  text-decoration: none;
+  border-bottom: 1px dotted;
 }
 
 .post .related {
