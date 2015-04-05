@@ -24,6 +24,7 @@ h1 {
 
 h1.headline {
   font-size: 170%;
+  margin-bottom: .5em;
 }
 
 h2 {
@@ -72,6 +73,10 @@ h3 {
 .post {
   width: 90%;
   margin: auto;
+}
+
+.post article {
+  margin-top: 25px;
 }
 
 .post .related {
