@@ -2,12 +2,14 @@ permalink: /:categories/:year/:month/:day/:title
 
 title : Ben Limmer
 tagline: "Software Developer in Denver, Colorado, USA"
-author :
-  name : Ben Limmer
-  email : hello@benlimmer.com
-  github : blimmer
-  twitter : l1m5
+author:
+  name: Ben Limmer
+  email: hello@benlimmer.com
+  github: blimmer
+  twitter: l1m5
   googleplus: +BenLimmer
+
+production_url: http://benlimmer.com
 
 defaults:
   -
