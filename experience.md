@@ -2,10 +2,8 @@
 layout: page
 title: Experience & Education
 description: "An informational list about Ben Limmer's professional experience and educational background"
-group: navigation
-weight: 2
+is_about: true
 ---
-{% include JB/setup %}
 
 ## General
 I am passionate about all aspects of software development. I have experience and education to support the creation of software from concept, to user testing, to development in an agile environment.

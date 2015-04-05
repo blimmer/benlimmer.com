@@ -34,4 +34,4 @@ This blog post will track other posts that document our journey to Ember CLI.
 # Ember CLI Related Posts
 
 * [Ember CLI Testing with Jenkins CI]({% post_url 2015-03-22-ember-cli-testing-with-jenkins %})
-* [Migrating a CoffeeScript Ember Application to Ember CLI](% post_url 2015-03-23-coffeescript-to-ember-cli %})
+* [Migrating a CoffeeScript Ember Application to Ember CLI]({% post_url 2015-03-23-coffeescript-to-ember-cli %})

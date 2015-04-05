@@ -1,0 +1,31 @@
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">{{ site.title }}</a>
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        {% assign current = page.url | downcase | split: '/' %}
+        <li>
+          <a href="/" {% if current[1] == 'index.html' %}class='active'{% endif %}>HOME</a>
+        </li>
+        <li>
+          <a href="/archive.html" {% if current[1] == 'archive.html' or page.is_post %}class='active'{% endif %}>BLOG</a>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle {% if page.is_about %}active{% endif %}" data-toggle="dropdown" href="#" id="about">ABOUT <span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="about">
+            <li><a href="/about.html">About Me</a></li>
+            <li><a href="/experience.html">Experience &amp; Education</a></li>
+            <li><a href="/portfolio.html">Portfolio</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
