@@ -73,6 +73,7 @@ h3 {
 .post {
   width: 90%;
   margin: auto;
+  line-height: 1.618;
 }
 
 .post article {
@@ -88,6 +89,7 @@ h3 {
 }
 
 footer {
+  color: black;
   margin-top: 20px;
 }
 
