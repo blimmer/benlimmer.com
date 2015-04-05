@@ -3,8 +3,6 @@ layout: page
 title: "In the News"
 description: "Posts Ben Limmer has written or been featured in"
 ---
-{% include JB/setup %}
-
 * [Inside CU](http://www.colorado.edu/insidecu/editions/2008/4-8/story2.html), "Service learning class connects students and communities", April 2008
 * [CU Computer Science](http://www.cs.colorado.edu/department/news/startups2students.html), "CSUAC to Host Local Startup Internship Event", February 2009
 * [David G. Cohen](http://www.davidgcohen.com/2010/01/17/startup2student-at-cu/), "Startup2Student at CU", January 2010

@@ -3,8 +3,6 @@ layout: page
 title: "swt-bling"
 description: "A Free and Open Source GitHub project started at ReadyTalk to create modern, blinged out SWT Widgets. Inspired by the Nebula project, we wanted to create custom, more modern widgets for the Standard Widget Toolkit (SWT) framework."
 ---
-{% include JB/setup %}
-
 At ReadyTalk, we have several customer-facing applications. The client I work with most frequently is our Rich Java app, which is downloaded on-the-fly and used by Chairpeople and Collaborators in ReadyTalk meetings. This application, for lots of reasons, uses the Eclipse [Standard Widget Toolkit (SWT)](http://www.eclipse.org/swt/) for the front-end.
 
 SWT provides us with a native look-and-feel on different platforms, but can be a bit lacking in more modern UI components, which drives us to do custom drawing of more advanced components. As part of a project started in October 2013, we took on refreshing the front-end to make our application look more flat and modern. This drove us to need more advanced widgets for SWT and, thus, the [swt-bling](https://github.com/ReadyTalk/swt-bling) project.

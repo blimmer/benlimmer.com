@@ -3,10 +3,8 @@ layout: page
 title: Portfolio
 header: Portfolio
 description: "A showcase of Ben Limmer's work at ReadyTalk and at CU Boulder."
-group: navigation
-weight: 4
+is_about: true
 ---
-{% include JB/setup %}
 
 <h2 class="anchor-fix" id="readytalk-ref">ReadyTalk</h2>
 - [Conference Controls Redesign](/portfolio/rt/controlsredesign.html)

@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="home">
+  <h2>Recent Blog Posts</h2>
+  <ul class="posts">
+    {% for post in site.posts limit:10 %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+    {% endfor %}
+    <div class="more">
+      <a href="/archive.html">More...</a>
+    </div>
+  </ul>
+</div>

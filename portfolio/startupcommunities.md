@@ -3,8 +3,6 @@ layout: page
 title: "Startup Communities"
 description: "Description of Ben Limmer's section in Startup Communities by Brad Feld"
 ---
-{% include JB/setup %}
-
 In mid-2012 I was approached by [Brad Feld](http://www.feld.com), with whom I had worked extensively on the [startups2students](/portfolio/startups2students.html "Startups2Students") event at CU, to write an excerpt for his new book [Startup Communities: Building an Entrepreneurial Ecosystem in Your City](http://www.amazon.com/Startup-Communities-Building-Entrepreneurial-Ecosystem/dp/1118441540).
 
 <div class="center"><img src="/assets/images/pages/portfolio/StartupCommunities.jpg" width="300" height="168" alt="Startup Communities Book Cover" /></div>

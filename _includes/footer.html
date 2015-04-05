@@ -1,0 +1,34 @@
+<footer class="footer container">
+  <hr>
+  <div class="row">
+    <div class="contact col-md-offset-1 col-md-5" itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <p>
+        <span itemprop="name">{{ site.author.name }}</span><br />
+        <span itemprop="jobtitle">{{ site.tagline }}</span><br />
+        <span itemprop="email"><a href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a></span>
+      </p>
+    </div>
+    <div class="contact col-md-3">
+      <p>
+        <a href="http://github.com/{{ site.author.github }}/">github.com/{{ site.author.github }}</a><br />
+        <a href="http://twitter.com/{{ site.author.twitter }}/">twitter.com/{{ site.author.twitter }}</a><br />
+        {% if page.type == 'post' %}
+        <a href="https://plus.google.com/{{ site.author.googleplus }}?rel=author">google.com/{{ site.author.googleplus }}</a><br/>
+        {% else %}
+        <a href="https://plus.google.com/{{ site.author.googleplus }}">google.com/{{ site.author.googleplus }}</a><br/>
+        {% endif %}
+      </p>
+    </div>
+    <div class="rss col-md-2">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        <img alt="Creative Commons License" style="padding-right:10px" src="http://i.creativecommons.org/l/by/4.0/88x31.png" />
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- jQuery -->
+<script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>

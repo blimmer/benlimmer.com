@@ -1,6 +1,25 @@
 ---
 layout: default
-type: post
 ---
-{% include JB/setup %}
-{% include themes/l1m5/post.html %}
+<div class="post" itemscope itemType="http://schema.org/BlogPosting">
+  <meta itemprop="inLanguage" content="en-US"/>
+  <h1 itemprop="headline">{{ page.title }}</h1>
+  <p class="meta">
+    Posted on <span itemprop="datePublished" content={{ page.date | date_to_xmlschema }}> {{ page.date | date_to_long_string }}<span> by {{ site.author.name }} <br/>
+    {% if page.location %}{{ page.location }}{% endif %}
+  </p>
+  <article itemprop="articleBody">
+    {{ content }}
+  </article>
+
+  <div class="related">
+    <h5>Keywords</h5>
+    <p class="meta">
+      {{ page.tags | array_to_sentence_string }}
+    </p>
+    <div class="pagination">
+      {% if page.previous %}<span class="pull-left"><a href={{page.previous.url}}>&lt; Previous Post</a></span>{% endif %}
+      {% if page.next %}<span class="pull-right"><a href={{page.next.url}}>Next Post &gt;</a></span>{% endif %}
+    </div>
+  </div>
+</div>
