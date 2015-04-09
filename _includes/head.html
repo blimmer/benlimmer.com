@@ -8,9 +8,6 @@
   <title>{% if page.title %}{{ page.title }} | Ben Limmer{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <!--<link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">-->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/journal/bootstrap.min.css">
-  <link rel="stylesheet" href="{{ "/css/custom.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   <link type="text/plain" rel="author" href="http://benlimmer.com/humans.txt" />
@@ -26,4 +23,26 @@
    ga('require', 'displayfeatures');
    ga('send', 'pageview');
  </script>
+ <script>
+  function loadCSS(href){
+    var ss = window.document.createElement('link'),
+        ref = window.document.getElementsByTagName('head')[0];
+
+    ss.rel = 'stylesheet';
+    ss.href = href;
+
+    // temporarily, set media to something non-matching to ensure it'll
+    // fetch without blocking render
+    ss.media = 'only x';
+
+    ref.parentNode.insertBefore(ss, ref);
+
+    setTimeout( function(){
+      // set media back to `all` so that the stylesheet applies once it loads
+      ss.media = 'all';
+    },0);
+  }
+  loadCSS('//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/journal/bootstrap.min.css');
+  loadCSS("/css/custom.css")
+</script>
 </head>
