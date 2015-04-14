@@ -80,7 +80,7 @@ Now we're ready to configure our job to run our test suite.
 
           npm install
           bower update
-          ember test > results.tap
+          ember test | tee results.tap
 
    * Click "Add a Post Build Action" and Choose "Publish TAP Results" pointing to your results.tap
      file you indicated in the shell script
