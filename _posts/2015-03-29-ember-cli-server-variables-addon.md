@@ -89,7 +89,7 @@ the add-on to fetch the property.
 
 {% highlight javascript %}
 MyController = Ember.Controller.extend({
-  serverVariablesService = Ember.inject.service('serverVariables'),
+  serverVariablesService: Ember.inject.service('serverVariables'),
   userLocation: Ember.computed.reads('serverVariablesService.location')
 });
 {% endhighlight %}
