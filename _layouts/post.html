@@ -17,9 +17,16 @@ layout: default
     <p class="meta">
       {{ page.tags | array_to_sentence_string }}
     </p>
-    <div class="pagination">
-      {% if page.previous %}<span class="pull-left"><a href={{page.previous.url}}>&lt; Previous Post</a></span>{% endif %}
-      {% if page.next %}<span class="pull-right"><a href={{page.next.url}}>Next Post &gt;</a></span>{% endif %}
-    </div>
+  </div>
+
+  <div class="report-bugs">
+    <h5>Find an issue?</h5>
+    Open a pull request against my blog
+    <a href='https://github.com/blimmer/benlimmer.com' target='_blank'>on GitHub</a>.
+  </div>
+
+  <div class="pagination">
+    {% if page.previous %}<span class="pull-left"><a href={{page.previous.url}}>&lt; Previous Post</a></span>{% endif %}
+    {% if page.next %}<span class="pull-right"><a href={{page.next.url}}>Next Post &gt;</a></span>{% endif %}
   </div>
 </div>
