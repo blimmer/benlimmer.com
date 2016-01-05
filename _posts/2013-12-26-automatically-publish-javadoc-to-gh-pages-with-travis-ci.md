@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Automatically Publish Javadoc to GitHub Pages with Travis CI
-tags: 
+tags:
 - github
 - travis ci
 - github pages
@@ -19,17 +19,17 @@ We're already using [Travis CI](https://travis-ci.org/) to automatically run our
 After lots of searching around, I ended up having a hard time finding one definitive source of how to accomplish this with Travis CI. So, here's how you do it.
 
 # How to Do It
-1. [Setup GitHub Pages](http://pages.github.com/#project-site) if you haven't already.  
-This will create a gh-pages branch on your GitHub project. Checking out and automatically commiting and pushing to this branch is how this little trick works.  
+1. [Setup GitHub Pages](https://pages.github.com/) if you haven't already.  
+This will create a gh-pages branch on your GitHub project. Checking out and automatically committing and pushing to this branch is how this little trick works.  
 
-2. [Setup Travis CI](http://about.travis-ci.org/docs/user/getting-started/) if you haven't already.  
+2. [Setup Travis CI](https://docs.travis-ci.com/user/getting-started/) if you haven't already.  
 Travis is neat. In most use cases, it just works with your build system. It also has the ability to encrypt 'secret' data (in our case, the token to allow Travis to push to our gh-pages branch).  
 
 3. [Create a GitHub Access Token](https://github.com/settings/tokens) for Travis.  
-As I mentioned, this will allow Travis to push to our gh-pages branch. 
-<div class="center"><img src="/assets/images/posts/2013/12/GhAccessToken.png" width="800" height="146" alt="GitHub Create New Personal Access Token" /></div> 
+	As I mentioned, this will allow Travis to push to our gh-pages branch.
+	<div class="center"><img src="/assets/images/posts/2013/12/GhAccessToken.png" width="800" height="146" alt="GitHub Create New Personal Access Token" /></div>
 
-4. [Encrypt](http://about.travis-ci.org/docs/user/encryption-keys/) your access token.
+4. [Encrypt](https://docs.travis-ci.com/user/environment-variables/#Encrypted-Variables) your access token.
 You'll need to install the Travis gem with ```gem install travis```. Then you'll run  
 
 		travis encrypt GH_TOKEN=your token from step 4
@@ -44,17 +44,17 @@ In your .travis.yml file, you'll tell Travis to run your script after a successf
 
 	 	after_success:
 	 	- .utility/initiate-publish.sh
-	 	
+
 
 7. That's it! That should get you going with automatic publishes!
 
 # Script Explanation
 I'll take a second to explain how we've come to the script we're using today. There was a lot of trial and error with this particular script, so I'll go through it for clarity.
 
-## The Big-Ol' Conditional 
+## The Big-Ol' Conditional
 If you tell Travis to publish ```after_success```, it will run on a ton of builds you don't want Javadoc published for. So, for our purposes, we define a number of prerequisites to publish.  
 
-```[ "$TRAVIS_REPO_SLUG" == "ReadyTalk/swt-bling" ]```  
+```[ "$TRAVIS_REPO_SLUG" == "ReadyTalk/swt-bling" ]```
 1. We want this to only happen from our repo, not forks.  
 Since people will clone this script when they fork the repo, we don't want them to be able to publish Javadoc if they set up Travis. Luckily, our secret ```GH_TOKEN``` variable will not work for their fork, but we might as well bail from the script if it's not our repo.
 
@@ -68,18 +68,19 @@ Since people will clone this script when they fork the repo, we don't want them 
 4. If it's merged to master, we want to publish Javadoc for it.
 
 ## The Meat of the Script
+
 	# Get to the Travis build directory, configure git and clone the repo
 	cd $HOME
-  	git config --global user.email "travis@travis-ci.org"
-  	git config --global user.name "travis-ci"
-  	git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/ReadyTalk/swt-bling gh-pages > /dev/null
+	git config --global user.email "travis@travis-ci.org"
+	git config --global user.name "travis-ci"
+	git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/ReadyTalk/swt-bling gh-pages > /dev/null
 
-  	# Commit and Push the Changes
-  	cd gh-pages
-  	git rm -rf ./javadoc
-  	cp -Rf $HOME/javadoc-latest ./javadoc
-  	git add -f .
-  	git commit -m "Lastest javadoc on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
-  	git push -fq origin gh-pages > /dev/null
+	# Commit and Push the Changes
+	cd gh-pages
+	git rm -rf ./javadoc
+	cp -Rf $HOME/javadoc-latest ./javadoc
+	git add -f .
+	git commit -m "Lastest javadoc on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
+	git push -fq origin gh-pages > /dev/null
 
 And that will do it! It's pretty straightforward, but hopefully this helps out. Happy publishing!
