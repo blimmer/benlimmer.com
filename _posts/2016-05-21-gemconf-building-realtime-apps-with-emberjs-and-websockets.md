@@ -26,4 +26,4 @@ This talk was originally given at GEMConf in May 2016 in San Fransisco.
 They're [available on slideshare](http://www.slideshare.net/BenLimmer/building-realtime-apps-with-emberjs-and-websockets).
 
 ### The video
-Video is coming soon!
+You can find it [here](https://www.embermeetup.com/videos/building-real-time-applications-with-ember-and-websockets).
