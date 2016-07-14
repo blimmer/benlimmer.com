@@ -1,5 +1,3 @@
-permalink: /:categories/:year/:month/:day/:title
-
 title : Ben Limmer
 tagline: "Software Developer in Denver, Colorado, USA"
 author:
@@ -11,6 +9,7 @@ author:
 description: "A software engineering blog written by Ben Limmer. Topics include EmberJS, software development best-practices, automated testing and more."
 
 production_url: https://benlimmer.com
+permalink: pretty
 
 defaults:
   -
