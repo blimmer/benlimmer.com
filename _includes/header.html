@@ -12,17 +12,17 @@
       <ul class="nav navbar-nav">
         {% assign current = page.url | downcase | split: '/' %}
         <li>
-          <a href="/" {% if current[1] == 'index.html' %}class='active'{% endif %}>HOME</a>
+          <a href="/" {% if current[1] == 'index' %}class='active'{% endif %}>HOME</a>
         </li>
         <li>
-          <a href="/archive.html" {% if current[1] == 'archive.html' or page.is_post %}class='active'{% endif %}>BLOG</a>
+          <a href="/archive" {% if current[1] == 'archive' or page.is_post %}class='active'{% endif %}>BLOG</a>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle {% if page.is_about %}active{% endif %}" data-toggle="dropdown" href="#" id="about">ABOUT <span class="caret"></span></a>
           <ul class="dropdown-menu" aria-labelledby="about">
-            <li><a href="/about.html">About Me</a></li>
-            <li><a href="/experience.html">Experience &amp; Education</a></li>
-            <li><a href="/portfolio.html">Portfolio</a></li>
+            <li><a href="/about">About Me</a></li>
+            <li><a href="/experience">Experience &amp; Education</a></li>
+            <li><a href="/portfolio">Portfolio</a></li>
           </ul>
         </li>
       </ul>

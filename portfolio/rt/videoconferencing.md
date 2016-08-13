@@ -7,7 +7,7 @@ description: "A description of Ben Limmer's invovlement in developing the ReadyT
 <div class="center">
 	<img src="/assets/images/pages/portfolio/rt/VCiMacComp.png" height="169" width="425" alt="ReadyTalk Video Conferencing on an iMac" />
 </div>
-After completing my first small project at ReadyTalk, [QuickLauncher](/portfolio/rt/quicklauncher.html), I was excited to be chosen to work on the company's highest priority project, Video Conferencing.
+After completing my first small project at ReadyTalk, [QuickLauncher](/portfolio/rt/quicklauncher), I was excited to be chosen to work on the company's highest priority project, Video Conferencing.
 
 In the collaboration Conferencing space, a high-quality Video Conferencing product is hugely important. Because of the incredibly competitive market space, my team was tasked with getting out a high-quality, home-grown Video Conferencing product to be delivered to a GA audience within a year.
 

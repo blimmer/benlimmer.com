@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Automatically Publish to Sonatype with Gradle and Travis CI
-tags: 
+tags:
 - travis ci
 - github
 - sonatype
@@ -9,7 +9,7 @@ tags:
 description: "How to automatically publish SNAPSHOT and RELEASE artifacts to Sonatype (Nexus) using Gradle and Travis CI. This approach utilizes the gradle-nexus-plugin from Benjamin Muschko."
 ---
 
-As I've [mentioned before]({% post_url 2013-12-26-automatically-publish-javadoc-to-gh-pages-with-travis-ci %}), I hate doing stuff manually. When we started the [swt-bling](/portfolio/swt-bling.html) project, I wanted to make sure we had a solid way for people to use our current development (SNAPSHOT) jars, as well as our RELEASE jars.
+As I've [mentioned before]({% post_url 2013-12-26-automatically-publish-javadoc-to-gh-pages-with-travis-ci %}), I hate doing stuff manually. When we started the [swt-bling](/portfolio/swt-bling) project, I wanted to make sure we had a solid way for people to use our current development (SNAPSHOT) jars, as well as our RELEASE jars.
 
 At [ReadyTalk](http://www.readytalk.com), we are standardizing our build and deployment of Java code with [Gradle](http://www.gradle.org/). So, it was an easy choice to pick Gradle for swt-bling. Plus, I get to learn some [Groovy](http://groovy.codehaus.org/) by working with Gradle so it's an awesome learning experience.
 
@@ -33,9 +33,9 @@ Alright, enough background. How do you do this with your project?
 	In our case, we were all set except for the GPG signing keys. We had to generate these and push them out to a public keyserver. Check out [How To Generate PGP Signatures With Maven](https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven) if you need setup the GPG keys for Maven.
 
 3. Create secret Travis CI entries for your Sonatype username and password.
-	
+
 	Travis will need to login using the username and password you created in step 1 to publish. Because we'll eventually have a utility script that Travis will run, you'll need to utilize Travis' [Encrypt](http://about.travis-ci.org/docs/user/encryption-keys/) functionality.
-	
+
 	To do this, install the Travis gem using:  
 
 		gem install travis
@@ -47,7 +47,7 @@ Alright, enough background. How do you do this with your project?
 	Make sure you add the resulting encrypted variables to the ```secure``` block in your .travis.yml file.
 
 ## gradle-nexus-plugin
-1. Include the plugin in your build script. 
+1. Include the plugin in your build script.
 
 	We download the plugin on-demand from [BinTray](https://bintray.com/bmuschko/gradle-plugins/gradle-nexus-plugin), but you can download the plugin and include it in your repo if you'd like.
 
@@ -66,7 +66,7 @@ Alright, enough background. How do you do this with your project?
 		    }
 		}
 
-2. Create publishing logic in Gradle. 
+2. Create publishing logic in Gradle.
 
 	In swt-bling, we created a separate ```publish.gradle``` file and include that in our build.gradle. You can [check out ours](https://github.com/ReadyTalk/swt-bling/blob/master/gradle/publish.gradle) or the gradle-nexus-plugin [README](https://github.com/bmuschko/gradle-nexus-plugin#example) for an example.
 
@@ -87,7 +87,7 @@ Alright, enough background. How do you do this with your project?
 	- 	Invoking the Gradle command if the prerequisites are met. You'll need to remember to pass in the encrypted username and password variables we created above with the Travis gem. You'll end up with something like:
 
 			 ./gradlew uploadArchives -PnexusUsername="${SONATYPE_USERNAME}" -PnexusPassword="${SONATYPE_PASSWORD}"
-		
+
 	- 	Worried about security? Don't worry, Travis will not allow forks to utilize your secret entries, so people will not be able to push to Sonatype as your organization.
 
 4. Tell Travis to run the new script ```after_success```. So, in your .travis.yml file, you'll want a block that reads something like:
