@@ -8,8 +8,8 @@
   <title>{% if page.title %}{{ page.title }} | Ben Limmer{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <link rel="canonical" href="{{ page.url | replace:'index','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  <link rel="canonical" href="{{ site.production_url }}{{ page.url | replace:'index.html',''}}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.production_url }}/feed.xml" />
   <link type="text/plain" rel="author" href="https://benlimmer.com/humans.txt" />
   <link rel="shortcut icon" href="/assets/favicon.png" />
 
