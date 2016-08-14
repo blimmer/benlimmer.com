@@ -2,10 +2,12 @@
 layout: post
 title: Using TTF fonts with PhantomJS on Ubuntu
 tags:
-- phantomjs
+- phantomjs issues
+- phantomjs pdf fonts
+- phantomjs fonts
 - infrastructure
 
-description: "How to use TrueType (ttf) fonts with PhantomJS 2 on Ubuntu linux distributions."
+description: "How to use TrueType (ttf) fonts with PhantomJS 2 on Ubuntu linux distributions. This article describes how to fix PhantomJS issues with using custom fonts and PDF generation."
 ---
 
 I was recently tasked with figuring out how to automate the generation of a PDF
@@ -20,13 +22,14 @@ out to PDF. It was really easy to get set up, but then I discovered this:
 </div>
 <br/>
 
-Ah, yes, a standard linux font. I needed to figure out the best way to expose
-my custom licensed font (Helvetica Neue) to PhantomJS. The first thing I found
-was [this blog post](https://medium.com/@stockholmux/besting-phantomjs-font-problems-ee22795f5c0b)
+PhantomJS was having an issue where my custom font was not rendering.
+I needed to figure out the best way to expose my custom licensed font
+(Helvetica Neue) to PhantomJS. The first thing I found was
+[this blog post](https://medium.com/@stockholmux/besting-phantomjs-font-problems-ee22795f5c0b)
 that was mentioned all over the internet. It suggested converting the file from
 TrueType over to a Type1 format, but that wasn't working for me.
 
-I managed to get it working with the regular-ol' TTF font by following these steps:
+I managed to get PhantomJS working with a TTF font by following these steps:
 
 1. Create a folder in the `/usr/share/fonts/truetype` directory for your font.
 For example, `/usr/share/fonts/truetype/helvetica`.
