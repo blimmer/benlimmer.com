@@ -5,7 +5,12 @@ layout: default
   <meta itemprop="inLanguage" content="en-US"/>
   <h1 class="headline" itemprop="headline">{{ page.title }}</h1>
   <p class="meta">
-    Posted on <span itemprop="datePublished" content={{ page.date | date_to_xmlschema }}> {{ page.date | date_to_long_string }}<span> by {{ site.author.name }} <br/>
+    Posted on <span itemprop="datePublished" content={{ page.date | date_to_xmlschema }}> {{ page.date | date_to_long_string }}<span> by <span itemprop="author">{{ site.author.name }}</span>
+    <span class='little-face' itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+      <img itemprop="url"  src='{{site.url}}/assets/gravatar.jpeg' />
+      <meta itemprop="height" content="512" />
+      <meta itemprop="width" content="512" />
+    </span><br/>
     {% if page.location %}{{ page.location }}{% endif %}
   </p>
   <article itemprop="articleBody">
@@ -28,5 +33,16 @@ layout: default
   <div class="pagination">
     {% if page.previous %}<span class="pull-left"><a href={{page.previous.url}}>&lt; Previous Post</a></span>{% endif %}
     {% if page.next %}<span class="pull-right"><a href={{page.next.url}}>Next Post &gt;</a></span>{% endif %}
+  </div>
+
+  <div itemprop='publisher' itemscope='itemscope' itemtype='https://schema.org/Organization' style='display:none;'>
+    <div itemprop='logo' itemscope='itemscope' itemtype='https://schema.org/ImageObject'>
+      <img itemprop="url"  src='{{site.url}}/assets/gravatar.jpeg' />
+      <meta itemprop="height" content="512" />
+      <meta itemprop="width" content="512" />
+    </div>
+    <div itemprop='name'>
+      {{site.author.name}}
+    </div>
   </div>
 </div>
