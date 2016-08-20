@@ -19,6 +19,14 @@ including [ember-composable-helpers](https://github.com/DockYard/ember-composabl
 [ember-wormhole](https://github.com/yapplabs/ember-wormhole) and general composition
 support introduced in Ember 2.
 
+<br/>
+<div class="center">
+  <a href="http://www.slideshare.net/BenLimmer/fun-with-ember-2x-features" target="_blank">
+	 <img src="/assets/images/posts/2016/08/composition_slides.png">
+  </a>
+</div>
+<br/>
+
 ### The slides
 They're [available on slideshare](http://www.slideshare.net/BenLimmer/fun-with-ember-2x-features).
 
