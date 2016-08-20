@@ -29,6 +29,6 @@ They're [available on slideshare](http://www.slideshare.net/BenLimmer/automated-
 Is [available on GitHub](https://github.com/blimmer/emberjs-denver-testing-talk).
 
 ### The video
-Our editing team (me) is still working on this :-) and it'll be up on YouTube soon!
+Is [available on YouTube](https://www.youtube.com/watch?v=KphVAbk7SLA).
 
 If this helped you out, shoot me [a tweet](https://twitter.com/l1m5).
