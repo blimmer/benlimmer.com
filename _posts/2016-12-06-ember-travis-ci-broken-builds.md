@@ -71,7 +71,7 @@ This is a little more complex since ember-try is called directly. It sounds like
 the ember-cli team is updating the blueprint as we speak. As a temporary workaround,
 you can do something like this.
 
-In your package.json create a `test` script that looks like this:
+In your `package.json` create a `test` script that looks like this:
 
 ```
 {
@@ -91,7 +91,7 @@ Then, call it like this from your `.travis.yml`:
 
 ```
   script:
-    - npm run-script test-ci -- $EMBER_TRY_SCENARIO test --skip-cleanup
+    - npm run test-ci -- $EMBER_TRY_SCENARIO test --skip-cleanup
 ```
 
 I'll update this issue once the core team updates the blueprint, if it differs
