@@ -18,6 +18,11 @@ ember: command not found
 
 you're not alone. This article will show you how to fix to fix it.
 
+## Fixed Upstream (for now)
+Travis-CI has deployed a fix on their end to restore the previous behavior
+([PR](https://github.com/travis-ci/travis-build/pull/905)). However, it is likely
+that this will change again, so making a change below is probably a safe idea.
+
 ## The Problem
 The problem stems from [this change](https://github.com/travis-ci/travis-build/pull/903)
 to Travis CI. It removes `node_modules/.bin` from the system path. When `ember-cli`
@@ -97,7 +102,8 @@ Then, call it like this from your `.travis.yml`:
 I'll update this issue once the core team updates the blueprint, if it differs
 from this solution.
 
-**UPDATE**: A [PR](https://github.com/ember-cli/ember-cli/pull/6533) is open for
+### Upstream PR to Ember CLI
+A [PR](https://github.com/ember-cli/ember-cli/pull/6533) is open for
 this issue. It uses a slightly different strategy, by calling the binary directly
 in `travis.yml`:
 
