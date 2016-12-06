@@ -97,5 +97,14 @@ Then, call it like this from your `.travis.yml`:
 I'll update this issue once the core team updates the blueprint, if it differs
 from this solution.
 
+**UPDATE**: A [PR](https://github.com/ember-cli/ember-cli/pull/6533) is open for
+this issue. It uses a slightly different strategy, by calling the binary directly
+in `travis.yml`:
+
+```
+  script:
+    - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
+```
+
 ## Problems?
 If you run into problems, let me know on the [ember community slack](http://emberjs.com/community/).
