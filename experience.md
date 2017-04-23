@@ -12,9 +12,20 @@ I graduated from [CU Boulder](http://www.colorado.edu) in May 2011, with a Bache
 
 
 ## Work Experience
-[Ibotta](http://www.ibotta.com/), Software Engineer _(March 2014 - Present)_
+[Ibotta](https://www.ibotta.com/), Principal Software Engineer _(January 2017 - Present)_
 
-+ Launched [Ibotta.com](http://ibotta.com), a complete rewrite of the previous Ruby on Rails site using EmberJS
+Making cross-functional impact within the Engineering and Product teams during a time of rapid-growth and unique scalability challenges.
+
++ Designing and executing complex business-critical software products across the stack
++ Providing strategic technical direction in both front and back-end systems
++ Mentoring a growing team of 30+ engineers
+
+[Ibotta](https://www.ibotta.com/), Software Engineer / Technical Lead _(March 2014 - January 2017)_
+
++ Technical Lead for all web and internal tools products
++ Identified and optimized use of external Amazon services to save approximately $1,000,000 in operating costs annually
++ Launched [Ibotta.com](https://ibotta.com), a complete rewrite of the previous Ruby on Rails site using EmberJS
++ Maintained 3 widely-used production Ember applications
 
 [ReadyTalk](http://www.readytalk.com/), Software Developer & UX/UI Designer _(July 2011 - March 2014)_
 
