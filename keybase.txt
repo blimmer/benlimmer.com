@@ -1,0 +1,66 @@
+==================================================================
+https://keybase.io/blimmer
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://benlimmer.com
+  * I am blimmer (https://keybase.io/blimmer) on keybase.
+  * I have a public key with fingerprint 6819 6C90 F3C1 FA3D 0B38  E1C4 5F24 4531 0F92 F1EA
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101c39597693abb87ad5df4bb9228f53b86e286fe7dbacf7055aae3c2caa1d56c030a",
+            "fingerprint": "68196c90f3c1fa3d0b38e1c45f2445310f92f1ea",
+            "host": "keybase.io",
+            "key_id": "5f2445310f92f1ea",
+            "kid": "0101c39597693abb87ad5df4bb9228f53b86e286fe7dbacf7055aae3c2caa1d56c030a",
+            "uid": "77e0dd2f3dbe47f7d5c0bafdff50e219",
+            "username": "blimmer"
+        },
+        "service": {
+            "hostname": "benlimmer.com",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1496104845,
+    "expire_in": 157680000,
+    "prev": "dae63f2fbbbf2e693b970cd9ab3f2dc5a852e0baf6e5adcb6b56372c7f61b79f",
+    "seqno": 12,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtkllIFVEYx69luBWJ0Y2MqKaoQJHZziwXIiyiKG0BCy30clad9M5c546WiBaZ
+oohkC21kUlFCRdFLUURiCSVlCpGUy4OELVKEFj0IQmcs33rsvBzO//z+//N9H6d1
+wdxAYlx4zRZp4amJ8biXX1CgILPzVrWAHFIlhKqFUjqz0TJCY1641CJCSBAlUcKK
+CUxdMxWIkKFDAghTETJl2WBAQYZGZUNjVCcIYqaLAEBIFSxjCCUCNCwqIhQyBWbZ
+xdSNupbt8VjNkEwNmyJTsMSgQkSkGFTCKmCyqgJFEpkpM4n6xhIn5jt4cQjGaJbl
+cI0fwjPl/YP/z3VXzMTpOhUJkZlCEFV1phOARQQZYQyIVJZMH4xR14YRymlUZkUi
+1BVqMgUuVlqY+nP1G5kFqP0HycJOhHujruM52CnjVyWeF42FfKtXFfXZQxSF/6aE
+kWUTPkfuqKRuzHJsISRxEnuWHyuppiaJqqGCTIEejlouDVs+AXTNEPny36GVPJJA
+qilMLmAIISZTPiFk6iImJkRcJhhAA8jUb1CjABKMNAQ0RZexzjQJ6SYT/MbKbYeH
+y7xQWMxDY1axDb0Klwo1yU1xSnwgLjGwPLgqvmRpWeuPrqkNKcZo9+znmzfH/3mB
+5KTUWSValBhofFTcePL6/d4bF8bbjq68d+NKX+Xp/omt7ed2r9gT/jiU19A8sfZy
+5GpXR9ElWDd/qn3Htgu1k58/TB4u/fZwPJhwe3X/GbsoYU5fS1NbQ8fbjIztjdnp
+3fGFKUnX0I66oUV3buYMj+7sCtQeP1Y/pR9Ifd+798S37M5c7eaBxy++DtdXDNhp
+8+K3Lu7/9Hpdx6t7g8lp0+ltu+7SlncX129JCm8MJZ1JyZq8OLa+PvWJuqDmx/Sv
+4MgAKs8pP/+xIWiNTZ7tmb6a23xHyhhMOVVYm/fc+9STj2/9zP2eVj/2bP8+YXNk
+RBo8+GbZmk0PggyDHHf00JKup0f6sk8/yL9+Lqtn7Dc=
+=hfbQ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/blimmer
+
+==================================================================
