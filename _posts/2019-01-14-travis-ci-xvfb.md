@@ -1,0 +1,52 @@
+---
+layout: post
+title: Travis CI XVFB Breaking Change
+tags:
+  - travis ci
+  - xvfb
+description: 'If you''re suddenly getting xvfb warnings on Travis CI The command "sh -e /etc/init.d/xvfb start" failed and exited with 127 during ., here''s how to fix it.'
+---
+
+This morning I was greeted by a bunch of failing front-end builds on Travis CI because XVFB couldn't start. Here's how to fix it.
+
+## The Problem
+
+Travis CI released [an update to their Xenial build environemnt](https://changelog.travis-ci.com/ubuntu-xenial-16-04-build-environment-update-86123),
+which introduced a new way to start up [XVFB](https://en.wikipedia.org/wiki/Xvfb)
+for front-end builds.
+
+Unfortunately, they broke all existing builds based on their documentation, which
+had you set it up like this:
+
+```yaml
+before_script:
+  # start XVFB to test the extension (headless does not install extensions fully)
+  # https://docs.travis-ci.com/user/gui-and-headless-browsers/#using-xvfb-to-run-tests-that-require-a-gui
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 # give xvfb some time to start
+```
+
+Starting on January 15, 2019, your builds will start failing with messages like
+this:
+
+```console
+$ export DISPLAY=:99.0
+$ sh -e /etc/init.d/xvfb start
+sh: 0: Can't open /etc/init.d/xvfb
+The command "sh -e /etc/init.d/xvfb start" failed and exited with 127 during .
+```
+
+## The Solution
+
+You need to remove the portion of your `before_script` that starts `xvfb` and
+instead use the new syntax of:
+
+```yaml
+services:
+  - xvfb
+```
+
+This is now documented
+[in their documentation](https://docs.travis-ci.com/user/gui-and-headless-browsers/#using-services-xvfb),
+so check that out for more information.
