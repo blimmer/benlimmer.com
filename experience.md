@@ -6,19 +6,23 @@ is_about: true
 ---
 
 ## General
-I am passionate about all aspects of software development. I have experience and education to support the creation of software from concept, to user testing, to development in an agile environment.
-
-I graduated from [CU Boulder](http://www.colorado.edu) in May 2011, with a Bachelor of Science in Computer Science with an emphasis in [Human Centered Computing](http://www.cs.colorado.edu/ugrad/bs/tracks/videos/hcc.mov) (HCC).
-
+I am passionate about all aspects of software development. I have experience and education to support the creation of software from concept, to user testing, to development in an agile environment across the stack.
 
 ## Work Experience
-[Ibotta](https://www.ibotta.com/), Principal Software Engineer _(January 2017 - Present)_
+
+[Ibotta](https://www.ibotta.com/), Distinguished Software Engineer _(January 2019 - Present)_
+
+Over the past five years with Ibotta, I've played a critical role in developing the technology organization.
+
+As a Distinguished Engineer, I work across the organization and stack on Ibotta's most visible, high-impact projects. I have a wide range of responsibilities, including: requirements gathering and analysis, architectural design, implementation and technical mentorship.
+
+[Ibotta](https://www.ibotta.com/), Principal Software Engineer _(January 2017 - January 2019)_
 
 Making cross-functional impact within the Engineering and Product teams during a time of rapid-growth and unique scalability challenges.
 
 + Designing and executing complex business-critical software products across the stack
 + Providing strategic technical direction in both front and back-end systems
-+ Mentoring a growing team of 30+ engineers
++ Mentoring a growing team of 60+ engineers
 
 [Ibotta](https://www.ibotta.com/), Software Engineer / Technical Lead _(March 2014 - January 2017)_
 
