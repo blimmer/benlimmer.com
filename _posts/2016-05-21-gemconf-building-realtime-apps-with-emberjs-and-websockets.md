@@ -17,7 +17,7 @@ that set your app apart.
 This talk was originally given at GEMConf in May 2016 in San Fransisco.
 
 <div class="center">
-  <a href="http://www.slideshare.net/BenLimmer/building-realtime-apps-with-emberjs-and-websockets" target="_blank">
+  <a href="http://www.slideshare.net/BenLimmer/building-realtime-apps-with-emberjs-and-websockets" target="_blank" rel="noopener">
 	 <img src="/assets/images/posts/2016/05/gemconf.png">
   </a>
 </div>

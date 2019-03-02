@@ -17,7 +17,7 @@ of tests in Ember: unit tests, integration tests, and acceptance tests and when
 to use each.
 
 <div class="center">
-  <a href="http://www.slideshare.net/BenLimmer/automated-testing-in-emberjs" target="_blank">
+  <a href="http://www.slideshare.net/BenLimmer/automated-testing-in-emberjs" target="_blank" rel="noopener">
 	 <img src="/assets/images/posts/2015/07/testing-ember.png">
   </a>
 </div>

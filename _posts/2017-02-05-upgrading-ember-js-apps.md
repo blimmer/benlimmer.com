@@ -19,7 +19,7 @@ caused by dependencies and how to manage deprecations. It was originally
 given at the Ember.js Denver Meetup in January 2017.
 
 <div class="center">
-  <a href="https://youtu.be/ToVdJjHiKco" target="_blank">
+  <a href="https://youtu.be/ToVdJjHiKco" target="_blank" rel="noopener">
 	 <img src="/assets/images/posts/2017/02/upgrading-ember-apps.png">
   </a>
 </div>

@@ -21,7 +21,7 @@ support introduced in Ember 2.
 
 <br/>
 <div class="center">
-  <a href="http://www.slideshare.net/BenLimmer/fun-with-ember-2x-features" target="_blank">
+  <a href="http://www.slideshare.net/BenLimmer/fun-with-ember-2x-features" target="_blank" rel="noopener">
 	 <img src="/assets/images/posts/2016/08/composition_slides.png">
   </a>
 </div>

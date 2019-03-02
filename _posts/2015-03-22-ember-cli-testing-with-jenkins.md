@@ -17,19 +17,19 @@ This post will walk you through running [Ember CLI](http://www.ember-cli.com/)
 
 # Initial Setup
 First, you'll need to get Jenkins all set up. Here are some helpful guides to get
-you up and running:  
+you up and running:
 
   + [Installing Jenkins on Ubuntu](https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu)
   + [EC2 Jenkins](https://aws.amazon.com/marketplace/pp/B008AT8BYK)
 
 # Plugin Setup
-You'll need a few plugins to run ember-cli on your Jenkins instance:  
+You'll need a few plugins to run ember-cli on your Jenkins instance:
 
-1. **[NodeJS Plugin](https://wiki.jenkins-ci.org/display/JENKINS/NodeJS+Plugin)**  
+1. **[NodeJS Plugin](https://wiki.jenkins-ci.org/display/JENKINS/NodeJS+Plugin)**
 The Node plugin will add support for running the `ember` command in the job
 shell.
 
-    + Install a current version of node  
+    + Install a current version of node
       At the time of this writing 0.12.0 is what you'll want to install.
 
     + Navigate to Manage Jenkins
@@ -49,11 +49,11 @@ shell.
       that I always peg the versions to prevent issues when a new version is
       released.
 
-2. **[TAP Plugin](https://wiki.jenkins-ci.org/display/JENKINS/TAP+Plugin)**  
+2. **[TAP Plugin](https://wiki.jenkins-ci.org/display/JENKINS/TAP+Plugin)**
 This will allow Jenkins to display results from the testem test suite run.
 Install it through the Plugin Manager and you're set.
 
-3. **[GitHub Plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin)**  
+3. **[GitHub Plugin](https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin)**
 I'm assuming you're using GitHub to store your source code. If you're not, you'll
 need to do some research to figure out how to automatically build your project
 on push.
@@ -65,13 +65,13 @@ site will walk you through all the configuration steps you'll need.
 Now we're ready to configure our job to run our test suite.
 
 1. Create a new job
-   I've had the best luck with the Freestyle Projects.  
+   I've had the best luck with the Freestyle Projects.
 
    ![Freestyle Project Radio Button](/assets/images/posts/2015/03/freestyle-project.png)
 
 2. Configure the job
 
-   <a href='/assets/images/posts/2015/03/job-configuration.png' target='_blank'>![Sample Configuration Settings](/assets/images/posts/2015/03/job-configuration.png)</a>
+   <a href='/assets/images/posts/2015/03/job-configuration.png' target='_blank' rel="noopener">![Sample Configuration Settings](/assets/images/posts/2015/03/job-configuration.png)</a>
 
    * Setup the Git Repository
    * Check "Build when a change is pushed to GitHub"
@@ -93,6 +93,6 @@ published.
 
 # Conclusion
 At a high level, it's pretty easy to get this set up. The portion that I couldn't find
-documentation for was the piping `ember test` output to a file for the plugin to pick up.  
+documentation for was the piping `ember test` output to a file for the plugin to pick up.
 
 If you have any problems with these steps, let me know by [tweeting @ me](http://twitter.com/l1m5)!
