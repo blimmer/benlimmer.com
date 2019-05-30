@@ -26,7 +26,7 @@ This will create a gh-pages branch on your GitHub project. Checking out and auto
 Travis is neat. In most use cases, it just works with your build system. It also has the ability to encrypt 'secret' data (in our case, the token to allow Travis to push to our gh-pages branch).  
 
 3. [Create a GitHub Access Token](https://github.com/settings/tokens) for Travis.  
-	As I mentioned, this will allow Travis to push to our gh-pages branch.
+	As I mentioned, this will allow Travis to push to our gh-pages branch. Make sure the token is set to have the [repo scope](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line), otherwise you will get "permission denied" errors on push.
 	<div class="center"><img src="/assets/images/posts/2013/12/GhAccessToken.png" width="800" height="146" alt="GitHub Create New Personal Access Token" /></div>
 
 4. [Encrypt](https://docs.travis-ci.com/user/environment-variables/#Encrypted-Variables) your access token.
