@@ -70,6 +70,8 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.production_url }}/feed.xml" />
   <link type="text/plain" rel="author" href="https://benlimmer.com/humans.txt" />
   <link rel="shortcut icon" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootswatch/3.4.1/journal/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/custom.css" />
   <script src="/js/require.js"></script>
   <script>
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -92,26 +94,5 @@
     }
   });
   require(["jquery", "bootstrap"]);
-
-  function loadCSS(href){
-    var ss = window.document.createElement('link'),
-        ref = window.document.getElementsByTagName('head')[0];
-
-    ss.rel = 'stylesheet';
-    ss.href = href;
-
-    // temporarily, set media to something non-matching to ensure it'll
-    // fetch without blocking render
-    ss.media = 'only x';
-
-    ref.parentNode.insertBefore(ss, ref);
-
-    setTimeout( function(){
-      // set media back to `all` so that the stylesheet applies once it loads
-      ss.media = 'all';
-    },0);
-  }
-  loadCSS('//stackpath.bootstrapcdn.com/bootswatch/3.4.1/journal/bootstrap.min.css');
-  loadCSS("/css/custom.css")
 </script>
 </head>
