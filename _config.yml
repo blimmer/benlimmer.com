@@ -21,3 +21,6 @@ defaults:
 
 exclude:
   - deploy.sh
+
+plugins:
+  - jekyll/minibundle
