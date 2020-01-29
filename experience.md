@@ -109,4 +109,4 @@ I graduated with over a 3.8 cumulative GPA (3.9+ major) and magna cum laude. In 
 
 
 ## Contact Me
-Like what you see? Shoot me an email at ben {at} benlimmer {dot} com
+Like what you see? Shoot me an email at hello {at} benlimmer {dot} com
