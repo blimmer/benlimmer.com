@@ -1,5 +1,6 @@
 # Jekyll Ignores
 _site/
+.jekyll-cache/
 
 # Mac Ignores
 .DS_Store
