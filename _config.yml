@@ -21,3 +21,8 @@ defaults:
 
 exclude:
   - deploy.sh
+  - LICENSE
+  - README
+
+plugins:
+  - jekyll/minibundle
