@@ -48,7 +48,7 @@ code {
 }
 
 .page-content .container {
-  margin-top: 60px;
+  margin-top: 5.5rem;
 }
 
 .navbar .navbar-brand {
@@ -117,6 +117,7 @@ code {
 }
 
 .post .pagination {
+  margin: 1rem 0;
   width: 100%;
 }
 
