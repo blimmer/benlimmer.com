@@ -1,35 +1,3 @@
-<!-- <div class="navbar navbar-expand-lg navbar-light navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">{{ site.title }}</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main" aria-label="toggle navigation">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
-    <div class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        {% assign current = page.url | downcase | split: '/' %}
-        <li>
-          <a href="/" {% if current[1] == 'index' %}class='active'{% endif %}>HOME</a>
-        </li>
-        <li>
-          <a href="/archive" {% if current[1] == 'archive' or page.is_post %}class='active'{% endif %}>BLOG</a>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle {% if page.is_about %}active{% endif %}" data-toggle="dropdown" href="#" id="about">ABOUT <span class="caret"></span></a>
-          <ul class="dropdown-menu" aria-labelledby="about">
-            <li><a href="/about">About Me</a></li>
-            <li><a href="/experience">Experience &amp; Education</a></li>
-            <li><a href="/portfolio">Portfolio</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div> -->
-
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <div class="container">
     <a class="navbar-brand" href="/">{{ site.title }}</a>
@@ -51,10 +19,26 @@
         <li class="nav-item {% if current[1] == 'index' %} active {% endif %}">
           <a class="nav-link" href="/">HOME</a>
         </li>
-        <li
-          class="nav-item {% if current[1] == 'archive' or page.is_post %}active{% endif %}"
-        >
+        <li class="nav-item {% if current[1] == 'archive' or page.is_post %}active{% endif %}">
           <a class="nav-link" href="/archive">BLOG</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="about-dropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            ABOUT
+          </a>
+          <div class="dropdown-menu" aria-labelledby="about-dropdown">
+            <a class="dropdown-item" href="/about">About Me</a>
+            <a class="dropdown-item" href="/experience">Experience &amp; Education</a>
+            <a class="dropdown-item" href="/portfolio">Portfolio</a>
+          </div>
         </li>
       </ul>
     </div>
