@@ -30,9 +30,9 @@ layout: default
     <a href='https://github.com/blimmer/benlimmer.com' target='_blank' rel="noopener">on GitHub</a>.
   </div>
 
-  <div class="pagination">
-    {% if page.previous %}<span class="pull-left"><a href={{page.previous.url}}>&lt; Previous Post</a></span>{% endif %}
-    {% if page.next %}<span class="pull-right"><a href={{page.next.url}}>Next Post &gt;</a></span>{% endif %}
+  <div class="pagination justify-content-between">
+    {% if page.previous %}<span><a href={{page.previous.url}}>&lt; Previous Post</a></span>{% endif %}
+    {% if page.next %}<span><a href={{page.next.url}}>Next Post &gt;</a></span>{% endif %}
   </div>
 
   <div itemprop='publisher' itemscope='itemscope' itemtype='https://schema.org/Organization' style='display:none;'>

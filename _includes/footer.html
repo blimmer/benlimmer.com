@@ -1,22 +1,26 @@
 <footer class="footer container">
-  <hr>
-  <div class="row">
-    <div class="contact col-md-offset-1 col-md-5" itemscope itemprop="author" itemtype="http://schema.org/Person">
-      <p>
-        <span itemprop="name">{{ site.author.name }}</span><br />
-        <span itemprop="jobtitle">{{ site.tagline }}</span><br />
-        <span itemprop="email"><a href='mailto:{{ site.author.email }}'>{{ site.author.email }}</a></span>
-      </p>
+  <hr />
+  <div class="row justify-content-center">
+    <div class="contact1 col-md-5 mb-2 mt-2" itemscope itemprop="author" itemtype="http://schema.org/Person">
+      <span itemprop="name">{{ site.author.name }}</span><br />
+      <span itemprop="jobtitle">{{ site.tagline }}</span><br />
+      <span itemprop="email"><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></span>
     </div>
-    <div class="contact col-md-3">
-      <p>
-        <a href="https://github.com/{{ site.author.github }}/">github.com/{{ site.author.github }}</a><br />
-        <a href="https://keybase.io/{{site.author.keybase}}">keybase.io/{{ site.author.keybase }}</a><br />
-      </p>
+    <div class="contact col-md-3 align-items-start mb-2 mt-2">
+      <div class="mb-2">
+        <a href="https://github.com/{{ site.author.github }}/">github.com/{{ site.author.github }}</a>
+      </div>
+      <div>
+        <a href="https://keybase.io/{{site.author.keybase}}">keybase.io/{{ site.author.keybase }}</a>
+      </div>
     </div>
-    <div class="rss col-md-2">
+    <div class="rss col-md-2 md-2 mt-2">
       <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-        <img alt="Creative Commons License" style="padding-right:10px" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+        <img
+          alt="Creative Commons License"
+          style="padding-right:10px"
+          src="https://i.creativecommons.org/l/by/4.0/88x31.png"
+        />
       </a>
     </div>
   </div>
