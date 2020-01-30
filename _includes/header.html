@@ -16,9 +16,10 @@
     <div class="collapse navbar-collapse" id="navbar-toggler">
       {% assign current = page.url | downcase | split: '/' %}
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item {% if current[1] == 'index' %} active {% endif %}">
+        <li class="nav-item {% if page.url == '/' %} active {% endif %}">
           <a class="nav-link" href="/">HOME</a>
         </li>
+
         <li class="nav-item {% if current[1] == 'archive' or page.is_post %}active{% endif %}">
           <a class="nav-link" href="/archive">BLOG</a>
         </li>

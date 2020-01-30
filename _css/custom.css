@@ -57,7 +57,7 @@ code {
 }
 
 .navbar .nav-item:not(:last-of-type) {
-  padding-right: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .navbar .nav-item.active {
@@ -103,7 +103,7 @@ code {
 }
 
 .post article {
-  margin-top: 25px;
+  margin: 2rem 0;
 }
 
 .post article a {
@@ -126,9 +126,9 @@ code {
   width: 100%;
 }
 
-footer {
+footer.footer {
   color: black;
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 footer hr {
