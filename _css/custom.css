@@ -28,7 +28,7 @@ h1 {
 
 h1.headline {
   font-size: 170%;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 h2 {
@@ -76,7 +76,7 @@ code {
 
 .posts li {
   list-style-type: none;
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .posts .more {
@@ -129,8 +129,8 @@ footer hr {
   width: 80%;
 }
 
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus {
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
   background-color: gray;
 }
 
@@ -150,7 +150,6 @@ footer hr {
 .highlight pre code {
   white-space: pre; // forces <code> to respect <pre> formatting
 }
-
 
 /*
  * GitHub style for Pygments syntax highlighter, for use with Jekyll
@@ -428,5 +427,5 @@ pre,
 
 .highlight .gc {
   color: #999;
-  background-color: #EAF2F5;
+  background-color: #eaf2f5;
 }
