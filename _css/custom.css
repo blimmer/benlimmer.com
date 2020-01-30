@@ -74,6 +74,11 @@ code {
   font-size: 1.2em;
 }
 
+.posts .post-date {
+  display: inline-block;
+  width: 7.1rem;
+}
+
 .posts li {
   list-style-type: none;
   margin-top: 0.5em;
@@ -130,8 +135,8 @@ footer hr {
   width: 80%;
 }
 
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
   background-color: gray;
 }
 
