@@ -76,7 +76,7 @@ code {
 
 .posts .post-date {
   display: inline-block;
-  width: 6.8rem;
+  width: 7rem;
 }
 
 .posts li {
@@ -141,8 +141,8 @@ footer hr {
   }
 }
 
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus {
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
   background-color: gray;
 }
 
