@@ -76,7 +76,7 @@ code {
 
 .posts .post-date {
   display: inline-block;
-  width: 7.1rem;
+  width: 6.8rem;
 }
 
 .posts li {
@@ -133,6 +133,12 @@ footer.footer {
 
 footer hr {
   width: 80%;
+}
+
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
 }
 
 .dropdown-menu>li>a:hover,
