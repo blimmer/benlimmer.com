@@ -18,6 +18,7 @@ is_about: true
 - [ember-raffle]()
 - [ember-braze]()
 - [benlimmer.com]()
+- [Open Source Contributions]()
 
 <h2 class="anchor-fix" id="ibotta-ref">Ibotta</h2>
 - [Payments Solution Architect]()
