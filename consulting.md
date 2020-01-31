@@ -27,28 +27,29 @@ I have experience throughout the tech stack, but I primarily specialize in:
 
 - Build and Deployment Pipelines
 - Microservice Generation and Tooling
-- Infrastructure as Code, especially Terraform
-- Observability and Metrics, especially DataDog and NewRelic
+- Infrastructure as Code
+- Observability and Metrics
 - Static Analysis and Linting
 
 ### Cloud
 
-- Cloud Computing, especially AWS
-- Serverless, especially Lambda
-- Event-Driven Architectures, especially EventBridge
+- Cloud Computing
+- Cost Optimization
+- Serverless
+- Event-Driven Architectures
 
 ### Front-End
 
-- Browser Extensions, especially WebExtensions
-- Single Page Applications, especially Vue and Ember
-- Server-Side Rendering Single Page Applications
+- Browser Extensions
+- Single Page Applications
+- Server-Side Rendering
 - PageSpeed and Structured Data Optimization
 - Automated Unit, Integration and Acceptance/UI Testing
 
 ### Back-End
 
-- Node apps, especially Express
-- Ruby apps, especially Ruby on Rails
+- Node apps
+- Ruby apps
 - Docker
 - GraphQL
 - SQL and NoSQL Databases
@@ -59,7 +60,7 @@ I have experience throughout the tech stack, but I primarily specialize in:
 In addition to technical offerings, I have some customizable presentations that are perfect for lunch-and-learn or workshop settings, covering topics such as:
 
 - Productivity Maximization
-- Effective Use of git
+- Effective Use of `git`
 - Successfully Tech Leading a Project
 - Pull Request Best-Practices and Etiquette
 
