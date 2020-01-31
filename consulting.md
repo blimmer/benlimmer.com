@@ -31,9 +31,9 @@ I have experience throughout the tech stack, but I primarily specialize in:
 - Observability and Metrics
 - Static Analysis and Linting
 
-### Cloud
+### Cloud Computing
 
-- Cloud Computing
+- Solution Architecture
 - Cost Optimization
 - Serverless
 - Event-Driven Architectures
