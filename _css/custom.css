@@ -141,9 +141,21 @@ footer hr {
   }
 }
 
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
   background-color: gray;
+}
+
+#specialties-accordian {
+  margin: 1rem;
+}
+
+#specialties-accordian details {
+  margin: 0.1rem 0;
+}
+
+#specialties-accordian details summary h3 {
+  display: inline-block;
 }
 
 /* Syntax */
