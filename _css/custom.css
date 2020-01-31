@@ -154,6 +154,10 @@ footer hr {
   margin: 0.1rem 0;
 }
 
+.consulting-accordian details ul {
+  margin-top: 0.5rem;
+}
+
 .consulting-accordian details .row:not(:first-of-type) {
   margin-top: 1rem;
 }

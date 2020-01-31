@@ -30,3 +30,5 @@ I have experience throughout the tech stack, but I primarily specialize in:
 I'm currently accepting new leads and contracts. I'd love to learn about what you're working on, and how I can be of help.
 
 {% include consulting/availability_accordian.html %}
+
+{% include consulting/contact_button.html %}
