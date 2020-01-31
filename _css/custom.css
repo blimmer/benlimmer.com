@@ -146,15 +146,19 @@ footer hr {
   background-color: gray;
 }
 
-#specialties-accordian {
+.consulting-accordian {
   margin: 1rem;
 }
 
-#specialties-accordian details {
+.consulting-accordian details {
   margin: 0.1rem 0;
 }
 
-#specialties-accordian details summary h3 {
+.consulting-accordian details .row:not(:first-of-type) {
+  margin-top: 1rem;
+}
+
+.consulting-accordian details summary h3 {
   display: inline-block;
 }
 

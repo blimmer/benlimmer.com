@@ -25,6 +25,8 @@ I have experience throughout the tech stack, but I primarily specialize in:
 
 {% include consulting/specialties_accordian.html %}
 
-## Availability
+## Let's Work Together!
 
 I'm currently accepting new leads and contracts. I'd love to learn about what you're working on, and how I can be of help.
+
+{% include consulting/availability_accordian.html %}
