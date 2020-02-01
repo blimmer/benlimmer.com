@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Consulting Services
-header: TODO
-description: TODO
+header: Consulting Services
+description: Ben Limmer is a principal consultant specializing in Developer Tools & Experience, Cloud Computing, Front-End and Back-End Development and speaking engagements.
 ---
 
 I'm a software engineer and architect. I have 10+ years of experience working throughout the
