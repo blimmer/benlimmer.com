@@ -25,8 +25,6 @@ Now, I help companies of all sizes solve their hardest technology and scaling pr
 
 ## Let's Work Together!
 
-I'm currently accepting new leads and contracts. I'd love to learn about what you're working on, and how I can be of help.
-
 {% include consulting/availability_accordian.html %}
 
 {% include consulting/contact_button.html %}
