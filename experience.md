@@ -11,6 +11,10 @@ I am passionate about all aspects of software development. I have experience and
 
 ## Work Experience
 
+[Self-Employed](https://benlimmer.com/consulting), Principal Consultant _(January 2020 - Present)_
+
+Helping companies of all sizes with technical problems throughout the tech stack. More information at [benlimmer.com](https://benlimmer.com/consulting).
+
 [Ibotta](https://www.ibotta.com/), Distinguished Software Engineer / Solutions Architect _(January 2019 - January 2020)_
 
 As a Distinguished Engineer and Solutions Architect, I worked across the organization and tech stack on Ibotta's most visible, high-impact projects. As part of the architecture team, I worked with the top technologists at Ibotta, including the Senior Leadership Team, to ensure Ibotta's continued success as a business and engineering team.
