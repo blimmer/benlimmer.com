@@ -1,4 +1,4 @@
-title : Ben Limmer
+title: Ben Limmer
 tagline: "Software Developer in Denver, Colorado, USA"
 author:
   name: Ben Limmer
@@ -12,10 +12,9 @@ production_url: https://benlimmer.com
 permalink: pretty
 
 defaults:
-  -
-    scope:
-      path: ""      # empty string for all files
-      type: posts   # limit to posts
+  - scope:
+      path: "" # empty string for all files
+      type: posts # limit to posts
     values:
       is_post: true # automatically set is_post=true for all posts
 
@@ -26,3 +25,4 @@ exclude:
 
 plugins:
   - jekyll/minibundle
+  - jekyll-octicons

@@ -154,6 +154,11 @@ footer hr {
   margin: 0.1rem 0;
 }
 
+.consulting-accordian details svg.octicon {
+  margin-top: -4px;
+  margin-right: 0.5rem;
+}
+
 .consulting-accordian details ul {
   margin-top: 0.5rem;
 }
