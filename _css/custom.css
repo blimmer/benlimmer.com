@@ -146,6 +146,15 @@ footer hr {
   }
 }
 
+/* account for fixed header */
+.anchor-fix::before {
+  content: '';
+  display: block;
+  height: 75px;
+  margin-top: -75px;
+  visibility: hidden;
+}
+
 .dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:focus {
   background-color: gray;
