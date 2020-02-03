@@ -18,10 +18,15 @@ is_about: true
 - [Ibotta.com Webapp Launch]()
 
 <h2 class="anchor-fix" id="talks-ref">Talks</h2>
-- [1-Upping Your Git Skills]()
-- [Productivity]()
-- [Being a Successful Tech Lead]()
-- [Ember talks...]()
+- [1-Up Your Git Skills](https://blimmer.github.io/1up-git-skills-talk/#/)
+- [Maximize Your Output (sans "productivity shame")](https://blimmer.github.io/maximize-your-output-talk/#/)
+- [Tips & Tricks for Being a Successful Tech Lead](https://www.slideshare.net/BenLimmer/tips-tricks-for-being-a-successful-tech-lead)
+- [Upgrading Ember.js Apps](https://www.slideshare.net/BenLimmer/upgrading-emberjs-apps)
+- [Fun with Ember 2.x Features](https://www.slideshare.net/BenLimmer/fun-with-ember-2x-features)
+- [Building Real-Time Apps with Ember.js and Websockets](https://www.slideshare.net/BenLimmer/building-realtime-apps-with-emberjs-and-websockets)
+- [Building a Single Page Application using Ember.js ... for fun and profit](https://www.slideshare.net/BenLimmer/building-a-single-page-application-using-emberjs-for-fun-and-profit)
+- [Automated Testing in Ember.js](https://www.slideshare.net/BenLimmer/automated-testing-in-emberjs)
+- [Deploying a Location-Aware Ember.js App](https://www.slideshare.net/BenLimmer/deploying-a-locationaware-ember-application)
 
 <h2 class="anchor-fix" id="blimmer-ref">Side Projects</h2>
 - [zsh-aws-vault]()
