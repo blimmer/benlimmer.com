@@ -1,0 +1,22 @@
+---
+layout: page
+title: Protocol Buffers/gRPC Artifact Pipeline
+description: "A description of Ben Limmer's role building a scaleable Protocol Buffers (protobuf) and GRPC pipeline"
+is_about: true
+---
+
+Ibotta uses gRPC and Protocol Buffers to rapidly innovate in a microservice-driven environment. gRPC provides low-latency, bi-directional binary streaming via HTTP/2. gRPC also relies on reusable, validateable, language-agnostic Protocol Buffers messages.
+
+Because of these advantages, many of our services are using gRPC for their inter-service communication. We’re also using Protocol Buffers outside of gRPC for predictable serialization/deserialization of messages on streams and queues.
+
+However, our initial implementation for packaging Protocol Buffers messages and gRPC services could not handle the influx of new technologist (engineers, data scientists and analysts) interest. I wrote an [article on Medium](https://medium.com/building-ibotta/building-a-scaleable-protocol-buffers-grpc-artifact-pipeline-5265c5118c9d) describing how I built a scaleable pipeline to rapidly ship Protocol Buffers & gRPC artifacts to production.
+
+## Key Skills
+
+- Scaleable Developer Tooling
+- Build and Deployment
+- gRPC
+- Protocol Buffers
+- Artifact Delivery
+
+For detailed information, please read the article [article on Medium](https://medium.com/building-ibotta/building-a-scaleable-protocol-buffers-grpc-artifact-pipeline-5265c5118c9d).
