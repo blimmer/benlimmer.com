@@ -29,12 +29,12 @@ is_about: true
 - [Deploying a Location-Aware Ember.js App](https://www.slideshare.net/BenLimmer/deploying-a-locationaware-ember-application)
 
 <h2 class="anchor-fix" id="side-projects">Side Projects</h2>
-- [zsh-aws-vault]()
-- [mac-dev-playbook]()
-- [ember-raffle]()
-- [ember-braze]()
-- [benlimmer.com]()
-- [Open Source Contributions]()
+- [zsh-aws-vault](https://github.com/blimmer/zsh-aws-vault)
+- [mac-dev-playbook](https://github.com/blimmer/mac-dev-playbook)
+- [ember-raffle](https://blimmer.github.io/ember-raffle/)
+- [ember-braze](https://github.com/blimmer/ember-braze)
+- [benlimmer.com](https://github.com/blimmer/benlimmer.com)
+- [Open Source Contributions](https://github.com/blimmer?tab=overview)
 
 <h2 class="anchor-fix" id="readytalk">ReadyTalk</h2>
 - [Conference Controls Redesign](/portfolio/rt/controlsredesign)
