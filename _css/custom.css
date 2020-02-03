@@ -96,6 +96,11 @@ code {
   width: 90%;
   margin: auto;
   line-height: 1.618;
+  font-size: 18px;
+}
+
+.post h2 {
+  margin: 2rem 0 1rem 0;
 }
 
 .post .little-face img {
