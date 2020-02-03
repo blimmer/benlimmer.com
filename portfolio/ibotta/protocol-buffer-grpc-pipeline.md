@@ -19,4 +19,4 @@ However, our initial implementation for packaging Protocol Buffers messages and 
 - Protocol Buffers
 - Artifact Delivery
 
-For detailed information, please read the article [article on Medium](https://medium.com/building-ibotta/building-a-scaleable-protocol-buffers-grpc-artifact-pipeline-5265c5118c9d).
+For detailed information, check out the article [article on Medium](https://medium.com/building-ibotta/building-a-scaleable-protocol-buffers-grpc-artifact-pipeline-5265c5118c9d).
