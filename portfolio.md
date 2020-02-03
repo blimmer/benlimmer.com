@@ -8,7 +8,7 @@ is_about: true
 
 <h2 class="anchor-fix" id="ibotta">Ibotta</h2>
 - [Digital Payments Solution Architect](/portfolio/ibotta/digital-payments)
-- [Ibotta Browser Extension]()
+- [Ibotta Browser Extension](/portfolio/ibotta/browser-extension)
 - [Protocol Buffer / GRPC Pipeline]()
 - [Microservice Scorecard Generator]()
 - [Docker-Driven Deployment Tool]()
