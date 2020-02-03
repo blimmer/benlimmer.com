@@ -13,7 +13,10 @@
 
   <!-- start OpenGraph -->
   <meta content="{{ site.title }}" property="og:site_name" />
-  <meta content="{{ site.url }}/assets/gravatar.jpeg" property="og:image" />
+  <meta
+    content="{{ site.base_url }}/{% ministamp _images/headshot.png assets/images/headshot.png %}"
+    property="og:image"
+  />
   {% if page.title %}
   <meta content="{{ page.title }}" property="og:title" />
   {% else %}
@@ -35,7 +38,10 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@l1m5" />
   <meta name="twitter:creator" content="@l1m5" />
-  <meta name="twitter:image:src" content="{{ site.url }}/assets/gravatar.jpeg" />
+  <meta
+    name="twitter:image:src"
+    content="{{ site.base_url }}/{% ministamp _images/headshot.png assets/images/headshot.png %}"
+  />
   {% if page.title %}
   <meta name="twitter:title" content="{{ page.title }}" />
   {% else %}

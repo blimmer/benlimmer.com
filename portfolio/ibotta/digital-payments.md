@@ -29,7 +29,7 @@ This success of the first iteration of Pay with Ibotta was a key part of the [Se
 - Real-Time Gift Card Provisioning
 
 <div class='center mt-5 mb-5'>
-  <img src="{{ site.base_url }}/{% ministamp _images/portfolio/ibotta/pwi.png assets/images/pages/portfolio/ibotta/ %}">
+  <img src="{{ site.base_url }}/{% ministamp _images/portfolio/ibotta/pwi.png assets/images/pages/portfolio/ibotta/pwi.png %}">
 </div>
 
 For more information on the Pay with Ibotta product, visit [pay.ibotta.com](https://pay.ibotta.com).
