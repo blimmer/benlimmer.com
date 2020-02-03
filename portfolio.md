@@ -6,6 +6,17 @@ description: "A showcase of Ben Limmer's work at ReadyTalk and at CU Boulder."
 is_about: true
 ---
 
+<h2 class="anchor-fix" id="ibotta-ref">Ibotta</h2>
+- [Payments Solution Architect]()
+- [Ibotta Browser Extension]()
+- [Protocol Buffer / GRPC Pipeline]()
+- [Microservice Scorecard Generator]()
+- [Docker-Driven Deployment Tool]()
+- [AWS Cost Optimizations]()
+- [Partner Portal]()
+- [Customer Support Internal Tool]()
+- [Ibotta.com Webapp Launch]()
+
 <h2 class="anchor-fix" id="talks-ref">Talks</h2>
 - [1-Upping Your Git Skills]()
 - [Productivity]()
@@ -19,17 +30,6 @@ is_about: true
 - [ember-braze]()
 - [benlimmer.com]()
 - [Open Source Contributions]()
-
-<h2 class="anchor-fix" id="ibotta-ref">Ibotta</h2>
-- [Payments Solution Architect]()
-- [Ibotta Browser Extension]()
-- [Protocol Buffer / GRPC Pipeline]()
-- [Microservice Scorecard Generator]()
-- [Docker-Driven Deployment Tool]()
-- [AWS Cost Optimizations]()
-- [Partner Portal]()
-- [Customer Support Internal Tool]()
-- [Ibotta.com Webapp Launch]()
 
 <h2 class="anchor-fix" id="readytalk-ref">ReadyTalk</h2>
 - [Conference Controls Redesign](/portfolio/rt/controlsredesign)
