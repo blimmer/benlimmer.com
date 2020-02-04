@@ -13,7 +13,7 @@ is_about: true
 - [Microservice Scorecard Generator](/portfolio/ibotta/microservice-scorecard-generator)
 - [Docker-Driven Deployment Tool](/portfolio/ibotta/docker-deployment-tool)
 - [AWS Cost Optimizations](/portfolio/ibotta/aws-spend)
-- [Partner Portal](/portfolio/ibotta/coming-soon)
+- [Partner Portal](/portfolio/ibotta/partner-portal)
 - [Customer Support Internal Tool](/portfolio/ibotta/coming-soon)
 - [Ibotta.com Webapp Launch](/portfolio/ibotta/coming-soon)
 
