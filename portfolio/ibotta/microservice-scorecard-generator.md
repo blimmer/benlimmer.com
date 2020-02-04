@@ -20,6 +20,14 @@ However, we had a difficult time documenting and communicating the available too
 
 To help mitigate this problem, I developed a [scorecard](https://medium.com/building-ibotta/encouraging-development-best-practices-with-gamification-ffdea7b0712) to game-ify following best practices. The scorecard project proved to be a fun, effective way to emit information about the health of services as the company grows. It rolls up a plethora of information about each project and helps identify opportunities for maintenance work after services are in production.
 
+### Key Skills
+
+- Scaleable Developer Tooling
+- Internal Tools
+- Microservices Best Practices
+- Team Building
+- [Brigade](https://brigade.sh/)
+
 <div class='center mt-5 mb-5'>
   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/ibotta/scorecard.png assets/images/pages/portfolio/ibotta/scorecard.png %}">
 </div>
