@@ -7,7 +7,9 @@ is_about: true
 
 ## General
 
-I am passionate about all aspects of software development. I have experience and education to support the creation of software from concept, to user testing, to development in an agile environment across the stack.
+I'm a software engineer and architect. I have 10+ years of experience working throughout the tech stack, and love helping companies of all sizes achieve their goals.
+
+For more granular details, check out [my portfolio](/portfolio).
 
 ## Work Experience
 
@@ -19,9 +21,21 @@ Helping companies of all sizes with technical problems throughout the tech stack
 
 As a Distinguished Engineer and Solutions Architect, I worked across the organization and tech stack on Ibotta's most visible, high-impact projects. As part of the architecture team, I worked with the top technologists at Ibotta, including the Senior Leadership Team, to ensure Ibotta's continued success as a business and engineering team.
 
+Key Projects:
+
+- [Digital Payments Solution Architect](/portfolio/ibotta/digital-payments)
+- [Ibotta Browser Extension](/portfolio/ibotta/browser-extension)
+
 **[Ibotta](https://www.ibotta.com/), Principal Software Engineer _(January 2017 - January 2019)_**
 
 Worked across the stack, primarily focused on Developer Experience, DevOps and Platform Infrastructure during a time of rapid-growth with unique scalability challenges. My team and I paved the road to generate and deploy microservices, enabling a growing team of 60+ engineers.
+
+Key Projects:
+
+- [Protocol Buffer / GRPC Pipeline](/portfolio/ibotta/protocol-buffer-grpc-pipeline)
+- [Microservice Scorecard Generator](/portfolio/ibotta/microservice-scorecard-generator)
+- [Docker-Driven Deployment Tool](/portfolio/ibotta/docker-deployment-tool)
+- [AWS Cost Optimizations](/portfolio/ibotta/aws-spend)
 
 **[Ibotta](https://www.ibotta.com/), Software Engineer / Technical Lead _(March 2014 - January 2017)_**
 
@@ -29,11 +43,24 @@ Served as the technical lead and architect for teams building web applications t
 
 The tech stack primarily consisted of Ember.js, Node, and Ruby on Rails.
 
+Key Projects:
+
+- [Partner Portal](/portfolio/ibotta/partner-portal)
+- [Customer Support Internal Tool](/portfolio/ibotta/cs-tool)
+- [Ibotta.com Webapp](/portfolio/ibotta/ibotta-dot-com)
+
 **[ReadyTalk](http://www.readytalk.com/), Software Developer & UX/UI Designer _(July 2011 - March 2014)_**
 
 Developed the native desktop client for ReadyTalk's audio, web, and video conferencing products.
 
 The tech stack was primarily Java, Swift, and Flex. I also worked closely with customers and the User Experience team to provide industry-leading user experience interactions.
+
+Key Projects:
+
+- [Conference Controls Redesign](/portfolio/rt/controlsredesign)
+- [swt-bling](/portfolio/swt-bling)
+- [Video Conferencing](/portfolio/rt/videoconferencing)
+- [QuickLauncher](/portfolio/rt/quicklauncher)
 
 **[GoldSystems](http://www.goldsys.com), Software Developer _(August 2010 - May 2011)_**
 
