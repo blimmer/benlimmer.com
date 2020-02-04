@@ -10,12 +10,12 @@ is_about: true
 - [Digital Payments Solution Architect](/portfolio/ibotta/digital-payments)
 - [Ibotta Browser Extension](/portfolio/ibotta/browser-extension)
 - [Protocol Buffer / GRPC Pipeline](/portfolio/ibotta/protocol-buffer-grpc-pipeline)
-- [Microservice Scorecard Generator]()
-- [Docker-Driven Deployment Tool]()
-- [AWS Cost Optimizations]()
-- [Partner Portal]()
-- [Customer Support Internal Tool]()
-- [Ibotta.com Webapp Launch]()
+- [Microservice Scorecard Generator](/portfolio/ibotta/coming-soon)
+- [Docker-Driven Deployment Tool](/portfolio/ibotta/coming-soon)
+- [AWS Cost Optimizations](/portfolio/ibotta/coming-soon)
+- [Partner Portal](/portfolio/ibotta/coming-soon)
+- [Customer Support Internal Tool](/portfolio/ibotta/coming-soon)
+- [Ibotta.com Webapp Launch](/portfolio/ibotta/coming-soon)
 
 <h2 class="anchor-fix" id="talks">Talks</h2>
 - [1-Up Your Git Skills](https://blimmer.github.io/1up-git-skills-talk/#/)
