@@ -14,7 +14,7 @@ is_about: true
 - [Docker-Driven Deployment Tool](/portfolio/ibotta/docker-deployment-tool)
 - [AWS Cost Optimizations](/portfolio/ibotta/aws-spend)
 - [Partner Portal](/portfolio/ibotta/partner-portal)
-- [Customer Support Internal Tool](/portfolio/ibotta/coming-soon)
+- [Customer Support Internal Tool](/portfolio/ibotta/cs-tool)
 - [Ibotta.com Webapp Launch](/portfolio/ibotta/coming-soon)
 
 <h2 class="anchor-fix" id="talks">Talks (2012&ndash;Present)</h2>
