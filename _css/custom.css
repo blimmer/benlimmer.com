@@ -164,6 +164,12 @@ footer hr {
   margin: 1rem;
 }
 
+@media (max-width: 768px) {
+  .accordian {
+    margin: 1rem 0;
+  }
+}
+
 .accordian details {
   margin: 0.1rem 0;
 }
