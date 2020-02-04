@@ -10,7 +10,7 @@ is_about: true
 - [Digital Payments Solution Architect](/portfolio/ibotta/digital-payments)
 - [Ibotta Browser Extension](/portfolio/ibotta/browser-extension)
 - [Protocol Buffer / GRPC Pipeline](/portfolio/ibotta/protocol-buffer-grpc-pipeline)
-- [Microservice Scorecard Generator](/portfolio/ibotta/coming-soon)
+- [Microservice Scorecard Generator](/portfolio/ibotta/microservice-scorecard-generator)
 - [Docker-Driven Deployment Tool](/portfolio/ibotta/coming-soon)
 - [AWS Cost Optimizations](/portfolio/ibotta/coming-soon)
 - [Partner Portal](/portfolio/ibotta/coming-soon)
