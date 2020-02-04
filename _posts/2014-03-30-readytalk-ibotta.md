@@ -15,7 +15,7 @@ Making the decision to move to a new company was a really difficult decision. I'
 
 ReadyTalk really is [a great place to work](http://www.readytalk.com/about/news-and-awards). The people are some of the smartest, most caring people I've worked with so far in my career. They know how to have fun, and how to get high-quality products out the door. Not to mention, the C-level staff is approachable and truly cares about creating a sustainable business with happy, healthy employees. Every company can say they care about employees; ReadyTalk proves that they care about their employees every day.  
 
-ReadyTalk was a great experience for me, and I'm proud of everything [I've accomplished](/portfolio\#readytalk-ref) during my time there. But, it was time to move on.  
+ReadyTalk was a great experience for me, and I'm proud of everything [I've accomplished](/portfolio\#readytalk) during my time there. But, it was time to move on.  
 
 # Ibotta
 I was contacted out-of-the-blue by [Conor Swanson](https://twitter.com/conorswanson) of [LoHi Labs](http://www.lohilabs.com/). Conor was doing some moonlight-recruiting for his brother, [Luke](https://twitter.com/luke121), CTO at [Ibotta](https://ibotta.com/?r=ndynlq). Luke was looking to bring a new software engineer on at Ibotta, and Conor thought I might be a good fit.  

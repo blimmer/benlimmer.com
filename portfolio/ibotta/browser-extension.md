@@ -1,0 +1,24 @@
+---
+layout: page
+title: Pay with Ibotta Browser Extension
+description: "A description of Ben Limmer's role building the Pay with Ibotta browser extension."
+is_about: true
+---
+
+Ibotta's mission is to "Make Every Purchase Rewarding." So, to enable use of Pay with Ibotta on the desktop, we built the [Pay with Ibotta Browser extension](https://chrome.google.com/webstore/detail/ibotta-browser-extension/mfaedmjlefifhnhpgipjjiiekchaimpk). With the product, a user receives cash-back on their entire purchase by Paying with Ibotta without ever leaving the retailer's webpage.
+
+As the technical lead of a small, agile team of six, we published the prototype of the extension in less than one month, fully releasing to the public in less than six months. Having never built a production-ready browser extension required me to come up to speed quickly on how browser extensions work and teach my team how to sustainably develop one ready for use by thousands of users at the initial release.
+
+## Key Skills
+
+- WebExtensions framework
+- Chrome extensions
+- Rapid prototype development
+- Vue.js
+- Mentorship of junior and senior engineers
+
+<div class='center mt-5 mb-5'>
+  <img src="{{ site.base_url }}/{% ministamp _images/portfolio/ibotta/extension.jpg assets/images/pages/portfolio/ibotta/extension.jpg %}">
+</div>
+
+For more information on the Pay with Ibotta browser extension, visit [the Chrome Web Store](https://chrome.google.com/webstore/detail/ibotta-browser-extension/mfaedmjlefifhnhpgipjjiiekchaimpk).

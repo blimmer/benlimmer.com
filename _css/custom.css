@@ -146,33 +146,42 @@ footer hr {
   }
 }
 
+/* account for fixed header */
+.anchor-fix::before {
+  content: '';
+  display: block;
+  height: 75px;
+  margin-top: -75px;
+  visibility: hidden;
+}
+
 .dropdown-menu>li>a:hover,
 .dropdown-menu>li>a:focus {
   background-color: gray;
 }
 
-.consulting-accordian {
+.accordian {
   margin: 1rem;
 }
 
-.consulting-accordian details {
+.accordian details {
   margin: 0.1rem 0;
 }
 
-.consulting-accordian details svg.octicon {
+.accordian details svg.octicon {
   margin-top: -4px;
   margin-right: 0.5rem;
 }
 
-.consulting-accordian details ul {
+.accordian details ul {
   margin-top: 0.5rem;
 }
 
-.consulting-accordian details .row:not(:first-of-type) {
+.accordian details .row:not(:first-of-type) {
   margin-top: 1rem;
 }
 
-.consulting-accordian details summary h3 {
+.accordian details summary h3 {
   display: inline-block;
 }
 
