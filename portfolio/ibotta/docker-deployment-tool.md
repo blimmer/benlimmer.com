@@ -1,0 +1,29 @@
+---
+layout: page
+title: Docker-Driven Deployment Tool
+description: "A description of Ben Limmer's role building a docker-driven deployment tool for Ibotta's Ruby on Rails monolithic application."
+is_about: true
+---
+
+At Ibotta, the transition from a monolithic Ruby on Rails application to microservices began back in 2018. All new features wer written as microservices, with legacy code remaining on the monolithic app. Even with new services being created in the microservice ecosystem, the monolith application still served about 2,000 requests per minute and was **critical** to the end-user experience. Deployment failures could cause downtime for Ibotta's users, which negatively impacts every business metric for each second the application doesn't work.
+
+At the same time, the technology department was [growing exponentially](https://medium.com/building-ibotta/actively-building-ibottas-engineering-culture-with-monique-aida-mitchell-da6847e9cefd), and we realized that the new technologists didn't (and shouldn't) know about the intricacies of the legacy build and deployment process. We'd much rather them be experts on the new microservices environment, but sometimes these folks also needed to deploy the monolith as they made changes.
+
+To set up a user's environment, the technologist needed to work through a list of nearly _fifteen items_ (software dependencies, configuration files and "secrets") that needed to be present on the user's host machine. This hours-long process presented a high barrier to entry for new technologists and also exposed secret configurations that shouldn't live unencrypted on endpoint machines. Additionally, misconfigurations could cause failed deployments and downtime, reducing user trust in our application.
+
+To ease the burden on new engineers and to significantly reduce the risk of deployment-caused downtime, I wrapped an existing [CLI tool](https://github.com/erikhuda/thor) in an easy-to-use Docker container. All secret configuration keys and files were encrypted at rest using [sopstool](https://github.com/Ibotta/sopstool) and [Amazon KMS](https://aws.amazon.com/kms/), making it safe and straightforward to share the secrets needed to complete a deployment. In addition to requiring almost no setup, runbooks and contextual information are automatically displayed to the deployer. These runbooks significantly increased first-time deployer's confidence and reduced deployment-related downtime.
+
+By investing in this crucial Developer Experience tool, new technologists could confidently deploy the monolith application on their very first day, instead of months into their Ibotta experience. Doing so was as simple as:
+
+```console
+ibotta_cli application deploy-api-server-production
+```
+
+## Key Skills
+
+- Build and Deployment Tools
+- Working Effectively with Legacy Code
+- Developer Experience
+- Technologist Onboarding
+- Docker
+- Chef

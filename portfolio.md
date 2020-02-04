@@ -11,7 +11,7 @@ is_about: true
 - [Ibotta Browser Extension](/portfolio/ibotta/browser-extension)
 - [Protocol Buffer / GRPC Pipeline](/portfolio/ibotta/protocol-buffer-grpc-pipeline)
 - [Microservice Scorecard Generator](/portfolio/ibotta/microservice-scorecard-generator)
-- [Docker-Driven Deployment Tool](/portfolio/ibotta/coming-soon)
+- [Docker-Driven Deployment Tool](/portfolio/ibotta/docker-deployment-tool)
 - [AWS Cost Optimizations](/portfolio/ibotta/coming-soon)
 - [Partner Portal](/portfolio/ibotta/coming-soon)
 - [Customer Support Internal Tool](/portfolio/ibotta/coming-soon)
