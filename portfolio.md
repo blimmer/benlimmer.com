@@ -15,7 +15,7 @@ is_about: true
 - [AWS Cost Optimizations](/portfolio/ibotta/aws-spend)
 - [Partner Portal](/portfolio/ibotta/partner-portal)
 - [Customer Support Internal Tool](/portfolio/ibotta/cs-tool)
-- [Ibotta.com Webapp Launch](/portfolio/ibotta/coming-soon)
+- [Ibotta.com Webapp](/portfolio/ibotta/ibotta-dot-com)
 
 <h2 class="anchor-fix" id="talks">Talks (2012&ndash;Present)</h2>
 - [1-Up Your Git Skills](https://blimmer.github.io/1up-git-skills-talk/#/)
