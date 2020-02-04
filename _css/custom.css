@@ -177,6 +177,7 @@ footer hr {
 .accordian details svg.octicon {
   margin-top: -4px;
   margin-right: 0.5rem;
+  fill: currentColor;
 }
 
 .accordian details ul {
