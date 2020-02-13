@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Contact Form
+title: Contact
 custom_js: "consulting/contact_form.js"
 ---
 
