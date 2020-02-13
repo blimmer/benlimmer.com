@@ -105,12 +105,11 @@
         bootstrap: "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min"
       }
     });
-    require(["jquery", "bootstrap"]);
+    require(["jquery", "bootstrap"], function() {
+      // Dependencies loaded
+      {% if page.custom_js %}
+        {% include {{page.custom_js}} %}
+      {% endif %}
+    });
   </script>
-
-  {% if page.custom_js %}
-  <script type="text/javascript">
-    {% include {{page.custom_js}} %}
-  </script>
-  {% endif %}
 </head>
