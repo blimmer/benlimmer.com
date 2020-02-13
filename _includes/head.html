@@ -102,8 +102,12 @@
       },
       paths: {
         jquery: "//code.jquery.com/jquery-3.4.1.slim.min",
-        bootstrap: "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min"
+        bootstrap: "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min",
+        sentry: "https://browser.sentry-cdn.com/5.12.1/bundle.min"
       }
+    });
+    require(["sentry"], function() {
+      Sentry.init({ dsn: 'https://c42c768bbbdc49ae8164dd8cd83dc5b4@sentry.io/2504126' });
     });
     require(["jquery", "bootstrap"], function() {
       // Dependencies loaded
