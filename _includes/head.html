@@ -107,4 +107,10 @@
     });
     require(["jquery", "bootstrap"]);
   </script>
+
+  {% if page.custom_js %}
+  <script type="text/javascript">
+    {% include {{page.custom_js}} %}
+  </script>
+  {% endif %}
 </head>

@@ -1,4 +1,4 @@
-<form>
+<form id="contact-form">
   <div class="form-group">
     <label for="name-input">Your Name</label>
     <input class="form-control" id="name-input" />
@@ -17,4 +17,16 @@
       >Introduce yourself and share some information about your consulting needs.</small
     >
   </div>
+
+  <button type="submit" class="btn btn-info">Submit</button>
 </form>
+
+<div class="alert-gutter mt-5">
+  <div class="alert alert-danger collapse" role="alert" id="contact-error">
+    There was an error submitting the form. Please try again. If you experience another failure, please email me at
+    hello@benlimmer.com.
+  </div>
+  <div class="alert alert-success collapse" role="alert" id="contact-success">
+    Thank you! I'll be touch with you in 1-3 business days.
+  </div>
+</div>
