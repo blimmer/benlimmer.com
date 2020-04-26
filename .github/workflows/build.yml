@@ -12,7 +12,15 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: .ruby-version
-      - name: Install dependencies
-        run: bundle install
+      - uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: bundle-use-ruby-ubuntu-${{ hashFiles('.ruby-version') }}-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            bundle-use-ruby-ubuntu-${{ hashFiles('.ruby-version') }}-
+      - name: bundle install
+        run: |
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
       - name: Build site
         run: bundle exec jekyll b
