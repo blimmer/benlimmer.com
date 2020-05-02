@@ -7,8 +7,16 @@ rm -fr _site
 bundle exec jekyll build
 cd _site || exit
 
-aws-vault exec benlimmer.com_s3deploy -- s3deploy \
-  -config "$ROOT_DIR"/.s3deploy.yml \
-  -region us-east-1 \
-  -bucket benlimmer.com \
-  -distribution-id E2ZJLY90YUBA3S
+if [[ -n $CI ]]; then
+  "$GOPATH"/bin/s3deploy \
+      -config "$ROOT_DIR"/.s3deploy.yml \
+      -region us-east-1 \
+      -bucket benlimmer.com \
+      -distribution-id E2ZJLY90YUBA3S
+else
+  aws-vault exec benlimmer.com_s3deploy -- s3deploy \
+    -config "$ROOT_DIR"/.s3deploy.yml \
+    -region us-east-1 \
+    -bucket benlimmer.com \
+    -distribution-id E2ZJLY90YUBA3S
+fi
