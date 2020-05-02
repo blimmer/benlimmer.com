@@ -24,3 +24,6 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Build site
         run: bundle exec jekyll b
+      - name: Deploy site
+        if: ${{ github.ref == 'feature/deploy-on-merge-to-master' }}
+        run: echo 'hi!'
