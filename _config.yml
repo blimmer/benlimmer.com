@@ -5,7 +5,9 @@ author:
   email: hello@benlimmer.com
   github: blimmer
   keybase: blimmer
-description: "A software engineering blog written by Ben Limmer. Topics include EmberJS, software development best-practices, automated testing and more."
+description:
+  "A software engineering blog written by Ben Limmer. Topics include EmberJS, software development best-practices,
+  automated testing and more."
 
 url: https://benlimmer.com
 production_url: https://benlimmer.com
@@ -17,6 +19,10 @@ defaults:
       type: posts # limit to posts
     values:
       is_post: true # automatically set is_post=true for all posts
+  - scope:
+      path: "assets/**/*"
+    values:
+      sitemap: false
 
 exclude:
   - deploy.sh
@@ -26,3 +32,5 @@ exclude:
 plugins:
   - jekyll/minibundle
   - jekyll-octicons
+  - jekyll-sitemap
+  - jekyll-last-modified-at
