@@ -25,5 +25,5 @@ jobs:
       - name: Build site
         run: bundle exec jekyll b
       - name: Deploy site
-        if: contains( github.ref, 'feature/deploy-on-merge-to-master' )
+        if: contains( github.ref, 'master' )
         run: echo 'hi!'
