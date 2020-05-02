@@ -27,5 +27,6 @@ jobs:
       - name: Deploy site
         if: ${{ github.ref == 'refs/heads/feature/deploy-on-merge-to-master' }}
         run: |
+          export GOPATH=~/go
           go get -u -v github.com/bep/s3deploy
           ./deploy.sh
