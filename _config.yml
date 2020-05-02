@@ -33,3 +33,4 @@ plugins:
   - jekyll/minibundle
   - jekyll-octicons
   - jekyll-sitemap
+  - jekyll-last-modified-at

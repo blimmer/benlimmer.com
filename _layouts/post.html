@@ -12,6 +12,7 @@ layout: default
         <meta itemprop="height" content="512" />
         <meta itemprop="width" content="512" />
       </span><br/>
+      <span style="display:none;" itemprop="dateModified">{{ page.last_modified_at | date: '%Y-%m-%dT%H:%M:%S.%L%z' }}</span>
       {% if page.location %}{{ page.location }}{% endif %}
     </p>
     <article itemprop="articleBody">
