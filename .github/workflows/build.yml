@@ -25,7 +25,7 @@ jobs:
       - name: Build site
         run: bundle exec jekyll b
       - name: Deploy site
-        if: ${{ github.ref == 'refs/heads/feature/deploy-on-merge-to-master' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
