@@ -8,7 +8,7 @@ bundle exec jekyll build
 cd _site || exit
 
 if [[ -n $CI ]]; then
-  s3deploy \
+  "$GOPATH"/bin/s3deploy \
       -config "$ROOT_DIR"/.s3deploy.yml \
       -region us-east-1 \
       -bucket benlimmer.com \
