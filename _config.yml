@@ -12,6 +12,7 @@ description:
 url: https://benlimmer.com
 production_url: https://benlimmer.com
 permalink: pretty
+timezone: America/Denver
 
 defaults:
   - scope:
