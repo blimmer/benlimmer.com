@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Deep Clone
-        if: ${{ github.ref == 'refs/heads/bug/gh-issue-30' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -30,7 +30,7 @@ jobs:
       - name: Build site
         run: bundle exec jekyll b
       - name: Deploy site
-        if: ${{ github.ref == 'refs/heads/bug/gh-issue-30' }}
+        if: ${{ github.ref == 'refs/heads/master' }}
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
