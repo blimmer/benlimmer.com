@@ -8,6 +8,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Deep Clone
+        if: ${{ github.ref == 'refs/heads/bug/gh-issue-30' }}
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -24,11 +29,6 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Build site
         run: bundle exec jekyll b
-      - name: Deep Clone
-        if: ${{ github.ref == 'refs/heads/bug/gh-issue-30' }}
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: Deploy site
         if: ${{ github.ref == 'refs/heads/bug/gh-issue-30' }}
         env:
