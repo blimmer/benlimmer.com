@@ -42,7 +42,7 @@ However, in Mavericks, we saw an issue where we would get a pattern of packet lo
 
 Notice the the packet loss. This was incredibly unfortunate when we would SSH to our machines and have to wait while the packets were retransmitted (causing at least a five second delay in transmission).
 
-After some digging, we disocovered that other folks were having this issue, especially within corporate networks. We stumbled upon [this Apple Support Forum post](https://discussions.apple.com/message/23583393#23583393) and discovered the fix.
+After some digging, we discovered that other folks were having this issue, especially within corporate networks. We stumbled upon [this Apple Support Forum post](https://discussions.apple.com/thread/5483424?answerId=23583393022#23583393022) and discovered the fix.
 
 Essentially, you need to tell OS X that it should reach out as soon as it couldn't discover the host anymore. Poster [Lunaweb](https://discussions.apple.com/people/Lunaweb) graciously provided a workaround by setting a kernal parameter, specifically ```net.link.ether.inet.arp_unicast_lim=0```
 

@@ -26,7 +26,7 @@ It seemed clear that the Ember Community was moving toward a standardized build
 and deployment system, but it wasn't abundantly clear that
 [Ember-CLI](http://www.ember-cli.com/),
 [ES6 Modules](http://www.2ality.com/2014/09/es6-modules-final.html) and
-ES6/2015 syntax would be so heavily adopted by the community.  
+ES6/2015 syntax would be so heavily adopted by the community.
 
 Because this wasn't obvious, we made some decisions that go against the grain
 of the 2014/2015 Ember Community. Specifically, we bet on the following:
@@ -42,7 +42,7 @@ Some of these things will continue to work, and others are falling to the way-si
 At EmberConf 2015, we finally realized that we need to move off of our custom
 architecture and follow the standards being set by the Ember community. No one
 likes to argue for a multi-week engineering-only transition but, in this case,
-it was necessary.  
+it was necessary.
 
 So, starting this week, we at Ibotta are going all-in on a migration to Ember-CLI.
 Here's how we're doing it.
@@ -90,7 +90,7 @@ app.
 Get started by setting up the plugin as
 [described in the README](https://github.com/kimroen/ember-cli-coffeescript/blob/master/README.md).
 You can test it out by changing your `router.js` file to a `router.coffee` file
-and fixing the syntax to see that it's truly working.  
+and fixing the syntax to see that it's truly working.
 
 The great part about this plugin is that you can write ES6 javascript alongside
 your CoffeeScript and everything will work. So, get used to the ES6 syntax and
@@ -100,7 +100,7 @@ You'll need to hack your existing files a bit to get it working with `ember-cli-
 but it's pretty formulaic. Let's start with your Router, because you almost
 undoubtedly have one.
 
-In CoffeeScript you'd have something like this:  
+In CoffeeScript you'd have something like this:
 {% highlight coffeescript %}
 Ember.Router.reopen
   location: 'auto'
@@ -131,21 +131,21 @@ imports and exports for you, making your copy/paste task a bit easier.
 # Sass
 Sass was a bit easier. The Ember community still likes Sass and they're working
 on a [first-class Node port](https://github.com/sass-eyeglass/eyeglass), so it'll
-be around for a bit.  
+be around for a bit.
 
 Just install the [ember-cli-sass](https://github.com/aexmachina/ember-cli-sass)
 add-on, follow the README and migrate your styles. Now you're rockin' sass. Easy.
 
 # Mocha
 We have a bunch of CoffeeScript Mocha tests around, and we want to retain these
-tests as we port our app over.  
+tests as we port our app over.
 
 ## Getting Mocha Tests Running
 The first order of business is to support Mocha and Chai style tests whether
 they're written in JavaScript or CoffeeScript. The
 [ember-mocha](https://github.com/switchfly/ember-mocha) Ember-CLI add-on does
 just this. It adds first-class support for testing Ember apps (just like QUnit)
-in the CLI environment.  
+in the CLI environment.
 
 Get it installed and try writing a quick test - does your Index Hello World app run?
 
@@ -155,7 +155,7 @@ Mocha tests since we're going doubly against the grain from the Ember Community 
 are using QUnit and JavaScript.
 
 For this task, we ended up forking a repository of
-[ember-cli-mocha-coffeescript](https://github.com/Ibotta/ember-cli-mocha-coffeescript).
+[ember-cli-mocha-coffeescript](https://github.com/wongpeiyi/ember-cli-mocha-coffeescript).
 We decided to do this because it provides handy generators for Ember Mocha tests
 and allows us to port most of our tests over verbatim (inside the blueprint structure).
 
@@ -166,7 +166,7 @@ Get it installed and try generating a new CoffeeScript flavored test by running
 So this is where we're at today. Not bad for only a few hours in, right? We have
 started to migrate over our application piece-by-piece, migrating application code
 and tests over as we see fit. In all reality, it's grabbing a (seemingly) independent
-piece of code and migrating it, it's dependencies and tests over to CLI.  
+piece of code and migrating it, it's dependencies and tests over to CLI.
 
 It was really helpful to get our
 [tests running with Jenkins CI]({% post_url 2015-03-22-ember-cli-testing-with-jenkins %})
@@ -187,7 +187,7 @@ change here to get up-and-running.
 ### Deployment
 This is where things get interesting. Our previous app constructed the `index.html`
 file in the ExpressJS server at request-time. We'll need to modify this slightly
-to be CLI-compatible.  
+to be CLI-compatible.
 
 As announced at EmberConf 2015, the best Ember-CLI add-ons for deployment are merging
 into the new [ember-cli-deploy](https://github.com/ember-cli/ember-cli-deploy)
