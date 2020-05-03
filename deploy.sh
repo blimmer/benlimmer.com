@@ -12,7 +12,8 @@ if [[ -n $CI ]]; then
       -config "$ROOT_DIR"/.s3deploy.yml \
       -region us-east-1 \
       -bucket benlimmer.com \
-      -distribution-id E2ZJLY90YUBA3S
+      -distribution-id E2ZJLY90YUBA3S \
+      -try
 else
   aws-vault exec benlimmer.com_s3deploy -- s3deploy \
     -config "$ROOT_DIR"/.s3deploy.yml \
