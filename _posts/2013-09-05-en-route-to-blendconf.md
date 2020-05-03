@@ -1,7 +1,7 @@
 ---
 layout: post
 title: En Route to BlendConf 2013
-tags: 
+tags:
 - conferences
 description: "A description of Ben Limmer's trip to BlendConf 2013 in Charlotte, North Carolina, USA"
 ---
@@ -9,7 +9,7 @@ description: "A description of Ben Limmer's trip to BlendConf 2013 in Charlotte,
 At [ReadyTalk](http://www.readytalk.com), we're provided with an annual budget to spend on conferences that pique our interest. I'm really happy that they've introduced this new budget (though it might need a few tweaks here and there) in the spirit of continued education and professional development. There's also a great requirement that you give a Lunch & Learn after you return to share what you've learned with your colleagues. Pretty cool idea, huh? Since this new budget was recently introduced, I was looking for an interesting event to attend before the end of the year.
 
 ## BlendConf 2013
-Browsing [Lanyrd](http://lanyrd.com/conferences/) (who was recently acquired by [EventBrite](http://www.eventbrite.com/)), I stumbled upon [BlendConf](http://blendconf.com), a conference focusing on three main topics: UX, UI Design and Development. As a budding practitioner in all three fields, I instantly started planning how I could get to Charlotte, NC for the event.
+Browsing Lanyrd (who was recently acquired by [EventBrite](http://www.eventbrite.com/)), I stumbled upon [BlendConf](http://blendconf.com), a conference focusing on three main topics: UX, UI Design and Development. As a budding practitioner in all three fields, I instantly started planning how I could get to Charlotte, NC for the event.
 
 The conference features a plethora of great talks over the two-day event (I'll get in 12 talks for under $350 - not bad). The event is structured to have a simultaneous talks in the three categories (UX, Design, Dev) during each of the time slots. I've got a plan to hit at least a few talks in each of the categories, but there are a few subjects I'm particularly excited to learn about.
 

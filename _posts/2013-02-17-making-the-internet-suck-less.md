@@ -6,9 +6,9 @@ tags:
 description: "A write-up of Ben Limmer's hosts project to block pop-ups, banner ads, tracking cookies, spyware and more. Available on Ben Limmer's GitHub page."
 ---
 Let's face it - sometimes the Internet sucks.
-Pop ups, pop unders, banner-ads, tracking cookies, spyware, drive-by attacks... they all drive us to drink.  
+Pop ups, pop unders, banner-ads, tracking cookies, spyware, drive-by attacks... they all drive us to drink.
 
-We've all experienced it - look at something on Amazon and see advertisements for that product on every website you visit for the next six months. I was a long-time user of [AdBlock Plus](http://adblockplus.org/), but I started seeing my browser's footprint getting larger and larger so I started trimming the fat by ridding them of browser extensions. I knew there had to be a [better way](http://www.reddit.com/r/wheredidthesodago) to make browsing the Internet not suck.
+We've all experienced it - look at something on Amazon and see advertisements for that product on every website you visit for the next six months. I was a long-time user of [AdBlock Plus](http://adblockplus.org/), but I started seeing my browser's footprint getting larger and larger so I started trimming the fat by ridding them of browser extensions. I knew there had to be a better way to make browsing the Internet not suck.
 
 A few months ago, I stumbled upon the [Dan Pollock's](http://someonewhocares.org) [hosts file project ](http://someonewhocares.org/hosts/). It's an interesting idea on how to manage ads, tracking cookies, [shock sites](http://en.wikipedia.org/wiki/Shock_site) and other stuff that makes the Internet suck. It takes routes unwanted DNS requests to localhost to speed up browsing and make it safer. Here are a few example entries out of his project (I've changed the domains so you don't accidentally navigate to these sites):
 
@@ -16,7 +16,7 @@ A few months ago, I stumbled upon the [Dan Pollock's](http://someonewhocares.org
 	127.0.0.1 goatse.fake            #shock sites
 	127.0.0.1 www.pacificpoker.fake  #[AdWare.Win32.Casino.m]
 
-As you can see, it takes requests to resolve the IP addresses for these sites and reroutes them to localhost. It's a really great, fast way to make browsing the Internet faster, safer and more enjoyable. I was using his hosts file wholesale for quite some time, but the only way to find out when there are updates was to subscribe to his [RSS feed](feed://someonewhocares.org/hosts/rss.xml). Maybe I'm living in the stone-age, but I never bought into the whole RSS Feed thing. My OCD around inbox 0 would easily translate over to an RSS feed, so I never went there.
+As you can see, it takes requests to resolve the IP addresses for these sites and reroutes them to localhost. It's a really great, fast way to make browsing the Internet faster, safer and more enjoyable. I was using his hosts file wholesale for quite some time, but the only way to find out when there are updates was to subscribe to his RSS feed. Maybe I'm living in the stone-age, but I never bought into the whole RSS Feed thing. My OCD around inbox 0 would easily translate over to an RSS feed, so I never went there.
 
 It had been a few months since I updated my hosts file, so I went on over to Github to see if anyone had already figured out a good resolution to this problem of keeping third-party hosts projects up-to-date. I stumbled upon [Steven Black](https://github.com/StevenBlack)'s [hosts project](https://github.com/StevenBlack/hosts). It was an interesting project concatenating several third party hosts files, including Dan Pollock's, into one. Unfortunately, there wasn't anything provided in his repository to keep these files up-to-date. I think our Canuck friend, Steven, was either manually concatenating all of these hosts files in a text editor, or was keeping his script secret.
 

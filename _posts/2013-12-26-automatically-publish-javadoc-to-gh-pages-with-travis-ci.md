@@ -14,33 +14,33 @@ I hate doing the same thing more than once. Like, a lot. The more things that ar
 
 With our recent project, [swt-bling](https://github.com/ReadyTalk/swt-bling), I've informally taken on a lot of the build and deployment tasks. My goal with this OSS project is to make it as sustainable and attractive for others to use as possible. Thus, documentation is a must.
 
-We're already using [Travis CI](https://travis-ci.org/) to automatically run our unit and integration tests, build our jars and deploy SNAPSHOTs out to [Sonatype](http://oss.sonatype.org/content/repositories/snapshots/com/readytalk/swt-bling/). It's a good start, but automatically generating JavaDoc for our [GitHub page](http://oss.readytalk.com/swt-bling/) would be a huge win.
+We're already using [Travis CI](https://travis-ci.org/) to automatically run our unit and integration tests, build our jars and deploy SNAPSHOTs out to [Sonatype](http://oss.sonatype.org/content/repositories/snapshots/com/readytalk/swt-bling/).
 
 After lots of searching around, I ended up having a hard time finding one definitive source of how to accomplish this with Travis CI. So, here's how you do it.
 
 # How to Do It
-1. [Setup GitHub Pages](https://pages.github.com/) if you haven't already.  
-This will create a gh-pages branch on your GitHub project. Checking out and automatically committing and pushing to this branch is how this little trick works.  
+1. [Setup GitHub Pages](https://pages.github.com/) if you haven't already.
+This will create a gh-pages branch on your GitHub project. Checking out and automatically committing and pushing to this branch is how this little trick works.
 
-2. [Setup Travis CI](https://docs.travis-ci.com/user/getting-started/) if you haven't already.  
-Travis is neat. In most use cases, it just works with your build system. It also has the ability to encrypt 'secret' data (in our case, the token to allow Travis to push to our gh-pages branch).  
+2. [Setup Travis CI](https://docs.travis-ci.com/user/getting-started/) if you haven't already.
+Travis is neat. In most use cases, it just works with your build system. It also has the ability to encrypt 'secret' data (in our case, the token to allow Travis to push to our gh-pages branch).
 
-3. [Create a GitHub Access Token](https://github.com/settings/tokens) for Travis.  
+3. [Create a GitHub Access Token](https://github.com/settings/tokens) for Travis.
 	As I mentioned, this will allow Travis to push to our gh-pages branch. Make sure the token is set to have the [repo scope](https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line), otherwise you will get "permission denied" errors on push.
 	<div class="center"><img src="/assets/images/posts/2013/12/GhAccessToken.png" width="800" height="146" alt="GitHub Create New Personal Access Token" /></div>
 
 4. [Encrypt](https://docs.travis-ci.com/user/environment-variables/#Encrypted-Variables) your access token.
-You'll need to install the Travis gem with ```gem install travis```. Then you'll run  
+You'll need to install the Travis gem with ```gem install travis```. Then you'll run
 
 		travis encrypt GH_TOKEN=your token from step 4
 
     Don't forget to place this in your ```.travis.yml``` configuration in your repo in a ```secure``` block.
 
 5. Create a script that you'll have Travis run.
-On [swt-bling](https://github.com/ReadyTalk/swt-bling), I created a [```.utility```](https://github.com/ReadyTalk/swt-bling/tree/master/.utility) folder in the root of the repo that contains our Travis shell scripts. You can start off [with ours](https://github.com/ReadyTalk/swt-bling/blob/master/.utility/push-javadoc-to-gh-pages.sh) as a sample. I'll explain the script below, if you're craving more details.  
+On [swt-bling](https://github.com/ReadyTalk/swt-bling), I created a [```.utility```](https://github.com/ReadyTalk/swt-bling/tree/master/.utility) folder in the root of the repo that contains our Travis shell scripts. You can start off [with ours](https://github.com/ReadyTalk/swt-bling/blob/master/.utility/push-javadoc-to-gh-pages.sh) as a sample. I'll explain the script below, if you're craving more details.
 
 6. Tell Travis to run your script.
-In your .travis.yml file, you'll tell Travis to run your script after a successful build. For instance on swt-bling we have  
+In your .travis.yml file, you'll tell Travis to run your script after a successful build. For instance on swt-bling we have
 
 	 	after_success:
 	 	- .utility/initiate-publish.sh
@@ -52,19 +52,19 @@ In your .travis.yml file, you'll tell Travis to run your script after a successf
 I'll take a second to explain how we've come to the script we're using today. There was a lot of trial and error with this particular script, so I'll go through it for clarity.
 
 ## The Big-Ol' Conditional
-If you tell Travis to publish ```after_success```, it will run on a ton of builds you don't want Javadoc published for. So, for our purposes, we define a number of prerequisites to publish.  
+If you tell Travis to publish ```after_success```, it will run on a ton of builds you don't want Javadoc published for. So, for our purposes, we define a number of prerequisites to publish.
 
 ```[ "$TRAVIS_REPO_SLUG" == "ReadyTalk/swt-bling" ]```
-1. We want this to only happen from our repo, not forks.  
+1. We want this to only happen from our repo, not forks.
 Since people will clone this script when they fork the repo, we don't want them to be able to publish Javadoc if they set up Travis. Luckily, our secret ```GH_TOKEN``` variable will not work for their fork, but we might as well bail from the script if it's not our repo.
 
-```[ "$TRAVIS_JDK_VERSION" == "oraclejdk7" ]```  
+```[ "$TRAVIS_JDK_VERSION" == "oraclejdk7" ]```
 2. swt-bling is built against OpenJDK 6 and Oracle JDK 7. JDK 6 has pretty old-school looking documentation, so we specify that we only want Javadoc built by JDK 7 to be pushed out.
 
-```[ "$TRAVIS_PULL_REQUEST" == "false" ]```  
+```[ "$TRAVIS_PULL_REQUEST" == "false" ]```
 3. Building pull requests is pretty awesome, we want to make sure that people have pushed solid code before we merge it in. However, we don't want documentation to be published until we merge it.
 
-```[ "$TRAVIS_BRANCH" == "master" ]```  
+```[ "$TRAVIS_BRANCH" == "master" ]```
 4. If it's merged to master, we want to publish Javadoc for it.
 
 ## The Meat of the Script

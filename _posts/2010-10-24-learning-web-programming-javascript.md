@@ -10,6 +10,6 @@ Over the past week I've been looking into "snazzing" up my website and I've foun
 
 [JQuery: Documentation](http://docs.jquery.com/Main_Page). I'm a huge proponent of not re-inventing the wheel. JQuery is a very lightweight, free library that allows you to write much less code and add really nice looking components to your site quickly and easily. The link above is to their documentation website, but specifically I recommend looking at their [how jQuery works](http://docs.jquery.com/How_jQuery_Works) and [tutorials](http://docs.jquery.com/Tutorials). Install jQuery on your server and try running some of the code. You'll likely be impressed!
 
-[Tutorialized](http://www.tutorialized.com/tutorials/Javascript/1). I've used this site in the past and I've always been really impressed with the quality of their free tutorials. Check it out and go through a few tutorials to familiarize yourself with how to do what you want to do with Javascript.
+Tutorialized. I've used this site in the past and I've always been really impressed with the quality of their free tutorials. Check it out and go through a few tutorials to familiarize yourself with how to do what you want to do with Javascript.
 
 By utilizing the information above, you'll be off to a good start with Javascript. Happy coding!

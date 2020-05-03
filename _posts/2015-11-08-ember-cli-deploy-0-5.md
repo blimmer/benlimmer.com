@@ -34,7 +34,7 @@ I've updated the
 components of my [location-aware-ember]( {% post_url 2015-05-31-deploying-a-location-aware-ember-app %} )
 project, so you can see the changes you'll need to make to go from 0.4.x to 0.5.x
 of ember-cli-deploy. You can also have a look at the
-[official upgrade docs](http://ember-cli.github.io/ember-cli-deploy/docs/v0.5.x/upgrading-apps/#upgrade-an-app-that-uses-the-lightning-strategy) for more info.
+[official upgrade docs](http://ember-cli-deploy.com/docs/v1.0.x/upgrading/) for more info.
 
 ## node-ember-cli-deploy-redis
 If you're using my [node-ember-cli-deploy-redis](https://github.com/blimmer/node-ember-cli-deploy-redis)
@@ -42,7 +42,7 @@ project, I've also updated it (in version 0.3+) to work with ember-cli-deploy 0.
 and beyond.
 
 Check out the
-[CHANGELOG.md](https://github.com/blimmer/node-ember-cli-deploy-redis/blob/develop/CHANGELOG.md#upgrade-guide)
+[CHANGELOG.md](https://github.com/blimmer/node-ember-cli-deploy-redis/blob/master/CHANGELOG.md)
 for info on how to upgrade from an older version of the middleware.
 
 ## ember-cli-deploy-hipchat

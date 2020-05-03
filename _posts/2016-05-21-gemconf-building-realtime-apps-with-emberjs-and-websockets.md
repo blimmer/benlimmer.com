@@ -14,7 +14,7 @@ demanding more real-time interactions in our apps. WebSockets help us escape the
 CRUD-y state of standard AJAX applications and introduce realtime interactions
 that set your app apart.
 
-This talk was originally given at GEMConf in May 2016 in San Fransisco.
+This talk was originally given at GEMConf in May 2016 in San Francisco.
 
 <div class="center">
   <a href="http://www.slideshare.net/BenLimmer/building-realtime-apps-with-emberjs-and-websockets" target="_blank" rel="noopener">
@@ -24,6 +24,3 @@ This talk was originally given at GEMConf in May 2016 in San Fransisco.
 
 ### The slides
 They're [available on slideshare](http://www.slideshare.net/BenLimmer/building-realtime-apps-with-emberjs-and-websockets).
-
-### The video
-You can find it [here](https://www.embermeetup.com/videos/building-real-time-applications-with-ember-and-websockets).

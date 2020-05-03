@@ -7,14 +7,14 @@ tags:
 description: "Key EmberJS concepts to help you get up to speed with the framework. Topics include Handlebars, Ember computed properties not firing, Ember Observers and general advice when looking for help."
 ---
 
-<div class="center"><img src="/assets/images/posts/2014/08/tomster.png" width="324" height="308" alt="Tomster: The EmberJS Mascot" /></div>  
+<div class="center"><img src="/assets/images/posts/2014/08/tomster.png" width="324" height="308" alt="Tomster: The EmberJS Mascot" /></div>
 
-I was posed with a very free-form project after I got my feet wet in the [Ibotta](https://ibotta.com/?r=ndynlq) Ruby on Rails codebase. The task: create a kick-ass [Single-Page Application](http://en.wikipedia.org/wiki/Single-page_application) to replace the minimal Rails front-end website. It needed to communicate with the existing RoR API and needed to be released within a few months.  
+I was posed with a very free-form project after I got my feet wet in the [Ibotta](https://ibotta.com/?r=ndynlq) Ruby on Rails codebase. The task: create a kick-ass [Single-Page Application](http://en.wikipedia.org/wiki/Single-page_application) to replace the minimal Rails front-end website. It needed to communicate with the existing RoR API and needed to be released within a few months.
 
 # Choosing a Framework
-I had worked briefly with [Backbone](http://backbonejs.org/) and [Marionette](http://marionettejs.com/), but I wanted to research [Angular](https://angularjs.org/) and [Ember](http://emberjs.com) before going with what I already sort-of knew.  
+I had worked briefly with [Backbone](http://backbonejs.org/) and [Marionette](http://marionettejs.com/), but I wanted to research [Angular](https://angularjs.org/) and [Ember](http://emberjs.com) before going with what I already sort-of knew.
 
-There have been a [lot](http://www.airpair.com/js/javascript-framework-comparison) [of](http://www.clearlytech.com/2013/12/01/choosing-web-framework/) [posts](http://blog.fusioncharts.com/2014/07/angularjs-vs-backbone-js-vs-ember-js%E2%80%95choosing-a-javascript-framework-part-1/) on the tubes lately talking about how to choose a framework. I suggest you read them and, perhaps, take my opinion with a grain of salt. So why did we choose to go with [Ember](http://emberjs.com)? Well, honestly, we chose Ember because we really didn't have a lot of experience in writing a large single-page app. Ember is an opinionated framework and, since we didn't already have an opinion, we borrowed theirs.  
+There have been a [lot](http://www.airpair.com/js/javascript-framework-comparison) [of](https://will.koffel.org/post/2013/choosing-a-web-framework/) [posts](http://blog.fusioncharts.com/2014/07/angularjs-vs-backbone-js-vs-ember-js%E2%80%95choosing-a-javascript-framework-part-1/) on the tubes lately talking about how to choose a framework. I suggest you read them and, perhaps, take my opinion with a grain of salt. So why did we choose to go with [Ember](http://emberjs.com)? Well, honestly, we chose Ember because we really didn't have a lot of experience in writing a large single-page app. Ember is an opinionated framework and, since we didn't already have an opinion, we borrowed theirs.
 
 # EmberJS
 Overall, I'm really happy with day-to-day development in Ember. Once you get the hang of the key concepts, you can iterate really quickly and don't have to write much boilerplate to get basic functionality out the door. Ember's opinionated nature can be restrictive, especially when [Ember Data](https://github.com/emberjs/data) comes into play. I'll describe Ember Data separately and dedicate this post to common 'gotchas' I experienced in the Ember core project over the last few months.
@@ -68,12 +68,12 @@ Then, in your Handlebars template, iterate over what you just created with your 
 {% endraw %}
 {% endhighlight %}
 
-With this approach, Handlebars is allowed to be dumb and just handle displaying the work you did in Ember.  
+With this approach, Handlebars is allowed to be dumb and just handle displaying the work you did in Ember.
 
 Remember, **if you're trying to do anything computational in Handlebars, you're doing it wrong.** Do your manipulation in Ember and expose it to Handlebars for display.
 
 ## Ember Computed Properties Don't Trigger
-I'd frequently be exploring an implementation, place a ```debugger``` statement in a new computed property and never see it get fired. It took a while for me to remember that computed properties aren't executed unless something is requesting its value. This is actually a really good thing, since Ember is trying to save cycles not computing unused properties.  
+I'd frequently be exploring an implementation, place a ```debugger``` statement in a new computed property and never see it get fired. It took a while for me to remember that computed properties aren't executed unless something is requesting its value. This is actually a really good thing, since Ember is trying to save cycles not computing unused properties.
 
 However, sometimes you need to see what's happening before using the new property. Luckily, there's an easy way to test this while you're developing. For instance, consider a computed property, ```fullName``` that's computed based on variables ```firstName``` and ```lastName```. In production, you'd want something like this:
 {% highlight coffeescript %}
@@ -113,4 +113,4 @@ Keep in mind that Ember is a pretty new framework. A lot of the posts on StackOv
 Keep in mind that the community is here to help! I've frequently used the EmberJS IRC room (#emberjs on [freenode.net](http://freenode.net)) to get help. It's a great resource in addition to the normal resources, like [StackOverflow](http://stackoverflow.com/questions/tagged/ember.js) and the [EmberJS discussion board](http://discuss.emberjs.com/).
 
 # More to Come!
-Overall, I really enjoy working in EmberJS and would recommend playing around with it if you're trying to choose a SPA Framework. In the coming weeks I'll be posting on other things I've learned while working with [Ember](http://emberjs.com/), [Node](http://nodejs.org/), [Express](http://expressjs.com/), [Brunch](http://brunch.io/), [CoffeeScript](http://coffeescript.org/), [Karma](http://karma-runner.github.io/0.12/index.html), [Mocha](http://visionmedia.github.io/mocha/), [Chai](http://chaijs.com/) and [Sinon](http://sinonjs.org/). Stay tuned!
+Overall, I really enjoy working in EmberJS and would recommend playing around with it if you're trying to choose a SPA Framework. In the coming weeks I'll be posting on other things I've learned while working with [Ember](http://emberjs.com/), [Node](http://nodejs.org/), [Express](http://expressjs.com/), [Brunch](http://brunch.io/), [CoffeeScript](http://coffeescript.org/), [Karma](http://karma-runner.github.io/0.12/index.html), [Mocha](https://mochajs.org/), [Chai](http://chaijs.com/) and [Sinon](http://sinonjs.org/). Stay tuned!
