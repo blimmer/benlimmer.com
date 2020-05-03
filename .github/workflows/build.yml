@@ -38,5 +38,3 @@ jobs:
           export GOPATH=~/go
           go get -u -v github.com/bep/s3deploy
           ./deploy.sh
-          cat _site/2010/12/10/human-centered-computing-professional-development-wrap-up/index.html
-          cat _site/2018/06/15/fixing-sennhesier-hd1-call-ended-issues/index.html
