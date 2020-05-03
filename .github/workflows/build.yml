@@ -24,8 +24,13 @@ jobs:
           bundle install --jobs 4 --retry 3
       - name: Build site
         run: bundle exec jekyll b
+      - name: Deep Clone
+        if: ${{ github.ref == 'refs/heads/bug/gh-issue-30' }}
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Deploy site
-        if: ${{ github.ref == 'refs/heads/master' }}
+        if: ${{ github.ref == 'refs/heads/bug/gh-issue-30' }}
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
