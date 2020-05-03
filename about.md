@@ -6,11 +6,11 @@ description: "A short bio about Ben Limmer, a software architect living in Denve
 is_about: true
 ---
 
-Hey! I'm Ben Limmer and this is my blog.
+I'm a software architect and engineer who loves solving challenging problems across the stack. I specialize in developer
+tooling and technical mentorship.
 
-I like to discuss what I'm up to and projects that interest me. Lately, that's a lot about [EmberJS](http://emberjs.com), [Node](https://nodejs.org/) and [Ruby](https://www.ruby-lang.org/en/).
-
-I'm a [Denverite](http://en.wikipedia.org/wiki/Denver) and an [Ibotta](https://www.ibotta.com) alum.
+Currently seeking short-term contracts for 2020. I'd love to [connect](/consulting) and hear about how I might help you
+and your team accomplish your goals!
 
 <div class="center">
 	<img src="{{ site.base_url }}/{% ministamp _images/headshot.png assets/images/headshot.png %}" />
