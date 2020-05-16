@@ -80,7 +80,7 @@ code {
 
 .posts .post-date {
   display: inline-block;
-  width: 7rem;
+  width: 7.1rem;
 }
 
 .posts li {
@@ -152,15 +152,15 @@ footer hr {
 
 /* account for fixed header */
 .anchor-fix::before {
-  content: '';
+  content: "";
   display: block;
   height: 75px;
   margin-top: -75px;
   visibility: hidden;
 }
 
-.dropdown-menu>li>a:hover,
-.dropdown-menu>li>a:focus {
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
   background-color: gray;
 }
 
