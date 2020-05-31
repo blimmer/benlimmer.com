@@ -22,7 +22,7 @@ $('#contact-form').submit(function (e) {
     email = $form.find("#email-input").val(),
     message = $form.find('#message-input').val();
 
-  fetch('https://9mhejqu3n3.execute-api.us-east-1.amazonaws.com/prod/contact', {
+  fetch('https://3n3k6baz3g.execute-api.us-east-1.amazonaws.com/prod/contact', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
