@@ -11,7 +11,7 @@ description:
 ---
 
 [Github's GraphQL API](https://developer.github.com/v4/) is powerful, especially for implementing
-[custom automation and developer tooling](/consulting). Check out the
+[custom automation and developer tooling](/freelance). Check out the
 [Explorer](https://developer.github.com/v4/explorer/) to play around with some queries and mutations in their live
 [GraphiQL environment](https://github.com/graphql/graphiql) if you've never used it before.
 

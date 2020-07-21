@@ -14,10 +14,10 @@ For more granular details, check out [my portfolio](/portfolio).
 
 ## Work Experience
 
-**[Self-Employed](https://benlimmer.com/consulting), Freelance Architect _(January 2020 - Present)_**
+**[Self-Employed](https://benlimmer.com/freelance), Freelance Architect _(January 2020 - Present)_**
 
 Helping companies of all sizes with technical problems throughout the tech stack. More information at
-[benlimmer.com](https://benlimmer.com/consulting).
+[benlimmer.com](https://benlimmer.com/freelance).
 
 **[Ibotta](https://www.ibotta.com/), Distinguished Software Engineer / Solutions Architect _(January 2019 -
 January 2020)_**

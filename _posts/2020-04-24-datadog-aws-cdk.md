@@ -44,5 +44,5 @@ reference the
 [Datadog-provided CloudFormation templates](https://datadog-cloudformation-template.s3.amazonaws.com/aws/main.yaml).
 This method allows for easy, automatic upgrades to your configuration as Datadog improves their AWS Integration.
 
-Are you interested in improving your company's observability with a tool like Datadog? Let's [connect](/consulting)! I'd
+Are you interested in improving your company's observability with a tool like Datadog? Let's [connect](/freelance)! I'd
 love to help.
