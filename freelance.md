@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Consulting Services
-header: Consulting Services
+title: Freelance Services
+header: Freelance Services
 description:
   Ben Limmer is a freelance architect specializing in Developer Tools & Experience, Cloud Computing, Front-End and
   Back-End Development and speaking engagements.
@@ -28,12 +28,12 @@ Now, I help companies of all sizes solve their hardest technology and scaling pr
 
 ## Specialties
 
-{% include consulting/specialties_accordian.html %}
+{% include freelance/specialties_accordian.html %}
 
 For more granular details, check out [my portfolio](/portfolio).
 
 ## Let's Work Together!
 
-{% include consulting/availability_accordian.html %}
+{% include freelance/availability_accordian.html %}
 
-{% include consulting/contact_button.html %}
+{% include freelance/contact_button.html %}
