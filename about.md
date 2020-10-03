@@ -6,11 +6,8 @@ description: "A short bio about Ben Limmer, a software architect living in Denve
 is_about: true
 ---
 
-I'm a software architect and engineer who loves solving challenging problems across the stack. I specialize in developer
-tooling and technical mentorship.
-
-Currently seeking short-term contracts for 2020. I'd love to [connect](/freelance) and hear about how I might help you
-and your team accomplish your goals!
+I'm a freelance software architect and engineer who loves solving challenging problems across the stack. You can learn
+more about my background on the [experience](/experience) page.
 
 <div class="center">
 	<img src="{{ site.base_url }}/{% ministamp _images/headshot.png assets/images/headshot.png %}" />

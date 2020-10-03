@@ -34,6 +34,6 @@ For more granular details, check out [my portfolio](/portfolio).
 
 ## Let's Work Together!
 
-{% include freelance/availability_accordian.html %}
+I'd love to hear more about you're working on and how I can help.
 
 {% include freelance/contact_button.html %}
