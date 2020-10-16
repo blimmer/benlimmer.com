@@ -120,6 +120,10 @@ code {
   border-bottom: 1px dotted;
 }
 
+.post ol > li:not(:first-of-type) {
+  margin-top: 0.5em;
+}
+
 .post .report-bugs {
   margin-top: 20px;
 }
