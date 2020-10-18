@@ -20,7 +20,8 @@ platforms like CircleCI, Semaphore, and more.
 
 To work around the rate limit, you'll need to authenticate with DockerHub in a few places.
 
-1. **Create a DockerHub user** if you don't already have one. You can sign up [here](https://hub.docker.com/signup).
+1. **Create a DockerHub user** if you don't already have one. You can
+   [sign up for DockerHub here](https://hub.docker.com/signup).
 1. **Decide if you need a [paid plan](https://www.docker.com/pricing)**. Free users get up to 200 image pulls every six
    hours. If you're working for an organization with many builds, you'll want to upgrade to at least the "Pro" Plan,
    which, when paid annually, costs \$5/month and allows for unlimited image pulls.
