@@ -20,11 +20,11 @@ the stack.
 
 In addition to technical endeavors, I helped Ibotta's technology department scale as hiring
 [increased exponentially](https://medium.com/building-ibotta/actively-building-ibottas-engineering-culture-with-monique-aida-mitchell-da6847e9cefd).
-By planning to scale technology best-practices through tooling and mentorship, Ibotta became one of
+By planning to scale technology best practices through tooling and mentorship, Ibotta became one of
 [Colorado's first tech "unicorns"](https://www.builtincolorado.com/2019/08/05/ibotta-series-d-funding-unicorn) hiring
 and retaining top technology talent in Denver.
 
-Now, I help companies of all sizes solve their hardest technology and scaling problems.
+Now, I help companies of all sizes solve their most challenging technology and scaling problems.
 
 ## Specialties
 
@@ -34,6 +34,6 @@ For more granular details, check out [my portfolio](/portfolio).
 
 ## Let's Work Together!
 
-I'd love to hear more about you're working on and how I can help.
+I'd love to hear more about what you're working on and how I can help.
 
 {% include freelance/contact_button.html %}
