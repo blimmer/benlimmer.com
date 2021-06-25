@@ -2,18 +2,17 @@
 layout: post
 title: Slow Ember CLI builds and Sass @extends methods
 tags:
-- emberjs
-- ember-cli
-- libsass
-- sasscompile
-- extends
+  - emberjs
+  - ember-cli
+  - libsass
+  - sasscompile
+  - extends
 
 description: "Slow ember cli builds can be caused by use of sass @extends directives."
 ---
 
-After transitioning back to an older Ember project of mine, I noticed incredibly
-slow build times compared to other apps I've worked on. The initial build was taking
-almost a full minute, and subsequent builds were taking almost 30 seconds.
+After transitioning back to an older Ember project of mine, I noticed incredibly slow build times compared to other apps
+I've worked on. The initial build was taking almost a full minute, and subsequent builds were taking almost 30 seconds.
 
 ### Cold Build
 
@@ -34,7 +33,6 @@ almost a full minute, and subsequent builds were taking almost 30 seconds.
     CoffeeScriptFilter (2)                        | 4721ms (2360 ms)
     ES6: App Tree (1)                             | 2773ms
 
-
 ### Subsequent Builds
 
     file changed foo/bar.js
@@ -49,11 +47,10 @@ almost a full minute, and subsequent builds were taking almost 30 seconds.
     ----------------------------------------------+---------------------
     SassCompiler (1)                              | 20473ms
 
-
 ## Removing @extends
-This was driving me insane, and I finally tracked down the cause of the slow
-builds. It was actually our use of Sass [@extends](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend).
-Removing them produced this:
+
+This was driving me insane, and I finally tracked down the cause of the slow builds. It was actually our use of Sass
+[@extends](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend). Removing them produced this:
 
 ### Cold Builds
 
@@ -105,10 +102,9 @@ Removing them produced this:
     TreeMerger (appAndDependencies) (1)           | 355ms
 
 ## The solution
-Turns out that each instance of `@extends` was increasing our build time by
-about 3-4 seconds. So, if your builds are suddenly really slow, try cutting out
-your use of `@extends`. Some [would say](http://www.sitepoint.com/avoid-sass-extend/)
-mixins are better, anyway.
 
-At any rate, this has made developing our older app so much more pleasant. If this
-helped you out, shoot me [a tweet](https://twitter.com/l1m5).
+Turns out that each instance of `@extends` was increasing our build time by about 3-4 seconds. So, if your builds are
+suddenly really slow, try cutting out your use of `@extends`. Some
+[would say](http://www.sitepoint.com/avoid-sass-extend/) mixins are better, anyway.
+
+At any rate, this has made developing our older app so much more pleasant.
