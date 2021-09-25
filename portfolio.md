@@ -6,6 +6,9 @@ description: "A showcase of Ben Limmer's work."
 is_about: true
 ---
 
+<h2 class="anchor-fix" id="freelance">Freelance (2020&ndash;Present)</h2>
+- [Datadog Integration](/portfolio/freelance/datadog-integration)
+
 <h2 class="anchor-fix" id="ibotta">Ibotta (2014&ndash;2020)</h2>
 - [Digital Payments Solution Architect](/portfolio/ibotta/digital-payments)
 - [Ibotta Browser Extension](/portfolio/ibotta/browser-extension)
