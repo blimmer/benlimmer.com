@@ -48,9 +48,6 @@ is_about: true
 <h2 class="anchor-fix" id="postcollege">Post-College</h2>
 - [Startup Communities Feature](/portfolio/startupcommunities)
 
-<h2 class="anchor-fix" id="inthenews">In The News</h2>
-- [A Collection of Featured Articles](/portfolio/inthenews)
-
 <h2 class="anchor-fix" id="collegeera">College Era (2007-2011)</h2>
 - [Startups2Students: Bring the World of Entrepreneurship to CU Boulder](/portfolio/startups2students)
 - [Waldo: Intelligent Call Handler](/portfolio/waldo)
