@@ -81,8 +81,8 @@ department.
 The tech stack included C#, ASP.NET, WCF, IIS, Lync Server 2010, MSSQL, Microsoft Unified Communications Managed API
 (UCMA), and VXML Grammars..
 
-**[Computer Science Undergraduate Advisory Committee (CSUAC)](http://www.cs.colorado.edu/ugrad/csuac/),
-[startups2students](http://startup2student.pbworks.com) coordinator _(January 2009 - May 2011)_**
+**Computer Science Undergraduate Advisory Committee (CSUAC), [startups2students](http://startup2student.pbworks.com)
+coordinator _(January 2009 - May 2011)_**
 
 - Launched informal internship fair with start-up companies local to the
   [Boulder](http://en.wikipedia.org/wiki/Boulder,_Colorado)/[Denver](http://en.wikipedia.org/wiki/Denver), Colorado
@@ -92,8 +92,8 @@ The tech stack included C#, ASP.NET, WCF, IIS, Lync Server 2010, MSSQL, Microsof
 - Worked closely with Boulder [TechStars](http://techstars.org/) and the [Foundry Group](http://www.foundrygroup.com) in
   organizing the event.
 
-**[University of Colorado at Boulder Information Technology Services](http://www.colorado.edu/its),
-[Senior Desktop Support Specialist](http://www.colorado.edu/its/support/bugbusters.html) _(May 2008 - May 2011)_**
+**[University of Colorado at Boulder Information Technology Services](http://www.colorado.edu/its), Senior Desktop
+Support Specialist _(May 2008 - May 2011)_**
 
 Diagnosed and resolved software and hardware problems for students, faculty, and staff.
 
@@ -103,8 +103,7 @@ Analyst _(June 2010 - September 2010)_**
 Researched suspicious network traffic on the University of Colorado at Boulder campus, which serviced over 60,000
 student and faculty endpoints. I developed detection patterns and automatically quarantined risky machines.
 
-**[Computer Science Undergraduate Advisory Committee (CSUAC)](http://www.cs.colorado.edu/ugrad/csuac/), co-chair
-_(January 2009 - August 2010)_**
+**Computer Science Undergraduate Advisory Committee (CSUAC), co-chair _(January 2009 - August 2010)_**
 
 Acted as a liaison between undergraduate students and the [CU Computer Science](http://cs.colorado.edu) department,
 relaying feedback regarding the Computer Science curriculum. Also built community with free events for Computer Science
@@ -118,8 +117,8 @@ Developer _(May 2009 - August 2009)_**
   [GStreamer](http://www.gstreamer.net/) and [FFMPEG](http://www.ffmpeg.org).
 - Worked directly with advocates for the [Free Software Foundation](http://www.fsf.org/) (FSF).
 
-**[CU Student Government](http://cusg.colorado.edu/) [GLBT Resource Center](http://www.colorado.edu/glbtrc/index.html)
-[Student Advisory Board](http://www.colorado.edu/glbtrc/getinvolved.html), Voting Member _(December 2010 - May 2011)_**
+**[CU Student Government](http://cusg.colorado.edu/) GLBT Resource Center Student Advisory Board, Voting Member
+_(December 2010 - May 2011)_**
 
 - Advised the gay, lesbian, bisexual, and transgendered (GLBT) resource center on budget, programming, and important
   issues of concern to the GLBT community at the University of Colorado.
@@ -127,43 +126,42 @@ Developer _(May 2009 - August 2009)_**
 ## Formal Education
 
 In May 2011, I received a Bachelor's Degree in Computer Science from the University of Colorado at Boulder (CU). At CU,
-the Computer Science program offers a variety of [tracks](http://www.cs.colorado.edu/ugrad/bs/tracks/), or
-specializations, which allows the Computer Science degree to be tailored to meet the needs of individual students. My
-specialization is in [Human Centered Computing](http://www.cs.colorado.edu/ugrad/bs/requirements/2010-2011/hcc.html)
+the Computer Science program offers a variety of
+[tracks](https://www.colorado.edu/cs/academics/undergraduate-programs/bachelor-science), or specializations, which
+allows the Computer Science degree to be tailored to meet the needs of individual students. My specialization is in
+[Human Centered Computing](https://www.colorado.edu/cs/academics/undergraduate-programs/bachelor-science#human_centered_computing-755)
 (HCC), which focuses on gaining skills in the fields of: human computer interaction, design of interactive systems,
-cognitive science, and many other fields. In the HCC track, we work alongside
-[ATLAS](http://www.colorado.edu/ATLAS/home.html) (Alliance for Technology, Learning and Science), the
-[Institute for Cognitive Science](http://ics.colorado.edu/) and the
-[Discovery Learning Center](http://engineering.colorado.edu/DLC/index.html). A
-[video interview](http://www.cs.colorado.edu/ugrad/bs/tracks/videos/hcc.mov) of myself interviewing
-[Leysia Palen](http://www.cs.colorado.edu/~palen/Home/Welcome.html), an HCC professor at CU, explains a bit more about
-the HCC track.
+cognitive science, and many other fields. In the HCC track, we work alongside [ATLAS](https://www.colorado.edu/atlas/)
+(Alliance for Technology, Learning and Science), the [Institute for Cognitive Science](http://ics.colorado.edu/) and the
+[Discovery Learning Center](https://www.colorado.edu/activelearningprogram/discovery-learning-research). A
+[video interview](https://youtu.be/twJOrrbzgNQ) of myself interviewing
+[Leysia Palen](https://cmci.colorado.edu/~palen/), an HCC professor at CU, explains a bit more about the HCC track.
 
 I graduated with over a 3.8 cumulative GPA (3.9+ major) and magna cum laude. In addition, I received recognition as the
 Outstanding Graduate in Service for the College of Engineering as well as Outstanding Graduate from Computer Science.
 
 ## Computer Science Courses
 
-- [Computer Science as a Field of Work and Study](http://www.cs.colorado.edu/courses/csci1000.html)
-- [Computer Science I: Programming](http://www.cs.colorado.edu/courses/csci1300.html)
-- [Computer Science II: Data Structures](http://www.cs.colorado.edu/courses/csci2270.html)
-- [Computer Systems](http://www.cs.colorado.edu/courses/csci2400.html)
-- [Discrete Structures](http://www.cs.colorado.edu/courses/csci2824.html)
-- [Linear Algebra for Computer Science Applications](http://www.cs.colorado.edu/courses/csci2830linear.html)
-- [Digital and Social Systems: Foundations](http://www.cs.colorado.edu/courses/csci3002.html)
-- [Algorithms](http://www.cs.colorado.edu/courses/csci3104.html)
-- [DSS: Professional Development](http://www.cs.colorado.edu/courses/csci3112.html)
-- [Portfolio: Spring 2009](http://groups.google.com/group/dsspd/web/ben-limmers-weekly-update?pli=1) &
-  [Portfolio: Fall 2010](https://sites.google.com/site/hccpdforum/home/ben-limmer-s-updates)
-- [Principles of Programming Languages](http://www.cs.colorado.edu/courses/csci3155.html)
-- [Introduction to Artificial Intelligence](http://www.cs.colorado.edu/courses/csci3202.html)
-- [Cognitive Science](http://www.cs.colorado.edu/courses/csci3702.html)
-- [Unix System Administration](http://www.cs.colorado.edu/courses/csci4113.html)
-- [User Centered Design](http://www.cs.colorado.edu/courses/csci4839.html)
-- [Health Informatics](http://www.cs.colorado.edu/courses/csci4312.html)
-- [Object-Oriented Analysis and Design](http://www.cs.colorado.edu/courses/csci4448.html)
-- [Game Development for XBOX 360](http://www.cs.colorado.edu/courses/csci4830xbox360.html)
-- [Senior Project](http://www.cs.colorado.edu/~sanders/csci4308/)
+- Computer Science as a Field of Work and Study
+- Computer Science I: Programming
+- Computer Science II: Data Structures
+- Computer Systems
+- Discrete Structures
+- Linear Algebra for Computer Science Applications
+- Digital and Social Systems: Foundations
+- Algorithms
+- DSS: Professional Development
+- Principles of Programming Languages
+- Introduction to Artificial Intelligence
+- Cognitive Science
+- Unix System Administration
+- User Centered Design
+- Health Informatics
+- Object-Oriented Analysis and Design
+- Game Development for XBOX 360
+- [Senior Project](/portfolio/waldo)
+
+You can learn more about the content of these courses [here](https://catalog.colorado.edu/courses-a-z/csci/).
 
 ## Contact Me
 
