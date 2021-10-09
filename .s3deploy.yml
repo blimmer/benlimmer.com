@@ -1,6 +1,6 @@
 routes:
-  - route: "^.+-.+\\.(js|css)$"
-    # cache md5-summed css and js assets for 1 year
+  - route: "^.+-.+\\.(js|css|jpeg|jpg|png)$"
+    # cache md5-summed assets for 1 year
     headers:
       Cache-Control: "max-age=31536000, public"
     gzip: true
