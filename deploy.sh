@@ -24,7 +24,9 @@ create_redirect() {
     --bucket $BUCKET \
     --acl public-read \
     --key "$old_path" \
-    --website-redirect-location "$redirect_location"
+    --website-redirect-location "$redirect_location" \
+    --no-cli-pager \
+    --query 'ETag'
 }
 
 create_redirect "consulting/index.html" "/freelance"
