@@ -77,6 +77,33 @@
     crossorigin="anonymous"
   />
   <link rel="stylesheet" href="{{ site.base_url }}/{% ministamp _css/custom.css css/custom.css %}" />
+  <script>
+    (function (n, i, v, r, s, c, x, z) {
+      x = window.AwsRumClient = { q: [], n: n, i: i, v: v, r: r, c: c };
+      window[n] = function (c, p) {
+        x.q.push({ c: c, p: p });
+      };
+      z = document.createElement("script");
+      z.async = true;
+      z.src = s;
+      document.head.insertBefore(z, document.getElementsByTagName("script")[0]);
+    })(
+      "cwr",
+      "eb25f266-0a94-42b7-af0d-7372f6a4ee0e",
+      "1.0.0",
+      "us-east-1",
+      "https://client.rum.us-east-1.amazonaws.com/1.0.2/cwr.js",
+      {
+        sessionSampleRate: 1,
+        guestRoleArn: "arn:aws:iam::107111673154:role/benlimmer.com-RUM-UnauthenticatedRole",
+        identityPoolId: "us-east-1:452f1f73-40e4-44bc-b326-b56daf4d20e4",
+        endpoint: "https://dataplane.rum.us-east-1.amazonaws.com",
+        telemetries: ["performance", "errors", "http"],
+        allowCookies: true,
+        enableXRay: false,
+      }
+    );
+  </script>
   <script src="{{ site.base_url }}/{% ministamp _js/require.js js/require.js %}"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43746905-1"></script>
   <script>
