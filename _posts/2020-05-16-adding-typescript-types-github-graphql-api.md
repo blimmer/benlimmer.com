@@ -119,15 +119,15 @@ This will create an entry in the `package.json` `scripts` object. I like to use 
 enter.
 
 ```
-    Config file generated at codegen.yml
+Config file generated at codegen.yml
 
-      $ npm install
+  $ npm install
 
-    To install the plugins.
+To install the plugins.
 
-      $ npm run codegen
+  $ npm run codegen
 
-    To run GraphQL Code Generator.
+To run GraphQL Code Generator.
 ```
 
 Great, we're all done with the wizard. Install all the plugins the wizard wrote to `package.json`'s `devDependencies`.
@@ -279,7 +279,7 @@ generates:
 
 Now, let's write a simple query. Create `src/queries/who-am-i.graphql` and paste the following code:
 
-```
+```graphql
 query WhoAmI {
   viewer {
     login
@@ -343,7 +343,7 @@ API.
 
 Create `src/mutations/add-star.graphql` and paste the following code:
 
-```
+```graphql
 mutation AddStar($starrableId: ID!) {
   addStar(input: { starrableId: $starrableId }) {
     starrable {
@@ -443,7 +443,7 @@ Let's look up the repository ID at runtime, using the `repository` query, and us
 
 Create `src/queries/get-repo-id.graphql` and paste the following code:
 
-```
+```graphql
 query GetRepoId($owner: String!, $name: String!) {
   repository(owner: $owner, name: $name) {
     id
