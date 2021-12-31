@@ -39,7 +39,7 @@ The key to this solution is an [HTML comment](https://www.w3schools.com/html/htm
 comment text. This is how I identify whether we should create a new comment or update an existing one.
 
 <div class='center mt-3 mb-3'>
-  <img src="{{ site.base_url }}/{% ministamp _images/posts/2021/pr-comment-html-comment.png assets/images/posts/2021/pr-comment-html-comment.png %}" alt='HTML comment containing identifiable metadata to identify existing comments'>
+  <img src="{{ site.base_url }}/{% ministamp _images/posts/2021/12/pr-comment-html-comment.png assets/images/posts/2021/12/pr-comment-html-comment.png %}" alt='HTML comment containing identifiable metadata to identify existing comments'>
 </div>
 
 So, when a request to the endpoint is received, I fetch existing comments on the Pull Request:
@@ -105,10 +105,10 @@ By updating an existing comment, bot-based noise is significantly reduced, while
 retained in the "edited" dropdown.
 
 <div class='center mt-3 mb-3'>
-  <img src="{{ site.base_url }}/{% ministamp _images/posts/2021/pr-comment-edited.png assets/images/posts/2021/pr-comment-edited.png %}" alt='changes to the pull request comment are retained in the edited dropdown'>
+  <img src="{{ site.base_url }}/{% ministamp _images/posts/2021/12/pr-comment-edited.png assets/images/posts/2021/12/pr-comment-edited.png %}" alt='changes to the pull request comment are retained in the edited dropdown'>
 </div>
 <div class='center mt-3 mb-3'>
-  <img src="{{ site.base_url }}/{% ministamp _images/posts/2021/pr-comment-edited-diff.png assets/images/posts/2021/pr-comment-edited-diff.png %}" alt='the edit history displays inline diffs when the comment is updated'>
+  <img src="{{ site.base_url }}/{% ministamp _images/posts/2021/12/pr-comment-edited-diff.png assets/images/posts/2021/12/pr-comment-edited-diff.png %}" alt='the edit history displays inline diffs when the comment is updated'>
 </div>
 
 The [demo PR](https://github.com/blimmer/github-pr-comment-api-demo/pull/1) is interactive! Add a comment to see the bot

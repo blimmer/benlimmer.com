@@ -82,7 +82,7 @@ Now we're ready to configure our job to run our test suite.
 
 3.  Run it! To test, you can click the "Build Now" button, and you should see your TAP results published.
 
-<div class='center'><img alt="Example TAP Test Results" src="/assets/images/posts/2015/03/test-results.png" /></div>
+<div class='center'><img alt="Example TAP Test Results" src="{{ site.base_url }}/{% ministamp _images/posts/2015/03/test-results.png assets/images/posts/2015/03/test-results.png %}" /></div>
 
 ## Conclusion
 

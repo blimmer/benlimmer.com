@@ -18,4 +18,4 @@ Cheers!
 
 UPDATE: Here's a photo of our team from after our final presentation.
 
-<div class="center"><img src="/assets/images/posts/2011/04/WaldoFinalPicture.png" width="616" height="462" alt="Final Group Picture" /></div>
+<div class="center"><img src="{{ site.base_url }}/{% ministamp _images/posts/2011/04/WaldoFinalPicture.png assets/images/posts/2011/04/WaldoFinalPicture.png %}" width="616" height="462" alt="Final Group Picture" /></div>

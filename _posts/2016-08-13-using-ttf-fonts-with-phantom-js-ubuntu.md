@@ -2,37 +2,37 @@
 layout: post
 title: Using TTF fonts with PhantomJS on Ubuntu
 tags:
-- phantomjs issues
-- phantomjs pdf fonts
-- phantomjs fonts
-- infrastructure
+  - phantomjs issues
+  - phantomjs pdf fonts
+  - phantomjs fonts
+  - infrastructure
 
-description: "How to use TrueType (ttf) fonts with PhantomJS 2 on Ubuntu linux distributions. This article describes how to fix PhantomJS issues with using custom fonts and PDF generation."
+description:
+  "How to use TrueType (ttf) fonts with PhantomJS 2 on Ubuntu linux distributions. This article describes how to fix
+  PhantomJS issues with using custom fonts and PDF generation."
 ---
 
-I was recently tasked with figuring out how to automate the generation of a PDF
-file from one of my [EmberJS](http://emberjs.com/) apps. I discovered that
-[PhantomJS](http://phantomjs.org/) had the ability to
-[rasterize a rendered webpage](http://phantomjs.org/screen-capture.html)
-out to PDF. It was really easy to get set up, but then I discovered this:
+I was recently tasked with figuring out how to automate the generation of a PDF file from one of my
+[EmberJS](http://emberjs.com/) apps. I discovered that [PhantomJS](http://phantomjs.org/) had the ability to
+[rasterize a rendered webpage](http://phantomjs.org/screen-capture.html) out to PDF. It was really easy to get set up,
+but then I discovered this:
 
 <br/>
 <div class="center">
-	 <img src="/assets/images/posts/2016/08/ugly_font.png">
+	 <img src="{{ site.base_url }}/{% ministamp _images/posts/2016/08/ugly_font.png assets/images/posts/2016/08/ugly_font.png %}">
 </div>
 <br/>
 
-PhantomJS was having an issue where my custom font was not rendering.
-I needed to figure out the best way to expose my custom licensed font
-(Helvetica Neue) to PhantomJS. The first thing I found was
-[this blog post](https://medium.com/@stockholmux/besting-phantomjs-font-problems-ee22795f5c0b)
-that was mentioned all over the internet. It suggested converting the file from
-TrueType over to a Type1 format, but that wasn't working for me.
+PhantomJS was having an issue where my custom font was not rendering. I needed to figure out the best way to expose my
+custom licensed font (Helvetica Neue) to PhantomJS. The first thing I found was
+[this blog post](https://medium.com/@stockholmux/besting-phantomjs-font-problems-ee22795f5c0b) that was mentioned all
+over the internet. It suggested converting the file from TrueType over to a Type1 format, but that wasn't working for
+me.
 
 I managed to get PhantomJS working with a TTF font by following these steps:
 
-1. Create a folder in the `/usr/share/fonts/truetype` directory for your font.
-For example, `/usr/share/fonts/truetype/helvetica`.
+1. Create a folder in the `/usr/share/fonts/truetype` directory for your font. For example,
+   `/usr/share/fonts/truetype/helvetica`.
 2. Place your `.ttf` font in the newly created directory.
 3. Clear your font cache by running `fc-cache -fv`.
 
@@ -40,5 +40,5 @@ You're all set! Run your script again, and you should see your new font.
 
 <br/>
 <div class="center">
-	 <img src="/assets/images/posts/2016/08/nice_font.png">
+	 <img src="{{ site.base_url }}/{% ministamp _images/posts/2016/08/nice_font.png assets/images/posts/2016/08/nice_font.png %}">
 </div>

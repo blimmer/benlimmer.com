@@ -14,7 +14,7 @@ If you're using [pino](https://github.com/pinojs/pino) with
 reported at the `info` level, regardless of what log level you're using in your code.
 
 <div class="center mb-2">
-  <img src="/assets/images/posts/2020/10/dd-logs-info-level.png" alt="screenshot of the datadog log UI showing all info-level messages" />
+  <img src="{{ site.base_url }}/{% ministamp _images/posts/2020/10/dd-logs-info-level.png assets/images/posts/2020/10/dd-logs-info-level.png %}" alt="screenshot of the datadog log UI showing all info-level messages" />
 </div>
 
 Having all logs categorized as `info`-level messages makes it challenging to find what you're looking for.
@@ -99,5 +99,5 @@ Datadog configuration.
 Now, new messages should appear with the proper status identified in the Datadog UI. Happy log spelunking!
 
 <div class="center mb-2">
-  <img src="/assets/images/posts/2020/10/dd-logs-multiple-levels.png" alt="screenshot of the datadog log UI showing the proper log-levels being reported" />
+  <img src="{{ site.base_url }}/{% ministamp _images/posts/2020/10/dd-logs-multiple-levels.png assets/images/posts/2020/10/dd-logs-multiple-levels.png %}" alt="screenshot of the datadog log UI showing the proper log-levels being reported" />
 </div>

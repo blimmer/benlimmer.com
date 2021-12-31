@@ -14,7 +14,7 @@ College of Engineering. Here's a picture of me with [Xiao-Chuan Cai](https://www
 of the Computer Science department.
 
 <div class="center">
-	<img src="/assets/images/posts/2011/04/distinguised_senior.jpg" width="406" height="480" alt="Picture of Ben Limmer and Xiao-Chuan Cai, head of the CU Boulder Computer Science Department" />
+	<img src="{{ site.base_url }}/{% ministamp _images/posts/2011/04/distinguised_senior.jpg assets/images/posts/2011/04/distinguised_senior.jpg %}" width="406" height="480" alt="Picture of Ben Limmer and Xiao-Chuan Cai, head of the CU Boulder Computer Science Department" />
 </div>
 
 It was an awesome night and I am honored to receive the award.

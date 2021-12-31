@@ -412,7 +412,7 @@ the Github API.
 For example, if I don't pass the required `starrableId` variable, I get a handy warning in my editor.
 
 <div class="mb-2 center">
-  <img src="/assets/images/posts/2020/05/typescript-missing-variable.png" alt="an typescript error about a missing, expected variable" />
+  <img src="{{ site.base_url }}/{% ministamp _images/posts/2020/05/typescript-missing-variable.png assets/images/posts/2020/05/typescript-missing-variable.png %}" alt="an typescript error about a missing, expected variable" />
 </div>
 
 As before, let's run this code. Note that, if you're using the code as-is, you'll add a star to the

@@ -55,7 +55,7 @@ runtime
 ([docs](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-lambda-nodejs.BundlingOptions.html#externalmodules)).
 
 <div class="center mb-2">
-  <img src="/assets/images/posts/2021/06/bundling-options-external-modules.png" alt="screenshot of the aws-cdk bundling options documentation page" />
+  <img src="{{ site.base_url }}/{% ministamp _images/posts/2021/06/bundling-options-external-modules.png assets/images/posts/2021/06/bundling-options-external-modules.png %}" alt="screenshot of the aws-cdk bundling options documentation page" />
 </div>
 
 So, instead of the version you've defined in your `package.json` file, the version of `aws-sdk` included in the Lambda
@@ -64,7 +64,7 @@ information on the bundled `aws-sdk` version
 [in the Lambda Runtimes documentation](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html).
 
 <div class="center mb-2">
-  <img src="/assets/images/posts/2021/06/lambda-runtime-version-info.png" alt="screenshot of the bundled aws-sdk version available in the Node.js lambda runtime" />
+  <img src="{{ site.base_url }}/{% ministamp _images/posts/2021/06/lambda-runtime-version-info.png assets/images/posts/2021/06/lambda-runtime-version-info.png %}" alt="screenshot of the bundled aws-sdk version available in the Node.js lambda runtime" />
 </div>
 
 In most cases, this discrepancy doesn't matter. However, if you need to use a feature of the `aws-sdk` that's only

@@ -17,7 +17,7 @@ Suggestions. Photos scans your library to offer Search Suggestions. Connect your
 scanning."
 
 <div class='center mt-5 mb-5'>
-  <img src="{{ site.base_url }}/{% ministamp _images/posts/2021/no-suggestions.jpg assets/images/posts/2021/no-suggestions.jpg %}" style='max-width: 50%' alt='iPhone photos app screenshot showing message "No Suggestions. Photos scans your library to offer Search Suggestions. Connect your iPhone to power overnight to continue scanning"'>
+  <img src="{{ site.base_url }}/{% ministamp _images/posts/2021/09/no-suggestions.jpg assets/images/posts/2021/09/no-suggestions.jpg %}" style='max-width: 50%' alt='iPhone photos app screenshot showing message "No Suggestions. Photos scans your library to offer Search Suggestions. Connect your iPhone to power overnight to continue scanning"'>
 </div>
 
 This was a frustrating message to see after a few nights of charging my phone normally. What fixed the issue for me

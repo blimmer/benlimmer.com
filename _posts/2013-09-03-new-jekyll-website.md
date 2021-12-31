@@ -11,7 +11,7 @@ blog. Getting into that source ... I ... saw some things that I can't unsee. Tab
 party libraries, oh my!
 
 <div class="center">
-	<img src="/assets/images/posts/2013/09/WordpressSite.png" width="616" height="362" alt="Screenshot of old WordPress blog" />
+	<img src="{{ site.base_url }}/{% ministamp _images/posts/2013/09/WordpressSite.png assets/images/posts/2013/09/WordpressSite.png %}" width="616" height="362" alt="Screenshot of old WordPress blog" />
 </div>
 
 I have thorougly enjoyed the process of moving from WordPress to [Jekyll](https://github.com/mojombo/jekyll)

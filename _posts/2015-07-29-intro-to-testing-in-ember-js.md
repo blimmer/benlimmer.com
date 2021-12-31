@@ -19,7 +19,7 @@ and when to use each.
 
 <div class="center">
   <a href="http://www.slideshare.net/BenLimmer/automated-testing-in-emberjs" target="_blank" rel="noopener">
-	 <img src="/assets/images/posts/2015/07/testing-ember.png">
+	 <img src="{{ site.base_url }}/{% ministamp _images/posts/2015/07/testing-ember.png assets/images/posts/2015/07/testing-ember.png %}">
   </a>
 </div>
 

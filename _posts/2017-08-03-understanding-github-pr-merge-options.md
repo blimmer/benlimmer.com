@@ -2,59 +2,55 @@
 layout: post
 title: Understanding Github PR Merge Options
 tags:
-- git
-- pull requests
-- git process
+  - git
+  - pull requests
+  - git process
 
-description: "In this talk, Ben Limmer helps to improve your understanding of common git and github concepts. Topics of discussion include the two schools of thought surrounding history in github, the three options for integrating GitHub PRs (create a merge commit, squash and merge, rebase and merge), gotchas with rewriting history in git, and helpful git commands (add by patch, git revert and git bisect). A talk given at the Ibotta Technology Lunch and Learn series."
+description:
+  "In this talk, Ben Limmer helps to improve your understanding of common git and github concepts. Topics of discussion
+  include the two schools of thought surrounding history in github, the three options for integrating GitHub PRs (create
+  a merge commit, squash and merge, rebase and merge), gotchas with rewriting history in git, and helpful git commands
+  (add by patch, git revert and git bisect). A talk given at the Ibotta Technology Lunch and Learn series."
 ---
 
-Source control an extremely important tool for software developers to understand
-how to utilize. Today, that often includes [git](https://git-scm.com/) as the
-version control tool and [Github](https://github.com) as the hosting platform.
+Source control an extremely important tool for software developers to understand how to utilize. Today, that often
+includes [git](https://git-scm.com/) as the version control tool and [Github](https://github.com) as the hosting
+platform.
 
 ## GitHub PR Merge Options
 
-About a year ago, Github introduced two
-[new](https://github.com/blog/2141-squash-your-commits)
-[options](https://github.com/blog/2243-rebase-and-merge-pull-requests)
-to integrate a
-[pull request](https://help.github.com/articles/about-pull-requests/)
-into a base branch.
+About a year ago, Github introduced two [new](https://github.com/blog/2141-squash-your-commits)
+[options](https://github.com/blog/2243-rebase-and-merge-pull-requests) to integrate a
+[pull request](https://help.github.com/articles/about-pull-requests/) into a base branch.
 
 Those options include Squash and Merge in addition to Rebase and Merge.
 
 <div class='center'>
-  <img alt="GitHub pull request merge options" src="/assets/images/posts/2017/09/github_merge_options.png" />
+  <img alt="GitHub pull request merge options" src="{{ site.base_url }}/{% ministamp _images/posts/2017/09/github_merge_options.png assets/images/posts/2017/09/github_merge_options.png %}" />
 </div>
 
 <br/>
 
-Both of these options remove a lot of manual effort to accomplish a cleaner,
-more concise history in your mainline branch.
+Both of these options remove a lot of manual effort to accomplish a cleaner, more concise history in your mainline
+branch.
 
 ## `git` at Ibotta
 
-Ibotta's engineering team has grown from 15 to 55 in the last year. With that
-massive growth, we've hired a wide variety of developers at different levels
-of familiarity with git(hub).
+Ibotta's engineering team has grown from 15 to 55 in the last year. With that massive growth, we've hired a wide variety
+of developers at different levels of familiarity with git(hub).
 
-With our growth, we've started to enforce squashing PR commits upon merge to
-our upstream branch. I've spoken [in the past]({% post_url 2013-08-31-squash-your-commits %})
-about the benefits of squashing commits into concise, meaningful commits and
-now Github supports this right through the UI.
+With our growth, we've started to enforce squashing PR commits upon merge to our upstream branch. I've spoken [in the
+past]({% post_url 2013-08-31-squash-your-commits %}) about the benefits of squashing commits into concise, meaningful
+commits and now Github supports this right through the UI.
 
-However, many of my teammates had questions about why we're using the Squash and
-Merge strategy so, as part of the Ibotta Technology Lunch and Learn series, I
-presented how the three Github merge options work, stepping through a detailed
-explanation of each strategy.
+However, many of my teammates had questions about why we're using the Squash and Merge strategy so, as part of the
+Ibotta Technology Lunch and Learn series, I presented how the three Github merge options work, stepping through a
+detailed explanation of each strategy.
 
-I also discuss some gotcha with rewriting history in git, and present a few
-additional git tools that are helpful to be familiar with (`git add -p`,
-`git revert` and `git bisect`).
+I also discuss some gotcha with rewriting history in git, and present a few additional git tools that are helpful to be
+familiar with (`git add -p`, `git revert` and `git bisect`).
 
-This material is intended to be helpful for novice and experienced practitioners
-alike.
+This material is intended to be helpful for novice and experienced practitioners alike.
 
 ## The Video
 
@@ -63,15 +59,13 @@ alike.
 </div>
 
 ## The Slides
-If you prefer to read the content, you can find the slides
-[on Github](https://blimmer.github.io/1up-git-skills-talk/#/)
+
+If you prefer to read the content, you can find the slides [on Github](https://blimmer.github.io/1up-git-skills-talk/#/)
 or
 [on Slideshare](https://www.slideshare.net/BenLimmer/understanding-github-pr-merge-options-1uping-your-git-skills-part-2).
 
 ## More Resources
-If you want more in-depth information on interactive rebasing, you might be
-interested in the first version of this talk given in December 2015. You can
-view
-[the slides](https://github.com/blimmer/1up-git-skills-talk/tree/v1)
-or
+
+If you want more in-depth information on interactive rebasing, you might be interested in the first version of this talk
+given in December 2015. You can view [the slides](https://github.com/blimmer/1up-git-skills-talk/tree/v1) or
 [the video](https://www.youtube.com/watch?v=0lEFyKTob2o).

@@ -2,49 +2,48 @@
 layout: post
 title: Convert legacy CoffeeScript to ES2015 Javascript easily (ish)
 tags:
-- coffeescript
-- decaffeinate
-- es2015
+  - coffeescript
+  - decaffeinate
+  - es2015
 
-description: "How to convert CoffeeScript files over to ES6 (ES2015) compatible Javascript files using tools to make the process easier. You need to use BabelJS or another transpiler to be backwards compatible with older browsers."
+description:
+  "How to convert CoffeeScript files over to ES6 (ES2015) compatible Javascript files using tools to make the process
+  easier. You need to use BabelJS or another transpiler to be backwards compatible with older browsers."
 ---
 
-Before projects like [BabelJS](https://babeljs.io/), [CoffeeScript](http://coffeescript.org/)
-made a lot of sense. However, especially in the [EmberJS](http://emberjs.com/)
-community, CoffeeScript has fallen out of favor and it's recommended to convert
-code over to the new ES6/ES2015 style Javascript.
+Before projects like [BabelJS](https://babeljs.io/), [CoffeeScript](http://coffeescript.org/) made a lot of sense.
+However, especially in the [EmberJS](http://emberjs.com/) community, CoffeeScript has fallen out of favor and it's
+recommended to convert code over to the new ES6/ES2015 style Javascript.
 
 <br>
 <div class="center">
-	<img src="/assets/images/posts/2015/09/babel.png">
+	<img src="{{ site.base_url }}/{% ministamp _images/posts/2015/09/babel.png assets/images/posts/2015/09/babel.png %}">
 </div>
 <br>
 
-I'm not going to say that this is fun or (very) easy, but if you're trying to kick
-the CoffeeScript, this process will help you take advantage of ES2015 syntax
-instead of directly converting CoffeeScript to ES5-style Javascript. If you're
-trying to get over to Ember-CLI and have a legacy CoffeeScript app, check out
-[this post]({% post_url 2015-03-23-coffeescript-to-ember-cli %}) for more info
-before you kick off a project like this.
+I'm not going to say that this is fun or (very) easy, but if you're trying to kick the CoffeeScript, this process will
+help you take advantage of ES2015 syntax instead of directly converting CoffeeScript to ES5-style Javascript. If you're
+trying to get over to Ember-CLI and have a legacy CoffeeScript app, check out [this
+post]({% post_url 2015-03-23-coffeescript-to-ember-cli %}) for more info before you kick off a project like this.
 
 ## Prerequisites
+
 You'll need a few tools to get started:
 
 ### [Decaffeinate](https://github.com/eventualbuddha/decaffeinate)
 
-This is the main workhorse of the conversion process. It converts CoffeeScript
-(well, [CoffeeScript Redux](https://github.com/michaelficarra/CoffeeScriptRedux))
-to ES2015 style JavaScript. It's not perfect, and you sometimes have to tweak
-the source CoffeeScript for it to work (more on this in a minute), but it's better
-than doing all the conversion by hand.
+This is the main workhorse of the conversion process. It converts CoffeeScript (well,
+[CoffeeScript Redux](https://github.com/michaelficarra/CoffeeScriptRedux)) to ES2015 style JavaScript. It's not perfect,
+and you sometimes have to tweak the source CoffeeScript for it to work (more on this in a minute), but it's better than
+doing all the conversion by hand.
 
 ### [CoffeeScript Redux](https://github.com/michaelficarra/CoffeeScriptRedux)
 
-Since your source CoffeeScript probably won't always match the rules of CoffeeScript Redux,
-it's convenient to have the raw processor to identify where you need to tweak the
-file.
+Since your source CoffeeScript probably won't always match the rules of CoffeeScript Redux, it's convenient to have the
+raw processor to identify where you need to tweak the file.
 
 ## Converting Files
+
 To convert a file, run it through decaffeinate
 
     › decaffeinate my-file.coffee
@@ -52,9 +51,9 @@ To convert a file, run it through decaffeinate
 If everything goes well, you'll get no response. That's it! Rinse and repeat.
 
 ## When it Doesn't Work
-It would be great if it worked all the time. However, CoffeeScript Redux is pickier
-than standard CoffeeScript, so a lot of times it will bail out and leave you with an
-empty JS file. When it doesn't work, you'll see something like this
+
+It would be great if it worked all the time. However, CoffeeScript Redux is pickier than standard CoffeeScript, so a lot
+of times it will bail out and leave you with an empty JS file. When it doesn't work, you'll see something like this
 
     › cat my-file.coffee
     foo = func('param',
@@ -80,10 +79,9 @@ empty JS file. When it doesn't work, you'll see something like this
         at _stream_readable.js:908:16
         at process._tickCallback (node.js:355:11)
 
-The file I ran through is totally valid CoffeeScript, but is not valid CoffeeScript Redux.
-There's an [open bug](https://github.com/eventualbuddha/decaffeinate/issues/54) to
-make this error message better, but in the meantime, you'll want to use the
-CoffeeScript Redux package we installed earlier.
+The file I ran through is totally valid CoffeeScript, but is not valid CoffeeScript Redux. There's an
+[open bug](https://github.com/eventualbuddha/decaffeinate/issues/54) to make this error message better, but in the
+meantime, you'll want to use the CoffeeScript Redux package we installed earlier.
 
     Syntax error on line 1, column 20: unexpected '\n' (\u000A)
     1 : foo = func('param',
@@ -92,8 +90,8 @@ CoffeeScript Redux package we installed earlier.
     3 : qux: 'im out of things'
     4 : )
 
-This will help you to narrow down the problem. For instance, here the problem is
-that we need to wrap the object with curlies, like this:
+This will help you to narrow down the problem. For instance, here the problem is that we need to wrap the object with
+curlies, like this:
 
     foo = func('param', {
       bar: 'baz'
@@ -104,8 +102,8 @@ Now when we run it again, everything is happy!
 
     › decaffeinate my-file.coffee
 
-However, sometimes there are nodes that decaffeinate just doesn't understand,
-like `instanceof`. You'll see errors like this:
+However, sometimes there are nodes that decaffeinate just doesn't understand, like `instanceof`. You'll see errors like
+this:
 
     › cat my-file.coffee
     foo = (bar, baz) ->
