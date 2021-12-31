@@ -7,8 +7,34 @@ is_about: true
 ---
 
 <h2 class="anchor-fix" id="freelance">Freelance (2020&ndash;Present)</h2>
+
+### 2021
+
+- AWS Cloud Development Kit (CDK) Deployment Pipelines
+- Production-like QA Environment from Sanitized Production Data
+- Data Science Project Generators & Continuous Deployment
+- Front End Application Performance Optimization
+- Front End Application Continuous Deployment Pipelines
+- Front End Application Test Suite Migration & Usability Improvements
+- CircleCI Jest Performance Optimization
+
+### 2020
+
 - [Datadog Integration](/portfolio/freelance/datadog-integration)
 - [Automated Front End Content Preview](/portfolio/freelance/automated-front-end-content-preview)
+- AWS Cloud Development Kit (CDK) Implementations, Consulting and Training
+- Event-Driven Architecture Implementation via AWS EventBridge
+- Cost-Effective Salesforce Data Synchronization
+- Browser Extension Multi-Browser WebExtension Support
+- Browser Extension Continuous Delivery Platform
+- Serverless Postgres Change Data Capture
+- PDF Content Extraction and Indexing
+
+<div class="d-flex flex-row justify-content-center font-weight-lighter">
+  <div class="pr-1 pb-1 align-self-center">{% octicon question height:24 %}</div>
+  <div class="p-2">Are you interested in a freelance topic that
+doesn't yet have a dedicated page? <br/> Please don't hesitate to <a href="/freelance/contact">reach out</a> for more information.</div>
+</div>
 
 <h2 class="anchor-fix" id="ibotta">Ibotta (2014&ndash;2020)</h2>
 - [Digital Payments Solution Architect](/portfolio/ibotta/digital-payments)
