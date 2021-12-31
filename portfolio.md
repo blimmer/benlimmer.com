@@ -8,6 +8,7 @@ is_about: true
 
 <h2 class="anchor-fix" id="freelance">Freelance (2020&ndash;Present)</h2>
 - [Datadog Integration](/portfolio/freelance/datadog-integration)
+- [Automated Front End Content Preview](/portfolio/freelance/automated-front-end-content-preview)
 
 <h2 class="anchor-fix" id="ibotta">Ibotta (2014&ndash;2020)</h2>
 - [Digital Payments Solution Architect](/portfolio/ibotta/digital-payments)
