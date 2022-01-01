@@ -20,8 +20,8 @@ is_about: true
 
 ### 2020
 
-- [Datadog Integration](/portfolio/freelance/datadog-integration)
-- [Automated Front End Content Preview](/portfolio/freelance/automated-front-end-content-preview)
+- [Datadog Integration](/portfolio/freelance/2020/datadog-integration)
+- [Automated Front End Content Preview](/portfolio/freelance/2020/automated-front-end-content-preview)
 - AWS Cloud Development Kit (CDK) Implementations, Consulting and Training
 - Event-Driven Architecture Implementation via AWS EventBridge
 - Cost-Effective Salesforce Data Synchronization
@@ -30,7 +30,7 @@ is_about: true
 - Serverless Postgres Change Data Capture
 - PDF Content Extraction and Indexing
 
-<div class="d-flex flex-row justify-content-center font-weight-lighter">
+<div class="d-flex flex-row justify-content-center font-weight-lighter" style="font-size: 90%">
   <div class="pr-1 pb-1 align-self-center">{% octicon question height:24 %}</div>
   <div class="p-2">Are you interested in a freelance topic that
 doesn't yet have a dedicated page? <br/> Please don't hesitate to <a href="/freelance/contact">reach out</a> for more information.</div>
