@@ -32,15 +32,15 @@ You'll need a few plugins to run ember-cli on your Jenkins instance:
 
     - Navigate to Manage Jenkins
 
-      ![Manage Jenkins Button](/assets/images/posts/2015/03/manage-jenkins.png)
+      ![Manage Jenkins Button](/{% ministamp _images/posts/2015/03/manage-jenkins.png assets/images/posts/2015/03/manage-jenkins.png %})
 
     - Click NodeJS Installations
 
-      ![NodeJS Installations Button](/assets/images/posts/2015/03/node-installations.png)
+      ![NodeJS Installations Button](/{% ministamp _images/posts/2015/03/node-installations.png assets/images/posts/2015/03/node-installations.png %})
 
     - Configure NodeJS Installation
 
-      ![NodeJS Plugin Configuration](/assets/images/posts/2015/03/node-configuration.png)
+      ![NodeJS Plugin Configuration](/{% ministamp _images/posts/2015/03/node-configuration.png assets/images/posts/2015/03/node-configuration.png %})
 
       Choose "Install from nodejs.org" and choose a current version. You'll want to install ember-cli, phantom, and
       bower as global packages. You can see that I always peg the versions to prevent issues when a new version is
@@ -62,11 +62,11 @@ Now we're ready to configure our job to run our test suite.
 
 1.  Create a new job I've had the best luck with the Freestyle Projects.
 
-    ![Freestyle Project Radio Button](/assets/images/posts/2015/03/freestyle-project.png)
+    ![Freestyle Project Radio Button](/{% ministamp _images/posts/2015/03/freestyle-project.png assets/images/posts/2015/03/freestyle-project.png %})
 
 2.  Configure the job
 
-    <a href='/assets/images/posts/2015/03/job-configuration.png' target='_blank' rel="noopener">![Sample Configuration Settings](/assets/images/posts/2015/03/job-configuration.png)</a>
+    <a href='/assets/images/posts/2015/03/job-configuration.png' target='_blank' rel="noopener">![Sample Configuration Settings](/{% ministamp _images/posts/2015/03/job-configuration.png assets/images/posts/2015/03/job-configuration.png %})</a>
 
     - Setup the Git Repository
     - Check "Build when a change is pushed to GitHub"

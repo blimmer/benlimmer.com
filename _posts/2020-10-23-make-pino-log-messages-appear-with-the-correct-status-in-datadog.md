@@ -34,12 +34,25 @@ logger.warn("warn message");
 ```
 
 ```js
-{"level":30,"msg":"info message","time":1603492511716,"pid":66621,"hostname":"71b5c8be.local"}
-{"level":40,"msg":"warn message","time":1603492511716,"pid":66621,"hostname":"71b5c8be.local"}
+{
+  "level": 30,
+  "msg": "info message",
+  "time": 1603492511716,
+  "pid": 66621,
+  "hostname": "71b5c8be.local"
+}
+
+{
+  "level": 40,
+  "msg": "warn message",
+  "time": 1603492511716,
+  "pid": 66621,
+  "hostname": "71b5c8be.local"
+}
 ```
 
-Datadog's default Status Mapper does not understand how to convert these numbers over to their string representation
-(like `info`, `warn`.)
+Datadog's default Status Mapper does not understand how to convert these `level` numbers over to their string
+representation (like `info`, `warn`.)
 
 ## The Fix
 
@@ -92,9 +105,9 @@ Datadog configuration.
 1. [View your Log Pipelines in Datadog](https://app.datadoghq.com/logs/pipelines)
 1. Create a new pipeline for the service that uses Pino. You can skip this step if there's already a pipeline created
    for your service.
-   ![screenshot of the datadog UI creating a new log pipeline](/assets/images/posts/2020/10/dd-logs-new-pipeline.png)
+   ![screenshot of the datadog UI creating a new log pipeline](/{% ministamp _images/posts/2020/10/dd-logs-new-pipeline.png assets/images/posts/2020/10/dd-logs-new-pipeline.png %})
 1. Add a Status Remapper processor on the `level` attribute.
-   ![screenshot of the datadog UI creating a new processor](/assets/images/posts/2020/10/dd-logs-new-processor.png)
+   ![screenshot of the datadog UI creating a new processor](/{% ministamp _images/posts/2020/10/dd-logs-new-processor.png assets/images/posts/2020/10/dd-logs-new-processor.png %})
 
 Now, new messages should appear with the proper status identified in the Datadog UI. Happy log spelunking!
 
