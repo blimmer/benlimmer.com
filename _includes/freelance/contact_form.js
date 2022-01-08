@@ -2,46 +2,48 @@
 // right now.
 
 if (!window.fetch) {
-  var alert = $('.alert-danger');
+  var alert = $(".alert-danger");
   alert.text("You're using a very old browser, so this form won't work. Please email me at hello@benlimmer.com.");
   alert.show();
-  $('#contact-form').hide();
+  $("#contact-form").hide();
   return;
 }
 
-$('#contact-form').submit(function (e) {
+$("#contact-form").submit(function (e) {
   e.preventDefault();
 
-  $('#contact-error').hide();
+  $("#contact-error").hide();
 
   var $form = $(this);
 
-  $form.find('button[type="submit"').prop('disabled', true);
+  $form.find('button[type="submit"').prop("disabled", true);
 
   var name = $form.find("#name-input").val(),
     email = $form.find("#email-input").val(),
-    message = $form.find('#message-input').val();
+    message = $form.find("#message-input").val();
 
-  fetch('https://3n3k6baz3g.execute-api.us-east-1.amazonaws.com/prod/contact', {
-    method: 'POST',
+  fetch("https://api.benlimmer.com/contact", {
+    method: "POST",
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      Accept: "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       name: name,
       email: email,
-      message: message
+      message: message,
+    }),
+  })
+    .then(function () {
+      $("#contact-success").show();
+      $form.find(".form-control").each(function () {
+        $(this).prop("disabled", true);
+      });
     })
-  }).then(function () {
-    $('#contact-success').show();
-    $form.find('.form-control').each(function () {
-      $(this).prop('disabled', true);
+    .catch(function (e) {
+      console.error(e);
+      var alert = $("#contact-error");
+      alert.show();
+      $form.find('button[type="submit"').prop("disabled", false);
     });
-  }).catch(function (e) {
-    console.error(e);
-    var alert = $('#contact-error');
-    alert.show();
-    $form.find('button[type="submit"').prop('disabled', false);
-  });
 });
