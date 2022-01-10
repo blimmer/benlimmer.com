@@ -28,9 +28,7 @@ jobs:
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
       - name: Build site
-        run: bundle exec jekyll b
-        env:
-          JEKYLL_ENV: production
+        run: JEKYLL_ENV=production bundle exec jekyll build
       - name: Configure AWS Credentials
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: aws-actions/configure-aws-credentials@v1
