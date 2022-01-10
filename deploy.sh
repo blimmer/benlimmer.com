@@ -5,7 +5,7 @@ ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 BUCKET=benlimmer.com
 
 rm -fr _site
-bundle exec jekyll build
+JEKYLL_ENV=production bundle exec jekyll build
 cd _site || exit
 
 # Sync Site
