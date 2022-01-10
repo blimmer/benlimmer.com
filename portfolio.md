@@ -13,6 +13,7 @@ is_about: true
 - AWS Cloud Development Kit (CDK) Deployment Pipelines
 - Production-like QA Environment from Sanitized Production Data
 - Data Science Project Generators & Continuous Deployment
+- [Browser Extension Automated Release Platform](/portfolio/freelance/2021/browser-extension-automated-release-platform)
 - Front End Application Performance Optimization
 - Front End Application Continuous Deployment Pipelines
 - Front End Application Test Suite Migration & Usability Improvements
@@ -26,11 +27,10 @@ is_about: true
 - Event-Driven Architecture Implementation via AWS EventBridge
 - Cost-Effective Salesforce Data Synchronization
 - Browser Extension Multi-Browser WebExtension Support
-- Browser Extension Continuous Delivery Platform
 - Serverless Postgres Change Data Capture
 - PDF Content Extraction and Indexing
 
-<div class="d-flex flex-row justify-content-center font-weight-lighter" style="font-size: 90%">
+<div class="d-flex flex-row justify-content-center font-weight-lighter">
   <div class="pr-1 pb-1 align-self-center">{% octicon question height:24 %}</div>
   <div class="p-2">Are you interested in a freelance topic that
 doesn't yet have a dedicated page? <br/> Please don't hesitate to <a href="/freelance/contact">reach out</a> for more information.</div>
