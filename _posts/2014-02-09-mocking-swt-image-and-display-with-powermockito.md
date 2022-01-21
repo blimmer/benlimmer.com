@@ -5,8 +5,6 @@ tags:
 - swt
 - unit testing
 - powermockito
-- SWT Image
-- SWT Display
 description: "How to mock SWT Image and Display classes using JUnit and PowerMockito. Sometimes you need to mock out SWT Images or static calls on the SWT Display object. Cue JUnit and PowerMockito to the rescue!"
 ---
 
