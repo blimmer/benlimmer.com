@@ -2,6 +2,9 @@
 _site/
 .jekyll-cache/
 
+# IDE Ignores
+.vscode
+
 # Mac Ignores
 .DS_Store
 .AppleDouble
