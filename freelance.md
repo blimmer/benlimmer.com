@@ -22,7 +22,7 @@ changes confidently. Uninstrumented code makes it difficult to identify and reco
 
 Identifying and resolving these challenges are my bread-and-butter. By investing in Developer Enablement, you'll
 increase the value of your engineering team investment, improve retention, and deliver software to your users more
-quickly. Sound interesting? Please [reach out](/freelance/contact) to learn more!
+quickly. Sound interesting? Please [reach out](/freelance/contact) to learn more.
 
 ## Specialties
 
@@ -30,7 +30,7 @@ quickly. Sound interesting? Please [reach out](/freelance/contact) to learn more
 
 For more granular details, check out [my portfolio](/portfolio).
 
-## Let's Work Together!
+## Let's Work Together
 
 I'd love to hear more about what you're working on and how I can help.
 
