@@ -1,0 +1,59 @@
+---
+layout: post
+title: How to Fix Failed Datadog Agent Image Pulls from DockerHub
+tags:
+  - datadog
+description: "Recently, datadog/agent:latest images have failed to pull from DockerHub. Here's how to fix it."
+---
+
+Today, my client's ECS tasks suddenly failed at startup. This posed challenges for deploying new code and autoscaling.
+
+Our tasks were failing to start with this error message:
+
+<code>
+CannotPullContainerError: inspect image has been retried 1 time(s): failed to resolve ref "docker.io/datadog/agent:latest": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization fa...
+</code>
+
+It appears that we started getting throttled pulling the `datadog/agent:latest` image from DockerHub.
+
+## The Fix
+
+To work around this problem, you'll need to do one of the following.
+
+### Authenticate with DockerHub
+
+If you have a [paid user](https://docs.docker.com/subscription/upgrade/) through DockerHub, you can authenticate with
+your credentials to avoid the rate limit. [This documentation explains how](https://docs.docker.com/subscription/upgrade/).
+
+### Use the Google Container Registry (GCR) Mirror
+
+Datadog has quietly
+[updated their documentation](https://docs.datadoghq.com/integrations/ecs_fargate/?tab=fluentbitandfirelens) to recommend pulling the image from [GCR](https://cloud.google.com/container-registry/) to avoid the DockerHub rate limit.
+
+If you want to pull from GCR, change:
+
+```console
+datadog/agent:latest
+```
+
+to
+
+```console
+gcr.io/datadoghq/agent:latest
+```
+
+### Use AWS Public Elastic Container Registry (ECR)
+
+In addition to GCR, Datadog publishes verified images to [AWS Public ECR](https://gallery.ecr.aws/).
+
+If you want to pull from AWS Public ECR, change:
+
+```console
+datadog/agent:latest
+```
+
+to
+
+```console
+public.ecr.aws/datadog/agent:latest
+```
