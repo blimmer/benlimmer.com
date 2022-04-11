@@ -13,7 +13,7 @@ cd _site || exit
     -config "$ROOT_DIR"/.s3deploy.yml \
     -region us-east-1 \
     -bucket "$BUCKET" \
-    -distribution-id E2S061LCTHO4BI
+    -distribution-id E1J0ZU49NLG2H2
 
 # Create redirects
 create_redirect() {
