@@ -71,12 +71,14 @@ Select the type of app you're building. For this tutorial, we'll demo a `Backend
 API or server", press the space bar to select it, and press enter.
 
 ```
-? Where is your schema?: (path or url) src/generated/github-schema-loader.js
+? Where is your schema?: (path or url) node_modules/@octokit/graphql-schema/schema.json
 ```
 
 We'll point [`graphql-codegen`](https://graphql-code-generator.com/) at the schema published by
-[`@octokit/graphql-schema`](https://github.com/octokit/graphql-schema) that we installed earlier. For now, type
-`src/generated/github-schema-loader.js` and press enter. We'll create that file in a subsequent step.
+[`@octokit/graphql-schema`](https://github.com/octokit/graphql-schema) that we installed earlier. Codegen supports
+a [variety of formats](https://www.graphql-code-generator.com/docs/config-reference/schema-field#available-formats)
+including URLs and and even providing multiple sources. In our case, we'll be pointing directly to GitHub's `schema.json` file
+in our `node_modules`.
 
 ```
 ? Pick plugins: (Press <space> to select, <a> to toggle all, <i> to invert selection)
@@ -135,17 +137,6 @@ Great, we're all done with the wizard. Install all the plugins the wizard wrote 
 ```
 npm install
 ```
-
-Our last setup step is to write the `src/generated/github-schema-loader.js` file we referenced earlier. Create a file at
-src/generated/github-schema-loader.js` and paste the following code:
-
-```js
-const { schema } = require("@octokit/graphql-schema");
-module.exports = schema.json;
-```
-
-This will load the schema up from the package published by Github,
-[`@octokit/graphql-schema`](https://github.com/octokit/graphql-schema).
 
 Now, run your first codegen!
 
