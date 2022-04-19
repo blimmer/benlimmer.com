@@ -40,5 +40,5 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           export GOPATH=~/go
-          go get -u -v github.com/bep/s3deploy
+          go install github.com/bep/s3deploy/v2@v2.7.0
           ./deploy.sh
