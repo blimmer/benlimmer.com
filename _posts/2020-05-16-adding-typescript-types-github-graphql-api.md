@@ -34,7 +34,7 @@ cd my-typescript-project
 npm init -y
 npm install --save graphql
 npm install --save-dev typescript ts-node
-tsc --init
+npx tsc --init
 ```
 
 ## Generating Types from the Github GraphQL Schema
@@ -44,7 +44,7 @@ To start, we'll generate types from the Github GraphQL schema, provided by
 [`graphql-codegen`](https://graphql-code-generator.com/).
 
 ```
-npm i --save-dev @octokit/graphql-schema @graphql-codegen/cli
+npm install --save-dev @octokit/graphql-schema @graphql-codegen/cli
 ```
 
 Next, we'll use the `graphql-codegen`
@@ -71,12 +71,12 @@ Select the type of app you're building. For this tutorial, we'll demo a `Backend
 API or server", press the space bar to select it, and press enter.
 
 ```
-? Where is your schema?: (path or url) src/generated/github-schema-loader.js
+? Where is your schema?: src/generated/github-schema-loader.ts
 ```
 
 We'll point [`graphql-codegen`](https://graphql-code-generator.com/) at the schema published by
 [`@octokit/graphql-schema`](https://github.com/octokit/graphql-schema) that we installed earlier. For now, type
-`src/generated/github-schema-loader.js` and press enter. We'll create that file in a subsequent step.
+`src/generated/github-schema-loader.ts` and press enter. We'll create that file in a subsequent step.
 
 ```
 ? Pick plugins: (Press <space> to select, <a> to toggle all, <i> to invert selection)
@@ -136,16 +136,35 @@ Great, we're all done with the wizard. Install all the plugins the wizard wrote 
 npm install
 ```
 
-Our last setup step is to write the `src/generated/github-schema-loader.js` file we referenced earlier. Create a file at
-src/generated/github-schema-loader.js` and paste the following code:
+Our last setup step is to write the `src/generated/github-schema-loader.ts` file we referenced earlier. Create a file at
+`src/generated/github-schema-loader.ts` and paste the following code:
 
-```js
-const { schema } = require("@octokit/graphql-schema");
-module.exports = schema.json;
+```ts
+import { schema } from '@octokit/graphql-schema'
+export default schema.json;
 ```
 
 This will load the schema up from the package published by Github,
 [`@octokit/graphql-schema`](https://github.com/octokit/graphql-schema).
+
+Finally, you'll need to add `ts-node/register` to your `codegen.yml` file so the `github-schema-loader.ts` can be
+transpiled. The file should look like this:
+
+```yml
+# codegen.yml
+overwrite: true
+schema: "src/generated/github-schema-loader.ts"
+documents: null
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
+      - "typescript-document-nodes"
+# Add this block
+require:
+  - ts-node/register
+```
 
 Now, run your first codegen!
 
@@ -219,17 +238,14 @@ For this demo, I'll use [Apollo](https://github.com/apollographql/apollo-client)
 and its dependencies:
 
 ```
-npm i --save apollo-client apollo-cache-inmemory apollo-link-http cross-fetch
+npm install --save @apollo/client cross-fetch
 ```
 
 Now, we'll write some boilerplate code to generate a GraphQL client. Create `src/client.ts` and paste this code:
 
 ```ts
-import { ApolloClient } from "apollo-client";
-import { HttpLink } from "apollo-link-http";
-import { InMemoryCache, NormalizedCacheObject } from "apollo-cache-inmemory";
-
-import "cross-fetch/polyfill";
+import { ApolloClient, HttpLink, InMemoryCache, NormalizedCacheObject } from "@apollo/client/core";
+import fetch from 'cross-fetch';
 
 export function githubClient(): ApolloClient<NormalizedCacheObject> {
   if (!process.env.GITHUB_TOKEN) {
@@ -244,6 +260,7 @@ export function githubClient(): ApolloClient<NormalizedCacheObject> {
       headers: {
         authorization: `token ${process.env.GITHUB_TOKEN}`,
       },
+      fetch
     }),
     cache: new InMemoryCache(),
   });
@@ -323,7 +340,7 @@ When we run this code, we should see our username written out to the console. To
 your Github token generated above as the `GITHUB_TOKEN` environment variable. In your terminal, run:
 
 ```bash
-GITHUB_TOKEN=PASTE_YOUR_GITHUB_TOKEN_HERE ts-node src/index.ts
+GITHUB_TOKEN=PASTE_YOUR_GITHUB_TOKEN_HERE npx ts-node src/index.ts
 
 Your github username is blimmer
 ```
@@ -421,7 +438,7 @@ As before, let's run this code. Note that, if you're using the code as-is, you'l
 ```bash
 GITHUB_TOKEN=PASTE_YOUR_GITHUB_TOKEN_HERE ts-node src/index.ts
 Your github username is blimmer
-The repository now has 4 stargazers!!
+The repository now has 7 stargazers!!
 ```
 
 Great! We just used the Github GraphQL API to add a star to my repository (thanks!)
@@ -452,7 +469,8 @@ query GetRepoId($owner: String!, $name: String!) {
 ```
 
 This query takes two variables (`owner` and `name`) and will return the repository ID of the matching repo
-([docs](https://developer.github.com/v4/query/#repository)).
+([docs](https://developer.github.com/v4/query/#repository)). Remember to `npm run codegen` since we created a new
+`.graphql` file.
 
 Let's update `index.ts` to use the result of this query in the mutation. Paste the following code:
 
@@ -534,7 +552,7 @@ Let's run the code:
 ```bash
 GITHUB_TOKEN=PASTE_YOUR_GITHUB_TOKEN_HERE ts-node src/index.ts
 Your github username is blimmer
-The repository now has 4 stargazers!!
+The repository now has 7 stargazers!!
 ```
 
 The output is the same, but we're now dynamically querying for the repository ID before we call the `AddStar` mutation.
