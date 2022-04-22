@@ -112,7 +112,7 @@
       "2bf5df89-7706-4d4f-8f32-a91dfea63005",
       "1.0.0",
       "us-east-1",
-      "https://client.rum.us-east-1.amazonaws.com/1.2.1/cwr.js",
+      "{{ site.base_url }}/{% ministamp _js/cwr.js js/cwr.js %}",
       {
         sessionSampleRate: 1,
         guestRoleArn: "arn:aws:iam::107111673154:role/benlimmer.com-RUM-UnauthenticatedRole",
