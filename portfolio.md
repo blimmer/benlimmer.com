@@ -8,6 +8,16 @@ is_about: true
 
 <h2 class="anchor-fix" id="freelance">Freelance (2020&ndash;Present)</h2>
 
+### 2022
+
+- Multi-Tenant App Infrastructure Design and Deployment
+- Automated Database Migration Framework
+- Database Diaster Recovery Preparation
+- Organizational Security Posture Audit and Recommendations
+- Automated Acceptance Testing via Playwright
+- AWS IAM User Automation and Scope Reduction
+- "From the Ground Up" Educational Talks (Cloud Infrastructure, CI/CD)
+
 ### 2021
 
 - AWS Cloud Development Kit (CDK) Deployment Pipelines
