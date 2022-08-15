@@ -37,7 +37,7 @@ is_about: true
 - [Event-Driven Architecture Implementation via AWS EventBridge](/portfolio/freelance/2020/event-driven-architecture)
 - Cost-Effective Salesforce Data Synchronization
 - Browser Extension Multi-Browser WebExtension Support
-- Serverless Postgres Change Data Capture
+- [Serverless Postgres Change Data Capture](/portfolio/freelance/2020/serverless-postgres-change-data-capture)
 - PDF Content Extraction and Indexing
 
 <div class="d-flex flex-row justify-content-center font-weight-lighter">

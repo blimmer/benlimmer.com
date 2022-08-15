@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Event-Driven Architecture via AWS EventBridge
-description: "Interested in event-driven architectures? Start to break microservices out of your monolithic application using managed services like AWS EventBridge."
+description:
+  "Interested in event-driven architectures? Start to break microservices out of your monolithic application using
+  managed services like AWS EventBridge."
 is_about: true
 ---
 
@@ -45,7 +47,7 @@ informs your engineers about problems processing events.
 ## Concrete Example
 
 As a concrete example, imagine you want to notify your users when an unrecognized login occurs. Instead of writing this
-logic into your monolith, you could fire an EventBridge event that looks something like this:
+logic into your monolith, you could use the `PutEvent` API to fire an EventBridge event that looks like this:
 
 ```json
 {
@@ -60,8 +62,8 @@ logic into your monolith, you could fire an EventBridge event that looks somethi
 }
 ```
 
-Then, an EventBridge rule looking for `Customer Nofication` events triggers a Lambda function with logic to generate and
-send the notification to the user.
+Then, an EventBridge rule looking for `Customer Notification` events triggers a Lambda function with logic to generate
+and send the notification to the user.
 
 ```json
 {
@@ -76,6 +78,13 @@ An event-driven system might seem overkill for a single notification, but it's a
 monolithic application. It also allows separate teams to own the notifications logic for a system and evolve it as they
 see fit. They could swap out the templating system, email provider, programming language, etc., and the team working
 with the monolith wouldn't know (or care!) about the changes.
+
+## Auto-Generated Database Events
+
+In addition to responding to manually triggered events (e.g., via `PutEvent`), you can accelerate your team's transition
+to an event-driven architecture by auto-generating events. Learn more about how
+[Serverless Postgres Change Data Capture](/portfolio/freelance/2020/serverless-postgres-change-data-capture)
+significantly accelerated one of my client's adoption of an event-driven architecture.
 
 ## More Complex Targets
 
