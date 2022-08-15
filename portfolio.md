@@ -34,7 +34,7 @@ is_about: true
 - [Datadog Integration](/portfolio/freelance/2020/datadog-integration)
 - [Automated Front End Content Preview](/portfolio/freelance/2020/automated-front-end-content-preview)
 - AWS Cloud Development Kit (CDK) Implementations, Consulting and Training
-- Event-Driven Architecture Implementation via AWS EventBridge
+- [Event-Driven Architecture Implementation via AWS EventBridge](/portfolio/freelance/2020/event-driven-architecture)
 - Cost-Effective Salesforce Data Synchronization
 - Browser Extension Multi-Browser WebExtension Support
 - Serverless Postgres Change Data Capture
