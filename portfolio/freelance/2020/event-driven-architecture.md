@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Event Driven Architecture via AWS EventBridge
-description: "TODO"
+title: Event-Driven Architecture via AWS EventBridge
+description: "Interested in event-driven architectures? Start to break microservices out of your monolithic application using managed services like AWS EventBridge."
 is_about: true
 ---
 
