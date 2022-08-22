@@ -8,37 +8,54 @@ is_about: true
 
 <h2 class="anchor-fix" id="freelance">Freelance (2020&ndash;Present)</h2>
 
-### 2022
+### Infrastructure as Code
 
-- Multi-Tenant App Infrastructure Design and Deployment
+- AWS Cloud Development Kit (aws-cdk) Implementations, Consulting, and Training
+
+### Continuous Integration, Delivery, and Deployment
+
 - Automated Database Migration Framework
-- Database Diaster Recovery Preparation
-- Organizational Security Posture Audit and Recommendations
-- Automated Acceptance Testing via Playwright
-- AWS IAM User Automation and Scope Reduction
-- "From the Ground Up" Educational Talks (Cloud Infrastructure, CI/CD)
-
-### 2021
-
-- AWS Cloud Development Kit (CDK) Deployment Pipelines
-- Production-like QA Environment from Sanitized Production Data
-- Data Science Project Generators & Continuous Deployment
-- [Browser Extension Automated Release Platform](/portfolio/freelance/2021/browser-extension-automated-release-platform)
-- Front End Application Performance Optimization
+- AWS Cloud Development Kit (aws-cdk) Deployment Pipelines
+- [Browser Extension Automated Release Platform](/portfolio/freelance/browser-extension-automated-release-platform)
 - Front End Application Continuous Deployment Pipelines
-- Front End Application Test Suite Migration & Usability Improvements
+- Reusable CircleCI Orbs
+
+### Testing
+
+- Automated Acceptance Testing via Playwright
+- [Automated Front End Content Preview](/portfolio/freelance/automated-front-end-content-preview)
 - CircleCI Jest Performance Optimization
+- Front End Application Test Suite Migration, and Usability Improvements
+- Production-like QA Environment from Sanitized Production Data
 
-### 2020
+### System Architecture
 
-- [Datadog Integration](/portfolio/freelance/2020/datadog-integration)
-- [Automated Front End Content Preview](/portfolio/freelance/2020/automated-front-end-content-preview)
-- AWS Cloud Development Kit (CDK) Implementations, Consulting and Training
-- [Event-Driven Architecture Implementation via AWS EventBridge](/portfolio/freelance/2020/event-driven-architecture)
 - Cost-Effective Salesforce Data Synchronization
-- Browser Extension Multi-Browser WebExtension Support
-- [Serverless Postgres Change Data Capture](/portfolio/freelance/2020/serverless-postgres-change-data-capture)
+- [Event-Driven Architecture Implementation via AWS EventBridge](/portfolio/freelance/event-driven-architecture)
+- Multi-Tenant App Infrastructure Design and Deployment
 - PDF Content Extraction and Indexing
+- [Serverless Postgres Change Data Capture](/portfolio/freelance/serverless-postgres-change-data-capture)
+
+### Security and Operations
+
+- AWS IAM User Automation and Scope Reduction
+- Database Diaster Recovery Preparation
+- [Datadog Integration](/portfolio/freelance/datadog-integration)
+- Organizational Security Posture Audit and Recommendations
+
+### Client-Side Applications
+
+- Browser Extension Multi-Browser WebExtension Support
+- Front End Application Performance Optimization
+
+### Talks and Education
+
+- "From the Ground Up" Educational Talks (Cloud Infrastructure, RDS, CI/CD)
+
+### Data Science
+
+- Data Science Project Generators & Continuous Deployment
+- EMR Encryption-in-Transit via Amazon Private Certificate Authority
 
 <div class="d-flex flex-row justify-content-center font-weight-lighter">
   <div class="pr-1 pb-1 align-self-center">{% octicon question height:24 %}</div>

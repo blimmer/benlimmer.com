@@ -27,7 +27,7 @@ For most clients, I start with a single "paved-road" pattern: a single event typ
 it's posted to the bus.
 
 <div class='center mt-5 mb-5'>
-  <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/2020/event-driven-architecture/eventbridge-diagram.png assets/images/pages/portfolio/freelance/2020/event-driven-architecture/eventbridge-diagram.png %}" alt='PutEvent posting to EventBridge, triggering an AWS lambda, with error handling via AWS SQS Dead Letter Queues'>
+  <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/event-driven-architecture/eventbridge-diagram.png assets/images/pages/portfolio/freelance/event-driven-architecture/eventbridge-diagram.png %}" alt='PutEvent posting to EventBridge, triggering an AWS lambda, with error handling via AWS SQS Dead Letter Queues'>
 </div>
 
 The flexible `PutEvent` API allows your existing services to fire events on the event bus.
@@ -41,7 +41,7 @@ workflows simple and allows for more complex rules in the future.
 EventBridge supports the
 [AWS Lambda Asynchronous Invocation API](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html), which
 provides automatic retry and dead-letter queueing upon repeated failure. Layering this behavior in with CloudWatch
-alarms and your existing alerting platform (e.g., [Datadog](/portfolio/freelance/2020/datadog-integration) or PagerDuty)
+alarms and your existing alerting platform (e.g., [Datadog](/portfolio/freelance/datadog-integration) or PagerDuty)
 informs your engineers about problems processing events.
 
 ## Concrete Example
@@ -83,7 +83,7 @@ with the monolith wouldn't know (or care!) about the changes.
 
 In addition to responding to manually triggered events (e.g., via `PutEvent`), you can accelerate your team's transition
 to an event-driven architecture by auto-generating events. Learn more about how
-[Serverless Postgres Change Data Capture](/portfolio/freelance/2020/serverless-postgres-change-data-capture)
+[Serverless Postgres Change Data Capture](/portfolio/freelance/serverless-postgres-change-data-capture)
 significantly accelerated one of my client's adoption of an event-driven architecture.
 
 ## More Complex Targets

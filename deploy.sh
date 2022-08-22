@@ -19,6 +19,7 @@ cd _site || exit
 create_redirect() {
   local old_path="$1"
   local redirect_location="$2"
+  printf "redirecting %s to %s", "$old_path", "$redirect_location"
 
   aws s3api put-object \
     --bucket $BUCKET \
@@ -31,3 +32,9 @@ create_redirect() {
 
 create_redirect "consulting/index.html" "/freelance"
 create_redirect "consulting/contact/index.html" "/freelance/contact"
+
+create_redirect "portfolio/freelance/2020/automated-front-end-content-preview/index.html" "/portfolio/freelance/automated-front-end-content-preview"
+create_redirect "portfolio/freelance/2020/event-driven-architecture/index.html" "/portfolio/freelance/event-driven-architecture"
+create_redirect "portfolio/freelance/2020/serverless-postgres-change-data-capture/index.html" "/portfolio/freelance/serverless-postgres-change-data-capture"
+create_redirect "portfolio/freelance/2020/datadog-integration/index.html" "/portfolio/freelance/datadog-integration"
+create_redirect "portfolio/freelance/2021/browser-extension-automated-release-platform/index.html" "/porfolio/freelance/browser-extension-automated-release-platform"

@@ -15,7 +15,7 @@ In 2020, I handled contract negotiation, initial deployment, and ongoing setup a
 client.
 
 <div class='center mt-5 mb-5'>
-  <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/2020/datadog-logo.svg assets/images/pages/portfolio/freelance/2020/datadog-logo.svg %}" style='max-width: 40%' alt='Datadog logo'>
+  <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/datadog-integration/datadog-logo.svg assets/images/pages/portfolio/freelance/datadog-integration/datadog-logo.svg %}" style='max-width: 40%' alt='Datadog logo'>
 </div>
 
 ## Contract Negotiation
