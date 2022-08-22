@@ -19,6 +19,7 @@ cd _site || exit
 create_redirect() {
   local old_path="$1"
   local redirect_location="$2"
+  printf "redirecting %s to %s", "$old_path", "$redirect_location"
 
   aws s3api put-object \
     --bucket $BUCKET \
