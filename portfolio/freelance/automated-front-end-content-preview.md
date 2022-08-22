@@ -30,14 +30,14 @@ When an engineer opens a Pull Request, a [GitHub Action](https://github.com/feat
    `s3://bucket-name/content-preview/feature-my-branch`).
 
     <div class="center mb-2">
-      <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/2020/content-preview/pr-upload.png assets/images/pages/portfolio/freelance/2020/content-preview/pr-upload.png %}" alt='diagram describing the steps outlined above'>
+      <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/content-preview/pr-upload.png assets/images/pages/portfolio/freelance/content-preview/pr-upload.png %}" alt='diagram describing the steps outlined above'>
     </div>
 
 1. A bot user posts back to the PR with a URL to view the preview. You can learn more about how this bot user works [on
    my blog]({% post_url 2021-12-20-create-or-update-pr-comment %}).
 
   <div class="center mb-4">
-    <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/2020/content-preview/bot-pr-postback.png assets/images/pages/portfolio/freelance/2020/content-preview/bot-pr-postback.png %}" alt='a bot user posting the URL to view the content preview to the GitHub pull request comment feed'>
+    <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/content-preview/bot-pr-postback.png assets/images/pages/portfolio/freelance/content-preview/bot-pr-postback.png %}" alt='a bot user posting the URL to view the content preview to the GitHub pull request comment feed'>
   </div>
 
 Then, when the user visits the preview URL (e.g., `https://feature-my-branch.client.com`):
@@ -48,7 +48,7 @@ Then, when the user visits the preview URL (e.g., `https://feature-my-branch.cli
    S3. The requester is served the assets produced and uploaded by the GitHub action described above.
 
   <div class="center mb-2">
-    <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/2020/content-preview/request-diagram.png assets/images/pages/portfolio/freelance/2020/content-preview/request-diagram.png %}" alt='diagram describing the request steps outlined above'>
+    <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/content-preview/request-diagram.png assets/images/pages/portfolio/freelance/content-preview/request-diagram.png %}" alt='diagram describing the request steps outlined above'>
   </div>
 
 This simple, cost-effective solution significantly improved developers confidence to review and approve changes. Easily

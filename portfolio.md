@@ -16,14 +16,14 @@ is_about: true
 
 - Automated Database Migration Framework
 - AWS Cloud Development Kit (aws-cdk) Deployment Pipelines
-- [Browser Extension Automated Release Platform](/portfolio/freelance/2021/browser-extension-automated-release-platform)
+- [Browser Extension Automated Release Platform](/portfolio/freelance/browser-extension-automated-release-platform)
 - Front End Application Continuous Deployment Pipelines
 - Reusable CircleCI Orbs
 
 ### Testing
 
 - Automated Acceptance Testing via Playwright
-- [Automated Front End Content Preview](/portfolio/freelance/2020/automated-front-end-content-preview)
+- [Automated Front End Content Preview](/portfolio/freelance/automated-front-end-content-preview)
 - CircleCI Jest Performance Optimization
 - Front End Application Test Suite Migration, and Usability Improvements
 - Production-like QA Environment from Sanitized Production Data
@@ -31,16 +31,16 @@ is_about: true
 ### System Architecture
 
 - Cost-Effective Salesforce Data Synchronization
-- [Event-Driven Architecture Implementation via AWS EventBridge](/portfolio/freelance/2020/event-driven-architecture)
+- [Event-Driven Architecture Implementation via AWS EventBridge](/portfolio/freelance/event-driven-architecture)
 - Multi-Tenant App Infrastructure Design and Deployment
 - PDF Content Extraction and Indexing
-- [Serverless Postgres Change Data Capture](/portfolio/freelance/2020/serverless-postgres-change-data-capture)
+- [Serverless Postgres Change Data Capture](/portfolio/freelance/serverless-postgres-change-data-capture)
 
 ### Security and Operations
 
 - AWS IAM User Automation and Scope Reduction
 - Database Diaster Recovery Preparation
-- [Datadog Integration](/portfolio/freelance/2020/datadog-integration)
+- [Datadog Integration](/portfolio/freelance/datadog-integration)
 - Organizational Security Posture Audit and Recommendations
 
 ### Client-Side Applications

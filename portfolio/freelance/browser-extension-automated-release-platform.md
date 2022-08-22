@@ -60,7 +60,7 @@ branch for preview releases.
 Then, the script asks which tested preview version should be promoted to the release for production releases.
 
 <div class='center mt-4 mb-4'>
-   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/2021/browser-extension-automated-release-platform/release-script.png assets/images/portfolio/freelance/2021/browser-extension-automated-release-platform/release-script.png %}" alt="console screenshot creating a new production release from preview tags" />
+   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/browser-extension-automated-release-platform/release-script.png assets/images/portfolio/freelance/browser-extension-automated-release-platform/release-script.png %}" alt="console screenshot creating a new production release from preview tags" />
 </div>
 
 This behavior ensures that a well-tested preview version is distributed to end-users.
@@ -73,18 +73,18 @@ release notes are automatically generated and attached to a
 These release notes make it easy for stakeholders to see what changes have gone out with any given release.
 
 <div class='center mt-4 mb-4'>
-   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/2021/browser-extension-automated-release-platform/changelog.png assets/images/portfolio/freelance/2021/browser-extension-automated-release-platform/changelog.png %}" alt="an categorized changelog containing a list of bugfixes and features released with version 3.21.0" />
+   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/browser-extension-automated-release-platform/changelog.png assets/images/portfolio/freelance/browser-extension-automated-release-platform/changelog.png %}" alt="an categorized changelog containing a list of bugfixes and features released with version 3.21.0" />
 </div>
 
 Additionally, each pull request automatically is labeled and commented on when it's included in a release. This way,
 developers know when their changes have been released.
 
 <div class='center mt-4 mb-1'>
-   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/2021/browser-extension-automated-release-platform/release-comment.png assets/images/portfolio/freelance/2021/browser-extension-automated-release-platform/release-comment.png %}" alt="a GitHub pull request comment stating that it was included in a preview (3.21.0-alpha.1) release and a production (3.21.0) release" />
+   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/browser-extension-automated-release-platform/release-comment.png assets/images/portfolio/freelance/browser-extension-automated-release-platform/release-comment.png %}" alt="a GitHub pull request comment stating that it was included in a preview (3.21.0-alpha.1) release and a production (3.21.0) release" />
 </div>
 
 <div class='center mb-4'>
-   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/2021/browser-extension-automated-release-platform/pr-label.png assets/images/portfolio/freelance/2021/browser-extension-automated-release-platform/pr-label.png %}" alt="labels on a GitHub pull request indicating it was released to preview and production" />
+   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/browser-extension-automated-release-platform/pr-label.png assets/images/portfolio/freelance/browser-extension-automated-release-platform/pr-label.png %}" alt="labels on a GitHub pull request indicating it was released to preview and production" />
 </div>
 
 ### Submission to Hosting Providers

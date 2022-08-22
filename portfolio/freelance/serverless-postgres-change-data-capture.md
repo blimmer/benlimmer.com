@@ -12,10 +12,10 @@ monolith-centric ecosystems with a single database, you can accelerate the adopt
 automatically publishing database change events as they occur.
 
 By leveraging [logical replication](https://www.postgresql.org/docs/current/logical-replication.html), AWS Lambda, and
-an [event-driven architecture powered by EventBridge](/portfolio/freelance/2020/event-driven-architecture), we can
+an [event-driven architecture powered by EventBridge](/portfolio/freelance/event-driven-architecture), we can
 automatically produce events with information about changes to our database in near real-time. This approach removes the
 need to manually `PutEvent`s throughout your application code. In
-[my portfolio](/portfolio/freelance/2020/event-driven-architecture), you can learn more about my general approach to
+[my portfolio](/portfolio/freelance/event-driven-architecture), you can learn more about my general approach to
 event-driven architectures.
 
 ## Concrete Example
@@ -179,7 +179,7 @@ afterward.
 ## Case Study
 
 In 2020, I set up this system for a client with a monolithic backend and a new
-[Event-Driven Architecture powered by AWS EventBridge](/portfolio/freelance/2020/event-driven-architecture). As a team
+[Event-Driven Architecture powered by AWS EventBridge](/portfolio/freelance/event-driven-architecture). As a team
 of fewer than ten developers, they wanted to move quickly with a primarily monolithic application while breaking out
 third-party communications to separate Lambda functions.
 
@@ -192,7 +192,7 @@ generator asked questions to create the Infrastructure-as-Code, including an Eve
 lambda, all predefined and configured.
 
 <div class='center mt-4 mb-4'>
-  <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/2020/serverless-postgres-cdc/hygen-create-handler.png assets/images/pages/portfolio/freelance/2020/serverless-postgres-cdc/hygen-create-handler.png %}" alt='A hygen code generator walking the user through creating a new EventBridge target'>
+  <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/serverless-postgres-cdc/hygen-create-handler.png assets/images/pages/portfolio/freelance/serverless-postgres-cdc/hygen-create-handler.png %}" alt='A hygen code generator walking the user through creating a new EventBridge target'>
 </div>
 
 This system allowed this small team to be agile, producing decoupled integration code with minimal overhead or
