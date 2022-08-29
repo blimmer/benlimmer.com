@@ -10,7 +10,7 @@ is_about: true
 
 ### Infrastructure as Code
 
-- AWS Cloud Development Kit (aws-cdk) Implementations, Consulting, and Training
+- [AWS Cloud Development Kit (aws-cdk) Implementations, Consulting, and Training](/portfolio/freelance/aws-cdk-consulting)
 
 ### Continuous Integration, Delivery, and Deployment
 
