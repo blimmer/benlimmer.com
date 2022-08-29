@@ -22,6 +22,9 @@
         <li class="nav-item {% if current[1] == 'freelance' %} active {% endif %}">
           <a class="nav-link" href="/freelance">FREELANCE</a>
         </li>
+        <li class="nav-item {% if current[1] == 'portfolio' or page.is_portfolio %} active {% endif %}">
+          <a class="nav-link" href="/portfolio">PORTFOLIO</a>
+        </li>
         <li class="nav-item {% if current[1] == 'archive' or page.is_post %}active{% endif %}">
           <a class="nav-link" href="/archive">BLOG</a>
         </li>
@@ -40,7 +43,6 @@
           <div class="dropdown-menu" aria-labelledby="about-dropdown">
             <a class="dropdown-item" href="/about">About Me</a>
             <a class="dropdown-item" href="/experience">Experience &amp; Education</a>
-            <a class="dropdown-item" href="/portfolio">Portfolio</a>
           </div>
         </li>
       </ul>

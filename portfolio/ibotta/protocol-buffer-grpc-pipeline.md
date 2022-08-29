@@ -2,7 +2,6 @@
 layout: page
 title: Protocol Buffers/gRPC Artifact Pipeline
 description: "A description of Ben Limmer's role building a scaleable Protocol Buffers (protobuf) and GRPC pipeline"
-is_about: true
 ---
 
 Ibotta uses gRPC and Protocol Buffers to rapidly innovate in a microservice-driven environment. gRPC provides low-latency, bi-directional binary streaming via HTTP/2. gRPC also relies on reusable, validateable, language-agnostic Protocol Buffers messages.

@@ -2,7 +2,6 @@
 layout: page
 title: Partner Portal
 description: "A description of Ben Limmer's role building Ibotta.com."
-is_about: true
 ---
 
 When I was first hired at Ibotta, the main web presence was a simple marketing-focused webpage. Our mission was to develop an webapp that allowed using many of the same feature available in the native mobile apps on the web.

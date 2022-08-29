@@ -2,7 +2,6 @@
 layout: page
 title: Microservice Scorecard Generator
 description: "A description of Ben Limmer's role building the microservice scorecard generator at Ibotta"
-is_about: true
 ---
 
 In just twelve short months, the Technology department at Ibotta grew by over _100 people_. Along with this growth, we started breaking down our monolithic Ruby on Rails application into a series of microservices, which caused a rapid increase in the number of GitHub projects, languages and frameworks squads use.

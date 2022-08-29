@@ -4,7 +4,6 @@ title: Datadog Integration
 description:
   "Ben Limmer is a freelance engineer who can help you negotiate and deploy Datadog for your organization. Learn more
   and contact me today!"
-is_about: true
 ---
 
 [Datadog](https://datadoghq.com) is one of my favorite observability platforms. They offer a multitude of

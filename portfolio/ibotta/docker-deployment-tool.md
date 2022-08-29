@@ -2,7 +2,6 @@
 layout: page
 title: Docker-Driven Deployment Tool
 description: "A description of Ben Limmer's role building a docker-driven deployment tool for Ibotta's Ruby on Rails monolithic application."
-is_about: true
 ---
 
 At Ibotta, the transition from a monolithic Ruby on Rails application to microservices began back in 2018. All new features wer written as microservices, with legacy code remaining on the monolithic app. Even with new services being created in the microservice ecosystem, the monolith application still served about 2,000 requests per minute and was **critical** to the end-user experience. Deployment failures could cause downtime for Ibotta's users, which negatively impacts every business metric for each second the application doesn't work.

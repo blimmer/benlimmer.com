@@ -2,7 +2,6 @@
 layout: page
 title: Digital Payments Solutions Architect
 description: "A description of Ben Limmer's role building the Pay with Ibotta product."
-is_about: true
 ---
 
 From January 2019 to January 2020, I was the Solutions Architect for Ibotta's Payments team. This team consisted of 30+

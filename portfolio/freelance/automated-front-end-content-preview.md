@@ -4,7 +4,6 @@ title: Automated Front End Content Preview
 description:
   "Ben Limmer is a freelance engineer who can help accelerate your frontend engineering teams by deploying an automated
   content preview solution. Learn more and contact me today!"
-is_about: true
 ---
 
 Some of the most productive front-end engineering teams utilize a

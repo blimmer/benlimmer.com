@@ -2,7 +2,6 @@
 layout: page
 title: AWS Cost Optimization
 description: "A description of Ben Limmer's role managing AWS spend at Ibotta."
-is_about: true
 ---
 
 As a cloud-native technology company, Ibotta spent millions of dollars every year on the Amazon Web Services (AWS) ecosystem. Because AWS was such a large cost-center for the technology department, cost optimization was always top-of-mind.

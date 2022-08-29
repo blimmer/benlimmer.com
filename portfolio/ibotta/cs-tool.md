@@ -2,7 +2,6 @@
 layout: page
 title: Customer Support Internal Tool
 description: "A description of Ben Limmer's role building a internal-facing Customer Support tool."
-is_about: true
 ---
 
 Ibotta's core functionality was initially centered around submitting an image of a receipt after a user went shopping. We'd attempt to run [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition), and match products on the receipt to offers unlocked in the app.

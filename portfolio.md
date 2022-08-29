@@ -3,7 +3,6 @@ layout: page
 title: Portfolio
 header: Portfolio
 description: "A showcase of Ben Limmer's work."
-is_about: true
 ---
 
 <h2 class="anchor-fix" id="freelance">Freelance (2020&ndash;Present)</h2>

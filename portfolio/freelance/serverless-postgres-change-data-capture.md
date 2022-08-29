@@ -4,7 +4,6 @@ title: Serverless Postgres Change Data Capture
 description:
   "Accelerate your transition to an event-driven architecture by automatically publishing events when changes occur in
   your database."
-is_about: true
 ---
 
 Adopting an event-driven architecture can be a formidable paradigm shift for your developers. However, especially in

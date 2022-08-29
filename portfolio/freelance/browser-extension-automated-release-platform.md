@@ -4,7 +4,6 @@ title: Browser Extension Automated Release Platform
 description:
   "Accelerate your browser extension engineering teams by building an automated release platform for the Chrome
   WebStore, Mozilla Add-On Hub and more."
-is_about: true
 ---
 
 Browser Extensions are great tools but can be painful to build and deploy across the various hosting providers, like the

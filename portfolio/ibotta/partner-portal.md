@@ -2,7 +2,6 @@
 layout: page
 title: Partner Portal
 description: "A description of Ben Limmer's role building a client-facing Partner Portal to automate repetitive Account Management tasks."
-is_about: true
 ---
 
 Ibotta's Account Management team wanted to surprise and delight our clients by providing a self-service portal to manage their campaigns. By enabling clients to access data about their campaign in near real-time, whenever and wherever they wanted to, Ibotta provided a best-in-class product.

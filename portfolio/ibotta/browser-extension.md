@@ -2,7 +2,6 @@
 layout: page
 title: Pay with Ibotta Browser Extension
 description: "A description of Ben Limmer's role building the Pay with Ibotta browser extension."
-is_about: true
 ---
 
 Ibotta's mission is to "Make Every Purchase Rewarding." So, to enable use of Pay with Ibotta on the desktop, we built the [Pay with Ibotta Browser extension](https://chrome.google.com/webstore/detail/ibotta-browser-extension/mfaedmjlefifhnhpgipjjiiekchaimpk). With the product, a user receives cash-back on their entire purchase by Paying with Ibotta without ever leaving the retailer's webpage.
