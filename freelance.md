@@ -2,9 +2,6 @@
 layout: page
 title: Freelance Services
 header: Freelance Services
-description:
-  Ben Limmer is a freelance architect specializing in Developer Tools & Experience, Cloud Computing, Front-End and
-  Back-End Development, AWS Cloud Development Kit (aws-cdk) and speaking engagements.
 ---
 
 I'm a software engineer and architect with 10+ years of [experience](/portfolio) working throughout the tech stack. I
