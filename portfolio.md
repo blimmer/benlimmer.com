@@ -13,7 +13,7 @@ description: "A showcase of Ben Limmer's work."
 
 ### Continuous Integration, Delivery, and Deployment
 
-- Automated Database Migration Framework
+- [Continuous Deployment Database Migrations](/portfolio/freelance/continuous-deployment-database-migrations)
 - AWS Cloud Development Kit (aws-cdk) Deployment Pipelines
 - [Browser Extension Automated Release Platform](/portfolio/freelance/browser-extension-automated-release-platform)
 - Front End Application Continuous Deployment Pipelines
