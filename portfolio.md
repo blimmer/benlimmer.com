@@ -41,11 +41,13 @@ description: "A showcase of Ben Limmer's work."
 - Database Diaster Recovery Preparation
 - [Datadog Integration](/portfolio/freelance/datadog-integration)
 - Organizational Security Posture Audit and Recommendations
+- Third-Party SaaS Cost Optimizations (AWS, CircleCI, Chromatic, Datadog)
 
 ### Client-Side Applications
 
 - Browser Extension Multi-Browser WebExtension Support
 - Front End Application Performance Optimization
+- Vue CLI to Nuxt Transition
 
 ### Talks and Education
 
