@@ -42,6 +42,7 @@ description: "A showcase of Ben Limmer's work."
 - [Datadog Integration](/portfolio/freelance/datadog-integration)
 - Organizational Security Posture Audit and Recommendations
 - Third-Party SaaS Cost Optimizations (AWS, CircleCI, Chromatic, Datadog)
+- Secure an Internet Accessible Bastion via AWS Systems Manager
 
 ### Client-Side Applications
 
