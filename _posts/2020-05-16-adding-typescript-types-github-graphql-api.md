@@ -58,13 +58,14 @@ npx graphql-codegen init
 ```
 
 ```
-? What type of application are you building? (Press <space> to select, <a> to toggle all, <i> to invert
- selection)
- ❯◉ Backend - API or server
- ◯ Application built with Angular
- ◯ Application built with React
- ◯ Application built with Stencil
- ◯ Application built with other framework or vanilla JS
+? What type of application are you building? (Use arrow keys)
+❯ Backend - API or server
+  Application built with Angular
+  Application built with React
+  Application built with Stencil
+  Application built with Vue
+  Application using graphql-request
+  Application built with other framework or vanilla JS
 ```
 
 Select the type of app you're building. For this tutorial, we'll demo a `Backend - API or server`. Highlight "Backend -
@@ -119,7 +120,7 @@ This will create an entry in the `package.json` `scripts` object. I like to use 
 enter.
 
 ```
-Config file generated at codegen.yml
+Config file generated at codegen.ts
 
   $ npm install
 
@@ -136,7 +137,7 @@ Great, we're all done with the wizard. Install all the plugins the wizard wrote 
 npm install
 ```
 
-Our last setup step is to write the `src/generated/github-schema-loader.ts` file we referenced earlier. Create a file at
+Now, write the `src/generated/github-schema-loader.ts` file we referenced earlier. Create a file at
 `src/generated/github-schema-loader.ts` and paste the following code:
 
 ```ts
@@ -223,19 +224,33 @@ mutations in their own folders, so create a directory for each:
 mkdir -p src/mutations src/queries
 ```
 
-And reference those directories in your `codegen.yml` file:
+And reference those directories in your `codegen.ts` file:
 
-```yaml
-documents:
-  - src/queries/*.graphql
-  - src/mutations/*.graphql
+```ts
+// codegen.ts
+import type { CodegenConfig } from "@graphql-codegen/cli";
+
+const config: CodegenConfig = {
+  overwrite: true,
+  schema: "src/generated/github-schema-loader.ts",
+  // Add this line
+  documents: ["src/mutations/*.graphql", "src/queries/*.graphql"],
+  generates: {
+    "src/generated/graphql.ts": {
+      plugins: ["typescript", "typescript-resolvers", "typescript-document-nodes"],
+    },
+  },
+  require: ["ts-node/register"],
+};
+
+export default config;
 ```
 
-For the next steps, you'll also need a Github Personal Access token with `repo` scope. If you don't already have one,
-create one in your [settings](https://github.com/settings/tokens). For help doing this, check out this
+For the next steps, you'll also need a Classic Github Personal Access token with `repo` scope. If you don't already have
+one, create one in your [settings](https://github.com/settings/tokens). For help doing this, check out this
 [Github support page](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
 
-### Install Apollo
+### Create an Apollo Client
 
 For this demo, I'll use [Apollo](https://github.com/apollographql/apollo-client) as my GraphQL client. Install Apollo
 and its dependencies:
@@ -271,7 +286,7 @@ export function githubClient(): ApolloClient<NormalizedCacheObject> {
 ```
 
 Don't worry about understanding this code if it's unfamiliar. All it's doing is setting up a GraphQL client to use when
-communicating with the Github GraphQL API.
+communicating with the Github GraphQL API. You can use any other network client you like.
 
 ### GraphQL Codegen Typescript Operations
 
@@ -283,16 +298,19 @@ to generate Typescript classes from our `.graphql` files.
 npm install --save-dev @graphql-codegen/typescript-operations
 ```
 
-and reference it in your `codegen.yml` file under the `plugins` list.
+and reference it in your `codegen.ts` file under the `plugins` list.
 
-```yaml
-generates:
-  src/generated/graphql.ts:
-    plugins:
-      - "typescript"
-      - "typescript-resolvers"
-      - "typescript-document-nodes"
-      - "typescript-operations" # add this
+```ts
+generates: {
+  "src/generated/graphql.ts": {
+    plugins: [
+      "typescript",
+      "typescript-resolvers",
+      "typescript-document-nodes",
+      "typescript-operations", // Add this line
+    ],
+  },
+},
 ```
 
 ### Writing A Query
@@ -333,7 +351,7 @@ async function main() {
   console.info(`Your github username is ${username}`);
 }
 
-main();
+main().catch((e) => console.error(e));
 ```
 
 By providing the `<WhoAmIQuery>` type, Typescript now understands the object that will be returned from the query. We
@@ -421,7 +439,7 @@ async function main() {
   await starRepo(benLimmerDotComRepoId);
 }
 
-main();
+main().catch((e) => console.error(e));
 ```
 
 Note that we've added the `starRepo` method that calls our new mutation. By passing
@@ -537,7 +555,7 @@ async function main() {
   await starRepo(benLimmerDotComRepoId);
 }
 
-main();
+main().catch((e) => console.error(e));
 ```
 
 Note that we're now calling `getBenLimmerDotComRepoId()` instead of hard-coding the value. Typescript is also helping us
