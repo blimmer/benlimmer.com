@@ -105,10 +105,10 @@ For this demo, we won't need an [introspection file](https://graphql.org/learn/i
 enter.
 
 ```
-? How to name the config file? (codegen.yml)
+? How to name the config file? (codegen.ts)
 ```
 
-Naming the `graphql-codegen` configuration file `codegen.yml` (the default indicated above) is fine with me. Press enter
+Naming the `graphql-codegen` configuration file `codegen.ts` (the default indicated above) is fine with me. Press enter
 to continue.
 
 ```
@@ -140,30 +140,33 @@ Our last setup step is to write the `src/generated/github-schema-loader.ts` file
 `src/generated/github-schema-loader.ts` and paste the following code:
 
 ```ts
-import { schema } from '@octokit/graphql-schema'
+import { schema } from "@octokit/graphql-schema";
 export default schema.json;
 ```
 
 This will load the schema up from the package published by Github,
 [`@octokit/graphql-schema`](https://github.com/octokit/graphql-schema).
 
-Finally, you'll need to add `ts-node/register` to your `codegen.yml` file so the `github-schema-loader.ts` can be
+Finally, you'll need to add `ts-node/register` to your `codegen.ts` file so the `github-schema-loader.ts` can be
 transpiled. The file should look like this:
 
-```yml
-# codegen.yml
-overwrite: true
-schema: "src/generated/github-schema-loader.ts"
-documents: null
-generates:
-  src/generated/graphql.ts:
-    plugins:
-      - "typescript"
-      - "typescript-resolvers"
-      - "typescript-document-nodes"
-# Add this block
-require:
-  - ts-node/register
+```ts
+// codegen.ts
+import type { CodegenConfig } from "@graphql-codegen/cli";
+
+const config: CodegenConfig = {
+  overwrite: true,
+  schema: "src/generated/github-schema-loader.ts",
+  generates: {
+    "src/generated/graphql.ts": {
+      plugins: ["typescript", "typescript-resolvers", "typescript-document-nodes"],
+    },
+  },
+  // Add this line
+  require: ["ts-node/register"],
+};
+
+export default config;
 ```
 
 Now, run your first codegen!
@@ -171,7 +174,7 @@ Now, run your first codegen!
 ```bash
 npm run codegen
 > my-typescript-project@1.0.0 codegen /private/tmp/my-typescript-project
-> graphql-codegen --config codegen.yml
+> graphql-codegen --config codegen.ts
 
   ✔ Parse configuration
   ✔ Generate outputs
@@ -245,7 +248,7 @@ Now, we'll write some boilerplate code to generate a GraphQL client. Create `src
 
 ```ts
 import { ApolloClient, HttpLink, InMemoryCache, NormalizedCacheObject } from "@apollo/client/core";
-import fetch from 'cross-fetch';
+import fetch from "cross-fetch";
 
 export function githubClient(): ApolloClient<NormalizedCacheObject> {
   if (!process.env.GITHUB_TOKEN) {
@@ -260,7 +263,7 @@ export function githubClient(): ApolloClient<NormalizedCacheObject> {
       headers: {
         authorization: `token ${process.env.GITHUB_TOKEN}`,
       },
-      fetch
+      fetch,
     }),
     cache: new InMemoryCache(),
   });
