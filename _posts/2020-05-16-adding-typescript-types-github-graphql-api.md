@@ -8,6 +8,7 @@ tags:
 description:
   "A tutorial to generate Typescript types for Github GraphQL API v4 using graphql-codegen. Complete with example code
   and repository."
+pinned: true
 ---
 
 [Github's GraphQL API](https://developer.github.com/v4/) is powerful, especially for implementing

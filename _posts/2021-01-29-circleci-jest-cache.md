@@ -9,6 +9,7 @@ tags:
   - cache
 description:
   "How to use the jest cache to speed up jest tests on CircleCI. Save and restore jest cache in your CircleCI jobs."
+pinned: true
 ---
 
 [Jest](https://jestjs.io/) is a great testing framework. Jest utilizes a cache to speed up subsequent test runs. I was
