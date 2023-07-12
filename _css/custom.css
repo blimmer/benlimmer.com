@@ -80,6 +80,7 @@ code {
 
 .posts .post-date {
   display: inline-block;
+  text-align: center;
   width: 7.3rem;
 }
 
