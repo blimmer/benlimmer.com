@@ -6,6 +6,8 @@ description:
   managed services like AWS EventBridge."
 ---
 
+{% include tldr.html content='Let me pave the road for your event-driven architecture using the simple, scalable <a href="https://aws.amazon.com/eventbridge/">AWS EventBridge</a> service.' %}
+
 Event-driven architectures are becoming increasingly popular, especially as more organizations move to loosely coupled
 architectures (e.g., microservices).
 [ThoughtWorks Decoder](https://www.thoughtworks.com/insights/decoder/e/event-driven-architecture) has an excellent
@@ -82,8 +84,8 @@ with the monolith wouldn't know (or care!) about the changes.
 
 In addition to responding to manually triggered events (e.g., via `PutEvent`), you can accelerate your team's transition
 to an event-driven architecture by auto-generating events. Learn more about how
-[Serverless Postgres Change Data Capture](/portfolio/freelance/serverless-postgres-change-data-capture)
-significantly accelerated one of my client's adoption of an event-driven architecture.
+[Serverless Postgres Change Data Capture](/portfolio/freelance/serverless-postgres-change-data-capture) significantly
+accelerated one of my client's adoption of an event-driven architecture.
 
 ## More Complex Targets
 

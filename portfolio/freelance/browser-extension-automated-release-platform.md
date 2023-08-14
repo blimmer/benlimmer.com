@@ -6,6 +6,8 @@ description:
   WebStore, Mozilla Add-On Hub and more."
 ---
 
+{% include tldr.html content='Creating an automated release pipeline <b>reduced time to release by over 90%</b>, improved reliability, and democratized deployment.' %}
+
 Browser Extensions are great tools but can be painful to build and deploy across the various hosting providers, like the
 [Google Chrome Webstore](https://chrome.google.com/webstore/category/extensions),
 [Firefox Add-On Hub](https://addons.mozilla.org/en-US/firefox/),

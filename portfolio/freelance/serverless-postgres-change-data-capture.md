@@ -6,6 +6,8 @@ description:
   your database."
 ---
 
+{% include tldr.html content='Rapidly increase adoption of an event-driven architecture by auto-publishing events when database changes occur.' %}
+
 Adopting an event-driven architecture can be a formidable paradigm shift for your developers. However, especially in
 monolith-centric ecosystems with a single database, you can accelerate the adoption of event-driven architecture by
 automatically publishing database change events as they occur.
@@ -178,8 +180,8 @@ afterward.
 ## Case Study
 
 In 2020, I set up this system for a client with a monolithic backend and a new
-[Event-Driven Architecture powered by AWS EventBridge](/portfolio/freelance/event-driven-architecture). As a team
-of fewer than ten developers, they wanted to move quickly with a primarily monolithic application while breaking out
+[Event-Driven Architecture powered by AWS EventBridge](/portfolio/freelance/event-driven-architecture). As a team of
+fewer than ten developers, they wanted to move quickly with a primarily monolithic application while breaking out
 third-party communications to separate Lambda functions.
 
 By leveraging these automatically-generated database events, they quickly created several microservices communicating
