@@ -7,12 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Deep Clone
-        if: ${{ github.ref == 'refs/heads/main' }}
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          # deep clone on the `main` branch, so we can properly generated Last Modified metadata for posts based on
+          # git commit history (via `jekyll-last-modified-at` gem)
+          fetch-depth: ${{ github.ref == 'refs/heads/main' && 0 || 1 }}
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
