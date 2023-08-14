@@ -12,7 +12,7 @@ jobs:
         with:
           # deep clone on the `main` branch, so we can properly generated Last Modified metadata for posts based on
           # git commit history (via `jekyll-last-modified-at` gem)
-          fetch-depth: ${{ github.ref == 'refs/heads/main' && 0 || 1 }}
+          fetch-depth: ${{ github.ref == 'refs/heads/main' && '0' || '1' }}
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
