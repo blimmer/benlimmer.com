@@ -6,6 +6,8 @@ description:
   and contact me today!"
 ---
 
+{% include tldr.html content='I\'m an expert at integrating Datadog, contract negotiation, deployment, and employee training.' %}
+
 [Datadog](https://datadoghq.com) is one of my favorite observability platforms. They offer a multitude of
 [products](https://www.datadoghq.com/product/), including APM, metrics, error tracking, log ingestion, and more. In
 addition, their suite of products continues to grow, replacing the need for a multitude of observability tools.

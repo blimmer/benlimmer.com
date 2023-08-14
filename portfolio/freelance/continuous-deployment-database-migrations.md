@@ -5,6 +5,8 @@ description:
   "Stabilize and democratize deployments by automating database migrations in your continuous deployment pipeline."
 ---
 
+{% include tldr.html content='Democratized application deployment by automating database migrations in a continuous delivery pipeline.' %}
+
 Database migrations often stand in the way of fully automating your deployment pipeline. Many teams treat database
 migrations as a separate, manual (and often error-prone) step.
 

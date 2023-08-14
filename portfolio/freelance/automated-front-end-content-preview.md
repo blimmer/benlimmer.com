@@ -6,6 +6,8 @@ description:
   content preview solution. Learn more and contact me today!"
 ---
 
+{% include tldr.html content='Reduce cycle time by automatically deploying "preview" single-page applications for every front-end pull request.' %}
+
 Some of the most productive front-end engineering teams utilize a
 [Continuous Deployment (CD)](https://en.wikipedia.org/wiki/Continuous_deployment) process to automatically deploy code
 changes once approved and merged to their `main` branch.

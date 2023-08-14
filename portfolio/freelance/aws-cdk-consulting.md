@@ -5,6 +5,9 @@ description:
   "Ben Limmer is an expert in the AWS Cloud Development Kit community and provides AWS CDK consulting services."
 ---
 
+{% include tldr.html content='I\'m an expert in the <a href="https://aws.amazon.com/cdk/">AWS CDK</a> ecosystem, with a breadth
+of experience working with new and existing applications.' %}
+
 Infrastructure as Code (IaC) tools aren't new, having appeared on
 the [ThoughtWorks Radar as early as 2011](https://www.thoughtworks.com/radar/techniques/infrastructure-as-code).
 However, [AWS Cloud Development Kit (aws-cdk)](https://aws.amazon.com/cdk/) represents a significant upgrade to existing
