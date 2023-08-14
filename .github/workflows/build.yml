@@ -7,31 +7,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Deep Clone
         if: ${{ github.ref == 'refs/heads/main' }}
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: .ruby-version
-      - uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: bundle-use-ruby-ubuntu-${{ hashFiles('.ruby-version') }}-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            bundle-use-ruby-ubuntu-${{ hashFiles('.ruby-version') }}-
-      - name: bundle install
-        run: |
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
+          bundler-cache: true
       - name: Build site
         run: JEKYLL_ENV=production bundle exec jekyll build
       - name: Configure AWS Credentials
         if: ${{ github.ref == 'refs/heads/main' }}
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
