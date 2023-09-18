@@ -28,7 +28,7 @@ Detected that you have 8 CPU core(s)
 Running with 7 threads to speed up the build
 ```
 
-Luckily, you can work around this issue by caching the NVM.
+Luckily, you can work around this issue by caching the Node tarball.
 
 ## Caching NVM
 
