@@ -1,0 +1,77 @@
+---
+layout: post
+title: Cache NVM Install on CircleCI
+tags:
+  - circleci
+description: "Avoid nvm install errors and improve build times by caching nvm install on CircleCI."
+---
+
+## The Problem
+
+Lately, Node downloads via [`nvm`](https://github.com/nvm-sh/nvm) have been failing on CircleCI. There have been
+[several issues opened on their GitHub repo](https://github.com/nodejs/nodejs.org/issues/5149) that have since been
+closed and locked. However, the issue still persists.
+
+The failure looks something like this:
+
+```
+Found '/home/circleci/project/.nvmrc' with version <v18.13.0>
+Downloading and installing node v18.13.0...
+Downloading https://nodejs.org/dist/v18.13.0/node-v18.13.0-linux-arm64.tar.xz...
+###                                                                        4.8%curl: (92) HTTP/2 stream 0 was not closed cleanly: INTERNAL_ERROR (err 2)
+
+Binary download from https://nodejs.org/dist/v18.13.0/node-v18.13.0-linux-arm64.tar.xz failed, trying source.
+grep: /opt/circleci/.nvm/.cache/bin/node-v18.13.0-linux-arm64/node-v18.13.0-linux-arm64.tar.xz: No such file or directory
+Provided file to checksum does not exist.
+Binary download failed, trying source.
+Detected that you have 8 CPU core(s)
+Running with 7 threads to speed up the build
+```
+
+Luckily, you can work around this issue by caching the NVM.
+
+## Caching NVM
+
+To cache the `nvm` resources, utilize the
+[`restore_cache`](https://circleci.com/docs/configuration-reference/#restorecache) and
+[`save_cache`](https://circleci.com/docs/configuration-reference/#savecache) steps in your CircleCI config.
+
+This is an example of caching the `nvm` resources for the `ubuntu-2204:2023.02.1` arm executor:
+
+{% raw %}
+
+```yaml
+- restore_cache:
+    name: Restore nvm cache
+    keys:
+      # Invalidate the cache based on architecture, the version of Node defined in `nvmrc` and the branch name
+      - v1-nvm-cache-{{ arch }}-{{ checksum ".nvmrc" }}-{{ .Branch }}
+      # Fall back to the latest cache if no exact match is found
+      - v1-nvm-cache-{{ arch }}-{{ checksum ".nvmrc" }}-
+- run: nvm install
+- save_cache:
+    name: Save nvm cache
+    key: v1-nvm-cache-{{ arch }}-{{ checksum ".nvmrc" }}-{{ .Branch }}
+    paths:
+      - /opt/circleci/.nvm/.cache
+```
+
+{% endraw %}
+
+With a warm cache, you'll see the `nvm install` step using the cached tarball:
+
+```
+Found '/home/circleci/project/.nvmrc' with version <v18.13.0>
+Downloading and installing node v18.13.0...
+Local cache found: ${NVM_DIR}/.cache/bin/node-v18.13.0-linux-arm64/node-v18.13.0-linux-arm64.tar.xz
+Checksums match! Using existing downloaded archive ${NVM_DIR}/.cache/bin/node-v18.13.0-linux-arm64/node-v18.13.0-linux-arm64.tar.xz
+Now using node v18.13.0 (npm v8.19.3)
+```
+
+This significantly speeds up your build process, reduces traffic on the `npmjs.org` servers, and avoids transient 500
+errors.
+
+NOTE: You only need to run an `nvm install` process on
+[machine executors](https://circleci.com/docs/executor-intro/#linux-vm). If you can manage, prefer using a
+[docker executor](https://circleci.com/docs/executor-intro/#docker) with a Node image (e.g.,
+[`cimg/node`](https://circleci.com/developer/images/image/cimg/node)).
