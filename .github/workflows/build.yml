@@ -11,7 +11,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           # deep clone on the `main` branch, so we can properly generated Last Modified metadata for posts based on
           # git commit history (via `jekyll-last-modified-at` gem)
@@ -25,7 +25,7 @@ jobs:
         run: JEKYLL_ENV=production bundle exec jekyll build
       - name: Configure AWS Credentials
         if: ${{ github.ref == 'refs/heads/main' }}
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::107111673154:role/benlimmer.com-deploy
           aws-region: us-east-1
@@ -33,5 +33,5 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           export GOPATH=~/go
-          go install github.com/bep/s3deploy/v2@v2.7.0
+          go install github.com/bep/s3deploy/v2@v2.11.0
           ./deploy.sh
