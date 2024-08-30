@@ -3,7 +3,7 @@ layout: post
 title: Migrating AWS Batch from Launch Configurations to Launch Templates
 tags:
   - aws-batch
-description: "TODO"
+description: "How to migrate AWS Batch Compute Environments from Launch Configurations to Launch Templates."
 ---
 
 {% include tldr.html content='If you created an AWS Batch Compute Environment using the <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html"><code>BEST_FIT</code> Allocation Strategy</a> before April 2024, it will use Launch Configurations. Recreate the Compute Environment to upgrade to Launch Templates.' %}
