@@ -47,6 +47,17 @@ code {
   color: inherit;
 }
 
+blockquote {
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border-left: 4px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+blockquote p:last-of-type {
+  margin: 0;
+}
+
 .page-content {
   min-height: 500px;
 }
