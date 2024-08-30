@@ -6,7 +6,7 @@ tags:
 description: "TODO"
 ---
 
-{% include tldr.html content='If you created an AWS Batch Compute Environment using the <code>BEST_FIT</code> Allocation Strategy before April 2024, it will use Launch Configurations. Recreate the Compute Environment to upgrade to Launch Templates.' %}
+{% include tldr.html content='If you created an AWS Batch Compute Environment using the <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html"><code>BEST_FIT</code> Allocation Strategy</a> before April 2024, it will use Launch Configurations. Recreate the Compute Environment to upgrade to Launch Templates.' %}
 
 ## AWS Batch Launch Configurations Deprecation
 
@@ -60,6 +60,10 @@ I recently received this message from AWS about the deprecation of Launch Config
 When I looked into the Launch Configurations I had defined, I was surprised to see that they didn't have a
 CloudFormation stack attached. After some digging, I realized that these auto-scaling groups and Launch Configurations
 were associated with AWS Batch.
+
+<div class='center mt-3 mb-3'>
+  <img src="{{ site.base_url }}/{% ministamp _images/posts/2024/08/lc-auto-scaling-groups.png assets/images/posts/2024/08/lc-auto-scaling-groups.png %}" alt="AWS Auto-Scaling Groups using legacy Launch Configurations" />
+</div>
 
 When you create a Compute Environment via CloudFormation, AWS Batch creates the auto-scaling groups and Launch
 Configurations automatically, but does not propagate tags from the parent resources managed by CloudFormation. This can
