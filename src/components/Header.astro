@@ -1,0 +1,99 @@
+---
+interface MenuItem {
+  path: string;
+  text: string;
+}
+
+const menuItems: MenuItem[] = [
+  { path: "/about", text: "About" },
+  { path: "/freelance", text: "Freelance" },
+  { path: "/blog", text: "Blog" },
+  { path: "/portfolio", text: "Portfolio" },
+  { path: "/freelance/contact", text: "Contact" },
+];
+---
+
+<header class="bg-header border-light sticky top-0 z-50 w-full border-b" role="banner">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3" aria-label="Main navigation">
+    <div class="flex items-center gap-8">
+      <span class="text-primary text-xl font-bold">
+        <a href="/" aria-label="home page">Ben Limmer</a>
+      </span>
+      <ul class="text-secondary hidden gap-6 text-base font-medium md:flex" role="menubar">
+        {
+          menuItems.map((item) => (
+            <li role="none">
+              <a href={item.path} role="menuitem" class="hover:text-primary transition-colors">
+                {item.text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <details class="text-secondary md:hidden">
+      <summary
+        class="cursor-pointer list-none"
+        aria-label="Toggle menu"
+        role="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <span class="sr-only">Open main menu</span>
+      </summary>
+      <ul
+        id="mobile-menu"
+        class="bg-header border-light absolute right-0 mt-2 w-48 rounded-md border p-2 shadow-lg"
+        role="menu"
+      >
+        {
+          menuItems.map((item) => (
+            <li role="none">
+              <a
+                href={item.path}
+                class="block px-4 py-2 transition-colors hover:bg-gray-700 hover:text-white"
+                role="menuitem"
+              >
+                {item.text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </details>
+  </nav>
+</header>
+
+<script>
+  // Add keyboard navigation support for the mobile menu
+  document.addEventListener("DOMContentLoaded", () => {
+    const details = document.querySelector("details");
+    const summary = document.querySelector("summary");
+
+    if (details && summary) {
+      summary.addEventListener("click", () => {
+        const isExpanded = details.hasAttribute("open");
+        summary.setAttribute("aria-expanded", (!isExpanded).toString());
+      });
+
+      // Close menu when pressing Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && details.hasAttribute("open")) {
+          details.removeAttribute("open");
+          summary.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+  });
+</script>

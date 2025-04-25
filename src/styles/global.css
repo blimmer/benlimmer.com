@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --color-bg-primary: #101623;
+  --color-bg-secondary: #0d121c;
+  --color-bg-header: #111827;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.8);
+  --color-text-tertiary: rgba(255, 255, 255, 0.6);
+  --color-accent: #3b82f6;
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+.bg-primary {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.bg-header {
+  background-color: var(--color-bg-header);
+}
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.border-light {
+  border-color: var(--color-border);
+}
+
+/* Typography styles */
+.prose {
+  color: var(--color-text-primary);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.prose p {
+  @apply text-xl leading-relaxed;
+  margin-bottom: 1.5rem;
+}
+
+.prose h1 {
+  @apply mb-8 text-5xl font-bold;
+  color: var(--color-text-primary);
+}
+
+.prose h2 {
+  @apply mb-6 text-3xl font-semibold;
+  color: var(--color-text-primary);
+}
+
+.prose h3 {
+  @apply mb-4 text-2xl font-semibold;
+  color: var(--color-text-primary);
+}
+
+.prose strong {
+  color: var(--color-text-primary);
+}
+
+.prose a {
+  color: var(--color-accent);
+}
+
+.prose ul {
+  @apply space-y-3;
+}
+
+.prose li {
+  @apply text-lg;
+}
+
+.prose-lg {
+  color: var(--color-text-primary);
+}
