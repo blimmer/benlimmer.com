@@ -12,11 +12,16 @@
     "postinstall": "husky install"
   },
   "dependencies": {
-    "astro": "^5.7.5"
+    "@tailwindcss/vite": "^4.1.4",
+    "astro": "^5.7.5",
+    "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
+    "@types/eslint-plugin-jsx-a11y": "^6",
+    "@typescript-eslint/parser": "^8.31.0",
     "eslint": "^9.25.1",
     "eslint-plugin-astro": "^1.3.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "husky": "^9.1.7",
     "imageoptim-cli": "^3.1.9",
     "lint-staged": "^15.5.1",
@@ -26,10 +31,10 @@
     "typescript": "^5.8.3"
   },
   "lint-staged": {
-    "*.{ts,tsx,astro,md,mdx}": "eslint --cache --fix",
+    "*.{ts,tsx,astro,md,mdx}": "eslint --fix",
     "*.{ts,tsx,astro,css,md,mdx}": "prettier --write",
     "*.{jpg,jpeg,png}": "imageoptim",
-    "*.js": "eslint --cache --fix",
+    "*.js": "eslint --fix",
     "*.{js,css,md}": "prettier --write"
   }
 }
