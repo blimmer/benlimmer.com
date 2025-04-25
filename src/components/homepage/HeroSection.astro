@@ -1,0 +1,144 @@
+<section class="relative flex flex-col items-center justify-center overflow-hidden py-32">
+  <div class="pointer-events-none absolute inset-0 z-0">
+    <div class="hero-grid-bg h-full w-full"></div>
+  </div>
+  <div class="relative z-10 flex flex-col items-center">
+    <a
+      href="/freelance"
+      class="transition-all duration-200 ease-in-out hover:scale-[1.02]"
+      aria-label="Learn more about freelance opportunities"
+    >
+      <span
+        class="mb-8 flex items-center gap-2 rounded-full border border-white/10 bg-[#232b3a] px-6 py-2 text-base font-medium tracking-wide text-white/90 shadow-lg"
+      >
+        Available for freelance work
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="ml-1 h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"
+          ></path></svg
+        >
+      </span>
+    </a>
+    <h1 class="mb-6 text-center text-6xl font-bold text-white md:text-8xl">
+      <span class="md:inline">Hi, I'm</span>
+      <span class="mt-2 block md:mt-0 md:inline"
+        ><span class="inline-flex min-w-[240px] md:min-w-[340px]">
+          <span id="typewriter-container" class="relative">
+            <span id="typewriter" class="text-blue-400">Ben Limmer</span><span
+              id="cursor"
+              class="cursor absolute text-blue-400">|</span
+            >
+          </span>
+        </span></span
+      >
+    </h1>
+    <p class="mb-12 max-w-3xl text-center text-2xl font-medium text-white/60 md:text-3xl">
+      I'm a freelance software engineer and architect with a passion for developer experience.
+    </p>
+    <div class="flex gap-6">
+      <a
+        href="/about"
+        class="rounded bg-blue-500 px-8 py-3 text-lg font-semibold text-white transition hover:bg-blue-600"
+        >Learn more</a
+      >
+      <a
+        href="/portfolio"
+        class="rounded border border-white/10 bg-[#161c26] px-8 py-3 text-lg font-semibold text-white transition hover:bg-[#232b3a]"
+        >View my work</a
+      >
+    </div>
+  </div>
+  <script is:inline>
+    const TYPING_SPEED = 120;
+    const TYPING_PAUSE = 2500;
+    const DELETING_SPEED = 120;
+    const SWITCH_PAUSE = 250;
+
+    const names = ["Ben Limmer", "blimmer"];
+    let current = 0;
+    let el = null;
+    let typing = true;
+    let charIndex = 0;
+    let loopTimeout;
+
+    function typeLoop() {
+      const name = names[current];
+      if (typing) {
+        if (charIndex < name.length) {
+          el.textContent = name.slice(0, charIndex + 1);
+          charIndex++;
+          loopTimeout = setTimeout(typeLoop, TYPING_SPEED);
+        } else {
+          typing = false;
+          loopTimeout = setTimeout(typeLoop, TYPING_PAUSE);
+        }
+      } else {
+        if (charIndex > 0) {
+          el.textContent = name.slice(0, charIndex - 1);
+          charIndex--;
+          loopTimeout = setTimeout(typeLoop, DELETING_SPEED);
+        } else {
+          typing = true;
+          current = (current + 1) % names.length;
+          loopTimeout = setTimeout(typeLoop, SWITCH_PAUSE);
+        }
+      }
+    }
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("DOMContentLoaded", () => {
+        el = document.getElementById("typewriter");
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (!prefersReducedMotion) {
+          typeLoop();
+        }
+      });
+    }
+  </script>
+  <style>
+    .hero-grid-bg {
+      background-color: #101623;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    #typewriter-container {
+      display: inline-block;
+      min-height: 1em;
+    }
+    #typewriter {
+      display: inline-block;
+      text-align: left;
+    }
+    .cursor {
+      display: inline-block;
+      margin-left: 2px;
+      animation: blink 1.5s step-end infinite;
+      position: absolute;
+      right: -0.2em;
+      top: -0.1em;
+      font-weight: 100;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cursor {
+        display: none;
+      }
+    }
+    @keyframes blink {
+      0%,
+      50% {
+        opacity: 1;
+      }
+      50.1%,
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</section>
