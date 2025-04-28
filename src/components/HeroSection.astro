@@ -12,7 +12,10 @@
       >
     </span>
     <h1 class="text-white text-6xl md:text-8xl font-bold text-center mb-6">
-      Hi, I'm <span id="typewriter" class="text-blue-400"></span>
+      Hi, I'm <span id="typewriter" class="text-blue-400">Ben Limmer</span><span
+        id="cursor"
+        class="cursor text-blue-400">|</span
+      >
     </h1>
     <p class="text-2xl md:text-3xl text-center max-w-3xl mb-12 text-white/60 font-medium">
       I'm a freelance developer and writer passionate about creating beautiful, functional digital experiences.
@@ -31,6 +34,11 @@
     </div>
   </div>
   <script is:inline>
+    const TYPING_SPEED = 120;
+    const TYPING_PAUSE = 2000;
+    const DELETING_SPEED = 120;
+    const SWITCH_PAUSE = 800;
+
     const names = ["Ben Limmer", "blimmer"];
     let current = 0;
     let el = null;
@@ -44,20 +52,20 @@
         if (charIndex < name.length) {
           el.textContent = name.slice(0, charIndex + 1);
           charIndex++;
-          loopTimeout = setTimeout(typeLoop, 90);
+          loopTimeout = setTimeout(typeLoop, TYPING_SPEED);
         } else {
           typing = false;
-          loopTimeout = setTimeout(typeLoop, 1200);
+          loopTimeout = setTimeout(typeLoop, TYPING_PAUSE);
         }
       } else {
         if (charIndex > 0) {
           el.textContent = name.slice(0, charIndex - 1);
           charIndex--;
-          loopTimeout = setTimeout(typeLoop, 60);
+          loopTimeout = setTimeout(typeLoop, DELETING_SPEED);
         } else {
           typing = true;
           current = (current + 1) % names.length;
-          loopTimeout = setTimeout(typeLoop, 400);
+          loopTimeout = setTimeout(typeLoop, SWITCH_PAUSE);
         }
       }
     }
@@ -76,6 +84,24 @@
         linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
       background-size: 40px 40px;
+    }
+    .cursor {
+      display: inline-block;
+      font-weight: bold;
+      margin-left: 2px;
+      animation: blink 1.5s step-end infinite;
+      position: relative;
+      top: -0.15em;
+    }
+    @keyframes blink {
+      0%,
+      50% {
+        opacity: 1;
+      }
+      50.1%,
+      100% {
+        opacity: 0;
+      }
     }
   </style>
 </section>
