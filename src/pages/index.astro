@@ -1,7 +1,20 @@
 ---
 import Layout from "src/layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import AboutMeSection from "../components/AboutMeSection.astro";
+import BlogPostsSection from "../components/BlogPostsSection.astro";
+import ServicesSection from "../components/ServicesSection.astro";
+import PortfolioSection from "../components/PortfolioSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Ben Limmer" description="Ben Limmer's personal website">
-  <h1>Hello, world!</h1>
+  <HeroSection />
+  <AboutMeSection />
+  <BlogPostsSection />
+  <ServicesSection />
+  <PortfolioSection />
+  <ContactSection />
+  <Footer />
 </Layout>
