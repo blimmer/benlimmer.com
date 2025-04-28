@@ -1,29 +1,43 @@
-<section class="relative bg-[#101623] text-white py-24 flex flex-col items-center justify-center overflow-hidden">
+<section class="relative py-32 flex flex-col items-center justify-center overflow-hidden">
   <div class="absolute inset-0 z-0 pointer-events-none">
-    <div
-      class="w-full h-full bg-[radial-gradient(circle,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:32px_32px]"
-    >
-    </div>
+    <div class="w-full h-full hero-grid-bg"></div>
   </div>
   <div class="relative z-10 flex flex-col items-center">
-    <span class="mb-4 px-4 py-1 rounded-full bg-white/10 text-xs tracking-wide border border-white/20"
-      >Available for freelance work</span
+    <span
+      class="mb-8 px-6 py-2 rounded-full bg-[#232b3a] text-white/90 text-base tracking-wide border border-white/10 shadow-lg flex items-center gap-2 font-medium"
     >
-    <h1 class="text-4xl md:text-6xl font-bold text-center mb-4">
+      Available for freelance work
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+      >
+    </span>
+    <h1 class="text-white text-6xl md:text-8xl font-bold text-center mb-6">
       Hi, I'm <span class="text-blue-400">Ben Limmer</span>
     </h1>
-    <p class="text-lg md:text-xl text-center max-w-2xl mb-8 text-white/80">
+    <p class="text-2xl md:text-3xl text-center max-w-3xl mb-12 text-white/60 font-medium">
       I'm a freelance developer and writer passionate about creating beautiful, functional digital experiences.
     </p>
-    <div class="flex gap-4">
-      <a href="#contact" class="px-6 py-2 rounded bg-blue-500 hover:bg-blue-600 text-white font-medium transition"
+    <div class="flex gap-6">
+      <a
+        href="#contact"
+        class="px-8 py-3 rounded bg-blue-500 hover:bg-blue-600 text-white font-semibold text-lg transition"
         >Get in touch</a
       >
       <a
         href="#portfolio"
-        class="px-6 py-2 rounded bg-white/10 hover:bg-white/20 text-white font-medium border border-white/20 transition"
+        class="px-8 py-3 rounded bg-[#161c26] hover:bg-[#232b3a] text-white font-semibold text-lg border border-white/10 transition"
         >View my work</a
       >
     </div>
   </div>
 </section>
+
+<style>
+  .hero-grid-bg {
+    background-color: #101623;
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+</style>
