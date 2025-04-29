@@ -24,9 +24,16 @@
       </span>
     </a>
     <h1 class="mb-6 text-center text-6xl font-bold text-white md:text-8xl">
-      Hi, I'm <span id="typewriter" class="text-blue-400">Ben Limmer</span><span
-        id="cursor"
-        class="cursor text-blue-400">|</span
+      <span class="md:inline">Hi, I'm</span>
+      <span class="mt-2 block md:mt-0 md:inline"
+        ><span class="inline-flex min-w-[240px] md:min-w-[340px]">
+          <span id="typewriter-container" class="relative">
+            <span id="typewriter" class="text-blue-400">Ben Limmer</span><span
+              id="cursor"
+              class="cursor absolute text-blue-400">|</span
+            >
+          </span>
+        </span></span
       >
     </h1>
     <p class="mb-12 max-w-3xl text-center text-2xl font-medium text-white/60 md:text-3xl">
@@ -97,13 +104,22 @@
         linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
       background-size: 40px 40px;
     }
+    #typewriter-container {
+      display: inline-block;
+      min-height: 1em;
+    }
+    #typewriter {
+      display: inline-block;
+      text-align: left;
+    }
     .cursor {
       display: inline-block;
-      font-weight: bold;
       margin-left: 2px;
       animation: blink 1.5s step-end infinite;
-      position: relative;
-      top: -0.15em;
+      position: absolute;
+      right: -0.2em;
+      top: -0.1em;
+      font-weight: 100;
     }
     @keyframes blink {
       0%,
