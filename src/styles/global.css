@@ -44,15 +44,15 @@
 }
 
 .btn {
-  @apply px-5 py-2 rounded transition text-sm;
+  @apply rounded px-5 py-2 text-sm transition;
 }
 
 .btn-primary {
-  @apply px-5 py-2 rounded transition text-sm bg-blue-500 hover:bg-blue-600 text-white font-medium;
+  @apply rounded bg-blue-500 px-5 py-2 text-sm font-medium text-white transition hover:bg-blue-600;
 }
 
 .btn-secondary {
-  @apply px-5 py-2 rounded transition text-sm bg-white/10 hover:bg-white/20 text-white border border-white/20;
+  @apply rounded border border-white/20 bg-white/10 px-5 py-2 text-sm text-white transition hover:bg-white/20;
 }
 
 body {
