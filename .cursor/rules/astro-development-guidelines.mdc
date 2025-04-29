@@ -1,0 +1,13 @@
+---
+description: Enforces specific development guidelines for Astro projects, including TypeScript strictness and TailwindCSS usage.
+globs: *.astro
+alwaysApply: false
+---
+- Enforce strict TypeScript settings, ensuring type safety across the project.
+- Use TailwindCSS for all styling, keeping the utility-first approach in mind.
+- Ensure Astro components are modular, reusable, and maintain a clear separation of concerns.
+- When suggesting an import, using the TypeScript `src` path from my `tsconfig.json`, instead of relative imports
+- Prioritize static generation and minimal JavaScript for optimal performance.
+- Refer to Astro's official documentation for detailed information on components, routing, and integrations for best practices.
+- Prioritize responsive design, with a mobile-first design approach.
+- Use Astro's Image component for optimized image delivery, instead of using `<img>` tags.
