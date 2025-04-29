@@ -1,12 +1,11 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
 <footer
-  class="bg-[#0d121c] text-white/60 py-6 text-xs flex flex-col md:flex-row items-center justify-between px-4 border-t border-white/10"
+  class="bg-secondary text-white/60 py-6 text-xs flex flex-col items-center justify-center px-4 border-t border-white/10"
 >
-  <div class="mb-2 md:mb-0 flex items-center gap-2">
-    <span class="bg-white/10 rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">N</span>
-    <span>© 2025 Ben Limmer. All rights reserved.</span>
-  </div>
-  <div class="flex gap-4">
-    <a href="#" class="hover:underline">Privacy</a>
-    <a href="#" class="hover:underline">Terms</a>
+  <div class="flex items-center gap-2">
+    <span>© {currentYear} Ben Limmer. All rights reserved.</span>
   </div>
 </footer>

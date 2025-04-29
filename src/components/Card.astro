@@ -1,0 +1,26 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  icon?: string;
+  link?: string;
+  linkText?: string;
+  children?: any;
+}
+
+const { title, description, icon, link, linkText, children } = Astro.props;
+---
+
+<div class="bg-white/5 border border-white/10 rounded-lg p-6 flex flex-col items-center text-center">
+  {icon && <div class="mb-3 text-2xl">{icon}</div>}
+  {title && <h3 class="font-semibold mb-2">{title}</h3>}
+  {description && <p class="text-white/70 text-sm mb-2">{description}</p>}
+  {children}
+  {
+    link && (
+      <a href={link} class="text-blue-400 text-xs mt-auto">
+        {linkText || "Learn more"} →
+      </a>
+    )
+  }
+</div>
