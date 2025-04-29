@@ -1,0 +1,11 @@
+---
+description: Design guidelines for the site
+globs: *.astro
+alwaysApply: false
+---
+Design Guidelines
+
+- The website is for a software engineer
+- The website should appear modern and polished
+- Prefer clean, minimal design
+
