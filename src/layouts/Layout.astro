@@ -2,17 +2,18 @@
 import Head from "src/components/Head.astro";
 
 interface Props {
-  title: string;
+  title?: string[];
   description: string;
 }
 
-const { title = "Ben Limmer", description } = Astro.props;
+const { title = [], description } = Astro.props;
+const titleString = [...title, "Ben Limmer"].join(" | ");
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <Head title={`${title}`} description={description} />
+    <Head title={titleString} description={description} />
   </head>
   <body>
     <main>
