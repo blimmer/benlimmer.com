@@ -20,7 +20,9 @@ const titleString = [...title, "Ben Limmer"].join(" | ");
   <body class="flex min-h-full flex-col">
     <Header />
     <div class="flex-1">
-      <slot />
+      <main>
+        <slot />
+      </main>
     </div>
     <Footer />
   </body>

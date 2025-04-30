@@ -1,8 +1,5 @@
 ---
 import Layout from "src/layouts/Layout.astro";
-import { Image } from "astro:assets";
-import headshot from "src/assets/headshot.png";
-import { getCollection } from "astro:content";
 import HeroSection from "src/components/homepage/HeroSection.astro";
 import BlogPostsSection from "src/components/homepage/BlogPostsSection.astro";
 import ContactSection from "src/components/homepage/ContactSection.astro";
@@ -12,10 +9,7 @@ import Footer from "src/components/Footer.astro";
 <Layout
   description="Ben Limmer is a freelance software engineer and architect based in Denver, Colorado. He specializes in improving developer experience and productivity."
 >
-  <main>
-    <HeroSection />
-    <BlogPostsSection />
-    <ContactSection />
-  </main>
-  <Footer />
+  <HeroSection />
+  <BlogPostsSection />
+  <ContactSection />
 </Layout>
