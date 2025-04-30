@@ -1,7 +1,5 @@
 ---
 import Layout from "src/layouts/Layout.astro";
-import Header from "src/components/Header.astro";
-import Footer from "src/components/Footer.astro";
 import { Image } from "astro:assets";
 import headshot from "src/assets/headshot.png";
 ---
@@ -10,8 +8,6 @@ import headshot from "src/assets/headshot.png";
   title={["About"]}
   description="Learn about Ben Limmer's background as a freelance software engineer and architect based in Denver, Colorado."
 >
-  <Header />
-
   <main class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
     <article class="max-w-none">
       <div class="mb-12 flex flex-col md:flex-row md:items-start md:gap-8">
@@ -70,6 +66,4 @@ import headshot from "src/assets/headshot.png";
       </div>
     </article>
   </main>
-
-  <Footer />
 </Layout>
