@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --color-bg-primary: #101623;
@@ -58,4 +59,30 @@ body {
 
 .btn-secondary {
   @apply rounded border border-white/20 bg-white/10 px-5 py-2 text-sm text-white transition hover:bg-white/20;
+}
+
+/* Typography overrides for dark mode */
+.prose {
+  color: var(--color-text-primary);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: var(--color-text-primary);
+}
+
+.prose strong {
+  color: var(--color-text-primary);
+}
+
+.prose a {
+  color: var(--color-accent);
+}
+
+.prose-lg {
+  color: var(--color-text-primary);
 }

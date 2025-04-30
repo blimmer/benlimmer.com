@@ -2,9 +2,74 @@
 import Layout from "src/layouts/Layout.astro";
 import Header from "src/components/Header.astro";
 import Footer from "src/components/Footer.astro";
+import { Image } from "astro:assets";
+import headshot from "src/assets/headshot.png";
 ---
 
-<Layout title={["About"]} description="">
+<Layout
+  title={["About"]}
+  description="Learn about Ben Limmer's background as a freelance software engineer and architect based in Denver, Colorado."
+>
   <Header />
+
+  <main class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
+    <article class="max-w-none">
+      <div class="mb-12 flex flex-col md:flex-row md:items-start md:gap-8">
+        <div class="mb-8 h-48 w-48 shrink-0 md:mb-0">
+          <Image
+            src={headshot}
+            alt="Ben Limmer headshot"
+            class="h-full w-full rounded-lg object-cover"
+            width={192}
+            height={192}
+          />
+        </div>
+        <div class="prose prose-lg">
+          <h1 class="mb-8 text-4xl font-bold">About Me</h1>
+
+          <section class="mb-12">
+            <p class="mb-6 text-lg leading-relaxed">
+              Hi! I'm Ben Limmer, a freelance software engineer and architect with a passion for developer experience.
+            </p>
+
+            <p class="mb-6 text-lg leading-relaxed">
+              Throughout my career, I've worked with all aspects of the tech stack and software development lifecycle.
+              I've built and architected scalable systems, designed and deployed cloud infrastructure from the ground
+              up, and implemented modern development practices to improve developer efficiency.
+            </p>
+
+            <p class="text-lg leading-relaxed">
+              In 2020, I launched my <a href="/freelance">freelance business</a>. As a freelance engineer, I partner
+              with businesses of all sizes to deliver <a href="/portfolio">high-quality software solutions</a> that increase
+              developer productivity and reduce toil. The best part of my job is hearing an engineer say, "You made my life
+              so much easier!".
+            </p>
+          </section>
+
+          <section class="mb-12">
+            <h2 class="mb-6 text-3xl font-semibold">What I Do</h2>
+            <ul class="space-y-4 pl-0">
+              <li class="flex items-start">
+                <span class="text-lg">🛠️ Improve developer experience and productivity</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-lg">💡 Provide technical strategy and consulting</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-lg">🏗️ Design and architect scalable cloud infrastructure</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-lg">📈 Streamline development workflows and reduce toil</span>
+              </li>
+              <li class="flex items-start">
+                <span class="text-lg">🤝 Partner with teams to modernize development practices</span>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+
   <Footer />
 </Layout>
