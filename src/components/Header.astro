@@ -1,14 +1,50 @@
+---
+interface MenuItem {
+  path: string;
+  text: string;
+}
+
+const menuItems: MenuItem[] = [
+  { path: "/about", text: "About" },
+  { path: "/freelance", text: "Freelance" },
+  { path: "/blog", text: "Blog" },
+  { path: "/portfolio", text: "Portfolio" },
+  { path: "/freelance/contact", text: "Contact" },
+];
+---
+
 <header class="bg-header border-light sticky top-0 z-50 w-full border-b">
   <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
     <div class="flex items-center gap-8">
       <span class="text-primary text-xl font-bold"><a href="/">Ben Limmer</a></span>
       <ul class="text-secondary hidden gap-6 text-base font-medium md:flex">
-        <li><a href="/about">About</a></li>
-        <li><a href="/freelance">Freelance</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/freelance/contact">Contact</a></li>
+        {
+          menuItems.map((item) => (
+            <li>
+              <a href={item.path}>{item.text}</a>
+            </li>
+          ))
+        }
       </ul>
     </div>
+
+    <details class="text-secondary md:hidden">
+      <summary class="cursor-pointer list-none" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </summary>
+      <ul class="bg-header border-light absolute right-0 mt-2 w-48 rounded-md border p-2 shadow-lg">
+        {
+          menuItems.map((item) => (
+            <li>
+              <a href={item.path} class="block px-4 py-2 transition-colors hover:bg-gray-700 hover:text-white">
+                {item.text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </details>
   </nav>
 </header>
