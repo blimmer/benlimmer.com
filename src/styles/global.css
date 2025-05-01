@@ -61,17 +61,30 @@ body {
   @apply rounded border border-white/20 bg-white/10 px-5 py-2 text-sm text-white transition hover:bg-white/20;
 }
 
-/* Typography overrides for dark mode */
+/* Typography styles */
 .prose {
+  color: var(--color-text-primary);
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.prose p {
+  @apply text-xl leading-relaxed;
+  margin-bottom: 1.5rem;
+}
+
+.prose h1 {
+  @apply mb-8 text-5xl font-bold;
   color: var(--color-text-primary);
 }
 
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4,
-.prose h5,
-.prose h6 {
+.prose h2 {
+  @apply mb-6 text-3xl font-semibold;
+  color: var(--color-text-primary);
+}
+
+.prose h3 {
+  @apply mb-4 text-2xl font-semibold;
   color: var(--color-text-primary);
 }
 
@@ -81,6 +94,14 @@ body {
 
 .prose a {
   color: var(--color-accent);
+}
+
+.prose ul {
+  @apply space-y-3;
+}
+
+.prose li {
+  @apply text-lg;
 }
 
 .prose-lg {
