@@ -1,0 +1,87 @@
+---
+interface Props {
+  title: string;
+  items: string[];
+  defaultOpen?: boolean;
+}
+
+const { title, items, defaultOpen = false } = Astro.props;
+const id = title.toLowerCase().replace(/\s+/g, "-");
+---
+
+<div class="border-b border-gray-200 py-5 dark:border-gray-700">
+  <button
+    class="group flex w-full items-center justify-between text-left"
+    aria-expanded={defaultOpen ? "true" : "false"}
+    aria-controls={`content-${id}`}
+  >
+    <h3
+      class="text-lg font-medium text-gray-900 transition-colors group-hover:text-blue-600 dark:text-gray-100 dark:group-hover:text-blue-400"
+    >
+      {title}
+    </h3>
+    <svg
+      class="h-4 w-4 transform text-gray-500 transition-transform group-hover:text-blue-600 dark:text-gray-400 dark:group-hover:text-blue-400"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      aria-hidden="true"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+
+  <div
+    id={`content-${id}`}
+    class="mt-3 overflow-hidden transition-all duration-300"
+    style={defaultOpen ? "" : "max-height: 0px;"}
+  >
+    <ul class="space-y-2.5 text-gray-700 dark:text-gray-300">
+      {
+        items.map((item) => (
+          <li class="flex items-start">
+            <svg
+              class="mt-1 mr-2.5 h-4 w-4 flex-shrink-0 text-blue-600 dark:text-blue-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+            <span class="text-base">{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll("button[aria-controls]");
+
+    buttons.forEach((button) => {
+      const content = document.getElementById(button.getAttribute("aria-controls")!);
+      const contentHeight = content?.scrollHeight;
+
+      if (button.getAttribute("aria-expanded") === "true" && content) {
+        content.style.maxHeight = `${contentHeight}px`;
+      }
+
+      button.addEventListener("click", () => {
+        const isExpanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", (!isExpanded).toString());
+
+        if (content) {
+          content.style.maxHeight = isExpanded ? "0px" : `${contentHeight}px`;
+        }
+
+        // Rotate the chevron
+        const chevron = button.querySelector("svg");
+        if (chevron) {
+          chevron.style.transform = isExpanded ? "" : "rotate(-180deg)";
+        }
+      });
+    });
+  });
+</script>

@@ -1,8 +1,117 @@
 ---
 import Layout from "src/layouts/Layout.astro";
+import SectionHeading from "src/components/SectionHeading.astro";
+import ServiceSection from "src/components/ServiceSection.astro";
+
+const devToolingItems = [
+  "Continuous Integration and Delivery",
+  "Microservice Generation and Tooling",
+  "Infrastructure as Code, especially AWS Cloud Development Kit (aws-cdk)",
+  "Observability and Metrics",
+  "Static Analysis and Linting",
+];
+
+const cloudItems = [
+  "Solution Architecture",
+  "Cost Optimization",
+  "Serverless",
+  "Event-Driven Architectures",
+  "AWS Training",
+];
+
+const frontEndItems = [
+  "Browser Extensions",
+  "Single Page Applications",
+  "Server-Side Rendering",
+  "PageSpeed and Structured Data Optimization",
+  "Automated Unit, Integration and Acceptance/UI Testing",
+];
+
+const backEndItems = ["Node apps", "Ruby apps", "Docker", "GraphQL", "SQL and NoSQL Databases", "Automated Testing"];
+
+const talkItems = [
+  "Productivity Maximization",
+  "Effective Use of git",
+  "Successfully Tech Leading a Project",
+  "Pull Request Best-Practices and Etiquette",
+];
 ---
 
 <Layout
   title={["Freelance"]}
-  description="Ben Limmer's freelance software engineering and consulting services. Specializing in developer experience and productivity improvements."
-/>
+  description="Ben Limmer's freelance software engineering and consulting services. Specializing in developer experience and productivity."
+>
+  <main class="mx-auto max-w-4xl px-4 py-12">
+    <h1 class="mb-8 text-4xl font-bold text-gray-900 dark:text-gray-100">Freelance Services</h1>
+
+    <div class="prose mb-12 max-w-none dark:prose-invert">
+      <p class="mb-6 text-lg">
+        I'm a software engineer and architect with 10+ years of experience working throughout the tech stack. I love
+        helping companies of all sizes achieve their goals! Whether you're a startup looking to build your
+        proof-of-concept, or an established shop looking to scale your platform and processes, I can help.
+      </p>
+    </div>
+
+    <section class="mb-16">
+      <SectionHeading text="Developer Enablement" />
+      <div class="prose max-w-none dark:prose-invert">
+        <p class="mb-4">
+          Most engineering problems are not memory or CPU-bound. Instead, they're bound by engineering bandwidth.
+          Therefore, my primary area of focus is <strong>Developer Enablement</strong>.
+        </p>
+        <p class="mb-4">
+          Many software engineering teams suffer from "paper cuts" that slow down their ability to deliver quality
+          software. For instance, slow or unreliable test suites levy a tax on every change set. Complex deployments
+          make it hard to deliver changes confidently. Uninstrumented code makes it difficult to identify and recover
+          during an incident.
+        </p>
+        <p>
+          Identifying and resolving these challenges are my bread-and-butter. By investing in Developer Enablement,
+          you'll increase the value of your engineering team investment, improve retention, and deliver software to your
+          users more quickly.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <SectionHeading text="Specialties" />
+      <div class="space-y-2">
+        <ServiceSection title="Developer Tooling & Experience" items={devToolingItems} defaultOpen={true} />
+        <ServiceSection title="Cloud Computing" items={cloudItems} />
+        <ServiceSection title="Front-End Development" items={frontEndItems} />
+        <ServiceSection title="Back-End Development" items={backEndItems} />
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <SectionHeading text="Talks" />
+      <div class="prose mb-6 max-w-none dark:prose-invert">
+        <p>
+          In addition to technical offerings, I have several customizable presentations that are perfect for
+          lunch-and-learn or workshop settings, covering topics such as:
+        </p>
+      </div>
+      <div class="mt-6">
+        <ServiceSection title="Available Presentations" items={talkItems} />
+      </div>
+      <div class="mt-6">
+        <a href="/portfolio" class="text-blue-600 hover:underline dark:text-blue-400">
+          See sample talk content and more details in my portfolio →
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <SectionHeading text="Let's Work Together" />
+      <div class="prose max-w-none dark:prose-invert">
+        <p class="mb-6">I'd love to hear more about what you're working on and how I can help.</p>
+        <a
+          href="mailto:hello@benlimmer.com"
+          class="inline-block rounded-lg bg-blue-600 px-6 py-3 text-white transition-colors hover:bg-blue-700"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </section>
+  </main>
+</Layout>
