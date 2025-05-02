@@ -5,4 +5,212 @@ import Layout from "src/layouts/Layout.astro";
 <Layout
   title={["Portfolio"]}
   description="Ben Limmer's portfolio of software engineering projects and consulting work."
-/>
+>
+  <main class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
+    <h1 class="mb-8 text-5xl font-bold">Portfolio</h1>
+    <div class="prose prose-lg max-w-none text-white">
+      <section class="mb-12">
+        <h2 id="freelance" class="mb-4 text-3xl font-semibold">Freelance (2020–Present)</h2>
+        <h3 class="mt-6 mb-2 text-xl font-bold">Infrastructure as Code</h3>
+        <ul>
+          <li>
+            <a href="/portfolio/freelance/aws-cdk-consulting"
+              >AWS Cloud Development Kit (aws-cdk) Implementations, Consulting, and Training</a
+            >
+          </li>
+        </ul>
+        <h3 class="mt-6 mb-2 text-xl font-bold">Continuous Integration, Delivery, and Deployment</h3>
+        <ul>
+          <li>
+            <a href="/portfolio/freelance/continuous-deployment-database-migrations"
+              >Continuous Deployment Database Migrations</a
+            >
+          </li>
+          <li>AWS Cloud Development Kit (aws-cdk) Deployment Pipelines</li>
+          <li>
+            <a href="/portfolio/freelance/browser-extension-automated-release-platform"
+              >Browser Extension Automated Release Platform</a
+            >
+          </li>
+          <li>Front End Application Continuous Deployment Pipelines</li>
+          <li>Reusable CircleCI Orbs</li>
+        </ul>
+        <h3 class="mt-6 mb-2 text-xl font-bold">Testing</h3>
+        <ul>
+          <li>Automated Acceptance Testing via Playwright</li>
+          <li>
+            <a href="/portfolio/freelance/automated-front-end-content-preview">Automated Front End Content Preview</a>
+          </li>
+          <li>CircleCI Jest Performance Optimization</li>
+          <li>Front End Application Test Suite Migration, and Usability Improvements</li>
+          <li>Production-like QA Environment from Sanitized Production Data</li>
+        </ul>
+        <h3 class="mt-6 mb-2 text-xl font-bold">System Architecture</h3>
+        <ul>
+          <li>Cost-Effective Salesforce Data Synchronization</li>
+          <li>
+            <a href="/portfolio/freelance/event-driven-architecture"
+              >Event-Driven Architecture Implementation via AWS EventBridge</a
+            >
+          </li>
+          <li>Multi-Tenant App Infrastructure Design and Deployment</li>
+          <li>PDF Content Extraction and Indexing</li>
+          <li>
+            <a href="/portfolio/freelance/serverless-postgres-change-data-capture"
+              >Serverless Postgres Change Data Capture</a
+            >
+          </li>
+        </ul>
+        <h3 class="mt-6 mb-2 text-xl font-bold">Security and Operations</h3>
+        <ul>
+          <li>AWS IAM User Automation and Scope Reduction</li>
+          <li>Database Diaster Recovery Preparation</li>
+          <li><a href="/portfolio/freelance/datadog-integration">Datadog Integration</a></li>
+          <li>Organizational Security Posture Audit and Recommendations</li>
+          <li>Third-Party SaaS Cost Optimizations (AWS, CircleCI, Chromatic, Datadog)</li>
+          <li>Secure an Internet Accessible Bastion via AWS Systems Manager</li>
+        </ul>
+        <h3 class="mt-6 mb-2 text-xl font-bold">Client-Side Applications</h3>
+        <ul>
+          <li>Browser Extension Multi-Browser WebExtension Support</li>
+          <li>Front End Application Performance Optimization</li>
+          <li>Vue CLI to Nuxt Transition</li>
+        </ul>
+        <h3 class="mt-6 mb-2 text-xl font-bold">Talks and Education</h3>
+        <ul>
+          <li>"From the Ground Up" Educational Talks (Cloud Infrastructure, RDS, CI/CD)</li>
+        </ul>
+        <h3 class="mt-6 mb-2 text-xl font-bold">Data Science</h3>
+        <ul>
+          <li>Data Science Project Generators & Continuous Deployment</li>
+          <li>EMR Encryption-in-Transit via Amazon Private Certificate Authority</li>
+        </ul>
+        <div class="flex justify-center">
+          <aside
+            class="mx-8 mt-6 flex w-full max-w-2xl items-center gap-3 rounded-lg border border-slate-600 bg-slate-700/80 px-6 py-4 shadow-lg"
+          >
+            <span aria-hidden="true" class="flex items-center justify-center">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text
+                  x="14"
+                  y="21"
+                  text-anchor="middle"
+                  font-size="22"
+                  font-family="sans-serif"
+                  fill="#FFFFFF"
+                  font-weight="bold">?</text
+                >
+              </svg>
+            </span>
+            <span class="text-base text-slate-100">
+              Are you interested in a freelance topic that doesn't yet have a dedicated page?
+              <a
+                href="/freelance/contact"
+                class="rounded font-semibold text-slate-200 underline underline-offset-2 transition-colors hover:text-white focus:ring-2 focus:ring-slate-400 focus:outline-none"
+                >Reach out for more information.</a
+              >
+            </span>
+          </aside>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 id="ibotta" class="mb-4 text-3xl font-semibold">Ibotta (2014–2020)</h2>
+        <ul>
+          <li><a href="/portfolio/ibotta/digital-payments">Digital Payments Solution Architect</a></li>
+          <li><a href="/portfolio/ibotta/browser-extension">Ibotta Browser Extension</a></li>
+          <li><a href="/portfolio/ibotta/protocol-buffer-grpc-pipeline">Protocol Buffer / GRPC Pipeline</a></li>
+          <li><a href="/portfolio/ibotta/microservice-scorecard-generator">Microservice Scorecard Generator</a></li>
+          <li><a href="/portfolio/ibotta/docker-deployment-tool">Docker-Driven Deployment Tool</a></li>
+          <li><a href="/portfolio/ibotta/aws-spend">AWS Cost Optimizations</a></li>
+          <li><a href="/portfolio/ibotta/partner-portal">Partner Portal</a></li>
+          <li><a href="/portfolio/ibotta/cs-tool">Customer Support Internal Tool</a></li>
+          <li><a href="/portfolio/ibotta/ibotta-dot-com">Ibotta.com Webapp</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 id="talks" class="mb-4 text-3xl font-semibold">Talks (2012–Present)</h2>
+        <ul>
+          <li><a href="https://blimmer.github.io/1up-git-skills-talk/#/">1-Up Your Git Skills</a></li>
+          <li>
+            <a href="https://blimmer.github.io/maximize-your-output-talk/#/"
+              >Maximize Your Output (sans "productivity shame")</a
+            >
+          </li>
+          <li>
+            <a href="https://www.slideshare.net/BenLimmer/tips-tricks-for-being-a-successful-tech-lead"
+              >Tips & Tricks for Being a Successful Tech Lead</a
+            >
+          </li>
+          <li><a href="https://www.slideshare.net/BenLimmer/upgrading-emberjs-apps">Upgrading Ember.js Apps</a></li>
+          <li>
+            <a href="https://www.slideshare.net/BenLimmer/fun-with-ember-2x-features">Fun with Ember 2.x Features</a>
+          </li>
+          <li>
+            <a href="https://www.slideshare.net/BenLimmer/building-realtime-apps-with-emberjs-and-websockets"
+              >Building Real-Time Apps with Ember.js and Websockets</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.slideshare.net/BenLimmer/building-a-single-page-application-using-emberjs-for-fun-and-profit"
+              >Building a Single Page Application using Ember.js ... for fun and profit</a
+            >
+          </li>
+          <li>
+            <a href="https://www.slideshare.net/BenLimmer/automated-testing-in-emberjs">Automated Testing in Ember.js</a
+            >
+          </li>
+          <li>
+            <a href="https://www.slideshare.net/BenLimmer/deploying-a-locationaware-ember-application"
+              >Deploying a Location-Aware Ember.js App</a
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 id="side-projects" class="mb-4 text-3xl font-semibold">Side Projects (2011–Present)</h2>
+        <ul>
+          <li><a href="https://github.com/blimmer/zsh-aws-vault">zsh-aws-vault</a></li>
+          <li><a href="https://github.com/blimmer/mac-dev-playbook">mac-dev-playbook</a></li>
+          <li><a href="https://blimmer.github.io/ember-raffle/">ember-raffle</a></li>
+          <li><a href="https://github.com/blimmer/ember-braze">ember-braze</a></li>
+          <li><a href="https://github.com/blimmer/benlimmer.com">benlimmer.com</a></li>
+          <li><a href="https://github.com/blimmer?tab=overview">Open Source Contributions</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 id="readytalk" class="mb-4 text-3xl font-semibold">ReadyTalk (2011–2014)</h2>
+        <ul>
+          <li><a href="/portfolio/rt/controlsredesign">Conference Controls Redesign</a></li>
+          <li><a href="/portfolio/swt-bling">swt-bling</a></li>
+          <li><a href="/portfolio/rt/videoconferencing">Video Conferencing</a></li>
+          <li><a href="/portfolio/rt/quicklauncher">QuickLauncher</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 id="postcollege" class="mb-4 text-3xl font-semibold">Post-College</h2>
+        <ul>
+          <li><a href="/portfolio/startupcommunities">Startup Communities Feature</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 id="collegeera" class="mb-4 text-3xl font-semibold">College Era (2007–2011)</h2>
+        <ul>
+          <li>
+            <a href="/portfolio/startups2students"
+              >Startups2Students: Bring the World of Entrepreneurship to CU Boulder</a
+            >
+          </li>
+          <li><a href="/portfolio/waldo">Waldo: Intelligent Call Handler</a></li>
+          <li><a href="/portfolio/launchpad">LaunchPad</a></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</Layout>
