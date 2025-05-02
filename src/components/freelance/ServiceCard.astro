@@ -18,6 +18,6 @@ const { emoji, headline, description } = Astro.props;
   </div>
   <div class="mx-8 hidden w-px bg-white/20 sm:block" aria-hidden="true"></div>
   <div class="flex flex-1 items-center text-base leading-relaxed text-white/80 sm:ml-0 md:text-lg lg:text-xl">
-    {description}
+    <span class="prose" set:html={description} />
   </div>
 </div>
