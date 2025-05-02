@@ -9,6 +9,5 @@ Tailwind CSS Best Practices
 - Use Tailwind utility classes extensively in your Astro components.
 - Leverage Tailwind's responsive design utilities (sm:, md:, lg:, etc.).
 - Utilize Tailwind's color palette and spacing scale for consistency.
-- Never use the @apply directive
 - The entire site is "dark mode". Do not use the `dark` class.
 
