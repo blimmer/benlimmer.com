@@ -8,13 +8,11 @@ import Layout from "src/layouts/Layout.astro";
 >
   <main class="mx-auto max-w-4xl px-4 py-12">
     <h1 class="mb-8 text-center text-5xl font-bold">Contact</h1>
-    <div class="mx-auto max-w-lg rounded-lg bg-zinc-900 p-6 shadow-lg">
-      <div class="mb-4 text-zinc-100">
+    <div class="mx-auto max-w-lg rounded-lg p-6 shadow-lg">
+      <div class="prose mb-4">
         Please fill out the form or, alternatively,
-        <a
-          href="mailto:hello@benlimmer.com?subject=Freelance%20Services"
-          class="text-blue-400 underline hover:text-blue-300">send me an email</a
-        >. I'm looking forward to connecting with you!
+        <a href="mailto:hello@benlimmer.com?subject=Freelance%20Services">send me an email</a>. I'm looking forward to
+        connecting with you!
       </div>
       <form id="contact-form" class="space-y-6" novalidate>
         <div>
@@ -32,9 +30,7 @@ import Layout from "src/layouts/Layout.astro";
             class="form-input"
             autocomplete="email"
           />
-          <small id="email-help" class="mt-1 block text-xs text-zinc-400"
-            >I'll never share your email with anyone else.</small
-          >
+          <small id="email-help" class="form-help">I'll never share your email with anyone else.</small>
         </div>
         <div>
           <label for="message-input" class="form-label">Message<span class="ml-1 text-red-400">*</span></label>
@@ -45,9 +41,9 @@ import Layout from "src/layouts/Layout.astro";
             required
             aria-describedby="message-help"
             class="form-input"></textarea>
-          <small id="message-help" class="mt-1 block text-xs text-zinc-400"
-            >Introduce yourself and share some information about your needs.</small
-          >
+          <small id="message-help" class="form-help">
+            Introduce yourself and share some information about your needs.
+          </small>
         </div>
         <button
           type="submit"
@@ -70,10 +66,13 @@ import Layout from "src/layouts/Layout.astro";
       @reference "../../styles/global.css";
 
       .form-label {
-        @apply block text-sm font-medium text-zinc-200;
+        @apply block;
       }
       .form-input {
         @apply mt-1 block w-full rounded-md border border-zinc-700 bg-zinc-800 p-2 text-zinc-100 focus:border-blue-500 focus:ring-blue-500;
+      }
+      .form-help {
+        @apply mt-1 block text-sm text-zinc-400;
       }
     </style>
     <script type="module" is:inline>
