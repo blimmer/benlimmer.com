@@ -1,0 +1,39 @@
+---
+import { Image, getImage } from "astro:assets";
+
+function getAlt({ alt, caption }: Record<string, any>): string {
+  if (alt && alt !== "") {
+    return alt;
+  }
+
+  if (caption) {
+    return caption;
+  } else {
+    return "";
+  }
+}
+
+const { src, caption, width: widthParam = "full" } = Astro.props;
+const unoptimizedImage = await getImage({ src });
+const alt = getAlt(Astro.props);
+const imgClass = `w-${widthParam} m-auto max-h-[94vh] object-contain`;
+---
+
+<figure>
+  {
+    caption ? (
+      <>
+        <a href={unoptimizedImage.src} target="_blank" rel="noopener noreferrer">
+          <Image class={imgClass} src={src} alt={alt} />
+        </a>
+        <figcaption>
+          <Fragment set:html={caption} />
+        </figcaption>
+      </>
+    ) : (
+      <a href={unoptimizedImage.src} target="_blank" rel="noopener noreferrer">
+        <Image class={imgClass} src={src} alt={alt} />
+      </a>
+    )
+  }
+</figure>

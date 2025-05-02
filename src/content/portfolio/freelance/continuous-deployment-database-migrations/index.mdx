@@ -1,10 +1,12 @@
 ---
-layout: page
 title: Continuous Deployment Database Migrations
 description:
   "Stabilize and democratize deployments by automating database migrations in your continuous deployment pipeline."
 tldr: "Democratized application deployment by automating database migrations in a continuous delivery pipeline."
 ---
+
+import MdxImage from "src/components/MdxImage.astro";
+import Diagram from "./assets/diagram.png";
 
 Database migrations often stand in the way of fully automating your deployment pipeline. Many teams treat database
 migrations as a separate, manual (and often error-prone) step.
@@ -25,11 +27,7 @@ I previously set this client up with
 containerized Python application to [Amazon ECS](https://aws.amazon.com/ecs/). CDK Pipelines provided a great platform
 to add automated database migrations.
 
-<div class="center mb-2">
-  <a href="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/continuous-deployment-database-migrations/diagram.png assets/images/pages/portfolio/freelance/continuous-deployment-database-migrations/diagram.png %}">
-    <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/continuous-deployment-database-migrations/diagram.png assets/images/pages/portfolio/freelance/continuous-deployment-database-migrations/diagram.png %}" alt=''>
-  </a>
-</div>
+<MdxImage src={Diagram} alt="Continuous Deployment Database Migrations diagram" />
 
 To automatically run the database migrations, we follow these steps:
 
