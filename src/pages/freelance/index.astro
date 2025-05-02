@@ -1,4 +1,5 @@
 ---
+import ContactSection from "src/components/ContactSection.astro";
 import ServiceCard from "src/components/freelance/ServiceCard.astro";
 import Layout from "src/layouts/Layout.astro";
 ---
@@ -77,10 +78,6 @@ import Layout from "src/layouts/Layout.astro";
         />
       </div>
     </section>
-    <section class="mb-16 flex flex-col items-center py-12" id="contact">
-      <h2 class="mb-8 text-4xl font-bold text-white">Get in Touch</h2>
-      <p class="prose mb-8 max-w-none text-center">Interested in working together? Let's connect.</p>
-      <a href="/freelance/contact" class="btn-primary"> Contact me </a>
-    </section>
+    <ContactSection />
   </main>
 </Layout>

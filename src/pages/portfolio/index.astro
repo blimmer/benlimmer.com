@@ -1,4 +1,5 @@
 ---
+import ContactSection from "src/components/ContactSection.astro";
 import Layout from "src/layouts/Layout.astro";
 ---
 
@@ -8,8 +9,8 @@ import Layout from "src/layouts/Layout.astro";
 >
   <main class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
     <h1 class="mb-8 text-5xl font-bold">Portfolio</h1>
-    <div class="prose prose-lg max-w-none text-white">
-      <section class="mb-12">
+    <div class="max-w-none text-white">
+      <section class="prose prose-lg mb-12">
         <h2 id="freelance" class="mb-4 text-3xl font-semibold">Freelance (2020–Present)</h2>
         <h3 class="mt-6 mb-2 text-xl font-bold">Infrastructure as Code</h3>
         <ul>
@@ -114,7 +115,7 @@ import Layout from "src/layouts/Layout.astro";
         </div>
       </section>
 
-      <section class="mb-12">
+      <section class="prose prose-lg mb-12">
         <h2 id="ibotta" class="mb-4 text-3xl font-semibold">Ibotta (2014–2020)</h2>
         <ul>
           <li><a href="/portfolio/ibotta/digital-payments">Digital Payments Solution Architect</a></li>
@@ -129,7 +130,7 @@ import Layout from "src/layouts/Layout.astro";
         </ul>
       </section>
 
-      <section class="mb-12">
+      <section class="prose prose-lg mb-12">
         <h2 id="talks" class="mb-4 text-3xl font-semibold">Talks (2012–Present)</h2>
         <ul>
           <li><a href="https://blimmer.github.io/1up-git-skills-talk/#/">1-Up Your Git Skills</a></li>
@@ -170,7 +171,7 @@ import Layout from "src/layouts/Layout.astro";
         </ul>
       </section>
 
-      <section class="mb-12">
+      <section class="prose prose-lg mb-12">
         <h2 id="side-projects" class="mb-4 text-3xl font-semibold">Side Projects (2011–Present)</h2>
         <ul>
           <li><a href="https://github.com/blimmer/zsh-aws-vault">zsh-aws-vault</a></li>
@@ -182,7 +183,7 @@ import Layout from "src/layouts/Layout.astro";
         </ul>
       </section>
 
-      <section class="mb-12">
+      <section class="prose prose-lg mb-12">
         <h2 id="readytalk" class="mb-4 text-3xl font-semibold">ReadyTalk (2011–2014)</h2>
         <ul>
           <li><a href="/portfolio/rt/controlsredesign">Conference Controls Redesign</a></li>
@@ -192,14 +193,14 @@ import Layout from "src/layouts/Layout.astro";
         </ul>
       </section>
 
-      <section class="mb-12">
+      <section class="prose prose-lg mb-12">
         <h2 id="postcollege" class="mb-4 text-3xl font-semibold">Post-College</h2>
         <ul>
           <li><a href="/portfolio/startupcommunities">Startup Communities Feature</a></li>
         </ul>
       </section>
 
-      <section class="mb-12">
+      <section class="prose prose-lg mb-12">
         <h2 id="collegeera" class="mb-4 text-3xl font-semibold">College Era (2007–2011)</h2>
         <ul>
           <li>
@@ -211,6 +212,7 @@ import Layout from "src/layouts/Layout.astro";
           <li><a href="/portfolio/launchpad">LaunchPad</a></li>
         </ul>
       </section>
+      <ContactSection />
     </div>
   </main>
 </Layout>
