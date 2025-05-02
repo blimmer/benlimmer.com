@@ -1,0 +1,51 @@
+---
+layout: page
+title: Datadog Integration
+description:
+  "Ben Limmer is a freelance engineer who can help you negotiate and deploy Datadog for your organization. Learn more
+  and contact me today!"
+---
+
+{% include tldr.html content='I\'m an expert at integrating Datadog, contract negotiation, deployment, and employee training.' %}
+
+[Datadog](https://datadoghq.com) is one of my favorite observability platforms. They offer a multitude of
+[products](https://www.datadoghq.com/product/), including APM, metrics, error tracking, log ingestion, and more. In
+addition, their suite of products continues to grow, replacing the need for a multitude of observability tools.
+
+In 2020, I handled contract negotiation, initial deployment, and ongoing setup and training for a rapidly growing
+client.
+
+<div class='center mt-5 mb-5'>
+  <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/datadog-integration/datadog-logo.svg assets/images/pages/portfolio/freelance/datadog-integration/datadog-logo.svg %}" style='max-width: 40%' alt='Datadog logo'>
+</div>
+
+## Contract Negotiation
+
+Although my client's usage was relatively small, cost-efficiency was top of mind. As a result, I negotiated a plan that
+saved my client over 50% on their ongoing bill. I accomplished this by providing Datadog's internal APM team with
+assistance debugging a complex problem that affected their Node.js APM users. You can learn more about this issue
+[here](https://github.com/DataDog/dd-trace-js/issues/1095).
+
+## Deployment
+
+This particular client is a big believer in infrastructure-as-code, specifically utilizing
+[AWS Cloud Development Kit](https://aws.amazon.com/cdk/). Therefore I deployed their Datadog integration via custom CDK
+code. I've since extracted this pattern into an open-source CDK package,
+[`cdk-datadog-integration`](https://github.com/blimmer/cdk-datadog-integration). Anyone can use this package to quickly
+deploy the
+[Datadog AWS integration](https://docs.datadoghq.com/integrations/amazon_web_services/?tab=roledelegation#setup) using
+Datadog's managed CloudFormation policies.
+
+In addition to the initial deployment, I completed integrations with APM, metrics, error tracking (frontend and
+backend), log ingestion, synthetics monitoring, and more.
+
+## Training
+
+An observability platform is only helpful if engineers feel comfortable using the product! In addition to initial
+infrastructure setup and configuration, I've led ongoing training sessions for this client's engineering team. They've
+seen great adoption of the tool and have opted into new features as they've been released.
+
+## Freelance Services
+
+Are you interested in deploying Datadog in your organization? I'd love to help! Learn more about my
+[freelance services](/freelance) and [reach out](/freelance/contact).
