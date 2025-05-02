@@ -5,9 +5,10 @@ alwaysApply: false
 ---
 Tailwind CSS Best Practices
 
+- The tailwind global config is located in `src/styles/global.css`. Prefer global style/classes for consistency when possible. Only customize when necessary.
 - Use Tailwind utility classes extensively in your Astro components.
 - Leverage Tailwind's responsive design utilities (sm:, md:, lg:, etc.).
 - Utilize Tailwind's color palette and spacing scale for consistency.
-- Implement custom theme extensions in tailwind.config.cjs when necessary.
 - Never use the @apply directive
 - The entire site is "dark mode". Do not use the `dark` class.
+
