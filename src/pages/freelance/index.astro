@@ -1,8 +1,6 @@
 ---
 import ServiceCard from "src/components/freelance/ServiceCard.astro";
 import Layout from "src/layouts/Layout.astro";
-import ContactSection from "src/components/homepage/ContactSection.astro";
-import FloatingContactButton from "src/components/FloatingContactButton.astro";
 ---
 
 <Layout
@@ -76,6 +74,15 @@ import FloatingContactButton from "src/components/FloatingContactButton.astro";
         />
       </div>
     </section>
+    <section class="mb-16 flex flex-col items-center py-12" id="contact">
+      <h2 class="mb-8 text-3xl font-bold text-blue-300">Get in Touch</h2>
+      <p class="prose mb-8 max-w-none text-center">Interested in working together? Let's connect.</p>
+      <a
+        href="/freelance/contact"
+        class="focus:ring-offset-bg-primary rounded bg-blue-500 px-8 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-blue-600 focus:ring-4 focus:ring-blue-400 focus:ring-offset-2 focus:outline-none"
+      >
+        Contact me
+      </a>
+    </section>
   </main>
-  <ContactSection />
 </Layout>
