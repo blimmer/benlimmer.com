@@ -5,4 +5,176 @@ import Layout from "src/layouts/Layout.astro";
 <Layout
   title={["Contact", "Freelance"]}
   description="Contact Ben Limmer about freelance software engineering and consulting services."
-/>
+>
+  <main class="mx-auto max-w-4xl px-4 py-12">
+    <h1 class="mb-8 text-center text-5xl font-bold">Contact</h1>
+    <div class="mx-auto max-w-lg rounded-lg p-6 shadow-lg">
+      <div class="prose mb-4">
+        Please fill out the form or, alternatively,
+        <a href="mailto:hello@benlimmer.com?subject=Freelance%20Services">send me an email</a>. I'm looking forward to
+        connecting with you!
+      </div>
+      <form id="contact-form" class="space-y-6" novalidate>
+        <div>
+          <label for="name-input" class="form-label">Your Name<span class="ml-1 text-red-400">*</span></label>
+          <input id="name-input" name="name" type="text" required class="form-input" autocomplete="name" />
+          <small id="name-error" class="mt-1 block hidden text-red-400">Please enter your name.</small>
+        </div>
+        <div>
+          <label for="email-input" class="form-label">Your Email Address<span class="ml-1 text-red-400">*</span></label>
+          <input
+            id="email-input"
+            name="email"
+            type="email"
+            required
+            aria-describedby="email-help"
+            class="form-input"
+            autocomplete="email"
+          />
+          <small id="email-help" class="mt-1 block text-zinc-400">I'll never share your email with anyone else.</small>
+          <small id="email-error" class="mt-1 block hidden text-red-400">Please enter a valid email address.</small>
+        </div>
+        <div>
+          <label for="message-input" class="form-label">Message<span class="ml-1 text-red-400">*</span></label>
+          <textarea
+            id="message-input"
+            name="message"
+            rows="4"
+            required
+            aria-describedby="message-help"
+            class="form-input"></textarea>
+          <small id="message-help" class="mt-1 block text-zinc-400">
+            Introduce yourself and share some information about your needs.
+          </small>
+          <small id="message-error" class="mt-1 block hidden text-red-400">Please enter a message.</small>
+        </div>
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full rounded-md bg-blue-600 px-4 py-2 font-semibold text-white transition-colors hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
+          disabled
+          aria-disabled="true">Submit</button
+        >
+      </form>
+      <div class="mt-5 space-y-2">
+        <div
+          id="contact-error"
+          class="hidden rounded bg-red-700 px-4 py-3 text-sm text-red-100"
+          role="alert"
+          aria-live="assertive"
+          tabindex="-1"
+        >
+          There was an error submitting the form. Please try again. If you experience another failure, please email me
+          using the link above.
+        </div>
+        <div
+          id="contact-success"
+          class="hidden rounded bg-green-700 px-4 py-3 text-sm text-green-100"
+          role="alert"
+          aria-live="assertive"
+          tabindex="-1"
+        >
+          Thank you! I'll be in touch with you in 1-3 business days.
+        </div>
+      </div>
+    </div>
+    <style>
+      @reference "../../styles/global.css";
+
+      .form-label {
+        @apply block;
+      }
+      .form-input {
+        @apply mt-1 block w-full rounded-md border border-zinc-700 bg-zinc-800 p-2 text-zinc-100 focus:border-blue-500 focus:ring-blue-500;
+      }
+    </style>
+    <script type="module" is:inline>
+      const form = document.getElementById("contact-form");
+      const errorDiv = document.getElementById("contact-error");
+      const successDiv = document.getElementById("contact-success");
+      const submitBtn = document.getElementById("submit-btn");
+      const requiredFields = [
+        document.getElementById("name-input"),
+        document.getElementById("email-input"),
+        document.getElementById("message-input"),
+      ];
+      const fieldErrors = [
+        document.getElementById("name-error"),
+        document.getElementById("email-error"),
+        document.getElementById("message-error"),
+      ];
+
+      let isSubmitting = false;
+      // Track touched state for each field
+      const touched = [false, false, false];
+
+      function checkFormValidity() {
+        let allFilled = true;
+        requiredFields.forEach((field, idx) => {
+          // Remove any previous error border
+          field.classList.remove("border-red-500");
+          fieldErrors[idx].classList.add("hidden");
+
+          if (!field.value.trim() || !field.checkValidity()) {
+            allFilled = false;
+            // Show error if field has been touched
+            if (touched[idx]) {
+              field.classList.add("border-red-500");
+              fieldErrors[idx].classList.remove("hidden");
+            }
+          }
+        });
+        submitBtn.disabled = !allFilled || isSubmitting;
+        submitBtn.setAttribute("aria-disabled", (!allFilled || isSubmitting).toString());
+      }
+
+      requiredFields.forEach((field, idx) => {
+        field.addEventListener("input", checkFormValidity);
+        field.addEventListener("blur", () => {
+          touched[idx] = true;
+          checkFormValidity();
+        });
+      });
+      checkFormValidity();
+
+      // Failsafe: hide all errors on load
+      fieldErrors.forEach((err) => err.classList.add("hidden"));
+
+      form?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        errorDiv.classList.add("hidden");
+        successDiv.classList.add("hidden");
+        isSubmitting = true;
+        submitBtn.disabled = true;
+        submitBtn.setAttribute("aria-disabled", "true");
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.textContent = "Sending…";
+        const name = form["name-input"].value.trim();
+        const email = form["email-input"].value.trim();
+        const message = form["message-input"].value.trim();
+        try {
+          const res = await fetch("https://api.benlimmer.com/contact", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, message }),
+          });
+          if (!res.ok) throw new Error("Network response was not ok");
+          successDiv.classList.remove("hidden");
+          successDiv.focus();
+          Array.from(form.elements).forEach((el) => (el.disabled = true));
+        } catch (err) {
+          errorDiv.classList.remove("hidden");
+          errorDiv.focus();
+          submitBtn.disabled = false;
+          submitBtn.setAttribute("aria-disabled", "false");
+        } finally {
+          isSubmitting = false;
+          submitBtn.textContent = originalBtnText;
+        }
+      });
+    </script>
+  </main>
+</Layout>
