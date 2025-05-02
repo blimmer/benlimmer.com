@@ -1,8 +1,58 @@
 ---
+import ServiceCard from "src/components/freelance/ServiceCard.astro";
 import Layout from "src/layouts/Layout.astro";
 ---
 
 <Layout
   title={["Freelance"]}
   description="Ben Limmer's freelance software engineering and consulting services. Specializing in developer experience and productivity."
-/>
+>
+  <main class="mx-auto max-w-4xl px-4 py-12">
+    <h1 class="mb-8 text-5xl font-bold">Freelance Services</h1>
+
+    <div class="prose mb-12 max-w-none">
+      <p class="mb-6">
+        I'm a software engineer and architect with 15+ years of experience working throughout the tech stack. I love
+        helping companies of all sizes achieve their goals! Whether you're a startup looking to build your
+        proof-of-concept, or an established shop looking to scale your platform and processes, I can help.
+      </p>
+    </div>
+
+    <section class="mb-16">
+      <h2 class="mb-8 text-3xl font-bold text-white">Developer Enablement</h2>
+      <div class="prose max-w-none">
+        <p class="mb-4">
+          Most engineering problems are not memory or CPU-bound. Instead, they're bound by engineering bandwidth.
+          Therefore, my primary area of focus is <strong>Developer Enablement</strong>.
+        </p>
+        <p class="mb-4">
+          Many software engineering teams suffer from "paper cuts" that slow down their ability to deliver quality
+          software. For instance, slow or unreliable test suites levy a tax on every change set. Complex deployments
+          make it hard to deliver changes confidently. Uninstrumented code makes it difficult to identify and recover
+          during an incident.
+        </p>
+        <p>
+          Identifying and resolving these challenges are my bread-and-butter. By investing in Developer Enablement,
+          you'll increase the value of your engineering team investment, improve retention, and deliver software to your
+          users more quickly.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="mb-8 text-3xl font-bold text-white">Specialties</h2>
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <ServiceCard
+          emoji="🛠️"
+          headline="Developer Experience (DX)"
+          description="Productive developers deliver value to customers faster. I help improve DX by streamlining workflows, reducing toil, and increasing productivity."
+        />
+        <ServiceCard
+          emoji="☁️"
+          headline="Cloud Architecture"
+          description="I'm an AWS guru. I design and build scalable, secure, and cost-effective cloud architectures using infrastructure as code."
+        />
+      </div>
+    </section>
+  </main>
+</Layout>

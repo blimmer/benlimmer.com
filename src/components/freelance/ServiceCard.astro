@@ -1,0 +1,21 @@
+---
+export interface Props {
+  emoji: string;
+  headline: string;
+  description: string;
+}
+const { emoji, headline, description } = Astro.props;
+---
+
+<div
+  class={`flex flex-col sm:flex-row items-stretch bg-white/5 border border-white/10 rounded-2xl p-6 gap-4 shadow-sm mb-6 min-h-[220px]`}
+>
+  <div class="flex w-full flex-shrink-0 flex-grow-0 flex-col items-center justify-center sm:w-1/4">
+    <span class="mb-2 text-3xl sm:text-4xl" aria-hidden="true">{emoji}</span>
+    <h3 class="text-center text-lg leading-tight font-semibold break-words text-white">{headline}</h3>
+  </div>
+  <div class="mx-6 hidden w-px bg-white/20 sm:block" aria-hidden="true"></div>
+  <div class="flex flex-1 items-center text-sm leading-relaxed text-white/80 sm:ml-0">
+    {description}
+  </div>
+</div>
