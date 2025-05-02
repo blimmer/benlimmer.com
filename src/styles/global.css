@@ -8,8 +8,8 @@
   --color-text-primary: #ffffff;
   --color-text-secondary: rgba(255, 255, 255, 0.8);
   --color-text-tertiary: rgba(255, 255, 255, 0.6);
-  --color-accent: #3b82f6;
   --color-border: rgba(255, 255, 255, 0.1);
+  --color-link: #38bdf8;
 }
 
 body {
@@ -39,10 +39,6 @@ body {
 
 .text-tertiary {
   color: var(--color-text-tertiary);
-}
-
-.text-accent {
-  color: var(--color-accent);
 }
 
 .border-light {
@@ -81,7 +77,11 @@ body {
 }
 
 .prose a {
-  color: var(--color-accent);
+  color: var(--color-link);
+  text-decoration: none;
+  transition:
+    color 0.2s,
+    text-decoration 0.2s;
 }
 
 .prose ul {
@@ -94,4 +94,9 @@ body {
 
 .prose-lg {
   color: var(--color-text-primary);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply rounded bg-blue-600 px-8 py-4 text-lg font-bold text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-blue-700 focus:ring-4 focus:ring-blue-400 focus:ring-offset-2 focus:outline-none disabled:cursor-not-allowed disabled:bg-blue-400 disabled:opacity-50 disabled:hover:scale-100;
 }
