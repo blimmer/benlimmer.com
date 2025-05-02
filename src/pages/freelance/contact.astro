@@ -5,4 +5,123 @@ import Layout from "src/layouts/Layout.astro";
 <Layout
   title={["Contact", "Freelance"]}
   description="Contact Ben Limmer about freelance software engineering and consulting services."
-/>
+>
+  <main class="mx-auto max-w-4xl px-4 py-12">
+    <h1 class="mb-8 text-center text-5xl font-bold">Contact</h1>
+    <div class="mx-auto max-w-lg rounded-lg bg-zinc-900 p-6 shadow-lg">
+      <div class="mb-4 text-zinc-100">
+        Please fill out the form or, alternatively,
+        <a
+          href="mailto:hello@benlimmer.com?subject=Freelance%20Services"
+          class="text-blue-400 underline hover:text-blue-300">send me an email</a
+        >. I'm looking forward to connecting with you!
+      </div>
+      <form id="contact-form" class="space-y-6" novalidate>
+        <div>
+          <label for="name-input" class="form-label">Your Name<span class="ml-1 text-red-400">*</span></label>
+          <input id="name-input" name="name" type="text" required class="form-input" autocomplete="name" />
+        </div>
+        <div>
+          <label for="email-input" class="form-label">Your Email Address<span class="ml-1 text-red-400">*</span></label>
+          <input
+            id="email-input"
+            name="email"
+            type="email"
+            required
+            aria-describedby="email-help"
+            class="form-input"
+            autocomplete="email"
+          />
+          <small id="email-help" class="mt-1 block text-xs text-zinc-400"
+            >I'll never share your email with anyone else.</small
+          >
+        </div>
+        <div>
+          <label for="message-input" class="form-label">Message<span class="ml-1 text-red-400">*</span></label>
+          <textarea
+            id="message-input"
+            name="message"
+            rows="4"
+            required
+            aria-describedby="message-help"
+            class="form-input"></textarea>
+          <small id="message-help" class="mt-1 block text-xs text-zinc-400"
+            >Introduce yourself and share some information about your needs.</small
+          >
+        </div>
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full rounded-md bg-blue-600 px-4 py-2 font-semibold text-white transition-colors hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
+          disabled>Submit</button
+        >
+      </form>
+      <div class="mt-5 space-y-2">
+        <div id="contact-error" class="hidden rounded bg-red-700 px-4 py-3 text-sm text-red-100" role="alert">
+          There was an error submitting the form. Please try again. If you experience another failure, please email me
+          using the link above.
+        </div>
+        <div id="contact-success" class="hidden rounded bg-green-700 px-4 py-3 text-sm text-green-100" role="alert">
+          Thank you! I'll be in touch with you in 1-3 business days.
+        </div>
+      </div>
+    </div>
+    <style>
+      @reference "../../styles/global.css";
+
+      .form-label {
+        @apply block text-sm font-medium text-zinc-200;
+      }
+      .form-input {
+        @apply mt-1 block w-full rounded-md border border-zinc-700 bg-zinc-800 p-2 text-zinc-100 focus:border-blue-500 focus:ring-blue-500;
+      }
+    </style>
+    <script type="module" is:inline>
+      const form = document.getElementById("contact-form");
+      const errorDiv = document.getElementById("contact-error");
+      const successDiv = document.getElementById("contact-success");
+      const submitBtn = document.getElementById("submit-btn");
+      const requiredFields = [
+        document.getElementById("name-input"),
+        document.getElementById("email-input"),
+        document.getElementById("message-input"),
+      ];
+
+      function checkFormValidity() {
+        const allFilled = requiredFields.every((field) => field.value.trim() !== "" && field.checkValidity());
+        submitBtn.disabled = !allFilled;
+      }
+
+      requiredFields.forEach((field) => {
+        field.addEventListener("input", checkFormValidity);
+      });
+      checkFormValidity();
+
+      form?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        errorDiv.classList.add("hidden");
+        successDiv.classList.add("hidden");
+        submitBtn.disabled = true;
+        const name = form["name-input"].value.trim();
+        const email = form["email-input"].value.trim();
+        const message = form["message-input"].value.trim();
+        try {
+          const res = await fetch("https://api.benlimmer.com/contact", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, message }),
+          });
+          if (!res.ok) throw new Error("Network response was not ok");
+          successDiv.classList.remove("hidden");
+          Array.from(form.elements).forEach((el) => (el.disabled = true));
+        } catch (err) {
+          errorDiv.classList.remove("hidden");
+          submitBtn.disabled = false;
+        }
+      });
+    </script>
+  </main>
+</Layout>
