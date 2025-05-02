@@ -45,14 +45,6 @@ body {
   border-color: var(--color-border);
 }
 
-/* Buttons */
-.btn {
-  @apply rounded-md border border-white/10 bg-white/10 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-white/20;
-}
-.btn-primary {
-  @apply bg-blue-600 text-white hover:bg-blue-700;
-}
-
 /* Typography styles */
 .prose {
   color: var(--color-text-primary);
