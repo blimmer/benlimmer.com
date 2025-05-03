@@ -1,12 +1,18 @@
 ---
-layout: page
-title: Browser Extension Automated Release Platform
 description:
-  "Accelerate your browser extension engineering teams by building an automated release platform for the Chrome
-  WebStore, Mozilla Add-On Hub and more."
+  Accelerate your browser extension engineering teams by building an automated release platform for the Chrome WebStore,
+  Mozilla Add-On Hub and more.
+title: Browser Extension Automated Release Platform
+tldr:
+  Creating an automated release pipeline <b>reduced time to release by over 90%</b>, improved reliability, and
+  democratized deployment.
 ---
 
-{% include tldr.html content='Creating an automated release pipeline <b>reduced time to release by over 90%</b>, improved reliability, and democratized deployment.' %}
+import MdxImage from "src/components/MdxImage.astro";
+import releaseScript from "./assets/release-script.png";
+import changelog from "./assets/changelog.png";
+import releaseComment from "./assets/release-comment.png";
+import prLabel from "./assets/pr-label.png";
 
 Browser Extensions are great tools but can be painful to build and deploy across the various hosting providers, like the
 [Google Chrome Webstore](https://chrome.google.com/webstore/category/extensions),
@@ -48,8 +54,8 @@ Since browser extensions have a user-visible version number, we wanted to automa
 automatically. For example, if every commit in a given release started with the `fix:` prefix, the next release would
 increment the `bugfix` version number.
 
-Since the team already used the [Squash & Merge]({% post_url 2017-08-03-understanding-github-pr-merge-options %}) GitHub
-merge option, I added a GitHub action to validate that PR titles conform to the
+Since the team already used the [Squash & Merge](/2017/08/03/understanding-github-pr-merge-options) GitHub merge option,
+I added a GitHub action to validate that PR titles conform to the
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) standard. Then, during release, each PR
 corresponds to a single commit and is used to determine the next version number.
 
@@ -60,9 +66,7 @@ branch for preview releases.
 
 Then, the script asks which tested preview version should be promoted to the release for production releases.
 
-<div class='center mt-4 mb-4'>
-   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/browser-extension-automated-release-platform/release-script.png assets/images/portfolio/freelance/browser-extension-automated-release-platform/release-script.png %}" alt="console screenshot creating a new production release from preview tags" />
-</div>
+<MdxImage src={releaseScript} alt="console screenshot creating a new production release from preview tags" />
 
 This behavior ensures that a well-tested preview version is distributed to end-users.
 
@@ -73,20 +77,20 @@ release notes are automatically generated and attached to a
 [GitHub Release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) at release time.
 These release notes make it easy for stakeholders to see what changes have gone out with any given release.
 
-<div class='center mt-4 mb-4'>
-   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/browser-extension-automated-release-platform/changelog.png assets/images/portfolio/freelance/browser-extension-automated-release-platform/changelog.png %}" alt="an categorized changelog containing a list of bugfixes and features released with version 3.21.0" />
-</div>
+<MdxImage
+  src={changelog}
+  alt="an categorized changelog containing a list of bugfixes and features released with version 3.21.0"
+/>
 
 Additionally, each pull request automatically is labeled and commented on when it's included in a release. This way,
 developers know when their changes have been released.
 
-<div class='center mt-4 mb-1'>
-   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/browser-extension-automated-release-platform/release-comment.png assets/images/portfolio/freelance/browser-extension-automated-release-platform/release-comment.png %}" alt="a GitHub pull request comment stating that it was included in a preview (3.21.0-alpha.1) release and a production (3.21.0) release" />
-</div>
+<MdxImage
+  src={releaseComment}
+  alt="a GitHub pull request comment stating that it was included in a preview (3.21.0-alpha.1) release and a production (3.21.0) release"
+/>
 
-<div class='center mb-4'>
-   <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/browser-extension-automated-release-platform/pr-label.png assets/images/portfolio/freelance/browser-extension-automated-release-platform/pr-label.png %}" alt="labels on a GitHub pull request indicating it was released to preview and production" />
-</div>
+<MdxImage src={prLabel} alt="labels on a GitHub pull request indicating it was released to preview and production" />
 
 ### Submission to Hosting Providers
 
@@ -109,5 +113,4 @@ duties.
 
 ## Freelance Services
 
-Are you interested in leveling up your browser extension release process? I'd love to help! Learn more about my
-[freelance services](/freelance) and [reach out](/freelance/contact).
+Are you interested in leveling up your browser extension release process? I'd love to help!

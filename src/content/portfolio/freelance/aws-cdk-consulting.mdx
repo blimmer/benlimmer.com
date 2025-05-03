@@ -7,10 +7,10 @@ tldr:
   working with new and existing applications.'
 ---
 
-Infrastructure as Code (IaC) tools aren't new, having appeared on
-the [ThoughtWorks Radar as early as 2011](https://www.thoughtworks.com/radar/techniques/infrastructure-as-code).
-However, [AWS Cloud Development Kit (aws-cdk)](https://aws.amazon.com/cdk/) represents a significant upgrade to existing
-tools like CloudFormation, Terraform, Chef, Ansible, etc.
+Infrastructure as Code (IaC) tools aren't new, having appeared on the
+[ThoughtWorks Radar as early as 2011](https://www.thoughtworks.com/radar/techniques/infrastructure-as-code). However,
+[AWS Cloud Development Kit (aws-cdk)](https://aws.amazon.com/cdk/) represents a significant upgrade to existing tools
+like CloudFormation, Terraform, Chef, Ansible, etc.
 
 ## Why AWS CDK?
 
@@ -19,10 +19,10 @@ programming languages like TypeScript, Python, Java, DotNet, and Go. These highe
 the target configuration language, like JSON/YAML or HCL for CloudFormation or Terraform, respectively. Using real
 programming languages, developers can jump in without learning a new configuration language.
 
-Additionally, AWS CDK
-provides [first-class constructs](https://docs.aws.amazon.com/cdk/v2/guide/constructs.html#constructs_using) following
-best practices. For instance, I can create a VPC, ECS Cluster, and Application Load Balanced ECS Fargate service with
-eight lines of code!
+Additionally, AWS CDK provides
+[first-class constructs](https://docs.aws.amazon.com/cdk/v2/guide/constructs.html#constructs_using) following best
+practices. For instance, I can create a VPC, ECS Cluster, and Application Load Balanced ECS Fargate service with eight
+lines of code!
 
 ```typescript
 export class MyEcsConstructStack extends Stack {

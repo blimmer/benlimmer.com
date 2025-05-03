@@ -1,12 +1,15 @@
 ---
-layout: page
-title: Event-Driven Architecture via AWS EventBridge
 description:
-  "Interested in event-driven architectures? Start to break microservices out of your monolithic application using
-  managed services like AWS EventBridge."
+  Interested in event-driven architectures? Start to break microservices out of your monolithic application using
+  managed services like AWS EventBridge.
+title: Event-Driven Architecture via AWS EventBridge
+tldr:
+  Let me pave the road for your event-driven architecture using the simple, scalable <a
+  href="https://aws.amazon.com/eventbridge/">AWS EventBridge</a> service.
 ---
 
-{% include tldr.html content='Let me pave the road for your event-driven architecture using the simple, scalable <a href="https://aws.amazon.com/eventbridge/">AWS EventBridge</a> service.' %}
+import MdxImage from "src/components/MdxImage.astro";
+import eventbridgeDiagram from "./assets/eventbridge-diagram.png";
 
 Event-driven architectures are becoming increasingly popular, especially as more organizations move to loosely coupled
 architectures (e.g., microservices).
@@ -27,9 +30,10 @@ you in the future.
 For most clients, I start with a single "paved-road" pattern: a single event type triggers a Lambda function each time
 it's posted to the bus.
 
-<div class='center mt-5 mb-5'>
-  <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/event-driven-architecture/eventbridge-diagram.png assets/images/pages/portfolio/freelance/event-driven-architecture/eventbridge-diagram.png %}" alt='PutEvent posting to EventBridge, triggering an AWS lambda, with error handling via AWS SQS Dead Letter Queues'>
-</div>
+<MdxImage
+  src={eventbridgeDiagram}
+  alt="PutEvent posting to EventBridge, triggering an AWS lambda, with error handling via AWS SQS Dead Letter Queues"
+/>
 
 The flexible `PutEvent` API allows your existing services to fire events on the event bus.
 
@@ -125,5 +129,3 @@ Et voila! The event handler is live. Developers love how easy it is to create an
 
 Even if microservices aren't an element of your near-term plan, a scalable event bus can provide a simple way to
 decouple asynchronous tasks from your [majestic monolith](https://m.signalvnoise.com/the-majestic-monolith/).
-
-Sound interesting? I can help. Learn more about my [freelance services](/freelance) and [reach out](/freelance/contact).

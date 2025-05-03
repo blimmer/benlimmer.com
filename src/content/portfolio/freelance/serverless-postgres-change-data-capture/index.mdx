@@ -1,12 +1,13 @@
 ---
-layout: page
-title: Serverless Postgres Change Data Capture
 description:
-  "Accelerate your transition to an event-driven architecture by automatically publishing events when changes occur in
-  your database."
+  Accelerate your transition to an event-driven architecture by automatically publishing events when changes occur in
+  your database.
+title: Serverless Postgres Change Data Capture
+tldr: Rapidly increase adoption of an event-driven architecture by auto-publishing events when database changes occur.
 ---
 
-{% include tldr.html content='Rapidly increase adoption of an event-driven architecture by auto-publishing events when database changes occur.' %}
+import MdxImage from "src/components/MdxImage.astro";
+import hygenCreateHandler from "./assets/hygen-create-handler.png";
 
 Adopting an event-driven architecture can be a formidable paradigm shift for your developers. However, especially in
 monolith-centric ecosystems with a single database, you can accelerate the adoption of event-driven architecture by
@@ -192,15 +193,11 @@ Developers found the "paved road" experience of creating a new handler delightfu
 generator asked questions to create the Infrastructure-as-Code, including an EventBridge Rule to trigger a TypeScript
 lambda, all predefined and configured.
 
-<div class='center mt-4 mb-4'>
-  <img src="{{ site.base_url }}/{% ministamp _images/portfolio/freelance/serverless-postgres-cdc/hygen-create-handler.png assets/images/pages/portfolio/freelance/serverless-postgres-cdc/hygen-create-handler.png %}" alt='A hygen code generator walking the user through creating a new EventBridge target'>
-</div>
+<MdxImage
+  src={hygenCreateHandler}
+  alt="A hygen code generator walking the user through creating a new EventBridge target"
+/>
 
 This system allowed this small team to be agile, producing decoupled integration code with minimal overhead or
 boilerplate. Furthermore, as the team grows, having this logic already decoupled will allow separate teams to own
 integrations without the other operational overhead of traditional microservices environments.
-
-## Want to Try It Out?
-
-Does this approach sound interesting? I can help implement this pattern at your organization. Learn more about my
-[freelance services](/freelance) and [reach out](/freelance/contact).
