@@ -1,8 +1,279 @@
 ---
+import ContactSection from "src/components/ContactSection.astro";
 import Layout from "src/layouts/Layout.astro";
+
+interface PortfolioItem {
+  text: string;
+  href?: string;
+}
+
+const portfolioSections = [
+  {
+    id: "freelance",
+    title: "Freelance (2020–Present)",
+    subsections: [
+      {
+        heading: "Infrastructure as Code",
+        items: [
+          {
+            text: "AWS Cloud Development Kit (aws-cdk) Implementations, Consulting, and Training",
+            href: "/portfolio/freelance/aws-cdk-consulting",
+          },
+        ],
+      },
+      {
+        heading: "Continuous Integration, Delivery, and Deployment",
+        items: [
+          {
+            text: "Continuous Deployment Database Migrations",
+            href: "/portfolio/freelance/continuous-deployment-database-migrations",
+          },
+          { text: "AWS Cloud Development Kit (aws-cdk) Deployment Pipelines" },
+          {
+            text: "Browser Extension Automated Release Platform",
+            href: "/portfolio/freelance/browser-extension-automated-release-platform",
+          },
+          { text: "Front End Application Continuous Deployment Pipelines" },
+          { text: "Reusable CircleCI Orbs" },
+        ],
+      },
+      {
+        heading: "Testing",
+        items: [
+          { text: "Automated Acceptance Testing via Playwright" },
+          {
+            text: "Automated Front End Content Preview",
+            href: "/portfolio/freelance/automated-front-end-content-preview",
+          },
+          { text: "CircleCI Jest Performance Optimization" },
+          { text: "Front End Application Test Suite Migration, and Usability Improvements" },
+          { text: "Production-like QA Environment from Sanitized Production Data" },
+        ],
+      },
+      {
+        heading: "System Architecture",
+        items: [
+          { text: "Cost-Effective Salesforce Data Synchronization" },
+          {
+            text: "Event-Driven Architecture Implementation via AWS EventBridge",
+            href: "/portfolio/freelance/event-driven-architecture",
+          },
+          { text: "Multi-Tenant App Infrastructure Design and Deployment" },
+          { text: "PDF Content Extraction and Indexing" },
+          {
+            text: "Serverless Postgres Change Data Capture",
+            href: "/portfolio/freelance/serverless-postgres-change-data-capture",
+          },
+        ],
+      },
+      {
+        heading: "Security and Operations",
+        items: [
+          { text: "AWS IAM User Automation and Scope Reduction" },
+          { text: "Database Diaster Recovery Preparation" },
+          { text: "Datadog Integration", href: "/portfolio/freelance/datadog-integration" },
+          { text: "Organizational Security Posture Audit and Recommendations" },
+          { text: "Third-Party SaaS Cost Optimizations (AWS, CircleCI, Chromatic, Datadog)" },
+          { text: "Secure an Internet Accessible Bastion via AWS Systems Manager" },
+        ],
+      },
+      {
+        heading: "Client-Side Applications",
+        items: [
+          { text: "Browser Extension Multi-Browser WebExtension Support" },
+          { text: "Front End Application Performance Optimization" },
+          { text: "Vue CLI to Nuxt Transition" },
+        ],
+      },
+      {
+        heading: "Talks and Education",
+        items: [{ text: '"From the Ground Up" Educational Talks (Cloud Infrastructure, RDS, CI/CD)' }],
+      },
+      {
+        heading: "Data Science",
+        items: [
+          { text: "Data Science Project Generators & Continuous Deployment" },
+          { text: "EMR Encryption-in-Transit via Amazon Private Certificate Authority" },
+        ],
+      },
+    ],
+    callout: {
+      text: "Are you interested in a freelance topic that doesn't yet have a dedicated page?",
+      linkText: "Reach out for more information.",
+      linkHref: "/freelance/contact",
+    },
+  },
+  {
+    id: "ibotta",
+    title: "Ibotta (2014–2020)",
+    items: [
+      { text: "Digital Payments Solution Architect", href: "/portfolio/ibotta/digital-payments" },
+      { text: "Ibotta Browser Extension", href: "/portfolio/ibotta/browser-extension" },
+      { text: "Protocol Buffer / GRPC Pipeline", href: "/portfolio/ibotta/protocol-buffer-grpc-pipeline" },
+      { text: "Microservice Scorecard Generator", href: "/portfolio/ibotta/microservice-scorecard-generator" },
+      { text: "Docker-Driven Deployment Tool", href: "/portfolio/ibotta/docker-deployment-tool" },
+      { text: "AWS Cost Optimizations", href: "/portfolio/ibotta/aws-spend" },
+      { text: "Partner Portal", href: "/portfolio/ibotta/partner-portal" },
+      { text: "Customer Support Internal Tool", href: "/portfolio/ibotta/cs-tool" },
+      { text: "Ibotta.com Webapp", href: "/portfolio/ibotta/ibotta-dot-com" },
+    ],
+  },
+  {
+    id: "talks",
+    title: "Talks (2012–Present)",
+    items: [
+      { text: "1-Up Your Git Skills", href: "https://blimmer.github.io/1up-git-skills-talk/#/" },
+      {
+        text: 'Maximize Your Output (sans "productivity shame")',
+        href: "https://blimmer.github.io/maximize-your-output-talk/#/",
+      },
+      {
+        text: "Tips & Tricks for Being a Successful Tech Lead",
+        href: "https://www.slideshare.net/BenLimmer/tips-tricks-for-being-a-successful-tech-lead",
+      },
+      { text: "Upgrading Ember.js Apps", href: "https://www.slideshare.net/BenLimmer/upgrading-emberjs-apps" },
+      { text: "Fun with Ember 2.x Features", href: "https://www.slideshare.net/BenLimmer/fun-with-ember-2x-features" },
+      {
+        text: "Building Real-Time Apps with Ember.js and Websockets",
+        href: "https://www.slideshare.net/BenLimmer/building-realtime-apps-with-emberjs-and-websockets",
+      },
+      {
+        text: "Building a Single Page Application using Ember.js ... for fun and profit",
+        href: "https://www.slideshare.net/BenLimmer/building-a-single-page-application-using-emberjs-for-fun-and-profit",
+      },
+      {
+        text: "Automated Testing in Ember.js",
+        href: "https://www.slideshare.net/BenLimmer/automated-testing-in-emberjs",
+      },
+      {
+        text: "Deploying a Location-Aware Ember.js App",
+        href: "https://www.slideshare.net/BenLimmer/deploying-a-locationaware-ember-application",
+      },
+    ],
+  },
+  {
+    id: "side-projects",
+    title: "Side Projects (2011–Present)",
+    items: [
+      { text: "zsh-aws-vault", href: "https://github.com/blimmer/zsh-aws-vault" },
+      { text: "mac-dev-playbook", href: "https://github.com/blimmer/mac-dev-playbook" },
+      { text: "ember-raffle", href: "https://blimmer.github.io/ember-raffle/" },
+      { text: "ember-braze", href: "https://github.com/blimmer/ember-braze" },
+      { text: "benlimmer.com", href: "https://github.com/blimmer/benlimmer.com" },
+      { text: "Open Source Contributions", href: "https://github.com/blimmer?tab=overview" },
+    ],
+  },
+  {
+    id: "readytalk",
+    title: "ReadyTalk (2011–2014)",
+    items: [
+      { text: "Conference Controls Redesign", href: "/portfolio/rt/controlsredesign" },
+      { text: "swt-bling", href: "/portfolio/swt-bling" },
+      { text: "Video Conferencing", href: "/portfolio/rt/videoconferencing" },
+      { text: "QuickLauncher", href: "/portfolio/rt/quicklauncher" },
+    ],
+  },
+  {
+    id: "postcollege",
+    title: "Post-College",
+    items: [{ text: "Startup Communities Feature", href: "/portfolio/startupcommunities" }],
+  },
+  {
+    id: "collegeera",
+    title: "College Era (2007–2011)",
+    items: [
+      {
+        text: "Startups2Students: Bring the World of Entrepreneurship to CU Boulder",
+        href: "/portfolio/startups2students",
+      },
+      { text: "Waldo: Intelligent Call Handler", href: "/portfolio/waldo" },
+      { text: "LaunchPad", href: "/portfolio/launchpad" },
+    ],
+  },
+];
 ---
 
 <Layout
   title={["Portfolio"]}
   description="Ben Limmer's portfolio of software engineering projects and consulting work."
-/>
+>
+  <main class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
+    <h1 class="mb-8 text-5xl font-bold">Portfolio</h1>
+    <div class="max-w-none text-white">
+      {
+        portfolioSections.map((section) => (
+          <section class="prose prose-lg mb-12">
+            <h2 id={section.id} class="mb-4 text-3xl font-semibold">
+              {section.title}
+            </h2>
+
+            {section.subsections ? (
+              section.subsections.map((subsection) => (
+                <>
+                  <h3 class="mt-6 mb-2 text-xl font-bold">{subsection.heading}</h3>
+                  <ul>
+                    {subsection.items.map((item: PortfolioItem) =>
+                      item.href ? (
+                        <li>
+                          <a href={item.href}>{item.text}</a>
+                        </li>
+                      ) : (
+                        <li>{item.text}</li>
+                      ),
+                    )}
+                  </ul>
+                </>
+              ))
+            ) : (
+              <ul>
+                {section.items.map((item: PortfolioItem) =>
+                  item.href ? (
+                    <li>
+                      <a href={item.href}>{item.text}</a>
+                    </li>
+                  ) : (
+                    <li>{item.text}</li>
+                  ),
+                )}
+              </ul>
+            )}
+
+            {/* Render the callout if it exists for the section */}
+            {section.callout && (
+              <div class="flex justify-center">
+                <aside class="mx-8 mt-6 flex w-full max-w-2xl items-center gap-3 rounded-lg border border-slate-600 bg-slate-700/80 px-6 py-4 shadow-lg">
+                  <span aria-hidden="true" class="flex items-center justify-center">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <text
+                        x="14"
+                        y="21"
+                        text-anchor="middle"
+                        font-size="22"
+                        font-family="sans-serif"
+                        fill="#FFFFFF"
+                        font-weight="bold"
+                      >
+                        ?
+                      </text>
+                    </svg>
+                  </span>
+                  <span class="text-base text-slate-100">
+                    {section.callout.text}
+                    <a
+                      href={section.callout.linkHref}
+                      class="rounded font-semibold text-slate-200 underline underline-offset-2 transition-colors hover:text-white focus:ring-2 focus:ring-slate-400 focus:outline-none"
+                    >
+                      {section.callout.linkText}
+                    </a>
+                  </span>
+                </aside>
+              </div>
+            )}
+          </section>
+        ))
+      }
+
+      <ContactSection />
+    </div>
+  </main>
+</Layout>

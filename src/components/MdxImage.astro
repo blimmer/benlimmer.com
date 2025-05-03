@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  caption?: string;
+  width?: "full" | "1/2" | "1/3" | "2/3" | "1/4" | "3/4";
+}
+
+const { src, caption, alt, width: widthParam = "full" } = Astro.props;
+
+const widthClasses = {
+  full: "w-full",
+  "1/2": "w-1/2",
+  "1/3": "w-1/3",
+  "2/3": "w-2/3",
+  "1/4": "w-1/4",
+  "3/4": "w-3/4",
+};
+
+const figureClass = `${widthClasses[widthParam]} m-auto`;
+const imgClass = `w-full max-h-[94vh] object-contain`;
+---
+
+<figure class={figureClass}>
+  {
+    caption ? (
+      <>
+        <a href={src.src} target="_blank" rel="noopener noreferrer">
+          <Image class={imgClass} src={src} alt={alt} />
+        </a>
+        <figcaption>
+          <Fragment set:html={caption} />
+        </figcaption>
+      </>
+    ) : (
+      <a href={src.src} target="_blank" rel="noopener noreferrer">
+        <Image class={imgClass} src={src} alt={alt} />
+      </a>
+    )
+  }
+</figure>
