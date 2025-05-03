@@ -1,14 +1,19 @@
 ---
-layout: page
-title: "ReadyTalk Conference Controls Redesign"
 description:
-  "The process of taking a dated-looking Java + SWT application and transforming the look and feel to a less
-  skeuomorphic, more modern application"
+  The process of taking a dated-looking Java + SWT application and transforming the look and feel to a less
+  skeuomorphic, more modern application
+title: ReadyTalk Conference Controls Redesign
 ---
 
-<div class="center">
-  <img src="{{ site.base_url }}/{% ministamp _images/pages/portfolio/rt/PrevMod.png assets/images/pages/portfolio/rt/PrevMod.png %}" height="316" width="450" alt="Legacy ReadyTalk Conference Controls" />
-</div>
+import MdxImage from "src/components/MdxImage.astro";
+import prevmod from "./assets/PrevMod.png";
+import modshareprestoolbar from "./assets/ModSharePresToolbar.png";
+import newmodfullres from "./assets/NewModFullRes.png";
+import previcons from "./assets/PrevIcons.png";
+import newicons from "./assets/NewIcons.png";
+import muchborders from "./assets/MuchBorders.png";
+
+<MdxImage src={prevmod} alt="Legacy ReadyTalk Conference Controls" />
 
 > You never get a second chance to make a good first impression. -- Will Roger
 
@@ -27,9 +32,10 @@ identified the Sharing area as the most valuable real-estate.
 With this knowledge, we set out to make the Sharing area bigger. The most obvious two components to work were the
 Presentation area and the Bottom toolbar.
 
-<div class="center">
-  <img src="{{ site.base_url }}/{% ministamp _images/pages/portfolio/rt/ModSharePresToolbar.png assets/images/pages/portfolio/rt/ModSharePresToolbar.png %}" height="316" width="450" alt="Highlighted Presentation and Bottom Toolbar on Legacy Conference Controls application" />
-</div>
+<MdxImage
+  src={modshareprestoolbar}
+  alt="Highlighted Presentation and Bottom Toolbar on Legacy Conference Controls application"
+/>
 
 ## Presentation Area
 
@@ -69,15 +75,11 @@ We wanted to take this redesign one step further. We really needed to get rid of
 
 These old icons are from a previous generation. They look way too ... Windows XP.
 
-<div class="center">
-  <img src="{{ site.base_url }}/{% ministamp _images/pages/portfolio/rt/PrevIcons.png assets/images/pages/portfolio/rt/PrevIcons.png %}" alt="Icons from the Legacy Conference Controls Application" />
-</div>
+<MdxImage src={previcons} alt="Icons from the Legacy Conference Controls Application" />
 
 [David Demmer](https://twitter.com/ddchili) came up with these excellent new icons.
 
-<div class="center">
-  <img src="{{ site.base_url }}/{% ministamp _images/pages/portfolio/rt/NewIcons.png assets/images/pages/portfolio/rt/NewIcons.png %}" alt="Icons from the New and Improved Conference Controls Application" />
-</div>
+<MdxImage src={newicons} alt="Icons from the New and Improved Conference Controls Application" />
 
 He removed a ton of unnecessary color, and flattened them out a ton. I think they look way better.
 
@@ -86,9 +88,7 @@ He removed a ton of unnecessary color, and flattened them out a ton. I think the
 Another thing that makes the previous client look dated is the excessive number of borders separating the different
 areas of the client. In some places, we had 3+ borders in the same area.
 
-<div class="center">
-  <img src="{{ site.base_url }}/{% ministamp _images/pages/portfolio/rt/MuchBorders.png assets/images/pages/portfolio/rt/MuchBorders.png %}" alt="Much Borders. So separation. Wow." />
-</div>
+<MdxImage src={muchborders} alt="Much Borders. So separation. Wow." />
 
 We really needed this fix this. To do so, we utilized borders only when absolutely necessary, leveraging natural
 separation more often than actually drawing a border.
@@ -98,8 +98,4 @@ separation more often than actually drawing a border.
 Taking all of the issues from above, we came up with this as a first step toward a more modern-looking ReadyTalk
 Conference Controls.
 
-<div class="center">
-  <a href="/assets/images/pages/portfolio/rt/NewModFullRes.png" style="border-bottom: none;"><img src="{{ site.base_url }}/{% ministamp _images/pages/portfolio/rt/NewMod.png assets/images/pages/portfolio/rt/NewMod.png %}" alt="The Phase 1, new-and-improved ReadyTalk conference controls application" /></a>
-</div>
-
-You'll likely want to click the image to see a high-res version of the final product.
+<MdxImage src={newmodfullres} alt="The Phase 1, new-and-improved ReadyTalk conference controls application" />

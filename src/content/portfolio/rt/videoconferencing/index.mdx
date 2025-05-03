@@ -1,13 +1,16 @@
 ---
-layout: page
+description: A description of Ben Limmer's involvement in developing the ReadyTalk Video Conferencing Product
 title: "ReadyTalk: Video Conferencing"
-description: "A description of Ben Limmer's invovlement in developing the ReadyTalk Video Conferencing Product"
 ---
 
-<div class="center">
-	<img src="{{ site.base_url }}/{% ministamp _images/pages/portfolio/rt/VCiMacComp.png assets/images/pages/portfolio/rt/VCiMacComp.png %}" height="169" width="425" alt="ReadyTalk Video Conferencing on an iMac" />
-</div>
-After completing my first small project at ReadyTalk, [QuickLauncher](/portfolio/rt/quicklauncher), I was excited to be chosen to work on the company's highest priority project, Video Conferencing.
+import MdxImage from "src/components/MdxImage.astro";
+import vciMacComp from "./assets/VCiMacComp.png";
+import red5 from "./assets/Red5.png";
+
+<MdxImage src={vciMacComp} alt="ReadyTalk Video Conferencing on an iMac" />
+
+After completing my first small project at ReadyTalk, [QuickLauncher](/portfolio/rt/quicklauncher), I was excited to be
+chosen to work on the company's highest priority project, Video Conferencing.
 
 In the collaboration Conferencing space, a high-quality Video Conferencing product is hugely important. Because of the
 incredibly competitive market space, my team was tasked with getting out a high-quality, home-grown Video Conferencing
@@ -22,9 +25,7 @@ both in the downloaded rich client and also within the Adobe Flash based partici
 
 ### Server-Side
 
-<div class="center">
-	<img src="{{ site.base_url }}/{% ministamp _images/pages/portfolio/rt/Red5.png assets/images/pages/portfolio/rt/Red5.png %}" height="169" width="425" alt="Red5 logo"/>
-</div>
+<MdxImage src={red5} alt="Red5 logo" />
 
 To avoid the insane licensing cost and closed-source nature of Adobe Media Server, we opted for
 [Red5](http://www.red5.org/), a powerful Open Source Media Server that supports
