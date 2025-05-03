@@ -1,0 +1,116 @@
+---
+description:
+  Accelerate your browser extension engineering teams by building an automated release platform for the Chrome WebStore,
+  Mozilla Add-On Hub and more.
+title: Browser Extension Automated Release Platform
+tldr:
+  Creating an automated release pipeline <b>reduced time to release by over 90%</b>, improved reliability, and
+  democratized deployment.
+---
+
+import MdxImage from "src/components/MdxImage.astro";
+import releaseScript from "./assets/release-script.png";
+import changelog from "./assets/changelog.png";
+import releaseComment from "./assets/release-comment.png";
+import prLabel from "./assets/pr-label.png";
+
+Browser Extensions are great tools but can be painful to build and deploy across the various hosting providers, like the
+[Google Chrome Webstore](https://chrome.google.com/webstore/category/extensions),
+[Firefox Add-On Hub](https://addons.mozilla.org/en-US/firefox/),
+[Apple App Store](https://developer.apple.com/safari/extensions/), and
+[Edge Add-On Store](https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home).
+
+In 2021, I worked with a client with a rapidly growing Browser Extension development team and user base. Their previous
+workflow had a few problems I was tasked with solving.
+
+1. Developers built release assets on their machines. Getting set up to build release assets required a lot of manual
+   configuration. It also introduced subtle, difficult-to-debug differences in the release assets depending on who ran
+   the release.
+
+1. The client had a restricted extension listing (referred to as "preview") shared with internal users and trusted user
+   testers. Publishing the preview extension was time-consuming, so they weren't publishing new versions as often as
+   they wanted to. Also, there was no easy way to release a known-good, tested preview version to production.
+
+1. Each developer needed the IT team to grant access to all the hosting providers. With a rapidly growing team, this
+   prevented new engineers from uploading new releases. Also, many of the hosting providers don't support SAML
+   authentication, so it created more manual tasks for the IT team to revoke access when an engineer left the company.
+
+1. Since each hosting provider’s UI is different, the client had to create complex documentation for uploading,
+   configuring, and promoting releases for each provider. Using the UI also increased the likelihood of user error when
+   releasing.
+
+## Automated Release Platform
+
+To solve these issues, I implemented an Automated Release Platform driven by
+[Semantic Release](https://semantic-release.gitbook.io/semantic-release/) and
+[GitHub actions](https://github.com/features/actions).
+
+### Semantic Versioning
+
+Since browser extensions have a user-visible version number, we wanted to automatically determine the appropriate next
+[semantic version](https://semver.org/) based on the contents of the release. To accomplish this, I leveraged the
+[`@semantic-release/commit-analyzer`](https://github.com/semantic-release/commit-analyzer) and
+[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) to generate the proper next release
+automatically. For example, if every commit in a given release started with the `fix:` prefix, the next release would
+increment the `bugfix` version number.
+
+Since the team already used the [Squash & Merge](/2017/08/03/understanding-github-pr-merge-options) GitHub merge option,
+I added a GitHub action to validate that PR titles conform to the
+[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) standard. Then, during release, each PR
+corresponds to a single commit and is used to determine the next version number.
+
+### Creating a Release
+
+To create a release, developers run an interactive NPM script. The script integrates all changes on the default `main`
+branch for preview releases.
+
+Then, the script asks which tested preview version should be promoted to the release for production releases.
+
+<MdxImage src={releaseScript} alt="console screenshot creating a new production release from preview tags" />
+
+This behavior ensures that a well-tested preview version is distributed to end-users.
+
+### Release Notes
+
+Another benefit of using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) is that categorized
+release notes are automatically generated and attached to a
+[GitHub Release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) at release time.
+These release notes make it easy for stakeholders to see what changes have gone out with any given release.
+
+<MdxImage
+  src={changelog}
+  alt="an categorized changelog containing a list of bugfixes and features released with version 3.21.0"
+/>
+
+Additionally, each pull request automatically is labeled and commented on when it's included in a release. This way,
+developers know when their changes have been released.
+
+<MdxImage
+  src={releaseComment}
+  alt="a GitHub pull request comment stating that it was included in a preview (3.21.0-alpha.1) release and a production (3.21.0) release"
+/>
+
+<MdxImage src={prLabel} alt="labels on a GitHub pull request indicating it was released to preview and production" />
+
+### Submission to Hosting Providers
+
+After a developer creates a release, GitHub actions automatically submit the release assets to each hosting provider.
+The variances between each hosting provider are contained to the GitHub action workflow, removing the error-prone manual
+steps required to release via the UI.
+
+Also, by using GitHub actions to build and release the extension, individual users no longer need direct access to the
+hosting providers. Instead, access is granted via secure API tokens encrypted and stored with GitHub.
+
+## Automated Release Platform Results
+
+The Automated Release Platform has reduced the time it takes for my client to release their browser extension by over
+90%. On average, they now release six preview versions before publishing a release version to all users. Being able to
+quickly release preview versions for testing has significantly improved stability for end-users.
+
+In addition, new team members can confidently release the extension during their first week of contributing code. The
+Automated Release Platform has democratized the release process and significantly simplified their on-call release
+duties.
+
+## Freelance Services
+
+Are you interested in leveling up your browser extension release process? I'd love to help!
