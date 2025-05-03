@@ -1,29 +1,33 @@
 ---
-import { Image, getImage } from "astro:assets";
+import { Image } from "astro:assets";
 
-function getAlt({ alt, caption }: Record<string, any>): string {
-  if (alt && alt !== "") {
-    return alt;
-  }
-
-  if (caption) {
-    return caption;
-  } else {
-    return "";
-  }
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  caption?: string;
+  width?: "full" | "1/2" | "1/3" | "2/3" | "1/4" | "3/4";
 }
 
-const { src, caption, width: widthParam = "full" } = Astro.props;
-const unoptimizedImage = await getImage({ src });
-const alt = getAlt(Astro.props);
-const imgClass = `w-${widthParam} m-auto max-h-[94vh] object-contain`;
+const { src, caption, alt, width: widthParam = "full" } = Astro.props;
+
+const widthClasses = {
+  full: "w-full",
+  "1/2": "w-1/2",
+  "1/3": "w-1/3",
+  "2/3": "w-2/3",
+  "1/4": "w-1/4",
+  "3/4": "w-3/4",
+};
+
+const figureClass = `${widthClasses[widthParam]} m-auto`;
+const imgClass = `w-full max-h-[94vh] object-contain`;
 ---
 
-<figure>
+<figure class={figureClass}>
   {
     caption ? (
       <>
-        <a href={unoptimizedImage.src} target="_blank" rel="noopener noreferrer">
+        <a href={src.src} target="_blank" rel="noopener noreferrer">
           <Image class={imgClass} src={src} alt={alt} />
         </a>
         <figcaption>
@@ -31,7 +35,7 @@ const imgClass = `w-${widthParam} m-auto max-h-[94vh] object-contain`;
         </figcaption>
       </>
     ) : (
-      <a href={unoptimizedImage.src} target="_blank" rel="noopener noreferrer">
+      <a href={src.src} target="_blank" rel="noopener noreferrer">
         <Image class={imgClass} src={src} alt={alt} />
       </a>
     )
