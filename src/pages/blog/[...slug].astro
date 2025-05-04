@@ -66,7 +66,7 @@ const { Content } = await render(post);
           {
             prevPost ? (
               <a
-                href={`/${prevPost.slug}`}
+                href={`/blog/${prevPost.slug}`}
                 class="group text-secondary hover:text-primary inline-flex items-center gap-1 text-sm font-medium transition-colors"
                 rel="prev"
                 aria-label={`Previous post: ${prevPost.data.title}`}
@@ -92,7 +92,7 @@ const { Content } = await render(post);
           {
             nextPost ? (
               <a
-                href={`/${nextPost.slug}`}
+                href={`/blog/${nextPost.slug}`}
                 class="group text-secondary hover:text-primary ml-auto inline-flex items-center gap-1 text-sm font-medium transition-colors"
                 rel="next"
                 aria-label={`Next post: ${nextPost.data.title}`}
