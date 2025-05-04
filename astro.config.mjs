@@ -13,5 +13,9 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
+  build: {
+    assets: "_assets",
+  },
+
   integrations: [mdx()],
 });
