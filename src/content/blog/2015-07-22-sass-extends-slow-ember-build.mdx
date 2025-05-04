@@ -15,36 +15,40 @@ I've worked on. The initial build was taking almost a full minute, and subsequen
 
 ### Cold Build
 
-    Build successful - 51632ms.
+```console
+Build successful - 51632ms.
 
-    Slowest Trees                                 | Total
-    ----------------------------------------------+---------------------
-    SassCompiler                                  | 20416ms
-    Babel                                         | 7292ms
-    Babel                                         | 4652ms
-    CoffeeScriptFilter                            | 2922ms
-    ES6: App Tree                                 | 2773ms
+Slowest Trees                                 | Total
+----------------------------------------------+---------------------
+SassCompiler                                  | 20416ms
+Babel                                         | 7292ms
+Babel                                         | 4652ms
+CoffeeScriptFilter                            | 2922ms
+ES6: App Tree                                 | 2773ms
 
-    Slowest Trees (cumulative)                    | Total (avg)
-    ----------------------------------------------+---------------------
-    SassCompiler (1)                              | 20416ms
-    Babel (8)                                     | 12836ms (1604 ms)
-    CoffeeScriptFilter (2)                        | 4721ms (2360 ms)
-    ES6: App Tree (1)                             | 2773ms
+Slowest Trees (cumulative)                    | Total (avg)
+----------------------------------------------+---------------------
+SassCompiler (1)                              | 20416ms
+Babel (8)                                     | 12836ms (1604 ms)
+CoffeeScriptFilter (2)                        | 4721ms (2360 ms)
+ES6: App Tree (1)                             | 2773ms
+```
 
 ### Subsequent Builds
 
-    file changed foo/bar.js
+```console
+file changed foo/bar.js
 
-    Build successful - 25769ms.
+Build successful - 25769ms.
 
-    Slowest Trees                                 | Total
-    ----------------------------------------------+---------------------
-    SassCompiler                                  | 20473ms
+Slowest Trees                                 | Total
+----------------------------------------------+---------------------
+SassCompiler                                  | 20473ms
 
-    Slowest Trees (cumulative)                    | Total (avg)
-    ----------------------------------------------+---------------------
-    SassCompiler (1)                              | 20473ms
+Slowest Trees (cumulative)                    | Total (avg)
+----------------------------------------------+---------------------
+SassCompiler (1)                              | 20473ms
+```
 
 ## Removing @extends
 
@@ -53,52 +57,56 @@ This was driving me insane, and I finally tracked down the cause of the slow bui
 
 ### Cold Builds
 
-    Build successful - 33243ms.
+```console
+Build successful - 33243ms.
 
-    Slowest Trees                                 | Total
-    ----------------------------------------------+---------------------
-    Babel                                         | 7005ms
-    Babel                                         | 4645ms
-    Concat: Vendor                                | 3184ms
-    CoffeeScriptFilter                            | 2737ms
-    ES6: App Tree                                 | 2534ms
-    JSHint tests- Mocha                           | 2330ms
-    CoffeeScriptFilter                            | 1836ms
-    JSHint app- Mocha                             | 1833ms
+Slowest Trees                                 | Total
+----------------------------------------------+---------------------
+Babel                                         | 7005ms
+Babel                                         | 4645ms
+Concat: Vendor                                | 3184ms
+CoffeeScriptFilter                            | 2737ms
+ES6: App Tree                                 | 2534ms
+JSHint tests- Mocha                           | 2330ms
+CoffeeScriptFilter                            | 1836ms
+JSHint app- Mocha                             | 1833ms
 
-    Slowest Trees (cumulative)                    | Total (avg)
-    ----------------------------------------------+---------------------
-    Babel (12)                                    | 13011ms (1084 ms)
-    CoffeeScriptFilter (2)                        | 4574ms (2287 ms)
-    Concat: Vendor (1)                            | 3184ms
-    ES6: App Tree (1)                             | 2534ms
-    JSHint tests- Mocha (1)                       | 2330ms
-    JSHint app- Mocha (1)                         | 1833ms
+Slowest Trees (cumulative)                    | Total (avg)
+----------------------------------------------+---------------------
+Babel (12)                                    | 13011ms (1084 ms)
+CoffeeScriptFilter (2)                        | 4574ms (2287 ms)
+Concat: Vendor (1)                            | 3184ms
+ES6: App Tree (1)                             | 2534ms
+JSHint tests- Mocha (1)                       | 2330ms
+JSHint app- Mocha (1)                         | 1833ms
+```
 
 ### Subsequent Builds
 
-    file changed foo/bar.js
+```console
+file changed foo/bar.js
 
-    Build successful - 6372ms.
+Build successful - 6372ms.
 
-    Slowest Trees                                 | Total
-    ----------------------------------------------+---------------------
-    SassCompiler                                  | 1474ms
-    Funnel: App JS Files                          | 692ms
-    ES6: App Tree                                 | 617ms
-    Concat: App                                   | 603ms
-    Concat: Vendor                                | 438ms
-    TreeMerger (appAndDependencies)               | 355ms
+Slowest Trees                                 | Total
+----------------------------------------------+---------------------
+SassCompiler                                  | 1474ms
+Funnel: App JS Files                          | 692ms
+ES6: App Tree                                 | 617ms
+Concat: App                                   | 603ms
+Concat: Vendor                                | 438ms
+TreeMerger (appAndDependencies)               | 355ms
 
-    Slowest Trees (cumulative)                    | Total (avg)
-    ----------------------------------------------+---------------------
-    SassCompiler (1)                              | 1474ms
-    Funnel: App JS Files (1)                      | 692ms
-    ES6: App Tree (1)                             | 617ms
-    Concat: App (1)                               | 603ms
-    Concat: Vendor (1)                            | 438ms
-    Babel (12)                                    | 424ms (35 ms)
-    TreeMerger (appAndDependencies) (1)           | 355ms
+Slowest Trees (cumulative)                    | Total (avg)
+----------------------------------------------+---------------------
+SassCompiler (1)                              | 1474ms
+Funnel: App JS Files (1)                      | 692ms
+ES6: App Tree (1)                             | 617ms
+Concat: App (1)                               | 603ms
+Concat: Vendor (1)                            | 438ms
+Babel (12)                                    | 424ms (35 ms)
+TreeMerger (appAndDependencies) (1)           | 355ms
+```
 
 ## The solution
 

@@ -22,9 +22,11 @@ other stuff that makes the Internet suck. It takes routes unwanted DNS requests 
 make it safer. Here are a few example entries out of his project (I've changed the domains so you don't accidentally
 navigate to these sites):
 
-    127.0.0.1 aalbc.advertserve.fake #ads
-    127.0.0.1 goatse.fake            #shock sites
-    127.0.0.1 www.pacificpoker.fake  #[AdWare.Win32.Casino.m]
+```plaintext
+127.0.0.1 aalbc.advertserve.fake #ads
+127.0.0.1 goatse.fake            #shock sites
+127.0.0.1 www.pacificpoker.fake  #[AdWare.Win32.Casino.m]
+```
 
 As you can see, it takes requests to resolve the IP addresses for these sites and reroutes them to localhost. It's a
 really great, fast way to make browsing the Internet faster, safer and more enjoyable. I was using his hosts file
@@ -50,25 +52,29 @@ All in all, it's a very cool project inspired by one of our neighbors to the Nor
 Steven and hopefully the script will end up in his mainline repository soon. In the meantime, if you want to make the
 Internet suck less, you can clone my project and get yourself a shiny new hosts file. Here's how to do it:
 
-    git clone https://github.com/blimmer/hosts.git
-    python updateHostsFile.py
-    Do you want to update all data sources? [Y/n] y
-    Updating source malwaredomainlist.com from http://www.malwaredomainlist.com/hostslist/hosts.txt
-    Updating source mvps.org from http://winhelp2002.mvps.org/hosts.txt
-    Updating source someonewhocares.org from http://someonewhocares.org/hosts/hosts
-    Updating source StevenBlack from https://raw.github.com/StevenBlack/hosts/master/data/StevenBlack/hosts
-    Do you want to exclude any domains?
-    For example, hulu.com video streaming must be able to access its tracking and ad servers in order to play video. [Y/n] y
-    Do you want to exclude the domain hulu.com ? [Y/n] y
-    Do you want to exclude any other domains? [Y/n] n
-    Removed 2138 duplicates from the merged file
-    Success! Your shiny new hosts file has been prepared.
+```console
+git clone https://github.com/blimmer/hosts.git
+python updateHostsFile.py
+Do you want to update all data sources? [Y/n] y
+Updating source malwaredomainlist.com from http://www.malwaredomainlist.com/hostslist/hosts.txt
+Updating source mvps.org from http://winhelp2002.mvps.org/hosts.txt
+Updating source someonewhocares.org from http://someonewhocares.org/hosts/hosts
+Updating source StevenBlack from https://raw.github.com/StevenBlack/hosts/master/data/StevenBlack/hosts
+Do you want to exclude any domains?
+For example, hulu.com video streaming must be able to access its tracking and ad servers in order to play video. [Y/n] y
+Do you want to exclude the domain hulu.com ? [Y/n] y
+Do you want to exclude any other domains? [Y/n] n
+Removed 2138 duplicates from the merged file
+Success! Your shiny new hosts file has been prepared.
+```
 
 This places your new hosts file in the directory you checked out the project in. Then all you need to do is move it into
 place. Here's how you do it on Mac OS X.
 
-    sudo cp hosts /etc/hosts
-    dscacheutil -flushcache
+```bash
+sudo cp hosts /etc/hosts
+dscacheutil -flushcache
+```
 
 The dscacheutil command flushes your DNS cache so you can start enjoying your new hosts file right away. For
 instructions on where to move the file and how to flush DNS on other platforms, check out the
@@ -93,5 +99,4 @@ What this project does it short-circuits requests to unwanted websites. For inst
 advertisement, your computer (in the background) does a lookup for the advertisers IP address. Since we've blocked it in
 our hosts file, nothing gets loaded and you can happily view your page without that ad.
 
-Hopefully that helps explain what I'm talking about a bit better :-) lly that helps explain what I'm talking about a bit
-better :-)
+Hopefully that helps explain what I'm talking about a bit better :-)

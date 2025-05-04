@@ -23,9 +23,11 @@ The reason behind this problem turns out to be the version of Ruby I built using
 The easy way for me turned out to be adding [rb-readline](https://github.com/luislavena/rb-readline) to my Gemfile, like
 this:
 
-    group :development do
-      gem 'rb-readline'
-    end
+```ruby
+group :development do
+  gem 'rb-readline'
+end
+```
 
 ## The Harder Way
 
@@ -33,11 +35,15 @@ But, of course, I did it the hard way first. I rebuild Ruby with the readline ve
 
 First, install readline:
 
-    brew install readline
+```shell
+brew install readline
+```
 
 Then, reinstall the version of Ruby you're using:
 
-    RUBY_CONFIGURE_OPTS=--with-readline-dir=`brew --prefix readline` rbenv install 1.9.3-p286
+```shell
+RUBY_CONFIGURE_OPTS=--with-readline-dir=`brew --prefix readline` rbenv install 1.9.3-p286
+```
 
 # Conclusion
 

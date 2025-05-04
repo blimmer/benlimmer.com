@@ -93,18 +93,30 @@ work. So, get used to the ES6 syntax and start to transition as time permits.
 You'll need to hack your existing files a bit to get it working with `ember-cli-coffeescript`, but it's pretty
 formulaic. Let's start with your Router, because you almost undoubtedly have one.
 
-In CoffeeScript you'd have something like this: {% highlight coffeescript %} Ember.Router.reopen location: 'auto'
+In CoffeeScript you'd have something like this:
 
-App.Router.map -> @route 'foo' {% endhighlight %}
+```coffeescript
+Ember.Router.reopen
+  location: 'auto'
 
-and with Ember CLI CoffeeScript, you'll translate to something like this: {% highlight coffeescript %}
-`import Ember from 'ember'` `import config from './config/environment'`
+App.Router.map ->
+  @route 'foo'
+
+export default Router
+```
+
+and with Ember CLI CoffeeScript, you'll translate to something like this:
+
+```coffeescript
+import Ember from 'ember'
+import config from './config/environment'
 
 Router = Ember.Router.extend location: config.locationType
 
 Router.map -> @route 'company'
 
-`export default Router` {% endhighlight %}
+export default Router
+```
 
 The biggest change here is the ES6-style module import/export. You need to explicitly import Ember (and your
 environment) and export the `Router` when you're done. Use `ember generate` to help with the transition. It will deal
@@ -148,9 +160,8 @@ So this is where we're at today. Not bad for only a few hours in, right? We have
 piece-by-piece, migrating application code and tests over as we see fit. In all reality, it's grabbing a (seemingly)
 independent piece of code and migrating it, it's dependencies and tests over to CLI.
 
-It was really helpful to get our [tests running with Jenkins
-CI]({% post_url 2015-03-22-ember-cli-testing-with-jenkins %}) as part of this process to make sure we were on the right
-track.
+It was really helpful to get our [tests running with Jenkins CI](/blog/2015/03/22/ember-cli-testing-with-jenkins) as
+part of this process to make sure we were on the right track.
 
 I'm going to continue posting with specifics on the rest of our migration process, but here's the general plan for those
 of your who are interested.

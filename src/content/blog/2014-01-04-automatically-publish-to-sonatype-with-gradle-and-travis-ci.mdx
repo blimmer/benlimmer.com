@@ -10,9 +10,9 @@ description:
   approach utilizes the gradle-nexus-plugin from Benjamin Muschko."
 ---
 
-As I've [mentioned before]({% post_url 2013-12-26-automatically-publish-javadoc-to-gh-pages-with-travis-ci %}), I hate
-doing stuff manually. When we started the [swt-bling](/portfolio/swt-bling) project, I wanted to make sure we had a
-solid way for people to use our current development (SNAPSHOT) jars, as well as our RELEASE jars.
+As I've [mentioned before](/blog/2013/12/26/automatically-publish-javadoc-to-gh-pages-with-travis-ci), I hate doing
+stuff manually. When we started the [swt-bling](/portfolio/swt-bling) project, I wanted to make sure we had a solid way
+for people to use our current development (SNAPSHOT) jars, as well as our RELEASE jars.
 
 At [ReadyTalk](http://www.readytalk.com), we are standardizing our build and deployment of Java code with
 [Gradle](http://www.gradle.org/). So, it was an easy choice to pick Gradle for swt-bling. Plus, I get to learn some
@@ -63,12 +63,16 @@ Alright, enough background. How do you do this with your project?
 
     To do this, install the Travis gem using:
 
-        gem install travis
+    ```bash
+    gem install travis
+    ```
 
     and run:
 
-        travis encrypt SONATYPE_USERNAME=username
-        travis encrypt SONATYPE_PASSWORD=password
+    ```bash
+    travis encrypt SONATYPE_USERNAME=username
+    travis encrypt SONATYPE_PASSWORD=password
+    ```
 
     Make sure you add the resulting encrypted variables to the `secure` block in your .travis.yml file.
 
@@ -81,10 +85,13 @@ Alright, enough background. How do you do this with your project?
 
     In your build script you need to apply the plugin:
 
-        apply plugin: 'nexus'
+    ```groovy
+    apply plugin: 'nexus'
+    ```
 
     and include the BinTray repository (if you're not checking the plugin into your repo):
 
+        ```groovy
         buildscript {
             repositories {
                 jcenter()
@@ -94,6 +101,7 @@ Alright, enough background. How do you do this with your project?
                 classpath 'org.gradle.api.plugins:gradle-nexus-plugin:0.6.1'
             }
         }
+        ```
 
 2.  Create publishing logic in Gradle.
 
@@ -115,10 +123,10 @@ Alright, enough background. How do you do this with your project?
 
 3.  Create a utility script for Travis to run.
 
-    If you've read my post on [Automatically Publishing Javadoc Using
-    Travis]({% post_url 2013-12-26-automatically-publish-javadoc-to-gh-pages-with-travis-ci %}), you already know about
-    our [.utility](https://github.com/ReadyTalk/swt-bling/tree/master/.utility) folder in swt-bling. For automatic
-    publishing, we're going to create another shell script in this folder. You can use
+    If you've read my post on
+    [Automatically Publishing Javadoc Using Travis](/blog/2013/12/26/automatically-publish-javadoc-to-gh-pages-with-travis-ci),
+    you already know about our [.utility](https://github.com/ReadyTalk/swt-bling/tree/master/.utility) folder in
+    swt-bling. For automatic publishing, we're going to create another shell script in this folder. You can use
     [ours](https://github.com/ReadyTalk/swt-bling/blob/master/.utility/initiate-publish.sh) as an example.
 
     The meat of the script is:
@@ -128,15 +136,19 @@ Alright, enough background. How do you do this with your project?
 
     -     Invoking the Gradle command if the prerequisites are met. You'll need to remember to pass in the encrypted username and password variables we created above with the Travis gem. You'll end up with something like:
 
-           ./gradlew uploadArchives -PnexusUsername="${SONATYPE_USERNAME}" -PnexusPassword="${SONATYPE_PASSWORD}"
+      ```bash
+      ./gradlew uploadArchives -PnexusUsername="${SONATYPE_USERNAME}" -PnexusPassword="${SONATYPE_PASSWORD}"
+      ```
 
     -     Worried about security? Don't worry, Travis will not allow forks to utilize your secret entries, so people will not be able to push to Sonatype as your organization.
 
 4.  Tell Travis to run the new script `after_success`. So, in your .travis.yml file, you'll want a block that reads
     something like:
 
-        after_success:
-        	- .utility/initiate-publish.sh
+    ```yaml
+    after_success:
+      - .utility/initiate-publish.sh
+    ```
 
 On your next push that meets the criteria specified in your utility script, you'll get an artifact pushed to your
 SNAPSHOT repository.
@@ -156,7 +168,9 @@ There are three additional flags you need to pass to the `uploadArchives` task t
 
 - signing.keyId The GPG keyId for your key. You can find this by running:
 
-      gpg --list-secret-keys
+  ```bash
+  gpg --list-secret-keys
+  ```
 
   and copying the hex keyId from the output.
 
@@ -164,12 +178,16 @@ There are three additional flags you need to pass to the `uploadArchives` task t
 - signing.secretKeyRingFile The path to the binary gpg file for your secret key. You can export your secret binary key
   by running:
 
-      gpg --export-secret-key yourKeyId > filename.gpg
+  ```bash
+  gpg --export-secret-key yourKeyId > filename.gpg
+  ```
 
 Once you have those three items, you'll end want to pass them to the Gradle `uploadArchives` task when you want to
 release. So, you'll end up with a long command like this:
 
+    ```bash
     ./gradlew uploadArchives -PnexusUsername=sonatypeUsername -PnexusPassword=sonatypePassword '-Psigning.keyId=yourKeyId' '-Psigning.password=yourPassword' -Psigning.secretKeyRingFile=path/to/maven.gpg
+    ```
 
 Be sure that you remove the -SNAPSHOT from the version string when you're ready to publish your release artifact.
 

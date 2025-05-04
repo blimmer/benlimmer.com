@@ -9,11 +9,11 @@ Today, my client's ECS tasks suddenly failed at startup. This posed challenges f
 
 Our tasks were failing to start with this error message:
 
-<code>
+```shell
   CannotPullContainerError: inspect image has been retried 1 time(s): failed to resolve ref
   "docker.io/datadog/agent:latest": pull access denied, repository does not exist or may require authorization: server
   message: insufficient_scope: authorization fa...
-</code>
+```
 
 It appears that we started getting throttled pulling the `datadog/agent:latest` image from DockerHub.
 

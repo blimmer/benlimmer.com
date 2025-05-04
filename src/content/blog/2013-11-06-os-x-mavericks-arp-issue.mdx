@@ -22,31 +22,33 @@ find the machine and complete the request.
 However, in Mavericks, we saw an issue where we would get a pattern of packet loss when pinging or SSHing to or from a
 Mavericks machine. It looked something like this:
 
-    ping blimmer
-    PING blimmer (192.168.x.x): 56 data bytes
-    64 bytes from 192.168.x.x: icmp_seq=0 ttl=62 time=87.337 ms
-    64 bytes from 192.168.x.x: icmp_seq=1 ttl=62 time=86.973 ms
-    64 bytes from 192.168.x.x: icmp_seq=2 ttl=62 time=86.651 ms
-    64 bytes from 192.168.x.x: icmp_seq=3 ttl=62 time=86.147 ms
-    64 bytes from 192.168.x.x: icmp_seq=4 ttl=62 time=86.103 ms
-    64 bytes from 192.168.x.x: icmp_seq=5 ttl=62 time=86.553 ms
-    64 bytes from 192.168.x.x: icmp_seq=15 ttl=62 time=89.345 ms
-    64 bytes from 192.168.x.x: icmp_seq=16 ttl=62 time=88.399 ms
-    64 bytes from 192.168.x.x: icmp_seq=17 ttl=62 time=88.005 ms
-    64 bytes from 192.168.x.x: icmp_seq=18 ttl=62 time=88.078 ms
-    64 bytes from 192.168.x.x: icmp_seq=19 ttl=62 time=86.651 ms
-    64 bytes from 192.168.x.x: icmp_seq=20 ttl=62 time=196.765 ms
-    64 bytes from 192.168.x.x: icmp_seq=21 ttl=62 time=87.073 ms
-    64 bytes from 192.168.x.x: icmp_seq=22 ttl=62 time=87.097 ms
-    64 bytes from 192.168.x.x: icmp_seq=23 ttl=62 time=87.913 ms
-    Request timeout for icmp_seq 16
-    Request timeout for icmp_seq 17
-    Request timeout for icmp_seq 18
-    Request timeout for icmp_seq 19
-    Request timeout for icmp_seq 20
-    64 bytes from 192.168.x.x: icmp_seq=21 ttl=62 time=87.073 ms
-    64 bytes from 192.168.x.x: icmp_seq=22 ttl=62 time=87.097 ms
-    64 bytes from 192.168.x.x: icmp_seq=23 ttl=62 time=87.913 ms
+```console
+ping blimmer
+PING blimmer (192.168.x.x): 56 data bytes
+64 bytes from 192.168.x.x: icmp_seq=0 ttl=62 time=87.337 ms
+64 bytes from 192.168.x.x: icmp_seq=1 ttl=62 time=86.973 ms
+64 bytes from 192.168.x.x: icmp_seq=2 ttl=62 time=86.651 ms
+64 bytes from 192.168.x.x: icmp_seq=3 ttl=62 time=86.147 ms
+64 bytes from 192.168.x.x: icmp_seq=4 ttl=62 time=86.103 ms
+64 bytes from 192.168.x.x: icmp_seq=5 ttl=62 time=86.553 ms
+64 bytes from 192.168.x.x: icmp_seq=15 ttl=62 time=89.345 ms
+64 bytes from 192.168.x.x: icmp_seq=16 ttl=62 time=88.399 ms
+64 bytes from 192.168.x.x: icmp_seq=17 ttl=62 time=88.005 ms
+64 bytes from 192.168.x.x: icmp_seq=18 ttl=62 time=88.078 ms
+64 bytes from 192.168.x.x: icmp_seq=19 ttl=62 time=86.651 ms
+64 bytes from 192.168.x.x: icmp_seq=20 ttl=62 time=196.765 ms
+64 bytes from 192.168.x.x: icmp_seq=21 ttl=62 time=87.073 ms
+64 bytes from 192.168.x.x: icmp_seq=22 ttl=62 time=87.097 ms
+64 bytes from 192.168.x.x: icmp_seq=23 ttl=62 time=87.913 ms
+Request timeout for icmp_seq 16
+Request timeout for icmp_seq 17
+Request timeout for icmp_seq 18
+Request timeout for icmp_seq 19
+Request timeout for icmp_seq 20
+64 bytes from 192.168.x.x: icmp_seq=21 ttl=62 time=87.073 ms
+64 bytes from 192.168.x.x: icmp_seq=22 ttl=62 time=87.097 ms
+64 bytes from 192.168.x.x: icmp_seq=23 ttl=62 time=87.913 ms
+```
 
 Notice the the packet loss. This was incredibly unfortunate when we would SSH to our machines and have to wait while the
 packets were retransmitted (causing at least a five second delay in transmission).

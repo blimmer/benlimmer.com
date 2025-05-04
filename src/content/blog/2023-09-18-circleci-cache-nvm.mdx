@@ -37,8 +37,6 @@ To cache the `nvm` resources, utilize the
 
 This is an example of caching the `nvm` resources for the `ubuntu-2204:2023.02.1` arm executor:
 
-{% raw %}
-
 ```yaml
 - restore_cache:
     name: Restore nvm cache
@@ -54,8 +52,6 @@ This is an example of caching the `nvm` resources for the `ubuntu-2204:2023.02.1
     paths:
       - /opt/circleci/.nvm/.cache
 ```
-
-{% endraw %}
 
 With a warm cache, you'll see the `nvm install` step using the cached tarball:
 

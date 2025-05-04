@@ -19,10 +19,12 @@ that will make you have a bad time.
 
 To work around this, replace the jQuery definition in your bower.json with this:
 
-    "jquery": "1.11.3"
+```json
+"jquery": "1.11.3"
+```
 
 That'll get you back in business until there's a mainline fix. You might also be interested in reading a previous post I
-wrote about [locking down your Bower components]( {% post_url 2014-09-13-lock-down-bower-components %} ).
+wrote about [locking down your Bower components](/blog/2014/09/13/lock-down-bower-components) .
 
 UPDATE: There's a [PR](https://github.com/emberjs/ember.js/pull/12787) open to fix this for jQuery 1.12, but if they
 release 1.13.x you'll still have a bad time. At this time, I still recommend locking to 1.11.3.
