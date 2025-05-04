@@ -28,15 +28,15 @@ To work around the rate limit, you'll need to authenticate with DockerHub in a f
    [the security settings page](https://hub.docker.com/settings/security) and create a new access token. Give it a
    description like "CircleCI".
 
-   ![create a new access token on hub.docker.com](/{% ministamp _images/posts/2020/10/new-access-token.png assets/images/posts/2020/10/new-access-token.png %})
+   <MdxImage src={NewAccessToken} alt="create a new access token on hub.docker.com" />
 
-   ![generated access token](/{% ministamp _images/posts/2020/10/generated-access-token.png assets/images/posts/2020/10/generated-access-token.png %})
+   <MdxImage src={GeneratedAccessToken} alt="generated access token" />
 
 1. **Create a CircleCI context** for DockerHub. You'll use this [context](https://circleci.com/docs/2.0/contexts/) to
    store your new DockerHub access token safely. Call the context `dockerhub`, then create a new environment variable
    called `DOCKERHUB_ACCESS_TOKEN`. Paste the access token you generated in the previous step.
 
-   ![create a new circleci context](/{% ministamp _images/posts/2020/10/new-context.png assets/images/posts/2020/10/new-context.png %})
+   <MdxImage src={NewContext} alt="create a new circleci context" />
 
 1. **Update your CircleCI configurations**. The next sections describe how to authenticate the different types of
    CircleCI builds:

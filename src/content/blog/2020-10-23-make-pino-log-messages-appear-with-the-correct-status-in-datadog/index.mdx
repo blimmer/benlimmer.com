@@ -11,6 +11,8 @@ description: >-
 import MdxImage from "src/components/MdxImage.astro";
 import DdLogsInfoLevel from "./assets/dd-logs-info-level.png";
 import DdLogsMultipleLevels from "./assets/dd-logs-multiple-levels.png";
+import DdLogsNewPipeline from "./assets/dd-logs-new-pipeline.png";
+import DdLogsNewProcessor from "./assets/dd-logs-new-processor.png";
 
 If you're using [pino](https://github.com/pinojs/pino) with
 [Datadog's Log Management product](https://docs.datadoghq.com/logs/), you might notice that all of your logs are
@@ -106,9 +108,9 @@ Datadog configuration.
 1. [View your Log Pipelines in Datadog](https://app.datadoghq.com/logs/pipelines)
 1. Create a new pipeline for the service that uses Pino. You can skip this step if there's already a pipeline created
    for your service.
-   ![screenshot of the datadog UI creating a new log pipeline](/{% ministamp _images/posts/2020/10/dd-logs-new-pipeline.png assets/images/posts/2020/10/dd-logs-new-pipeline.png %})
+   <MdxImage src={DdLogsNewPipeline} alt="screenshot of the datadog UI creating a new log pipeline" />
 1. Add a Status Remapper processor on the `level` attribute.
-   ![screenshot of the datadog UI creating a new processor](/{% ministamp _images/posts/2020/10/dd-logs-new-processor.png assets/images/posts/2020/10/dd-logs-new-processor.png %})
+   <MdxImage src={DdLogsNewProcessor} alt="screenshot of the datadog UI creating a new processor" />
 
 Now, new messages should appear with the proper status identified in the Datadog UI. Happy log spelunking!
 
