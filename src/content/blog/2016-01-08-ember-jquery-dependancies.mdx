@@ -1,0 +1,28 @@
+---
+title: Fix Travis CI stalled builds with EmberJS and Ember CLI
+tags:
+  - emberjs
+  - ember-cli
+
+description: "Ember CLI Travis CI builds suddenly broken? You aren't alone. Here's how to work around it."
+---
+
+    Uncaught Error: Assertion Failed: Ember Views require jQuery between 1.7 and 2.1 ember-testing.js:1159
+    Uncaught TypeError: $ is not a function
+
+Look familiar?
+
+Just recently, jQuery 1.12.x was released to bower, and Ember-CLI's default blueprint allowed upgrading to this version.
+Unfortunately, all current versions of Ember have a
+[hardcoded check](https://github.com/emberjs/ember.js/blob/1a2cd166a86219717a0cde1df4dab497d8dda3e3/packages/ember-views/lib/system/jquery.js#L16-L19)
+that will make you have a bad time.
+
+To work around this, replace the jQuery definition in your bower.json with this:
+
+    "jquery": "1.11.3"
+
+That'll get you back in business until there's a mainline fix. You might also be interested in reading a previous post I
+wrote about [locking down your Bower components]( {% post_url 2014-09-13-lock-down-bower-components %} ).
+
+UPDATE: There's a [PR](https://github.com/emberjs/ember.js/pull/12787) open to fix this for jQuery 1.12, but if they
+release 1.13.x you'll still have a bad time. At this time, I still recommend locking to 1.11.3.

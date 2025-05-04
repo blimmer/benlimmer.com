@@ -1,0 +1,74 @@
+---
+title: Working Around Mac OS X Mavericks ARP Issue
+tags:
+  - github
+  - gist
+  - os x mavericks
+description:
+  "Having issues with Mac OS X Maverick (10.9) and dropping packets when screen sharing or SSH'd? This is an interesting
+  issue, mainly affecting corporate networks and can be worked around using this script. It works by adjusting the
+  net.link.ether.inet.arp_unicast_lim setting, which tells OS X to send the ARP request the first time it doesn't find a
+  route to host."
+---
+
+At [ReadyTalk](http://www.readytalk.com), we recently uncovered an interesting issue related to how
+[OS X Mavericks](http://en.wikipedia.org/wiki/OS_X_Mavericks) handles caching ARP responses.
+
+On our corporate network, we have a floating [Virtual IP Address](http://en.wikipedia.org/wiki/Virtual_IP_address) to
+load balance the traffic on our subnets. In previous versions of OS X, if the OS couldn't reach out and find the
+specified host, it would immediately send an [ARP Request](http://en.wikipedia.org/wiki/Address_Resolution_Protocol) to
+find the machine and complete the request.
+
+However, in Mavericks, we saw an issue where we would get a pattern of packet loss when pinging or SSHing to or from a
+Mavericks machine. It looked something like this:
+
+    ping blimmer
+    PING blimmer (192.168.x.x): 56 data bytes
+    64 bytes from 192.168.x.x: icmp_seq=0 ttl=62 time=87.337 ms
+    64 bytes from 192.168.x.x: icmp_seq=1 ttl=62 time=86.973 ms
+    64 bytes from 192.168.x.x: icmp_seq=2 ttl=62 time=86.651 ms
+    64 bytes from 192.168.x.x: icmp_seq=3 ttl=62 time=86.147 ms
+    64 bytes from 192.168.x.x: icmp_seq=4 ttl=62 time=86.103 ms
+    64 bytes from 192.168.x.x: icmp_seq=5 ttl=62 time=86.553 ms
+    64 bytes from 192.168.x.x: icmp_seq=15 ttl=62 time=89.345 ms
+    64 bytes from 192.168.x.x: icmp_seq=16 ttl=62 time=88.399 ms
+    64 bytes from 192.168.x.x: icmp_seq=17 ttl=62 time=88.005 ms
+    64 bytes from 192.168.x.x: icmp_seq=18 ttl=62 time=88.078 ms
+    64 bytes from 192.168.x.x: icmp_seq=19 ttl=62 time=86.651 ms
+    64 bytes from 192.168.x.x: icmp_seq=20 ttl=62 time=196.765 ms
+    64 bytes from 192.168.x.x: icmp_seq=21 ttl=62 time=87.073 ms
+    64 bytes from 192.168.x.x: icmp_seq=22 ttl=62 time=87.097 ms
+    64 bytes from 192.168.x.x: icmp_seq=23 ttl=62 time=87.913 ms
+    Request timeout for icmp_seq 16
+    Request timeout for icmp_seq 17
+    Request timeout for icmp_seq 18
+    Request timeout for icmp_seq 19
+    Request timeout for icmp_seq 20
+    64 bytes from 192.168.x.x: icmp_seq=21 ttl=62 time=87.073 ms
+    64 bytes from 192.168.x.x: icmp_seq=22 ttl=62 time=87.097 ms
+    64 bytes from 192.168.x.x: icmp_seq=23 ttl=62 time=87.913 ms
+
+Notice the the packet loss. This was incredibly unfortunate when we would SSH to our machines and have to wait while the
+packets were retransmitted (causing at least a five second delay in transmission).
+
+After some digging, we discovered that other folks were having this issue, especially within corporate networks. We
+stumbled upon
+[this Apple Support Forum post](https://discussions.apple.com/thread/5483424?answerId=23583393022#23583393022) and
+discovered the fix.
+
+Essentially, you need to tell OS X that it should reach out as soon as it couldn't discover the host anymore. Poster
+[Lunaweb](https://discussions.apple.com/people/Lunaweb) graciously provided a workaround by setting a kernal parameter,
+specifically `net.link.ether.inet.arp_unicast_lim=0`
+
+The folks over at [MacMiniVault](https://github.com/MacMiniVault) provided a script that fixes the issue by writing out
+an `/etc/sysctl.conf` file, which sets the kernal parameter on startup. Since we are confident that Apple will provide a
+fix in a coming update, we wanted a way to set this variable that did not survive a reboot.
+
+So, I wrote a [shell script](https://gist.github.com/blimmer/7242676) that does just that. It sets the kernal parameter,
+but it does not survive a reboot.
+
+For what it's worth, Cisco has provided [a fix](https://supportforums.cisco.com/thread/2247235) for AnyConnect for Mac
+which also resolves the issue.
+
+Hopefully the script written by myself (or MacMiniVault) helps other early adopters resolve obnoxious latency issues
+caused by Mavericks!

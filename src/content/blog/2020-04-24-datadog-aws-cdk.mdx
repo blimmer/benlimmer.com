@@ -1,0 +1,47 @@
+---
+title: Installing Datadog AWS Integration using AWS Cloud Development Kit (CDK)
+tags:
+  - datadog
+  - aws-cdk
+  - cdk-datadog-integration
+  - cdk constructs
+  - datadog aws integration
+description: "The simplest way to use AWS Cloud Development Kit (aws-cdk) to install the Datadog AWS Integration."
+---
+
+I'm a proponent of [Infrastructure as Code](https://en.wikipedia.org/wiki/Infrastructure_as_code). The traceability of
+mutations to your infrastructure is reviewed and documented alongside the rest of your application code. For Amazon Web
+Services (AWS) customers, [AWS Cloud Development Kit (AWS CDK)](https://aws.amazon.com/cdk/) is one of the best
+Infrastructure as Code tools out there.
+
+Datadog is a comprehensive all-in-one observability tool, with features like
+[infrastructure monitoring](https://docs.datadoghq.com/infrastructure/),
+[log aggregation and indexing](https://www.datadoghq.com/log-management/), [APM](https://www.datadoghq.com/apm/),
+[and more](https://www.datadoghq.com/product/). A key component to install is their
+[AWS Integration](https://docs.datadoghq.com/integrations/amazon_web_services/?tab=allpermissions), which creates:
+
+1. An [IAM policy](https://docs.datadoghq.com/integrations/amazon_web_services/?tab=allpermissions#installation) to
+   create a Trust Relationship between your AWS account and the Datadog AWS account.
+1. A [Forwarding Lambda](https://github.com/DataDog/datadog-serverless-functions/tree/master/aws/logs_monitoring) used
+   to scrape CloudWatch metrics and logs.
+
+The documentation links to a single-click installation method; however, we'd prefer to keep our infrastructure in code
+with AWS CDK.
+
+To help with this problem, I created an open-source
+[CDK construct](https://twitter.com/awscdkio/status/1253846425387098117),
+[cdk-datadog-integration](https://github.com/blimmer/cdk-datadog-integration).
+[Install this package](https://github.com/blimmer/cdk-datadog-integration#basic-usage) via
+[NPM](https://www.npmjs.com/package/cdk-datadog-integration), [pypi](https://pypi.org/project/cdk-datadog-integration/),
+[NuGet](https://www.nuget.org/packages/BenLimmer.CdkDatadogIntegration/) or
+[Maven](https://github.com/blimmer/cdk-datadog-integration/packages), configure it with your Datadog account information
+and quickly get focused on your implementation.
+
+Under the hood, cdk-datadog-integration uses the
+[CfnStack](https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-cloudformation.CfnStack.html) construct to
+reference the
+[Datadog-provided CloudFormation templates](https://datadog-cloudformation-template.s3.amazonaws.com/aws/main.yaml).
+This method allows for easy, automatic upgrades to your configuration as Datadog improves their AWS Integration.
+
+Are you interested in improving your company's observability with a tool like Datadog? Let's [connect](/freelance)! I'd
+love to help.
