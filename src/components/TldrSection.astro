@@ -1,0 +1,25 @@
+---
+export interface Props {
+  tldr: string;
+}
+const { tldr } = Astro.props;
+---
+
+{
+  tldr && (
+    <div class="w-full">
+      <aside class="not-prose my-6 flex w-full items-start gap-3 rounded-lg border border-slate-600 bg-slate-700/80 px-6 py-4 shadow-lg">
+        <span aria-hidden="true" class="flex items-center justify-center">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="14" y="21" text-anchor="middle" font-size="20" font-family="sans-serif" fill="#FFFFFF">
+              💡
+            </text>
+          </svg>
+        </span>
+        <span class="text-base text-slate-100">
+          <strong>TLDR:</strong> <span set:html={tldr} />
+        </span>
+      </aside>
+    </div>
+  )
+}

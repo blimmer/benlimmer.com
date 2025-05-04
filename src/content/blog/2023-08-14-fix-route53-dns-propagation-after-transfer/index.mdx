@@ -5,6 +5,10 @@ tags:
   - dns
 description: >-
   Mismatched DNSSEC settings after a domain transfer to Route53 can cause DNS propagation issues.
+tldr: >-
+  DNS propagation errors for transferred domains might be caused by mismatched DNSSEC settings. The domain might have
+  DNSSEC enabled, while the Route53 hosted zone does not. Ensure DNSSEC is configured properly (or disabled) for the
+  domain and the hosted zone.
 ---
 
 import MdxImage from "src/components/MdxImage.astro";
@@ -12,8 +16,6 @@ import DisableDnssec from "./assets/disable-dnssec.png";
 import DomainDnssecSettings from "./assets/domain-dnssec-settings.png";
 import HostedZoneDnssecSettings from "./assets/hosted-zone-dnssec-settings.png";
 import DnsHaiku from "./assets/dns-haiku.png";
-
-{% include tldr.html content='DNS propagation errors for transferred domains might be caused by mismatched DNSSEC settings. The domain might have DNSSEC enabled, while the Route53 hosted zone does not. Ensure DNSSEC is configured properly (or disabled) for the domain and the hosted zone.' %}
 
 ## Background
 

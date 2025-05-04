@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 import gravatar from "src/assets/gravatar.jpeg";
 import { parseBlogPost } from "src/util";
 import { Temporal } from "temporal-polyfill";
+import TldrSection from "src/components/TldrSection.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -59,6 +60,7 @@ const { Content } = await render(post);
           Posted on {post.date.toLocaleString(undefined, { year: "numeric", month: "long", day: "numeric" })} by Ben Limmer
           <Image src={gravatar} alt="Avatar image of Ben Limmer" width={20} height={20} class="mt-0 mb-0 ml-2" />
         </div>
+        {post.data.tldr && <TldrSection tldr={post.data.tldr} />}
         <Content />
       </MdxProse>
       <nav class="mt-12 flex items-center justify-between" aria-label="Post Pagination">

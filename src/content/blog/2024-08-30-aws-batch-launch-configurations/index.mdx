@@ -4,12 +4,15 @@ tags:
   - aws-batch
 description: >-
   How to migrate AWS Batch Compute Environments from Launch Configurations to Launch Templates.
+tldr: >-
+  If you created an AWS Batch Compute Environment using the <a
+  href='https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html'><code>BEST_FIT</code> Allocation
+  Strategy</a> before April 2024, it will use Launch Configurations. Recreate the Compute Environment to upgrade to
+  Launch Templates.
 ---
 
 import MdxImage from "src/components/MdxImage.astro";
 import LcAutoScalingGroups from "./assets/lc-auto-scaling-groups.png";
-
-{% include tldr.html content='If you created an AWS Batch Compute Environment using the <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html"><code>BEST_FIT</code> Allocation Strategy</a> before April 2024, it will use Launch Configurations. Recreate the Compute Environment to upgrade to Launch Templates.' %}
 
 ## AWS Batch Launch Configurations Deprecation
 
