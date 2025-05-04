@@ -1,0 +1,43 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import MdxProse from "src/components/MdxProse.astro";
+import Layout from "src/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import gravatar from "src/assets/gravatar.jpeg";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => {
+    const [year, month, day, ...slugParts] = post.id.split("-");
+    const slug = slugParts.join("-");
+    const date = new Date([year, month, day].join("-"));
+    return {
+      params: { slug: [year, month, day, slug].join("/") },
+      props: { ...post, date },
+    };
+  });
+}
+
+type Props = CollectionEntry<"blog"> & { date: Date };
+const post = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={[post.data.title]} description={post.data.description}>
+  <article>
+    <main class="mx-auto max-w-4xl px-4 py-12">
+      <MdxProse>
+        <h1>{post.data.title}</h1>
+        <div class="text-md flex items-center text-gray-500">
+          Posted on {post.date.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" })} by Ben
+          Limmer
+          <Image src={gravatar} alt="Avatar image of Ben Limmer" width={20} height={20} class="mt-0 mb-0 ml-2" />
+        </div>
+        <Content />
+      </MdxProse>
+      <!-- TODO: Add pagination -->
+      <!-- TODO: add tags -->
+      <!-- TODO: add report bugs -->
+    </main>
+  </article>
+</Layout>
