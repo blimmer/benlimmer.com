@@ -46,9 +46,11 @@ with Travis CI. So, here's how you do it.
 4.  [Encrypt](https://docs.travis-ci.com/user/environment-variables/#Encrypted-Variables) your access token. You'll need
     to install the Travis gem with `gem install travis`. Then you'll run
 
-        	travis encrypt GH_TOKEN=your token from step 4
+    ```bash
+    travis encrypt GH_TOKEN=your token from step 4
+    ```
 
-        Don't forget to place this in your ```.travis.yml``` configuration in your repo in a ```secure``` block.
+    Don't forget to place this in your `.travis.yml` configuration in your repo in a `secure` block.
 
 5.  Create a script that you'll have Travis run. On [swt-bling](https://github.com/ReadyTalk/swt-bling), I created a
     [`.utility`](https://github.com/ReadyTalk/swt-bling/tree/master/.utility) folder in the root of the repo that
@@ -91,17 +93,21 @@ have pushed solid code before we merge it in. However, we don't want documentati
 ## The Meat of the Script
 
     # Get to the Travis build directory, configure git and clone the repo
+    ```bash
     cd $HOME
     git config --global user.email "travis@travis-ci.org"
     git config --global user.name "travis-ci"
     git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/ReadyTalk/swt-bling gh-pages > /dev/null
+    ```
 
     # Commit and Push the Changes
+    ```bash
     cd gh-pages
     git rm -rf ./javadoc
     cp -Rf $HOME/javadoc-latest ./javadoc
     git add -f .
     git commit -m "Lastest javadoc on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
     git push -fq origin gh-pages > /dev/null
+    ```
 
 And that will do it! It's pretty straightforward, but hopefully this helps out. Happy publishing!
