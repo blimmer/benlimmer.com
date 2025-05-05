@@ -18,4 +18,10 @@ export default defineConfig({
   },
 
   integrations: [mdx()],
+
+  markdown: {
+    shikiConfig: {
+      theme: "one-dark-pro",
+    },
+  },
 });

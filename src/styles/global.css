@@ -96,6 +96,10 @@ body {
   color: var(--color-text-primary);
 }
 
+.prose code:not(pre code) {
+  @apply bg-gray-800 px-1.5 py-0.5 font-normal text-gray-100;
+}
+
 @utility prose {
   blockquote {
     /* Disable adding quote marks to block-quotes: https://github.com/tailwindlabs/tailwindcss-typography/issues/66 */
