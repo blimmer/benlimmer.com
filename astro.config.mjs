@@ -1,10 +1,9 @@
 // @ts-check
-import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
-
 import mdx from "@astrojs/mdx";
-
+import tailwindcss from "@tailwindcss/vite";
 import expressiveCode from "astro-expressive-code";
+import { defineConfig } from "astro/config";
+import { remarkLastModifiedTime } from "./src/remark/lastModifiedTime";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,4 +19,8 @@ export default defineConfig({
   },
 
   integrations: [expressiveCode(), mdx()],
+
+  markdown: {
+    remarkPlugins: [remarkLastModifiedTime],
+  },
 });
