@@ -4,7 +4,7 @@ import MdxProse from "src/components/MdxProse.astro";
 import Layout from "src/layouts/Layout.astro";
 import { Image } from "astro:assets";
 import gravatar from "src/assets/gravatar.jpeg";
-import { parseBlogPost } from "src/util";
+import { parseBlogPost, type BlogPost } from "src/util";
 import { Temporal } from "temporal-polyfill";
 import TldrSection from "src/components/TldrSection.astro";
 
@@ -46,12 +46,12 @@ function getPrevPost() {
 const nextPost = getNextPost();
 const prevPost = getPrevPost();
 
-type Props = CollectionEntry<"blog"> & { date: Temporal.PlainDate };
+type Props = BlogPost;
 const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout title={[post.data.title]} description={post.data.description}>
+<Layout title={[post.data.title]} description={post.data.description} blogPost={post}>
   <article>
     <main class="mx-auto max-w-4xl px-4 py-12">
       <MdxProse>
