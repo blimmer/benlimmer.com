@@ -80,6 +80,7 @@ body {
   color: var(--color-text-primary);
 }
 
+.link,
 .prose a {
   color: var(--color-link);
   text-decoration: underline;
