@@ -1,0 +1,21 @@
+---
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout title={["404"]} description="Page not found">
+  <section class="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden py-32">
+    <div class="relative z-10 flex flex-col items-center">
+      <span class="mb-4 text-7xl font-extrabold tracking-tight text-blue-400 select-none md:text-9xl">404</span>
+      <h1 class="mb-4 text-center text-2xl font-semibold text-white md:text-4xl">Page Not Found</h1>
+      <p class="mb-8 max-w-xl text-center text-base text-white/60 md:text-lg">
+        Sorry, we couldn't find that page.
+        <span class="mt-2 block"
+          >Expecting something here? <a href="https://github.com/blimmer/benlimmer.com/issues/new" class="link"
+            >File an issue</a
+          > to let me know.</span
+        >
+      </p>
+      <a href="/" class="btn-primary">Go Home</a>
+    </div>
+  </section>
+</Layout>
