@@ -117,8 +117,8 @@ If you see `exporting to GitHub Actions Cache`, then the cache layers are being 
 
 Then, on subsequent builds, you should see cache hits for your docker layers:
 
-```shell
-[2/3] RUN apk add --no-cache     bash     curl     git     jq     openssh-client     python3     py3-pip     rsync     zip
+```shell {2}
+[2/3] RUN apk add --no-cache bash curl git jq openssh-client python3 py3-pip rsync zip
 CACHED
 ```
 
