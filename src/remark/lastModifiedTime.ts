@@ -13,14 +13,17 @@ export function remarkLastModifiedTime() {
       throw new Error("Frontmatter not found");
     }
 
-    // If the overrideLastModified property is set, use it instead of the git log
-    if (frontmatter.overrideLastModified) {
-      return frontmatter.overrideLastModified;
-    }
-
-    // Otherwise, query `git` to see when the file was last modified
-    const filepath = file.history[0];
-    const result = execSync(`git log -1 --pretty="format:%cI" "${filepath}"`);
-    file.data.astro!.frontmatter!.lastModified = result.toString();
+    frontmatter.lastModified = getLastModified(frontmatter, file.history[0]);
   };
+}
+
+function getLastModified(frontmatter: Record<string, string>, filePath: string): string {
+  // If the overrideLastModified property is set, use it instead of the git log
+  if (frontmatter.overrideLastModified) {
+    return frontmatter.overrideLastModified;
+  }
+
+  // Otherwise, query `git` to see when the file was last modified
+  const result = execSync(`git log -1 --pretty="format:%cI" "${filePath}"`);
+  return result.toString();
 }
