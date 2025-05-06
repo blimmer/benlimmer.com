@@ -54,8 +54,8 @@ Since browser extensions have a user-visible version number, we wanted to automa
 automatically. For example, if every commit in a given release started with the `fix:` prefix, the next release would
 increment the `bugfix` version number.
 
-Since the team already used the [Squash & Merge](/2017/08/03/understanding-github-pr-merge-options) GitHub merge option,
-I added a GitHub action to validate that PR titles conform to the
+Since the team already used the [Squash & Merge](/blog/2017/08/03/understanding-github-pr-merge-options) GitHub merge
+option, I added a GitHub action to validate that PR titles conform to the
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) standard. Then, during release, each PR
 corresponds to a single commit and is used to determine the next version number.
 

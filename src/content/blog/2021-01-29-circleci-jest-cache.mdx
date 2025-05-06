@@ -1,0 +1,100 @@
+---
+title: Restoring the Jest cache in Circle CI
+tags:
+  - jest
+  - circleci
+  - circle-ci
+  - test
+  - cache
+description:
+  "How to use the jest cache to speed up jest tests on CircleCI. Save and restore jest cache in your CircleCI jobs."
+---
+
+[Jest](https://jestjs.io/) is a great testing framework. Jest utilizes a cache to speed up subsequent test runs. I was
+trying to find information about saving / restoring the Jest cache on CircleCI, but I couldn't find anything. So, I
+implemented a solution from scratch.
+
+To help other folks out with saving and restoring the Jest Cache on CircleCI, I created a reusable CircleCI orb,
+[`@blimmer/jest`](https://circleci.com/developer/orbs/orb/blimmer/jest) to easily restore the Jest cache between runs.
+To jump right in, check out the [Orb Registry Listing](https://circleci.com/developer/orbs/orb/blimmer/jest) and/or the
+[GitHub repository](https://github.com/blimmer/jest-circleci-orb).
+
+## Example
+
+To utilize the cache, you can use the `jest/test` job exposed by the orb. In your `.circleci/config.yml` file, declare
+the job like this:
+
+```yaml
+# .circleci/config.yml
+version: 2.1
+
+orbs:
+  # Replace x.y.z. with a real version number. All versions are listed here:
+  # https://circleci.com/developer/orbs/orb/blimmer/jest
+  jest: blimmer/jest@x.y.z
+
+  workflows:
+    test:
+      jobs:
+        - jest/test
+```
+
+You'll also need to configure the Jest cache to be stored in a predictible location. By default, the orb expects it to
+be located at `.jest-cache`. Make sure you have defined the `cacheDirectory` in your
+[Jest configuration file](https://jestjs.io/docs/en/configuration).
+
+```js
+// jest.config.js
+module.exports = {
+  // other configuration properties
+  cacheDirectory: ".jest-cache",
+};
+```
+
+## Benefits of Storing the Jest Cache
+
+Jest stores useful information in the cache, which improves the performance of your test suite.
+
+- **Reduced startup time** Jest stores information about the file structure and mocks you create in your tests. By
+  restoring the previous `jest-haste-map` data, it reduces the amount of work jest has to do at startup.
+
+- **Even distribution of test suites across workers** If you're running your test suites in parallel (enabled by
+  default), jest will cache information about how long each of your test suites takes to run. It then uses this
+  information to evenly distribute your test suites across the jest workers, so they all complete their work around the
+  same time. This prevents one slow test suite from holding up the entire jest run.
+
+- **Fast fail with `bail` config.** Jest also stores whether each individual test succeeded or failed on the previous
+  run, and runs failed tests as soon as possible on the next run. This is very handy when used in conjunction with the
+  [`bail`](https://jestjs.io/docs/en/configuration.html#bail-number--boolean) configuration, so you get super-fast
+  feedback on previously failed tests.
+
+- **Faster Typescript transpiling.** If you're using TypeScript with jest, your files are likely transpiled to
+  Javascript before each run. By restoring the cache, jest will only transpile changed files.
+
+If you want to learn more about the jest cache, check out [Jest Architecture video](https://youtu.be/3YDiloj8_d0) on
+YouTube.
+
+<div class="flex justify-center">
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/3YDiloj8_d0"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+</div>
+
+## Other CI Providers
+
+This same idea could be applied to CI providers other than CircleCI, like GitHub actions, TravisCI, GitLab CI, CodeShip,
+etc. Check out the [orb source](https://github.com/blimmer/jest-circleci-orb/tree/main/src/commands) to see the method
+I'm using.
+
+Is there another CI provider I should support with an open-source package? Let me know! My contact details are in the
+footer.
+
+## Final Thoughts
+
+Did you try out the [CircleCI orb](https://circleci.com/developer/orbs/orb/blimmer/jest)? If it helped you out, help me
+out by starring the [GitHub repo](https://github.com/blimmer/jest-circleci-orb). Thanks!
