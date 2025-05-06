@@ -2,15 +2,17 @@
 import "../styles/global.css";
 import headshot from "src/assets/headshot.png";
 import cwrScriptUrl from "src/assets/scripts/cwr.js?url";
+import { type WithContext, type Thing } from "schema-dts";
 
 interface Props {
   title: string;
   description: string;
   openGraphTags?: Record<string, string | string[]>;
+  jsonLd?: WithContext<Thing>;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description, openGraphTags } = Astro.props;
+const { title, description, openGraphTags, jsonLd } = Astro.props;
 
 const isProd = !import.meta.env.DEV;
 ---
@@ -51,11 +53,13 @@ const isProd = !import.meta.env.DEV;
 {
   openGraphTags ? (
     <>
-      {Object.entries(openGraphTags).map(([key, value]) => (
-        Array.isArray(value)
-          ? value.map(v => <meta property={key} content={v} />)
-          : <meta property={key} content={value} />
-      ))}
+      {Object.entries(openGraphTags).map(([key, value]) =>
+        Array.isArray(value) ? (
+          value.map((v) => <meta property={key} content={v} />)
+        ) : (
+          <meta property={key} content={value} />
+        ),
+      )}
     </>
   ) : (
     <>
@@ -65,32 +69,7 @@ const isProd = !import.meta.env.DEV;
 }
 
 {/* JSON-LD */}
-{
-  blogPost && (
-    <script type="application/ld+json" >
-      {JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'BlogPosting',
-        headline: blogPost.data.title,
-        description: blogPost.data.description,
-        datePublished: blogPost.date.toString(),
-        dateModified: lastModified || blogPost.date.toString(),
-        author: {
-          '@type': 'Person',
-          name: 'Ben Limmer',
-          url: 'https://benlimmer.com/about/'
-        },
-        image: headshot.src,
-        url: canonicalURL.toString(),
-        mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': canonicalURL.toString()
-        },
-        keywords: blogPost.data.tags?.join(', ')
-      })}
-    </script>
-  )
-}
+{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
 {/* Twitter */}
 <meta name="twitter:card" content="summary" />

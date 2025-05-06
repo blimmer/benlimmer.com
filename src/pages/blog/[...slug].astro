@@ -7,6 +7,8 @@ import gravatar from "src/assets/gravatar.jpeg";
 import { parseBlogPost } from "src/util";
 import { Temporal } from "temporal-polyfill";
 import TldrSection from "src/components/TldrSection.astro";
+import { type WithContext, type BlogPosting } from "schema-dts";
+import headshot from "src/assets/headshot.png";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -60,9 +62,30 @@ const openGraphTags = {
   "article:author": "https://benlimmer.com/about/",
   "article:tag": post.data.tags ?? [],
 };
+
+const jsonLd: WithContext<BlogPosting> = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.date.toString(),
+  dateModified: lastModified,
+  author: {
+    "@type": "Person",
+    name: "Ben Limmer",
+    url: "https://benlimmer.com/about/",
+  },
+  image: headshot.src,
+  keywords: post.data.tags ?? [],
+  inLanguage: "en-US",
+  ...(post.body && {
+    wordCount: post.body.split(" ").length,
+    articleBody: post.body,
+  }),
+};
 ---
 
-<Layout title={[post.data.title]} description={post.data.description} openGraphTags={openGraphTags}>
+<Layout title={[post.data.title]} description={post.data.description} openGraphTags={openGraphTags} jsonLd={jsonLd}>
   <article>
     <main class="mx-auto max-w-4xl px-4 py-12">
       <MdxProse>

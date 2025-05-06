@@ -1,4 +1,5 @@
 ---
+import { type WithContext, type Thing } from "schema-dts";
 import Head from "src/components/Head.astro";
 import Header from "src/components/Header.astro";
 import Footer from "src/components/Footer.astro";
@@ -7,16 +8,17 @@ interface Props {
   title?: string[];
   description: string;
   openGraphTags?: Record<string, string | string[]>;
+  jsonLd?: WithContext<Thing>;
 }
 
-const { title = [], description, openGraphTags } = Astro.props;
+const { title = [], description, openGraphTags, jsonLd } = Astro.props;
 const titleString = [...title, "Ben Limmer"].join(" | ");
 ---
 
 <!doctype html>
 <html lang="en" class="h-full">
   <head>
-    <Head title={titleString} description={description} openGraphTags={openGraphTags} />
+    <Head title={titleString} description={description} openGraphTags={openGraphTags} jsonLd={jsonLd} />
   </head>
   <body class="flex min-h-full flex-col">
     <Header currentPath={Astro.url.pathname} />
