@@ -9,8 +9,9 @@ const menuItems: MenuItem[] = [
   { path: "/freelance", text: "Freelance" },
   { path: "/blog", text: "Blog" },
   { path: "/portfolio", text: "Portfolio" },
-  { path: "/freelance/contact", text: "Contact" },
 ];
+
+const { currentPath } = Astro.props;
 ---
 
 <header class="bg-header border-light sticky top-0 z-50 w-full border-b" role="banner">
@@ -23,7 +24,12 @@ const menuItems: MenuItem[] = [
         {
           menuItems.map((item) => (
             <li role="none">
-              <a href={item.path} role="menuitem" class="hover:text-primary transition-colors">
+              <a
+                href={item.path}
+                role="menuitem"
+                class={`hover:text-primary transition-colors${currentPath.startsWith(item.path) ? "text-primary font-bold" : ""}`}
+                aria-current={currentPath.startsWith(item.path) ? "page" : undefined}
+              >
                 {item.text}
               </a>
             </li>
@@ -78,8 +84,9 @@ const menuItems: MenuItem[] = [
             <li role="none">
               <a
                 href={item.path}
-                class="block px-4 py-2 transition-colors hover:bg-gray-700 hover:text-white"
+                class={`block px-4 py-2 transition-colors hover:bg-gray-700 hover:text-white${currentPath.startsWith(item.path) ? "bg-gray-700 text-white" : ""}`}
                 role="menuitem"
+                aria-current={currentPath.startsWith(item.path) ? "page" : undefined}
               >
                 {item.text}
               </a>
