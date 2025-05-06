@@ -5,7 +5,7 @@ import { Temporal } from "temporal-polyfill";
 
 const posts = (await getCollection("blog"))
   .map((post) => parseBlogPost(post))
-  .sort((a, b) => Temporal.PlainDate.compare(b.date, a.date))
+  .sort((a, b) => Temporal.ZonedDateTime.compare(b.date, a.date))
   .slice(0, 3);
 ---
 
@@ -30,7 +30,7 @@ const posts = (await getCollection("blog"))
             <h3 class="group-hover:text-primary mb-2 text-xl font-semibold text-blue-300 transition-colors">
               {post.data.title}
             </h3>
-            <time class="mb-2 text-xs text-white/70" datetime={post.date.toString()}>
+            <time class="mb-2 text-xs text-white/70" datetime={post.date.toInstant().toString()}>
               {post.date.toLocaleString(undefined, { year: "numeric", month: "long", day: "numeric" })}
             </time>
           </div>

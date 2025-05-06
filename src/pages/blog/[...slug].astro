@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 
 const posts = (await getCollection("blog"))
   .map((post) => parseBlogPost(post))
-  .sort((a, b) => Temporal.PlainDate.compare(a.date, b.date));
+  .sort((a, b) => Temporal.ZonedDateTime.compare(a.date, b.date));
 
 function getNextPost() {
   let postIndex;
@@ -48,7 +48,7 @@ function getPrevPost() {
 const nextPost = getNextPost();
 const prevPost = getPrevPost();
 
-type Props = CollectionEntry<"blog"> & { date: Temporal.PlainDate };
+type Props = CollectionEntry<"blog"> & { date: Temporal.ZonedDateTime };
 const post = Astro.props;
 const {
   Content,
@@ -57,7 +57,7 @@ const {
 
 const openGraphTags = {
   "og:type": "article",
-  "article:published_time": post.date.toString(),
+  "article:published_time": post.date.toInstant().toString(),
   "article:modified_time": lastModified,
   "article:author": "https://benlimmer.com/about/",
   "article:tag": post.data.tags ?? [],
@@ -68,7 +68,7 @@ const jsonLd: WithContext<BlogPosting> = {
   "@type": "BlogPosting",
   headline: post.data.title,
   description: post.data.description,
-  datePublished: post.date.toString(),
+  datePublished: post.date.toInstant().toString(),
   dateModified: lastModified,
   author: {
     "@type": "Person",

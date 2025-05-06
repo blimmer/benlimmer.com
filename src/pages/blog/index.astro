@@ -6,7 +6,7 @@ import Layout from "src/layouts/Layout.astro";
 
 const posts = (await getCollection("blog"))
   .map((post) => parseBlogPost(post))
-  .sort((a, b) => Temporal.PlainDate.compare(b.date, a.date));
+  .sort((a, b) => Temporal.ZonedDateTime.compare(b.date, a.date));
 
 // Group posts by year
 const postsByYear = posts.reduce<Record<string, any[]>>((acc, post) => {
@@ -49,7 +49,7 @@ const pageDescription = "Thoughts, insights, and tutorials on web development, d
                       &gt;
                     </span>
                   </div>
-                  <time class="mb-2 text-xs text-white/50" datetime={post.date.toString()}>
+                  <time class="mb-2 text-xs text-white/50" datetime={post.date.toInstant().toString()}>
                     {post.date.toLocaleString(undefined, { year: "numeric", month: "long", day: "numeric" })}
                   </time>
                   <p class="mb-2 text-base text-white/80">{post.data.description}</p>
