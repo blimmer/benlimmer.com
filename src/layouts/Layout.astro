@@ -2,6 +2,7 @@
 import Head from "src/components/Head.astro";
 import Header from "src/components/Header.astro";
 import Footer from "src/components/Footer.astro";
+import PageFind from "src/components/PageFind.astro";
 
 interface Props {
   title?: string[];
@@ -25,5 +26,6 @@ const titleString = [...title, "Ben Limmer"].join(" | ");
       </main>
     </div>
     <Footer />
+    <PageFind />
   </body>
 </html>
