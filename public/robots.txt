@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://benlimmer.com/sitemap-index.xml
