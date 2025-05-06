@@ -2,22 +2,21 @@
 import Head from "src/components/Head.astro";
 import Header from "src/components/Header.astro";
 import Footer from "src/components/Footer.astro";
-import type { BlogPost } from "src/util";
 
 interface Props {
   title?: string[];
   description: string;
-  blogPost?: BlogPost;
+  openGraphTags?: Record<string, string | string[]>;
 }
 
-const { title = [], description, blogPost } = Astro.props;
+const { title = [], description, openGraphTags } = Astro.props;
 const titleString = [...title, "Ben Limmer"].join(" | ");
 ---
 
 <!doctype html>
 <html lang="en" class="h-full">
   <head>
-    <Head title={titleString} description={description} blogPost={blogPost} />
+    <Head title={titleString} description={description} openGraphTags={openGraphTags} />
   </head>
   <body class="flex min-h-full flex-col">
     <Header currentPath={Astro.url.pathname} />

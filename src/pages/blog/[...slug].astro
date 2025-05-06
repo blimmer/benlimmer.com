@@ -4,7 +4,7 @@ import MdxProse from "src/components/MdxProse.astro";
 import Layout from "src/layouts/Layout.astro";
 import { Image } from "astro:assets";
 import gravatar from "src/assets/gravatar.jpeg";
-import { parseBlogPost, type BlogPost } from "src/util";
+import { parseBlogPost } from "src/util";
 import { Temporal } from "temporal-polyfill";
 import TldrSection from "src/components/TldrSection.astro";
 
@@ -46,12 +46,23 @@ function getPrevPost() {
 const nextPost = getNextPost();
 const prevPost = getPrevPost();
 
-type Props = BlogPost;
+type Props = CollectionEntry<"blog"> & { date: Temporal.PlainDate };
 const post = Astro.props;
-const { Content } = await render(post);
+const {
+  Content,
+  remarkPluginFrontmatter: { lastModified },
+} = await render(post);
+
+const openGraphTags = {
+  "og:type": "article",
+  "article:published_time": post.date.toString(),
+  "article:modified_time": lastModified,
+  "article:author": "https://benlimmer.com/about/",
+  "article:tag": post.data.tags ?? [],
+};
 ---
 
-<Layout title={[post.data.title]} description={post.data.description} blogPost={post}>
+<Layout title={[post.data.title]} description={post.data.description} openGraphTags={openGraphTags}>
   <article>
     <main class="mx-auto max-w-4xl px-4 py-12">
       <MdxProse>

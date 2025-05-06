@@ -1,8 +1,6 @@
 import type { CollectionEntry } from "astro:content";
 import { Temporal } from "temporal-polyfill";
 
-export type BlogPost = CollectionEntry<"blog"> & { date: Temporal.PlainDate };
-
 export function parseBlogPost(post: CollectionEntry<"blog">) {
   const [year, month, day, ...slugParts] = post.id.split("-");
   const dasherizedPostTitle = slugParts.join("-");
