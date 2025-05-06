@@ -13,11 +13,12 @@ closed and locked. However, the issue still persists.
 
 The failure looks something like this:
 
-```
+```console {5}
 Found '/home/circleci/project/.nvmrc' with version <v18.13.0>
 Downloading and installing node v18.13.0...
 Downloading https://nodejs.org/dist/v18.13.0/node-v18.13.0-linux-arm64.tar.xz...
-###                                                                        4.8%curl: (92) HTTP/2 stream 0 was not closed cleanly: INTERNAL_ERROR (err 2)
+###                                                                        4.8%
+curl: (92) HTTP/2 stream 0 was not closed cleanly: INTERNAL_ERROR (err 2)
 
 Binary download from https://nodejs.org/dist/v18.13.0/node-v18.13.0-linux-arm64.tar.xz failed, trying source.
 grep: /opt/circleci/.nvm/.cache/bin/node-v18.13.0-linux-arm64/node-v18.13.0-linux-arm64.tar.xz: No such file or directory
