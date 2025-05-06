@@ -17,6 +17,10 @@ body {
   color: var(--color-text-primary);
 }
 
+[id] {
+  scroll-margin-top: 4rem; /* Offset for sticky header */
+}
+
 .bg-primary {
   background-color: var(--color-bg-primary);
 }
