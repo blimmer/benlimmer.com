@@ -4,6 +4,8 @@ import { defineConfig } from "astro/config";
 
 import mdx from "@astrojs/mdx";
 
+import expressiveCode from "astro-expressive-code";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://benlimmer.com",
@@ -17,11 +19,5 @@ export default defineConfig({
     assets: "_assets",
   },
 
-  integrations: [mdx()],
-
-  markdown: {
-    shikiConfig: {
-      theme: "one-dark-pro",
-    },
-  },
+  integrations: [expressiveCode(), mdx()],
 });
