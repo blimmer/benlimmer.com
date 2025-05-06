@@ -18,7 +18,7 @@ const titleString = [...title, "Ben Limmer"].join(" | ");
     <Head title={titleString} description={description} />
   </head>
   <body class="flex min-h-full flex-col">
-    <Header />
+    <Header currentPath={Astro.url.pathname} />
     <div class="flex-1">
       <main>
         <slot />
