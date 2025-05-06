@@ -76,6 +76,34 @@ const isProd = !import.meta.env.DEV;
   )
 }
 
+{/* JSON-LD */}
+{
+  blogPost && (
+    <script type="application/ld+json" >
+      {JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: blogPost.data.title,
+        description: blogPost.data.description,
+        datePublished: blogPost.date.toString(),
+        dateModified: lastModified || blogPost.date.toString(),
+        author: {
+          '@type': 'Person',
+          name: 'Ben Limmer',
+          url: 'https://benlimmer.com/about/'
+        },
+        image: headshot.src,
+        url: canonicalURL.toString(),
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': canonicalURL.toString()
+        },
+        keywords: blogPost.data.tags?.join(', ')
+      })}
+    </script>
+  )
+}
+
 {/* Twitter */}
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@l1m5" />
