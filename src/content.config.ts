@@ -8,6 +8,10 @@ const blog = defineCollection({
     description: z.string(),
     tldr: z.string().optional(),
     tags: z.array(z.string()).optional(),
+    overrideLastModified: z
+      .string()
+      .regex(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{3})?Z$/) // ISO 8601
+      .optional(),
   }),
 });
 

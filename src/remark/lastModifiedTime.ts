@@ -7,7 +7,18 @@ import type { VFile } from "vfile";
  * See https://docs.astro.build/en/recipes/modified-time/
  */
 export function remarkLastModifiedTime() {
-  return function (tree: Root, file: VFile) {
+  return function (_: Root, file: VFile) {
+    const frontmatter = file.data.astro!.frontmatter!;
+    if (!frontmatter) {
+      throw new Error("Frontmatter not found");
+    }
+
+    // If the overrideLastModified property is set, use it instead of the git log
+    if (frontmatter.overrideLastModified) {
+      return frontmatter.overrideLastModified;
+    }
+
+    // Otherwise, query `git` to see when the file was last modified
     const filepath = file.history[0];
     const result = execSync(`git log -1 --pretty="format:%cI" "${filepath}"`);
     file.data.astro!.frontmatter!.lastModified = result.toString();
