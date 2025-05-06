@@ -1,0 +1,34 @@
+---
+title: Migrating to Ember CLI at Ibotta
+tags:
+  - emberjs
+  - ember-cli
+
+description: "A meta post with links to helpful resources and examples to migrate a project to Ember CLI."
+---
+
+At Ibotta, we've been running an EmberJS app for about a year. Ember
+[seemed the obvious choice](/blog/2014/08/22/getting-started-with-ember-js) to rewrite our marketing-centric webapp and
+we were able to turn around a brand new site in the span of just a few months.
+
+When we started project, there was no first-class way to build and deploy the app.
+[Ember App Kit](https://github.com/stefanpenner/ember-app-kit) existed, but didn't quite fit the bill for everything we
+needed in a build pipeline. We also tried [Grunt](http://gruntjs.com/), but it was extremely verbose. We ended up
+settling on [Brunch](http://brunch.io/) because of its simplicity and easy integration with our Express server.
+
+# Enter Ember CLI
+
+The Ember community realized that a standardized build and deployment system is crucial to making developers more
+productive. [Stephan Penner](https://twitter.com/stefanpenner)'s Ember App Kit project morphed into the
+[Ember CLI](http://www.ember-cli.com/) project and is now a first-class citizen and the de facto way to build Ember
+Apps.
+
+Especially after attending EmberConf 2015, we realized we need to ditch our current Brunch build system and migrate to
+Ember CLI.
+
+This blog post will track other posts that document our journey to Ember CLI.
+
+# Ember CLI Related Posts
+
+- [Ember CLI Testing with Jenkins CI](/blog/2015/03/22/ember-cli-testing-with-jenkins)
+- [Migrating a CoffeeScript Ember Application to Ember CLI](/blog/2015/03/23/coffeescript-to-ember-cli)

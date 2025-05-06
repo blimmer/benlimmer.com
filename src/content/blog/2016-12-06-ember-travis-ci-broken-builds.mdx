@@ -1,0 +1,115 @@
+---
+title: Ember + Travis CI Broken Builds
+tags:
+  - travis-ci
+  - emberjs
+
+description: "If you're getting command ember not found with ember or ember-cli on travis, this is how to fix it."
+---
+
+If you're suddenly getting this warning:
+
+```
+No command 'ember' found, did you mean:
+ Command 'enber' from package 'asn1c' (universe)
+ember: command not found
+```
+
+you're not alone. This article will show you how to fix to fix it.
+
+## Fixed Upstream (for now)
+
+Travis-CI has deployed a fix on their end to restore the previous behavior
+([PR](https://github.com/travis-ci/travis-build/pull/905)). However, it is likely that this will change again, so making
+a change below is probably a safe idea.
+
+## The Problem
+
+The problem stems from [this change](https://github.com/travis-ci/travis-build/pull/903) to Travis CI. It removes
+`node_modules/.bin` from the system path. When `ember-cli` is installed from `package.json`, it places a link to the
+ember binary in that directory. Since `ember-cli` isn't installed globally, the system can't find the executable.
+
+The good news is that `npm run` automatically adds `node_modules/.bin` to the path
+[at runtime](https://docs.npmjs.com/cli/run-script). From their docs:
+
+> In addition to the shell's pre-existing PATH, npm run adds node_modules/.bin to the PATH provided to scripts. Any
+> binaries provided by locally-installed dependencies can be used without the node_modules/.bin prefix
+
+## Ember Apps
+
+If you're experiencing this problem, you're likely a legacy user who hasn't run `ember init` in a while. To fix the
+problem, simply make sure you have `ember test` defined in your `package.json`:
+
+```
+{
+  ...
+
+  "scripts": {
+    "start": "ember server",
+    "build": "ember build",
+    "test": "ember test"
+  }
+
+  ...
+}
+```
+
+Then, change your `.travis.yml` to match the
+[newer blueprint](https://github.com/ember-cli/ember-cli/blob/2df251ce018fd12570bdce72c167ff14a427fa74/blueprints/app/files/.travis.yml#L25),
+by running `npm test` vs. `ember test`.
+
+```
+  script:
+    - npm test
+```
+
+If you're using any special options, you can pass them like this:
+
+```
+  script:
+    - npm test -- --launch Chrome
+```
+
+## Ember Addons
+
+This is a little more complex since ember-try is called directly. It sounds like the ember-cli team is updating the
+blueprint as we speak. As a temporary workaround, you can do something like this.
+
+In your `package.json` create a `test` script that looks like this:
+
+```
+{
+  ...
+
+  "scripts": {
+    "start": "ember server",
+    "build": "ember build",
+    "test-ci": "ember try:one"
+  }
+
+  ...
+}
+```
+
+Then, call it like this from your `.travis.yml`:
+
+```
+  script:
+    - npm run test-ci -- $EMBER_TRY_SCENARIO test --skip-cleanup
+```
+
+I'll update this issue once the core team updates the blueprint, if it differs from this solution.
+
+### Upstream PR to Ember CLI
+
+A [PR](https://github.com/ember-cli/ember-cli/pull/6533) is open for this issue. It uses a slightly different strategy,
+by calling the binary directly in `travis.yml`:
+
+```
+  script:
+    - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
+```
+
+## Problems?
+
+If you run into problems, let me know on the [ember community slack](http://emberjs.com/community/).

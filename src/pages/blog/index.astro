@@ -1,8 +1,64 @@
 ---
+import { getCollection } from "astro:content";
+import { Temporal } from "temporal-polyfill";
+import { parseBlogPost } from "src/util";
 import Layout from "src/layouts/Layout.astro";
+
+const posts = (await getCollection("blog"))
+  .map((post) => parseBlogPost(post))
+  .sort((a, b) => Temporal.PlainDate.compare(b.date, a.date));
+
+// Group posts by year
+const postsByYear = posts.reduce<Record<string, any[]>>((acc, post) => {
+  acc[post.year] = acc[post.year] || [];
+  acc[post.year].push(post);
+  return acc;
+}, {});
+const years: string[] = Object.keys(postsByYear).sort((a, b) => b.localeCompare(a));
+
+const pageTitle = ["Blog"];
+const pageDescription = "Thoughts, insights, and tutorials on web development, design, and technology by Ben Limmer.";
 ---
 
-<Layout
-  title={["Blog"]}
-  description="Ben Limmer's blog posts about software engineering, developer experience, and technical leadership."
-/>
+<Layout title={pageTitle} description={pageDescription}>
+  <main class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
+    <h1 class="mb-8 text-5xl font-bold text-white">Blog</h1>
+    <section aria-label="Blog posts list">
+      {
+        years.map((year) => (
+          <section class="mb-12" aria-labelledby={`year-${year}`}>
+            <h2 id={`year-${year}`} class="mb-6 border-b border-white/10 pb-2 text-3xl font-bold text-blue-200">
+              {year}
+            </h2>
+            <ul class="grid grid-cols-1 gap-8">
+              {postsByYear[year].map((post: any) => (
+                <li class="group relative flex flex-col rounded-lg border border-white/10 bg-white/5 p-6 transition-shadow focus-within:ring-2 focus-within:ring-blue-400 hover:bg-white/10 hover:shadow-lg">
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="absolute inset-0 z-10 rounded-lg focus:outline-none"
+                    aria-label={`Read post: ${post.data.title}`}
+                  />
+                  <div class="flex items-center justify-between">
+                    <h3 class="group-hover:text-primary mb-2 text-xl font-semibold text-blue-300 transition-colors">
+                      {post.data.title}
+                    </h3>
+                    <span
+                      class="group-hover:text-primary ml-4 flex-shrink-0 text-2xl text-blue-400 transition-colors"
+                      aria-hidden="true"
+                    >
+                      &gt;
+                    </span>
+                  </div>
+                  <time class="mb-2 text-xs text-white/50" datetime={post.date.toString()}>
+                    {post.date.toLocaleString(undefined, { year: "numeric", month: "long", day: "numeric" })}
+                  </time>
+                  <p class="mb-2 text-base text-white/80">{post.data.description}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </section>
+  </main>
+</Layout>

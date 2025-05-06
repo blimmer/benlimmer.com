@@ -1,0 +1,110 @@
+---
+title: Migrating AWS Batch from Launch Configurations to Launch Templates
+tags:
+  - aws-batch
+description: >-
+  How to migrate AWS Batch Compute Environments from Launch Configurations to Launch Templates.
+tldr: >-
+  If you created an AWS Batch Compute Environment using the <a
+  href='https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html'><code>BEST_FIT</code> Allocation
+  Strategy</a> before April 2024, it will use Launch Configurations. Recreate the Compute Environment to upgrade to
+  Launch Templates.
+---
+
+import MdxImage from "src/components/MdxImage.astro";
+import LcAutoScalingGroups from "./assets/lc-auto-scaling-groups.png";
+
+## AWS Batch Launch Configurations Deprecation
+
+I recently received this message from AWS about the deprecation of Launch Configurations in favor of Launch Templates.
+
+> [Notification] EC2 Auto Scaling Launch Configuration Deprecation Notification
+>
+> Hello,
+>
+> In 2021, AWS announced the plan to deprecate launch configurations in favor of launch templates. Since that time,
+> continual enhancements have been made to encourage migration to launch templates. This notification contains details
+> about the next step in the launch configuration deprecation process.
+>
+> Starting on October 1, 2024, you will be unable to create new launch configurations except in AWS Regions where you
+> had a launch configuration in your AWS account or AWS Organizations at some point between July 1, 2024 and October
+> 1, 2024.
+>
+> Affected accounts will receive the following exception when trying to create a launch configuration through the API or
+> CLI:
+>
+> UnsupportedOperationException: The launch configuration creation operation is not available in your account. Use
+> launch templates to create configuration templates for your Auto Scaling groups.
+>
+> Prior to this step, we have already taken the following actions to begin deprecating launch configurations:
+>
+> - Since January 1, 2023, launch configurations have not been updated with new instance types released after that date.
+>   Any new instance types that were released before January 1, 2023 in regions that became available after that date
+>   remain inaccessible through launch configurations. To use the latest instance types, users must transition to using
+>   launch templates.
+> - Since January 1, 2023, launch configurations have not received any new EC2 feature updates. To use new EC2 features,
+>   users must now use launch templates.
+> - Since April 1, 2023, new AWS accounts can no longer create launch configurations in the EC2 console. Only accounts
+>   created before this date retain access.
+>
+> We strongly encourage the remaining customers of launch configurations to migrate to launch templates as soon as
+> possible. Our documentation provides guidance on using the console migration tool to convert launch configurations to
+> launch templates [1]. To identify Auto Scaling groups that are still using launch configurations, you can run this
+> script [2].
+>
+> If you have any questions or concerns, please reach out to AWS Support [3].
+>
+> [1] https://docs.aws.amazon.com/autoscaling/ec2/userguide/migrate-to-launch-templates.html
+>
+> [2]
+> https://github.com/aws-samples/amazon-ec2-auto-scaling-group-examples/tree/main/tools/launch-configuration-inventory
+>
+> [3] https://aws.amazon.com/support
+>
+> Sincerely, Amazon Web Services
+
+When I looked into the Launch Configurations I had defined, I was surprised to see that they didn't have a
+CloudFormation stack attached. After some digging, I realized that these auto-scaling groups and Launch Configurations
+were associated with AWS Batch.
+
+<MdxImage src={LcAutoScalingGroups} alt="AWS Auto-Scaling Groups using legacy Launch Configurations" />
+
+When you create a Compute Environment via CloudFormation, AWS Batch creates the auto-scaling groups and Launch
+Configurations automatically, but does not propagate tags from the parent resources managed by CloudFormation. This can
+make it difficult to figure out where they came from.
+
+## AWS Batch and Launch Configurations
+
+AWS Batch, when used with the `BEST_FIT` allocation strategy, automatically created autoscaling groups and Launch
+Configurations to manage the compute environment. Beginning in April 2024, new Compute Environments were created with
+Launch Templates (the successor to Launch Configurations), but existing Compute Environments continued to use Launch
+Configurations. From [the documentation](https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html):
+
+> AWS Batch manages AWS resources in your account. Compute environments with the BEST_FIT allocation strategy originally
+> utilized launch configurations by default. However, the use of launch configurations with new AWS accounts will be
+> restricted over time.
+>
+> Therefore, beginning in late April 2024, newly-created BEST_FIT compute environments will default to launch templates.
+> If your service role lacks permissions to manage launch templates, AWS Batch may continue to utilize launch
+> configurations. Existing compute environments will continue to use launch configurations.
+
+According to AWS Support, AWS Batch has an exemption to the Launch Configuration deprecation and customers will
+eventually be transparently upgraded. However, you can silence the deprecation sooner by recreating the Compute
+Environment.
+
+## Recreate the AWS Batch Compute Environment
+
+Here's what I did to resolve the issue:
+
+1. Create a new Compute Environment via AWS CDK using the same parameters. If you're specifying a name for your
+   environment, you'll need to use a new name so it's unique.
+1. In a pre-production environment, update the Job Queue to point at the newly created Compute Environment.
+1. Test that jobs still run successfully against the new Compute Environment.
+1. Change the production Job Queue to point at the new Compute Environment.
+1. Allow jobs to run for a few days. At this point, the legacy Compute Environment still exists, in case we need to roll
+   back to the existing configuration.
+1. Delete the legacy Compute Environment from all environments. When you delete the Compute Environment, it will clean
+   up the auto-scaling groups and legacy Launch Configurations associated with it.
+
+That's it! You've now upgraded your AWS Batch Compute Environment to use Launch Templates instead of legacy Launch
+Configurations.

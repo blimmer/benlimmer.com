@@ -5,6 +5,7 @@ import { render } from "astro:content";
 import ContactSection from "src/components/ContactSection.astro";
 import MdxProse from "src/components/MdxProse.astro";
 import Layout from "src/layouts/Layout.astro";
+import TldrSection from "src/components/TldrSection.astro";
 
 export async function getStaticPaths() {
   const portfolioPages = await getCollection("portfolio");
@@ -24,24 +25,7 @@ const { Content } = await render(page);
     <main class="mx-auto max-w-4xl px-4 py-12">
       <MdxProse>
         <h1>{page.data.title}</h1>
-        {
-          page.data.tldr && (
-            <div class="w-full">
-              <aside class="not-prose my-6 flex w-full items-start gap-3 rounded-lg border border-slate-600 bg-slate-700/80 px-6 py-4 shadow-lg">
-                <span aria-hidden="true" class="flex items-center justify-center">
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <text x="14" y="21" text-anchor="middle" font-size="20" font-family="sans-serif" fill="#FFFFFF">
-                      💡
-                    </text>
-                  </svg>
-                </span>
-                <span class="text-base text-slate-100">
-                  <strong>TLDR:</strong> <span set:html={page.data.tldr} />
-                </span>
-              </aside>
-            </div>
-          )
-        }
+        {page.data.tldr && <TldrSection tldr={page.data.tldr} />}
         <Content />
       </MdxProse>
       <ContactSection />

@@ -1,0 +1,124 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import MdxProse from "src/components/MdxProse.astro";
+import Layout from "src/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import gravatar from "src/assets/gravatar.jpeg";
+import { parseBlogPost } from "src/util";
+import { Temporal } from "temporal-polyfill";
+import TldrSection from "src/components/TldrSection.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => {
+    const { date, slug } = parseBlogPost(post);
+    return {
+      params: { slug },
+      props: { ...post, date },
+    };
+  });
+}
+
+const posts = (await getCollection("blog"))
+  .map((post) => parseBlogPost(post))
+  .sort((a, b) => Temporal.PlainDate.compare(a.date, b.date));
+
+function getNextPost() {
+  let postIndex;
+  for (const post of posts) {
+    if (post.slug === Astro.params.slug) {
+      postIndex = posts.indexOf(post);
+      return posts[postIndex + 1];
+    }
+  }
+}
+
+function getPrevPost() {
+  let postIndex;
+  for (const post of posts) {
+    if (post.slug === Astro.params.slug) {
+      postIndex = posts.indexOf(post);
+      return posts[postIndex - 1];
+    }
+  }
+}
+
+const nextPost = getNextPost();
+const prevPost = getPrevPost();
+
+type Props = CollectionEntry<"blog"> & { date: Temporal.PlainDate };
+const post = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={[post.data.title]} description={post.data.description}>
+  <article>
+    <main class="mx-auto max-w-4xl px-4 py-12">
+      <MdxProse>
+        <h1>{post.data.title}</h1>
+        <div class="text-md flex items-center text-gray-400">
+          Posted on {post.date.toLocaleString(undefined, { year: "numeric", month: "long", day: "numeric" })} by Ben Limmer
+          <Image src={gravatar} alt="Avatar image of Ben Limmer" width={20} height={20} class="mt-0 mb-0 ml-2" />
+        </div>
+        {post.data.tldr && <TldrSection tldr={post.data.tldr} />}
+        <Content />
+      </MdxProse>
+      <nav class="mt-12 flex items-center justify-between" aria-label="Post Pagination">
+        <div class="flex-1">
+          {
+            prevPost ? (
+              <a
+                href={`/blog/${prevPost.slug}`}
+                class="group text-secondary hover:text-primary inline-flex items-center gap-1 text-sm font-medium transition-colors"
+                rel="prev"
+                aria-label={`Previous post: ${prevPost.data.title}`}
+              >
+                <svg
+                  class="text-tertiary group-hover:text-primary h-4 w-4 transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+                Previous Post
+              </a>
+            ) : (
+              <span class="invisible text-sm select-none">Previous Post</span>
+            )
+          }
+        </div>
+        <div class="flex-1 text-right">
+          {
+            nextPost ? (
+              <a
+                href={`/blog/${nextPost.slug}`}
+                class="group text-secondary hover:text-primary ml-auto inline-flex items-center gap-1 text-sm font-medium transition-colors"
+                rel="next"
+                aria-label={`Next post: ${nextPost.data.title}`}
+              >
+                Next Post
+                <svg
+                  class="text-tertiary group-hover:text-primary h-4 w-4 transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            ) : (
+              <span class="invisible text-sm select-none">Next Post</span>
+            )
+          }
+        </div>
+      </nav>
+      <!-- TODO: add tags -->
+      <!-- TODO: add report bugs -->
+    </main>
+  </article>
+</Layout>
