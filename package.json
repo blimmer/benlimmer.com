@@ -16,6 +16,7 @@
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.5",
     "astro-expressive-code": "^0.41.2",
+    "astro-pagefind": "^1.8.3",
     "tailwindcss": "^4.1.4",
     "temporal-polyfill": "^0.3.0"
   },
