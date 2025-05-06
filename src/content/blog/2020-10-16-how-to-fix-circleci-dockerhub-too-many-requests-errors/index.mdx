@@ -86,7 +86,7 @@ You need to authenticate the pull of `circleci/node:latest` by authenticating us
 steps above. To do this, add the `dockerhub` context and an `auth` object to your docker image definition. Your
 configuration will look something like this:
 
-```yaml
+```yaml {8,10,16-18,26-28}
 version: 2.1
 
 workflows:
@@ -94,17 +94,14 @@ workflows:
   default:
     jobs:
       - build:
-          # ADDED
           context: dockerhub
       - deploy:
-          # ADDED
           context: dockerhub
 
 jobs:
   build:
     docker:
       - image: circleci/node:latest
-        # ADDED
         auth:
           username: your-dockerhub-username
           password: $DOCKERHUB_ACCESS_TOKEN
@@ -115,7 +112,6 @@ jobs:
   deploy:
     docker:
       - image: circleci/node:latest
-        # ADDED
         auth:
           username: your-dockerhub-username
           password: $DOCKERHUB_ACCESS_TOKEN
@@ -153,7 +149,7 @@ jobs:
 You'll need to add the `context` and `auth` object, as you did above, but you'll also need to run a `docker login` in
 your `steps` before interacting with `docker`.
 
-```yaml
+```yaml {8,14-16,20}
 version: 2.1
 
 workflows:
@@ -161,21 +157,18 @@ workflows:
   default:
     jobs:
       - build:
-          # ADDED
           context: dockerhub
 
 jobs:
   build:
     docker:
       - image: circleci/node:latest
-        # ADDED
         auth:
           username: your-dockerhub-username
           password: $DOCKERHUB_ACCESS_TOKEN
     steps:
       - checkout
       - setup_remote_docker
-      # ADDED
       - run: docker login --username your-dockerhub-username --password $DOCKERHUB_ACCESS_TOKEN
       - run: docker run somecontainer
 ```
@@ -207,7 +200,7 @@ jobs:
 
 You'll need to add your `dockerhub` context and run a `docker login` in your `steps` before interacting with `docker`.
 
-```yaml
+```yaml {8,16}
 version: 2.1
 
 workflows:
@@ -215,7 +208,6 @@ workflows:
   default:
     jobs:
       - build:
-          # ADDED
           context: dockerhub
 
 jobs:
@@ -224,7 +216,6 @@ jobs:
       - image: ubuntu-1604:202007-01
     steps:
       - checkout
-      # Added
       - run: docker login --username your-dockerhub-username --password $DOCKERHUB_ACCESS_TOKEN
       - run: docker run somecontainer
 ```
@@ -234,7 +225,7 @@ jobs:
 You can use YAML's [merge](https://yaml.org/type/merge.html) feature to reduce duplication in your configuration file.
 Instead of duplicating the `auth` parameter in each of your jobs, reuse the code like this:
 
-```yaml
+```yaml {3-7,22-23,31-32}
 version: 2.1
 
 # Named YAML Block

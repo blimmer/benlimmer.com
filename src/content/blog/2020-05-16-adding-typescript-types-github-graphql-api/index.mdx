@@ -30,7 +30,7 @@ If you're looking for the TLDR, the complete sample code is available
 
 If you don't already have a Typescript / GraphQL repository initialized, go ahead and create one.
 
-```
+```shell
 mkdir my-typescript-project
 cd my-typescript-project
 npm init -y
@@ -45,7 +45,7 @@ To start, we'll generate types from the Github GraphQL schema, provided by
 [`@octokit/graphql-schema`](https://github.com/octokit/graphql-schema). We'll need to install the schema package and
 [`graphql-codegen`](https://graphql-code-generator.com/).
 
-```
+```shell
 npm install --save-dev @octokit/graphql-schema @graphql-codegen/cli
 ```
 
@@ -53,13 +53,13 @@ Next, we'll use the `graphql-codegen`
 [wizard](https://graphql-code-generator.com/docs/getting-started/index#initialization-wizard) to configure our initial
 code generation config.
 
-```
+```shell
 npx graphql-codegen init
     Welcome to GraphQL Code Generator!
     Answer few questions and we will setup everything for you.
 ```
 
-```
+```console
 ? What type of application are you building? (Use arrow keys)
 ❯ Backend - API or server
   Application built with Angular
@@ -73,7 +73,7 @@ npx graphql-codegen init
 Select the type of app you're building. For this tutorial, we'll demo a `Backend - API or server`. Highlight "Backend -
 API or server", press the space bar to select it, and press enter.
 
-```
+```shell
 ? Where is your schema?: src/generated/github-schema-loader.ts
 ```
 
@@ -81,7 +81,7 @@ We'll point [`graphql-codegen`](https://graphql-code-generator.com/) at the sche
 [`@octokit/graphql-schema`](https://github.com/octokit/graphql-schema) that we installed earlier. For now, type
 `src/generated/github-schema-loader.ts` and press enter. We'll create that file in a subsequent step.
 
-```
+```shell
 ? Pick plugins: (Press <space> to select, <a> to toggle all, <i> to invert selection)
  ◉ TypeScript (required by other typescript plugins)
  ◉ TypeScript Resolvers (strongly typed resolve functions)
@@ -94,34 +94,34 @@ I like to write distinct GraphQL files for improved IDE support. To support this
 the down arrow key to select "TypeScript GraphQL document nodes (embedded GraphQL document)", press space and then press
 enter.
 
-```
+```shell
 ? Where to write the output: (src/generated/graphql.ts)
 ```
 
 In this case, the default suggestion (`src/generated/graphql.ts`) is just fine. Press enter to continue.
 
-```
+```shell
 ? Do you want to generate an introspection file? (Y/n) n
 ```
 
 For this demo, we won't need an [introspection file](https://graphql.org/learn/introspection/). Type `n` and press
 enter.
 
-```
+```shell
 ? How to name the config file? (codegen.ts)
 ```
 
 Naming the `graphql-codegen` configuration file `codegen.ts` (the default indicated above) is fine with me. Press enter
 to continue.
 
-```
+```shell
 ? What script in package.json should run the codegen? codegen
 ```
 
 This will create an entry in the `package.json` `scripts` object. I like to use `codegen`. Type `codegen` and press
 enter.
 
-```
+```shell
 Config file generated at codegen.ts
 
   $ npm install
@@ -135,7 +135,7 @@ To run GraphQL Code Generator.
 
 Great, we're all done with the wizard. Install all the plugins the wizard wrote to `package.json`'s `devDependencies`.
 
-```
+```shell
 npm install
 ```
 
@@ -174,7 +174,7 @@ export default config;
 
 Now, run your first codegen!
 
-```bash
+```shell
 npm run codegen
 > my-typescript-project@1.0.0 codegen /private/tmp/my-typescript-project
 > graphql-codegen --config codegen.ts
@@ -222,7 +222,7 @@ Now that we have types generated let's do something with them! We'll write some 
 [queries and mutations](https://graphql.org/learn/queries/) with added type safety. I like to keep my queries and
 mutations in their own folders, so create a directory for each:
 
-```
+```shell
 mkdir -p src/mutations src/queries
 ```
 
@@ -257,7 +257,7 @@ one, create one in your [settings](https://github.com/settings/tokens). For help
 For this demo, I'll use [Apollo](https://github.com/apollographql/apollo-client) as my GraphQL client. Install Apollo
 and its dependencies:
 
-```
+```shell
 npm install --save @apollo/client cross-fetch
 ```
 
@@ -296,7 +296,7 @@ To add types to our queries, mutations, and variables, let's add the
 [`@graphql-codegen/typescript-operations`](https://graphql-code-generator.com/docs/plugins/typescript-operations) plugin
 to generate Typescript classes from our `.graphql` files.
 
-```
+```shell
 npm install --save-dev @graphql-codegen/typescript-operations
 ```
 
