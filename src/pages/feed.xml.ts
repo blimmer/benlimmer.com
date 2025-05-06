@@ -12,7 +12,7 @@ export async function GET(context: AstroUserConfig) {
     site: context.site!,
     items: posts.map((post) => ({
       title: post.data.title,
-      pubDate: new Date(post.date.year, post.date.month - 1, post.date.day),
+      pubDate: new Date(post.date.toInstant().epochMilliseconds),
       description: post.data.description,
       categories: post.data.tags,
       link: `/blog/${post.slug}`,

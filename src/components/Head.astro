@@ -1,38 +1,136 @@
 ---
 import "../styles/global.css";
+import headshot from "src/assets/headshot.png";
+import cwrScriptUrl from "src/assets/scripts/cwr.js?url";
+import { type WithContext, type Thing } from "schema-dts";
 
 interface Props {
   title: string;
   description: string;
-  image?: string;
+  openGraphTags?: Record<string, string | string[]>;
+  jsonLd?: WithContext<Thing>;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description } = Astro.props;
+const { title, description, openGraphTags, jsonLd } = Astro.props;
+
+const isProd = !import.meta.env.DEV;
 ---
 
-<!-- Global Metadata -->
+{/* Global Metadata */}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
+<meta name="author" content="Ben Limmer" />
 
-<!-- Canonical URL -->
+{/* Canonical URL */}
 <link rel="canonical" href={canonicalURL} />
 
-<!-- Primary Meta Tags -->
+{/* Primary Meta Tags */}
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
-<!-- Favicon -->
+{/* Favicon */}
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 <link rel="manifest" href="/site.webmanifest" />
 
-<!-- RSS Feed -->
+{/* RSS Feed */}
 <link rel="alternate" type="application/rss+xml" title="RSS Feed for BenLimmer.com" href="/feed.xml" />
 
-<!-- Sitemap -->
+{/* Sitemap */}
 <link rel="sitemap" href="/sitemap-index.xml" />
+
+{/* Open Graph */}
+<meta property="og:site_name" content="BenLimmer.com" />
+<meta property="og:image" content={headshot.src} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+{
+  openGraphTags ? (
+    <>
+      {Object.entries(openGraphTags).map(([key, value]) =>
+        Array.isArray(value) ? (
+          value.map((v) => <meta property={key} content={v} />)
+        ) : (
+          <meta property={key} content={value} />
+        ),
+      )}
+    </>
+  ) : (
+    <>
+      <meta property="og:type" content="website" />
+    </>
+  )
+}
+
+{/* JSON-LD */}
+{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+
+{/* Twitter */}
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@l1m5" />
+<meta name="twitter:creator" content="@l1m5" />
+<meta name="twitter:image:src" content={headshot.src} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:description" content={description} />
+
+{/* AWS CloudWatch RUM */}
+{
+  isProd && (
+    <script
+      set:html={`
+      (function (n, i, v, r, s, c, x, z) {
+        x = window.AwsRumClient = { q: [], n: n, i: i, v: v, r: r, c: c };
+        window[n] = function (c, p) {
+          x.q.push({ c: c, p: p });
+        };
+        z = document.createElement("script");
+        z.async = true;
+        z.src = s;
+        document.head.insertBefore(z, document.head.getElementsByTagName("script")[0]);
+      })(
+        "cwr",
+        "2bf5df89-7706-4d4f-8f32-a91dfea63005",
+        "1.0.0",
+        "us-east-1",
+        "${cwrScriptUrl}",
+        {
+          sessionSampleRate: 1,
+          guestRoleArn: "arn:aws:iam::107111673154:role/benlimmer.com-RUM-UnauthenticatedRole",
+          identityPoolId: "us-east-1:bb7e5a27-edcf-4907-8802-81d6f217da59",
+          endpoint: "https://dataplane.rum.us-east-1.amazonaws.com",
+          telemetries: ["errors", "performance", "http"],
+          allowCookies: true,
+          enableXRay: false,
+        }
+      );
+    `}
+    />
+  )
+}
+
+{/* Google Analytics */}
+{
+  isProd && (
+    <>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPYG2J7ECC" />
+      <script
+        set:html={`
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-ZPYG2J7ECC");
+    `}
+      />
+    </>
+  )
+}

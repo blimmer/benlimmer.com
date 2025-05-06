@@ -7,6 +7,8 @@ import gravatar from "src/assets/gravatar.jpeg";
 import { parseBlogPost } from "src/util";
 import { Temporal } from "temporal-polyfill";
 import TldrSection from "src/components/TldrSection.astro";
+import { type WithContext, type BlogPosting } from "schema-dts";
+import headshot from "src/assets/headshot.png";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -21,7 +23,7 @@ export async function getStaticPaths() {
 
 const posts = (await getCollection("blog"))
   .map((post) => parseBlogPost(post))
-  .sort((a, b) => Temporal.PlainDate.compare(a.date, b.date));
+  .sort((a, b) => Temporal.ZonedDateTime.compare(a.date, b.date));
 
 function getNextPost() {
   let postIndex;
@@ -46,12 +48,44 @@ function getPrevPost() {
 const nextPost = getNextPost();
 const prevPost = getPrevPost();
 
-type Props = CollectionEntry<"blog"> & { date: Temporal.PlainDate };
+type Props = CollectionEntry<"blog"> & { date: Temporal.ZonedDateTime };
 const post = Astro.props;
-const { Content } = await render(post);
+const {
+  Content,
+  remarkPluginFrontmatter: { lastModified },
+} = await render(post);
+
+const openGraphTags = {
+  "og:type": "article",
+  "article:published_time": post.date.toInstant().toString(),
+  "article:modified_time": lastModified,
+  "article:author": "https://benlimmer.com/about/",
+  "article:tag": post.data.tags ?? [],
+};
+
+const jsonLd: WithContext<BlogPosting> = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.date.toInstant().toString(),
+  dateModified: lastModified,
+  author: {
+    "@type": "Person",
+    name: "Ben Limmer",
+    url: "https://benlimmer.com/about/",
+  },
+  image: headshot.src,
+  keywords: post.data.tags ?? [],
+  inLanguage: "en-US",
+  ...(post.body && {
+    wordCount: post.body.split(" ").length,
+    articleBody: post.body,
+  }),
+};
 ---
 
-<Layout title={[post.data.title]} description={post.data.description}>
+<Layout title={[post.data.title]} description={post.data.description} openGraphTags={openGraphTags} jsonLd={jsonLd}>
   <article>
     <main class="mx-auto max-w-4xl px-4 py-12">
       <MdxProse>
