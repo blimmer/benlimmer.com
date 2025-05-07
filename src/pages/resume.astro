@@ -6,24 +6,31 @@ import ContactSection from "src/components/ContactSection.astro";
 <Layout title={["Resume"]} description="Ben Limmer's professional experience and education.">
   <main class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
     <div class="mb-12">
-      <div
-        class="flex flex-col rounded-xl border border-white/10 bg-white/5 p-8 shadow-sm md:flex-row md:items-center md:gap-8"
-      >
-        <div class="mb-6 flex flex-shrink-0 items-center justify-center md:mb-0">
-          <span class="mr-4 text-4xl" aria-hidden="true">👋</span>
-        </div>
-        <div>
-          <h2 class="mb-2 text-2xl font-bold text-white">At a Glance</h2>
-          <ul class="ml-6 list-disc space-y-1 text-lg text-white/80">
-            <li>15+ years experience as a software engineer and architect</li>
-            <li>Expertise across the full tech stack</li>
-            <li>Proven leader and technical mentor</li>
-            <li>Specializes in AI enablement, developer experience, DevOps, and scalable systems</li>
-            <li>Based in Denver, CO</li>
-          </ul>
-        </div>
-      </div>
+      <h2 class="mb-2 text-2xl font-bold text-white">At a Glance</h2>
+      <p class="mb-6 text-lg text-white/80">
+        Seasoned engineer and architect with a passion for building great teams and products.
+      </p>
+      <ul class="space-y-3 pl-0">
+        <li class="flex items-start">
+          <span class="mr-3 text-lg">🧑‍💻</span><span class="text-lg"
+            >15+ years experience as a software engineer and architect</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-3 text-lg">🏆</span><span class="text-lg">Expertise across the full tech stack</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-3 text-lg">🤝</span><span class="text-lg">Proven leader and technical mentor</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-3 text-lg">🤖</span><span class="text-lg"
+            >Specializes in AI enablement, developer experience, DevOps, and scalable systems</span>
+        </li>
+        <li class="flex items-start">
+          <span class="mr-3 text-lg">📍</span><span class="text-lg">Based in Denver, CO</span>
+        </li>
+      </ul>
     </div>
+    <hr class="my-12 border-t border-white/10" />
 
     <section class="mb-16">
       <div class="mb-8 flex items-center">
@@ -95,11 +102,13 @@ import ContactSection from "src/components/ContactSection.astro";
               <ul class="ml-6 list-disc">
                 <li>
                   <a href="/portfolio/ibotta/protocol-buffer-grpc-pipeline" class="underline"
-                    >Protocol Buffer / GRPC Pipeline</a>
+                    >Protocol Buffer / GRPC Pipeline</a
+                  >
                 </li>
                 <li>
                   <a href="/portfolio/ibotta/microservice-scorecard-generator" class="underline"
-                    >Microservice Scorecard Generator</a>
+                    >Microservice Scorecard Generator</a
+                  >
                 </li>
                 <li>
                   <a href="/portfolio/ibotta/docker-deployment-tool" class="underline">Docker-Driven Deployment Tool</a>
