@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # required for blog post last modified timestamps via git
+      - name: Bootstrap
+        uses: ./.github/actions/bootstrap
+      - name: Build Site
+        run: yarn build
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.DEPLOYMENT_ROLE_ARN }}
+          aws-region: us-east-1
+      - name: Deploy to S3
+        run: aws s3 sync --delete ./dist/ ${{ secrets.S3_BUCKET_URL}}
+      - name: Invalidate CloudFront Distribution
+        run: |
+          AWS_MAX_ATTEMPTS=6 aws cloudfront \
+            create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
