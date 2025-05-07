@@ -1,0 +1,268 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import ContactSection from "src/components/ContactSection.astro";
+---
+
+<Layout title={["Resume"]} description="Ben Limmer's professional experience and education.">
+  <main class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
+    <div class="mb-12">
+      <div
+        class="flex flex-col rounded-xl border border-white/10 bg-white/5 p-8 shadow-sm md:flex-row md:items-center md:gap-8"
+      >
+        <div class="mb-6 flex flex-shrink-0 items-center justify-center md:mb-0">
+          <span class="mr-4 text-4xl" aria-hidden="true">👋</span>
+        </div>
+        <div>
+          <h2 class="mb-2 text-2xl font-bold text-white">At a Glance</h2>
+          <ul class="ml-6 list-disc space-y-1 text-lg text-white/80">
+            <li>15+ years experience as a software engineer and architect</li>
+            <li>Expertise across the full tech stack</li>
+            <li>Proven leader and technical mentor</li>
+            <li>Specializes in AI enablement, developer experience, DevOps, and scalable systems</li>
+            <li>Based in Denver, CO</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <section class="mb-16">
+      <div class="mb-8 flex items-center">
+        <span class="mr-3 text-3xl" aria-hidden="true">💼</span>
+        <h2 id="work-experience" class="text-3xl font-semibold text-white">Work Experience</h2>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Self-Employed -->
+        <div class="flex flex-col rounded-xl border border-white/10 bg-white/5 p-6 md:flex-row md:items-start md:gap-8">
+          <div class="mb-4 md:mb-0 md:w-1/3">
+            <h3 class="mb-1 text-xl font-bold text-white">
+              <a href="https://benlimmer.com/freelance" target="_blank" rel="noopener noreferrer">Self-Employed</a>
+            </h3>
+            <div class="mb-1 text-white/70">Freelance Architect</div>
+            <div class="text-sm text-white/50">Jan 2020 – Present</div>
+          </div>
+          <div class="text-white/90 md:w-2/3">
+            Helping companies of all sizes with technical problems throughout the tech stack. More information at <a
+              href="https://benlimmer.com/freelance"
+              class="underline"
+              target="_blank"
+              rel="noopener noreferrer">benlimmer.com</a
+            >.
+          </div>
+        </div>
+
+        <!-- Ibotta Distinguished Engineer -->
+        <div class="flex flex-col rounded-xl border border-white/10 bg-white/5 p-6 md:flex-row md:items-start md:gap-8">
+          <div class="mb-4 md:mb-0 md:w-1/3">
+            <h3 class="mb-1 text-xl font-bold text-white">
+              <a href="https://www.ibotta.com/" target="_blank" rel="noopener noreferrer">Ibotta</a>
+            </h3>
+            <div class="mb-1 text-white/70">Distinguished Software Engineer / Solutions Architect</div>
+            <div class="text-sm text-white/50">Jan 2019 – Jan 2020</div>
+          </div>
+          <div class="text-white/90 md:w-2/3">
+            As a Distinguished Engineer and Solutions Architect, I worked across the organization and tech stack on
+            Ibotta's most visible, high-impact projects. As part of the architecture team, I worked with the top
+            technologists at Ibotta, including the Senior Leadership Team, to ensure Ibotta's continued success as a
+            business and engineering team.
+            <div class="mt-2">
+              <span class="font-semibold">Key Projects:</span>
+              <ul class="ml-6 list-disc">
+                <li>
+                  <a href="/portfolio/ibotta/digital-payments" class="underline">Digital Payments Solution Architect</a>
+                </li>
+                <li><a href="/portfolio/ibotta/browser-extension" class="underline">Ibotta Browser Extension</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ibotta Principal Engineer -->
+        <div class="flex flex-col rounded-xl border border-white/10 bg-white/5 p-6 md:flex-row md:items-start md:gap-8">
+          <div class="mb-4 md:mb-0 md:w-1/3">
+            <h3 class="mb-1 text-xl font-bold text-white">
+              <a href="https://www.ibotta.com/" target="_blank" rel="noopener noreferrer">Ibotta</a>
+            </h3>
+            <div class="mb-1 text-white/70">Principal Software Engineer</div>
+            <div class="text-sm text-white/50">Jan 2017 – Jan 2019</div>
+          </div>
+          <div class="text-white/90 md:w-2/3">
+            Worked across the stack, primarily focused on Developer Experience, DevOps and Platform Infrastructure
+            during a time of rapid-growth with unique scalability challenges. My team and I paved the road to generate
+            and deploy microservices, enabling a growing team of 60+ engineers.
+            <div class="mt-2">
+              <span class="font-semibold">Key Projects:</span>
+              <ul class="ml-6 list-disc">
+                <li>
+                  <a href="/portfolio/ibotta/protocol-buffer-grpc-pipeline" class="underline"
+                    >Protocol Buffer / GRPC Pipeline</a>
+                </li>
+                <li>
+                  <a href="/portfolio/ibotta/microservice-scorecard-generator" class="underline"
+                    >Microservice Scorecard Generator</a>
+                </li>
+                <li>
+                  <a href="/portfolio/ibotta/docker-deployment-tool" class="underline">Docker-Driven Deployment Tool</a>
+                </li>
+                <li><a href="/portfolio/ibotta/aws-spend" class="underline">AWS Cost Optimizations</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ibotta Software Engineer / Tech Lead -->
+        <div class="flex flex-col rounded-xl border border-white/10 bg-white/5 p-6 md:flex-row md:items-start md:gap-8">
+          <div class="mb-4 md:mb-0 md:w-1/3">
+            <h3 class="mb-1 text-xl font-bold text-white">
+              <a href="https://www.ibotta.com/" target="_blank" rel="noopener noreferrer">Ibotta</a>
+            </h3>
+            <div class="mb-1 text-white/70">Software Engineer / Technical Lead</div>
+            <div class="text-sm text-white/50">Mar 2014 – Jan 2017</div>
+          </div>
+          <div class="text-white/90 md:w-2/3">
+            Served as the technical lead and architect for teams building web applications that totaled a combined
+            1,000,000+ unique visitors monthly. Notably, we completely rewrote and launched the Ibotta homepage and web
+            app in under three months. We also purpose-built support and moderation tools for internal users, massively
+            improving moderator efficiency, and saving the company millions of dollars in operational expenses.<br />
+            <span class="mt-2 block">The tech stack primarily consisted of Ember.js, Node, and Ruby on Rails.</span>
+            <div class="mt-2">
+              <span class="font-semibold">Key Projects:</span>
+              <ul class="ml-6 list-disc">
+                <li><a href="/portfolio/ibotta/partner-portal" class="underline">Partner Portal</a></li>
+                <li><a href="/portfolio/ibotta/cs-tool" class="underline">Customer Support Internal Tool</a></li>
+                <li><a href="/portfolio/ibotta/ibotta-dot-com" class="underline">Ibotta.com Webapp</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ReadyTalk -->
+        <div class="flex flex-col rounded-xl border border-white/10 bg-white/5 p-6 md:flex-row md:items-start md:gap-8">
+          <div class="mb-4 md:mb-0 md:w-1/3">
+            <h3 class="mb-1 text-xl font-bold text-white">
+              <a href="http://www.readytalk.com/" target="_blank" rel="noopener noreferrer">ReadyTalk</a>
+            </h3>
+            <div class="mb-1 text-white/70">Software Developer &amp; UX/UI Designer</div>
+            <div class="text-sm text-white/50">Jul 2011 – Mar 2014</div>
+          </div>
+          <div class="text-white/90 md:w-2/3">
+            Developed the native desktop client for ReadyTalk's audio, web, and video conferencing products.<br />
+            The tech stack was primarily Java, Swift, and Flex. I also worked closely with customers and the User Experience
+            team to provide industry-leading user experience interactions.
+            <div class="mt-2">
+              <span class="font-semibold">Key Projects:</span>
+              <ul class="ml-6 list-disc">
+                <li><a href="/portfolio/rt/controlsredesign" class="underline">Conference Controls Redesign</a></li>
+                <li><a href="/portfolio/swt-bling" class="underline">swt-bling</a></li>
+                <li><a href="/portfolio/rt/videoconferencing" class="underline">Video Conferencing</a></li>
+                <li><a href="/portfolio/rt/quicklauncher" class="underline">QuickLauncher</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- GoldSystems -->
+        <div class="flex flex-col rounded-xl border border-white/10 bg-white/5 p-6 md:flex-row md:items-start md:gap-8">
+          <div class="mb-4 md:mb-0 md:w-1/3">
+            <h3 class="mb-1 text-xl font-bold text-white">
+              <a href="http://www.goldsys.com" target="_blank" rel="noopener noreferrer">GoldSystems</a>
+            </h3>
+            <div class="mb-1 text-white/70">Software Developer</div>
+            <div class="text-sm text-white/50">Aug 2010 – May 2011</div>
+          </div>
+          <div class="text-white/90 md:w-2/3">
+            Created "Find a Person", an automated, voice-driven application to direct a customer's call to the
+            appropriate person or department.<br />
+            The tech stack included C#, ASP.NET, WCF, IIS, Lync Server 2010, MSSQL, Microsoft Unified Communications Managed
+            API (UCMA), and VXML Grammars.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <div class="mb-8 flex items-center">
+        <span class="mr-3 text-3xl" aria-hidden="true">🎓</span>
+        <h2 id="formal-education" class="text-3xl font-semibold text-white">Formal Education</h2>
+      </div>
+      <div class="mb-8 rounded-xl border border-white/10 bg-white/5 p-6">
+        <p class="mb-4 text-white/90">
+          In May 2011, I received a Bachelor's Degree in Computer Science from the University of Colorado at Boulder
+          (CU). At CU, the Computer Science program offers a variety of <a
+            href="https://www.colorado.edu/cs/academics/undergraduate-programs/bachelor-science"
+            class="underline"
+            target="_blank"
+            rel="noopener noreferrer">tracks</a
+          >, or specializations, which allows the Computer Science degree to be tailored to meet the needs of individual
+          students. My specialization is in <a
+            href="https://www.colorado.edu/cs/academics/undergraduate-programs/bachelor-science#human_centered_computing-755"
+            class="underline"
+            target="_blank"
+            rel="noopener noreferrer">Human Centered Computing</a
+          > (HCC), which focuses on gaining skills in the fields of: human computer interaction, design of interactive systems,
+          cognitive science, and many other fields. In the HCC track, we work alongside <a
+            href="https://www.colorado.edu/atlas/"
+            class="underline"
+            target="_blank"
+            rel="noopener noreferrer">ATLAS</a
+          > (Alliance for Technology, Learning and Science), the <a
+            href="http://ics.colorado.edu/"
+            class="underline"
+            target="_blank"
+            rel="noopener noreferrer">Institute for Cognitive Science</a
+          > and the <a
+            href="https://www.colorado.edu/activelearningprogram/discovery-learning-research"
+            class="underline"
+            target="_blank"
+            rel="noopener noreferrer">Discovery Learning Center</a
+          >. A <a href="https://youtu.be/twJOrrbzgNQ" class="underline" target="_blank" rel="noopener noreferrer"
+            >video interview</a
+          > of myself interviewing <a
+            href="https://cmci.colorado.edu/~palen/"
+            class="underline"
+            target="_blank"
+            rel="noopener noreferrer">Leysia Palen</a
+          >, an HCC professor at CU, explains a bit more about the HCC track.
+        </p>
+        <p class="mb-4 text-white/90">
+          I graduated with over a 3.8 cumulative GPA (3.9+ major) and magna cum laude. In addition, I received
+          recognition as the Outstanding Graduate in Service for the College of Engineering as well as Outstanding
+          Graduate from Computer Science.
+        </p>
+      </div>
+      <div class="mb-8 rounded-xl border border-white/10 bg-white/5 p-6">
+        <h3 class="mb-2 text-xl font-bold text-white">Computer Science Courses</h3>
+        <ul class="ml-6 list-disc text-white/90">
+          <li>Computer Science as a Field of Work and Study</li>
+          <li>Computer Science I: Programming</li>
+          <li>Computer Science II: Data Structures</li>
+          <li>Computer Systems</li>
+          <li>Discrete Structures</li>
+          <li>Linear Algebra for Computer Science Applications</li>
+          <li>Digital and Social Systems: Foundations</li>
+          <li>Algorithms</li>
+          <li>DSS: Professional Development</li>
+          <li>Principles of Programming Languages</li>
+          <li>Introduction to Artificial Intelligence</li>
+          <li>Cognitive Science</li>
+          <li>Unix System Administration</li>
+          <li>User Centered Design</li>
+          <li>Health Informatics</li>
+          <li>Object-Oriented Analysis and Design</li>
+          <li>Game Development for XBOX 360</li>
+          <li><a href="/portfolio/waldo" class="underline">Senior Project</a></li>
+        </ul>
+        <p class="mt-4 text-white/90">
+          You can learn more about the content of these courses <a
+            href="https://catalog.colorado.edu/courses-a-z/csci/"
+            class="underline"
+            target="_blank"
+            rel="noopener noreferrer">here</a
+          >.
+        </p>
+      </div>
+    </section>
+
+    <ContactSection />
+  </main>
+</Layout>
