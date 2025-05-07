@@ -1,0 +1,17 @@
+name: "Bootstrap"
+description: "Common boilerplate setup for workflows"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        cache: yarn
+        node-version-file: .tool-versions
+    - name: Enable corepack
+      shell: bash
+      run: corepack enable
+    - name: Install dependencies
+      shell: bash
+      run: yarn install
