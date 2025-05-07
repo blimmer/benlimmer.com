@@ -12,3 +12,12 @@ jobs:
         uses: ./.github/actions/bootstrap
       - name: Build site
         run: yarn build
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Bootstrap
+        uses: ./.github/actions/bootstrap
+      - name: Check site
+        run: yarn astro check
