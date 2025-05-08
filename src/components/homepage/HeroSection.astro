@@ -1,3 +1,7 @@
+---
+import CaretIcon from "src/components/ui/CaretIcon.astro";
+---
+
 <section class="relative flex min-h-[99vh] flex-col items-center justify-center overflow-hidden py-16 md:py-24">
   <div class="pointer-events-none absolute inset-0 z-0">
     <div class="hero-grid-bg h-full w-full"></div>
@@ -20,18 +24,14 @@
     <p class="mb-12 max-w-3xl text-center text-2xl font-medium text-white/60 md:text-3xl">
       I'm a freelance software engineer and architect with a passion for developer experience.
     </p>
-    <div class="flex flex-col items-center gap-6 sm:flex-row">
+    <div class="flex justify-center">
       <a
         href="/freelance"
         class="group relative flex items-center gap-2 rounded-lg bg-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-200 hover:scale-[1.02] hover:bg-blue-600 hover:shadow-lg"
       >
         Work with Me
+        <CaretIcon />
       </a>
-      <a
-        href="/about"
-        class="rounded-lg border border-white/10 bg-[#161c26] px-8 py-4 text-lg font-semibold text-white transition-all duration-200 hover:scale-[1.02] hover:bg-[#232b3a]"
-        >Learn More</a
-      >
     </div>
   </div>
   <script is:inline>

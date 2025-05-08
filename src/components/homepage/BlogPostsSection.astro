@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { parseBlogPost } from "src/util";
 import { Temporal } from "temporal-polyfill";
+import CaretIcon from "src/components/ui/CaretIcon.astro";
 
 const posts = (await getCollection("blog"))
   .map((post) => parseBlogPost(post))
@@ -45,16 +46,7 @@ const posts = (await getCollection("blog"))
         class="group inline-flex items-center gap-2 rounded border border-white/20 bg-white/10 px-5 py-2 text-sm text-white transition hover:bg-white/20 focus:ring-2 focus:ring-blue-400 focus:outline-none"
       >
         View all blog posts
-        <svg
-          class="h-4 w-4 transition-transform group-hover:translate-x-1"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
-        </svg>
+        <CaretIcon />
       </a>
     </div>
   </div>
