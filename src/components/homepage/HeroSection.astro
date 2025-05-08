@@ -1,5 +1,6 @@
 ---
 import CaretIcon from "src/components/ui/CaretIcon.astro";
+import SectionDivider from "src/components/ui/SectionDivider.astro";
 ---
 
 <section class="relative flex min-h-[99vh] flex-col items-center justify-center overflow-hidden py-16 md:py-24">
@@ -34,6 +35,7 @@ import CaretIcon from "src/components/ui/CaretIcon.astro";
       </a>
     </div>
   </div>
+  <SectionDivider className="absolute bottom-[2%]" />
   <script is:inline>
     const TYPING_SPEED = 120;
     const TYPING_PAUSE = 2500;
