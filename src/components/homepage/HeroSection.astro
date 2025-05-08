@@ -3,26 +3,6 @@
     <div class="hero-grid-bg h-full w-full"></div>
   </div>
   <div class="relative z-10 flex flex-col items-center">
-    <a
-      href="/freelance"
-      class="transition-all duration-200 ease-in-out hover:scale-[1.02]"
-      aria-label="Learn more about freelance opportunities"
-    >
-      <span
-        class="mb-8 flex items-center gap-2 rounded-full border border-white/10 bg-[#232b3a] px-6 py-2 text-base font-medium tracking-wide text-white/90 shadow-lg"
-      >
-        Available for freelance work
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="ml-1 h-4 w-4"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"
-          ></path></svg
-        >
-      </span>
-    </a>
     <h1 class="mb-6 text-center text-6xl font-bold text-white md:text-8xl">
       <span class="md:inline">Hi, I'm</span>
       <span class="mt-2 block md:mt-0 md:inline"
@@ -39,11 +19,16 @@
     <p class="mb-12 max-w-3xl text-center text-2xl font-medium text-white/60 md:text-3xl">
       I'm a freelance software engineer and architect with a passion for developer experience.
     </p>
-    <div class="flex gap-6">
-      <a href="/freelance" class="btn-primary">Work with Me</a>
+    <div class="flex flex-col items-center gap-6 sm:flex-row">
+      <a
+        href="/freelance"
+        class="group relative flex items-center gap-2 rounded-lg bg-blue-500 px-8 py-4 text-lg font-semibold text-white transition-all duration-200 hover:scale-[1.02] hover:bg-blue-600 hover:shadow-lg"
+      >
+        Work with Me
+      </a>
       <a
         href="/about"
-        class="rounded border border-white/10 bg-[#161c26] px-8 py-3 text-lg font-semibold text-white transition hover:bg-[#232b3a]"
+        class="rounded-lg border border-white/10 bg-[#161c26] px-8 py-4 text-lg font-semibold text-white transition-all duration-200 hover:scale-[1.02] hover:bg-[#232b3a]"
         >Learn More</a
       >
     </div>
