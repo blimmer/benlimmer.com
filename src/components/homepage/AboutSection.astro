@@ -2,9 +2,10 @@
 import { Image } from "astro:assets";
 import headshot from "src/assets/headshot.png";
 import CaretIcon from "src/components/ui/CaretIcon.astro";
+import SectionDivider from "src/components/ui/SectionDivider.astro";
 ---
 
-<section class="bg-primary flex flex-col items-center px-4 pt-10 pb-20 text-white sm:px-6 lg:px-8">
+<section class="bg-primary flex flex-col items-center px-4 py-10 text-white sm:px-6 lg:px-8">
   <div class="mx-auto w-full max-w-4xl">
     <div class="mb-8 text-center md:mb-0">
       <h2 class="text-3xl font-bold text-blue-300 md:text-4xl">About Me</h2>
@@ -35,4 +36,5 @@ import CaretIcon from "src/components/ui/CaretIcon.astro";
       </a>
     </div>
   </div>
+  <SectionDivider className="mt-20" />
 </section>
