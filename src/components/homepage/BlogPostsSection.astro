@@ -10,38 +10,41 @@ const posts = (await getCollection("blog"))
 ---
 
 <section class="bg-primary flex flex-col items-center px-4 pt-10 pb-20 text-white sm:px-6 lg:px-8" id="blog">
-  <h2 class="mb-4 text-3xl font-bold text-blue-300 md:text-4xl">Latest Blog Posts</h2>
-  <p class="mb-10 max-w-2xl text-center text-white/80">
-    Musings on developer experience, productivity, and technology trends.
-  </p>
-  <ul class="mb-6 grid w-full max-w-4xl grid-cols-1 gap-8 md:grid-cols-3">
-    {
-      posts.map((post) => (
-        <li
-          class="group relative flex flex-col rounded-lg border border-white/10 bg-white/5 p-6 transition-shadow focus-within:ring-2 focus-within:ring-blue-400 hover:bg-white/10 hover:shadow-lg"
-          tabindex="0"
-        >
-          <a
-            href={`/blog/${post.slug}`}
-            class="absolute inset-0 z-10 rounded-lg focus:outline-none"
-            aria-label={`Read post: ${post.data.title}`}
-          />
-          <div class="flex flex-col">
-            <h3 class="group-hover:text-primary mb-2 text-xl font-semibold break-words text-blue-300 transition-colors">
-              {post.data.title}
-            </h3>
-            <time class="mb-2 text-xs text-white/70" datetime={post.date.toInstant().toString()}>
-              {post.date.toLocaleString(undefined, { year: "numeric", month: "long", day: "numeric" })}
-            </time>
-          </div>
-          <p class="mb-2 text-base break-words text-white/80">{post.data.description}</p>
-        </li>
-      ))
-    }
-  </ul>
-  <a
-    href="/blog"
-    class="rounded border border-white/20 bg-white/10 px-5 py-2 text-sm text-white transition hover:bg-white/20 focus:ring-2 focus:ring-blue-400 focus:outline-none"
-    >View all blog posts</a
-  >
+  <div class="mx-auto w-full max-w-4xl">
+    <div class="mb-12 text-center">
+      <h2 class="text-3xl font-bold text-blue-300 md:text-4xl">Latest Blog Posts</h2>
+    </div>
+    <ul class="mb-6 grid w-full grid-cols-1 gap-8 md:grid-cols-3">
+      {
+        posts.map((post) => (
+          <li
+            class="group relative flex flex-col rounded-lg border border-white/10 bg-white/5 p-6 transition-shadow focus-within:ring-2 focus-within:ring-blue-400 hover:bg-white/10 hover:shadow-lg"
+            tabindex="0"
+          >
+            <a
+              href={`/blog/${post.slug}`}
+              class="absolute inset-0 z-10 rounded-lg focus:outline-none"
+              aria-label={`Read post: ${post.data.title}`}
+            />
+            <div class="flex flex-col">
+              <h3 class="group-hover:text-primary mb-2 text-xl font-semibold break-words text-blue-300 transition-colors">
+                {post.data.title}
+              </h3>
+              <time class="mb-2 text-xs text-white/70" datetime={post.date.toInstant().toString()}>
+                {post.date.toLocaleString(undefined, { year: "numeric", month: "long", day: "numeric" })}
+              </time>
+            </div>
+            <p class="mb-2 text-base break-words text-white/80">{post.data.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mt-8 flex justify-center">
+      <a
+        href="/blog"
+        class="rounded border border-white/20 bg-white/10 px-5 py-2 text-sm text-white transition hover:bg-white/20 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+        >View all blog posts</a
+      >
+    </div>
+  </div>
 </section>

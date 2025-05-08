@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import headshot from "src/assets/headshot.png";
+---
+
+<section class="bg-primary flex flex-col items-center px-4 py-20 text-white sm:px-6 lg:px-8">
+  <div class="mx-auto w-full max-w-4xl">
+    <div class="mb-6 text-center">
+      <h2 class="text-3xl font-bold text-blue-300 md:text-4xl">About Me</h2>
+    </div>
+    <div class="flex flex-col items-center md:flex-row md:items-center md:gap-8">
+      <div class="mb-8 h-48 w-48 shrink-0 md:mb-0">
+        <Image
+          src={headshot}
+          alt="Ben Limmer headshot"
+          class="h-full w-full rounded-full object-cover ring-4 ring-white/10"
+          width={192}
+          height={192}
+        />
+      </div>
+      <div class="prose prose-lg prose-invert">
+        Over the past fifteen years, I've worked across the entire tech stack and software development lifecycle —
+        architecting scalable systems, building cloud infrastructure from scratch, and introducing modern AI-powered
+        development practices to boost productivity.
+      </div>
+    </div>
+    <div class="mt-8 flex justify-center">
+      <a
+        href="/about"
+        class="rounded border border-white/20 bg-white/10 px-5 py-2 text-sm text-white transition hover:bg-white/20 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+        >Learn more about me</a
+      >
+    </div>
+  </div>
+</section>
