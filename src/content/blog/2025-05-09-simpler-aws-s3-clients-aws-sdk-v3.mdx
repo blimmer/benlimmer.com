@@ -1,5 +1,5 @@
 ---
-title: Fix StreamingBlobPayloadOutputTypes Errors in AWS SDK v3 for Node.js
+title: AWS SDK v3 Node.js Streams Shouldn't Be This Hard (Here's the Fix)
 tags:
   - aws
   - aws-s3
@@ -32,7 +32,7 @@ When you're working in an application that will only be run in Node.js, this uni
 
 For example, consider this code that uses the `GetObjectCommand` to download a file from S3:
 
-```ts {15-17}
+```ts {15-18}
 import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
 
 export async function processFromS3(bucket: string, key: string) {
@@ -64,7 +64,7 @@ manually narrow stream types yourself. The
 [`NodeJsClient` type](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-smithy-types/TypeAlias/NodeJsClient/)
 tells AWS SDK v3 to use Node.js-specific stream APIs when returning streams from these clients.
 
-```ts {5,14,16}
+```ts {5,14,16-17}
 import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { type NodeJsClient } from "@smithy/types";
 
@@ -78,7 +78,7 @@ export async function processFromS3(bucket: string, key: string) {
     }),
   );
 
-  const stream = result.Body; // type-narrowed to SdkStream<IncomingMessage>
+  const stream = result.Body; // automatically type-narrowed to SdkStream<IncomingMessage>
   if (stream) {
     // No longer flags a type error
     stream.destroy();
