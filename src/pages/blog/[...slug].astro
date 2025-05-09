@@ -92,7 +92,15 @@ const jsonLd: WithContext<BlogPosting> = {
         <h1>{post.data.title}</h1>
         <div class="text-md flex items-center text-gray-400">
           Posted on {post.date.toLocaleString(undefined, { year: "numeric", month: "long", day: "numeric" })} by Ben Limmer
-          <Image src={gravatar} alt="Avatar image of Ben Limmer" width={20} height={20} class="mt-0 mb-0 ml-2" />
+          <Image
+            src={gravatar}
+            alt="Avatar image of Ben Limmer"
+            width={20}
+            height={20}
+            class="mt-0 mb-0 ml-2"
+            densities={[1, 2]}
+            quality={80}
+          />
         </div>
         {post.data.tldr && <TldrSection tldr={post.data.tldr} />}
         <Content />
