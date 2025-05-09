@@ -1,6 +1,5 @@
 // @ts-check
 import mdx from "@astrojs/mdx";
-import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import expressiveCode from "astro-expressive-code";
@@ -20,7 +19,7 @@ export default defineConfig({
     assets: "_assets",
   },
 
-  integrations: [expressiveCode(), mdx(), sitemap(), partytown({ config: { forward: ["dataLayer.push"] } })],
+  integrations: [expressiveCode(), mdx(), sitemap()],
 
   markdown: {
     remarkPlugins: [remarkLastModifiedTime],

@@ -120,9 +120,8 @@ const isProd = !import.meta.env.DEV;
 {
   isProd && (
     <>
-      <script async type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-ZPYG2J7ECC" />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPYG2J7ECC" />
       <script
-        type="text/partytown"
         set:html={`
       window.dataLayer = window.dataLayer || [];
       function gtag() {
