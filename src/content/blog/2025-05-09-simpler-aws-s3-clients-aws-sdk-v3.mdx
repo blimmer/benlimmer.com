@@ -1,20 +1,26 @@
 ---
-title: Simplify Dealing with Node Streams in AWS SDK v3 (TODO)
+title: Fix StreamingBlobPayloadOutputTypes Errors in AWS SDK v3 for Node.js
 tags:
   - aws
   - aws-s3
   - aws-sdk-v3
 description: >-
-  "TODO"
+  Learn how to fix frustrating stream type errors when using AWS SDK v3 in Node.js by casting to NodeJsClient.
+tldr: >-
+  Easily type-narrow stream types (like the <code>Body</code> response from <code>GetObjectCommand</code>) in Node.js by
+  casting your client to <code><a
+  href="https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-smithy-types/TypeAlias/NodeJsClient/">NodeJsClient</a></code>.
+  This forces the SDK to type-check against Node-specific stream APIs, reducing the need for manual type-narrowing code.
 ---
 
 AWS SDK v3 made working with streams in Node.js a lot more difficult than it was in v2. This article shows you how to
 simplify your migration from AWS SDK v2 to v3.
 
-## `StreamingBlobPayloadOutputTypes`
+## Why Node Streams Break in AWS SDK v3
 
-In AWS SDK v3, the `smithy` `StreamingBlobPayloadOutputTypes` type is used to represent streams that can be returned
-from in both browser _and_ Node.js environments.
+In AWS SDK v3, the
+[`StreamingBlobPayloadOutputTypes` type](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-smithy-types/TypeAlias/StreamingBlobPayloadOutputTypes/)
+is used to represent streams that can be returned in both browser _and_ Node.js environments.
 
 ```ts
 type StreamingBlobPayloadOutputTypes =
@@ -22,7 +28,7 @@ type StreamingBlobPayloadOutputTypes =
   | BrowserRuntimeStreamingBlobPayloadOutputTypes;
 ```
 
-When you're working in an environment that will only be run in Node.js, this union type is painful to deal with.
+When you're working in an application that will only be run in Node.js, this union type is painful to deal with.
 
 For example, consider this code that uses the `GetObjectCommand` to download a file from S3:
 
@@ -49,12 +55,12 @@ export async function processFromS3(bucket: string, key: string) {
 }
 ```
 
-This is annoying because in Node.js, you can be sure that the `Body` property is a stream.
+This can be frustrating, especially when you're sure you're dealing with a Node.js stream.
 
-## Using `NodeJsClient` Type Cast
+## Fixing It with `NodeJsClient` Type Cast
 
 Luckily, there's an underdocumented way to tell AWS SDK v3 what environment you're running in, so you don't have to
-write a bunch of type-narrowing code yourself. The
+manually narrow stream types yourself. The
 [`NodeJsClient` type](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-smithy-types/TypeAlias/NodeJsClient/)
 tells AWS SDK v3 to use Node.js-specific stream APIs when returning streams from these clients.
 
@@ -80,5 +86,4 @@ export async function processFromS3(bucket: string, key: string) {
 }
 ```
 
-So, save yourself some hassle when dealing with streams in Node.js with AWS SDK v3 by casting your client to
-`NodeJsClient<Client>`!
+Save yourself some hassle! Just cast to `NodeJsClient<Client>` and move on 🎉
