@@ -1,0 +1,84 @@
+---
+title: Simplify Dealing with Node Streams in AWS SDK v3 (TODO)
+tags:
+  - aws
+  - aws-s3
+  - aws-sdk-v3
+description: >-
+  "TODO"
+---
+
+AWS SDK v3 made working with streams in Node.js a lot more difficult than it was in v2. This article shows you how to
+simplify your migration from AWS SDK v2 to v3.
+
+## `StreamingBlobPayloadOutputTypes`
+
+In AWS SDK v3, the `smithy` `StreamingBlobPayloadOutputTypes` type is used to represent streams that can be returned
+from in both browser _and_ Node.js environments.
+
+```ts
+type StreamingBlobPayloadOutputTypes =
+  | NodeJsRuntimeStreamingBlobPayloadOutputTypes
+  | BrowserRuntimeStreamingBlobPayloadOutputTypes;
+```
+
+When you're working in an environment that will only be run in Node.js, this union type is painful to deal with.
+
+For example, consider this code that uses the `GetObjectCommand` to download a file from S3:
+
+```ts {15-17}
+import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
+
+export async function processFromS3(bucket: string, key: string) {
+  const s3 = new S3Client({});
+
+  const result = await s3.send(
+    new GetObjectCommand({
+      Bucket: bucket,
+      Key: key,
+    }),
+  );
+
+  const stream = result.Body;
+  if (stream) {
+    // Does not work
+    // Property 'destroy' does not exist on type 'StreamingBlobPayloadOutputTypes'.
+    //   Property 'destroy' does not exist on type 'Blob & SdkStreamMixin'.ts(2339)
+    stream.destroy();
+  }
+}
+```
+
+This is annoying because in Node.js, you can be sure that the `Body` property is a stream.
+
+## Using `NodeJsClient` Type Cast
+
+Luckily, there's an underdocumented way to tell AWS SDK v3 what environment you're running in, so you don't have to
+write a bunch of type-narrowing code yourself. The
+[`NodeJsClient` type](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-smithy-types/TypeAlias/NodeJsClient/)
+tells AWS SDK v3 to use Node.js-specific stream APIs when returning streams from these clients.
+
+```ts {5,14,16}
+import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { type NodeJsClient } from "@smithy/types";
+
+export async function processFromS3(bucket: string, key: string) {
+  const s3 = new S3Client({}) as NodeJsClient<S3Client>; // cast to NodeJsClient
+
+  const result = await s3.send(
+    new GetObjectCommand({
+      Bucket: bucket,
+      Key: key,
+    }),
+  );
+
+  const stream = result.Body; // type-narrowed to SdkStream<IncomingMessage>
+  if (stream) {
+    // No longer flags a type error
+    stream.destroy();
+  }
+}
+```
+
+So, save yourself some hassle when dealing with streams in Node.js with AWS SDK v3 by casting your client to
+`NodeJsClient<Client>`!
