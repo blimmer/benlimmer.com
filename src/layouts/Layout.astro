@@ -3,6 +3,7 @@ import { type WithContext, type Thing } from "schema-dts";
 import Head from "src/components/Head.astro";
 import Header from "src/components/Header.astro";
 import Footer from "src/components/Footer.astro";
+import ContentPreview from "src/components/ContentPreview.astro";
 
 interface Props {
   title?: string[];
@@ -13,6 +14,7 @@ interface Props {
 
 const { title = [], description, openGraphTags, jsonLd } = Astro.props;
 const titleString = [...title, "Ben Limmer"].join(" | ");
+const githubBranchName = import.meta.env.GITHUB_BRANCH;
 ---
 
 <!doctype html>
@@ -28,5 +30,6 @@ const titleString = [...title, "Ben Limmer"].join(" | ");
       </main>
     </div>
     <Footer />
+    {githubBranchName && <ContentPreview githubBranchName={githubBranchName} />}
   </body>
 </html>
