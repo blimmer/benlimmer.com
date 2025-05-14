@@ -26,7 +26,7 @@ jobs:
       - name: Bootstrap
         uses: ./.github/actions/bootstrap
       - name: Build Site
-        run: yarn build
+        run: GITHUB_BRANCH=${{ env.BRANCH_NAME }} yarn build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
