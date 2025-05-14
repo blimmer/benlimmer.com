@@ -5,6 +5,7 @@ on:
     types:
       - opened
       - synchronize
+      - closed
 
 permissions:
   contents: read
@@ -13,6 +14,7 @@ permissions:
 
 jobs:
   deploy:
+    if: github.event.action != 'closed'
     runs-on: ubuntu-latest
     env:
       BRANCH_NAME: ${{ github.head_ref }}
@@ -56,3 +58,18 @@ jobs:
 
             You can view this branch's preview environment at:
             [benlimmer.com/?preview=${{ env.BRANCH_NAME }}](https://benlimmer.com/?preview=${{ env.BRANCH_NAME }})
+
+  cleanup:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    env:
+      BRANCH_NAME: ${{ github.head_ref }}
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.PREVIEW_DEPLOYMENT_ROLE_ARN }}
+          aws-region: us-east-1
+      - name: Delete Preview Deployment from S3
+        run: |
+          aws s3 rm --recursive ${{ secrets.S3_BUCKET_URL}}/${{ env.BRANCH_NAME }}
