@@ -43,8 +43,15 @@ jobs:
         run: aws s3 sync --delete ./dist/ ${{ secrets.S3_BUCKET_URL }}/_preview/${{ env.BRANCH_NAME }}/
       - name: Invalidate CloudFront Distribution
         run: |
-          AWS_MAX_ATTEMPTS=6 aws cloudfront \
-            create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*" \
+            --query 'Invalidation.Id' \
+            --output text)
+          echo "Waiting for invalidation $INVALIDATION_ID to complete..."
+          aws cloudfront wait invalidation-completed \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --id $INVALIDATION_ID
       - name: Post Preview Comment to PR
         uses: edumserrano/find-create-or-update-comment@v3
         with:
@@ -56,8 +63,7 @@ jobs:
             <!-- preview-link -->
             🧪 **Preview is Deployed!**
 
-            You can view this branch's preview environment at:
-            [benlimmer.com/?preview=${{ env.BRANCH_NAME }}](https://benlimmer.com/?preview=${{ env.BRANCH_NAME }})
+            You can view this branch's preview environment at: [benlimmer.com/?preview=${{ env.BRANCH_NAME }}](https://benlimmer.com/?preview=${{ env.BRANCH_NAME }}){:target="_blank"}
 
   cleanup:
     if: github.event.action == 'closed'

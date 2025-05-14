@@ -32,5 +32,12 @@ jobs:
         run: aws s3 sync --delete ./dist/ ${{ secrets.S3_BUCKET_URL}}
       - name: Invalidate CloudFront Distribution
         run: |
-          AWS_MAX_ATTEMPTS=6 aws cloudfront \
-            create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*" \
+            --query 'Invalidation.Id' \
+            --output text)
+          echo "Waiting for invalidation $INVALIDATION_ID to complete..."
+          aws cloudfront wait invalidation-completed \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --id $INVALIDATION_ID
