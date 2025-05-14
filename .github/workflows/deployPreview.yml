@@ -38,9 +38,9 @@ jobs:
             --delete \
             --cache-control "max-age=31536000,immutable" \
             ./dist/_assets/ \
-            ${{ secrets.S3_BUCKET_URL}}/${{ env.BRANCH_NAME }}/_assets/
+            ${{ secrets.S3_BUCKET_URL }}/_preview/${{ env.BRANCH_NAME }}/_assets/
       - name: Deploy remaining files to S3
-        run: aws s3 sync --delete ./dist/ ${{ secrets.S3_BUCKET_URL}}/${{ env.BRANCH_NAME }}
+        run: aws s3 sync --delete ./dist/ ${{ secrets.S3_BUCKET_URL }}/_preview/${{ env.BRANCH_NAME }}/
       - name: Invalidate CloudFront Distribution
         run: |
           AWS_MAX_ATTEMPTS=6 aws cloudfront \
