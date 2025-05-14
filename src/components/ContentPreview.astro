@@ -24,7 +24,7 @@ const { githubBranchName } = Astro.props;
     <span>Branch: <code class="text-sm">{githubBranchName}</code></span>
     <button
       class="rounded bg-red-600 p-2 text-sm hover:bg-red-700"
-      onclick="document.cookie = 'content_preview=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'; window.location.reload();"
+      onclick="document.cookie = 'preview=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'; window.location.reload();"
     >
       Exit Preview
     </button>
