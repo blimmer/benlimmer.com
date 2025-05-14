@@ -1,0 +1,81 @@
+name: Deploy Preview
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - closed
+
+permissions:
+  contents: read
+  id-token: write # required for OIDC role assumption
+  pull-requests: write # required to post comments to PRs
+
+jobs:
+  deploy:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    env:
+      BRANCH_NAME: ${{ github.head_ref }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # required for blog post last modified timestamps via git
+      - name: Bootstrap
+        uses: ./.github/actions/bootstrap
+      - name: Build Site
+        run: GITHUB_BRANCH=${{ env.BRANCH_NAME }} yarn build
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.PREVIEW_DEPLOYMENT_ROLE_ARN }}
+          aws-region: us-east-1
+      - name: Deploy immutable assets to S3 with cache-control headers
+        run: |
+          aws s3 sync \
+            --delete \
+            --cache-control "max-age=31536000,immutable" \
+            ./dist/_assets/ \
+            ${{ secrets.S3_BUCKET_URL }}/_preview/${{ env.BRANCH_NAME }}/_assets/
+      - name: Deploy remaining files to S3
+        run: aws s3 sync --delete ./dist/ ${{ secrets.S3_BUCKET_URL }}/_preview/${{ env.BRANCH_NAME }}/
+      - name: Invalidate CloudFront Distribution
+        run: |
+          INVALIDATION_ID=$(aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*" \
+            --query 'Invalidation.Id' \
+            --output text)
+          echo "Waiting for invalidation $INVALIDATION_ID to complete..."
+          aws cloudfront wait invalidation-completed \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --id $INVALIDATION_ID
+      - name: Post Preview Comment to PR
+        uses: edumserrano/find-create-or-update-comment@v3
+        with:
+          edit-mode: replace
+          issue-number: ${{ github.event.pull_request.number }}
+          body-includes: <!-- preview-link -->
+          comment-author: "github-actions[bot]"
+          body: |
+            <!-- preview-link -->
+            🧪 **Preview is Deployed!**
+
+            You can view this branch's preview environment at: [benlimmer.com/?preview=${{ env.BRANCH_NAME }}](https://benlimmer.com/?preview=${{ env.BRANCH_NAME }})
+
+  cleanup:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    env:
+      BRANCH_NAME: ${{ github.head_ref }}
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.PREVIEW_DEPLOYMENT_ROLE_ARN }}
+          aws-region: us-east-1
+      - name: Delete Preview Deployment from S3
+        run: |
+          aws s3 rm --recursive ${{ secrets.S3_BUCKET_URL}}/_preview/${{ env.BRANCH_NAME }}

@@ -1,0 +1,43 @@
+---
+interface Props {
+  githubBranchName: string;
+}
+
+const { githubBranchName } = Astro.props;
+---
+
+<div
+  id="content-preview"
+  class="fixed right-4 bottom-4 z-50 flex origin-bottom-right flex-col-reverse items-end gap-2 rounded-lg bg-gray-800 p-2 shadow-lg transition-all duration-200"
+>
+  <button
+    id="preview-toggle"
+    class="flex items-center gap-2 p-1 text-white hover:text-gray-300"
+    aria-label="Toggle content preview details"
+    title={`Preview Mode - Branch: ${githubBranchName}`}
+  >
+    <span class="text-2xl">🧪</span>
+  </button>
+
+  <div id="preview-details" class="flex hidden flex-col items-center gap-3">
+    <h2 id="preview-label" class="text-lg font-medium">Preview Mode</h2>
+    <span>Branch: <code class="text-sm">{githubBranchName}</code></span>
+    <button
+      class="rounded bg-red-600 p-2 text-sm hover:bg-red-700"
+      onclick="document.cookie = 'preview=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'; window.location.reload();"
+    >
+      Exit Preview
+    </button>
+  </div>
+</div>
+
+<script>
+  const toggleButton = document.getElementById("preview-toggle");
+  const previewDetails = document.getElementById("preview-details");
+
+  if (toggleButton && previewDetails) {
+    toggleButton.addEventListener("click", () => {
+      previewDetails.classList.toggle("hidden");
+    });
+  }
+</script>
