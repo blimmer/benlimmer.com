@@ -1,0 +1,28 @@
+version: 2
+updates:
+  # Update GitHub Actions weekly
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday" # valid for weekly
+    labels:
+      - "dependencies"
+      - "github-actions"
+
+  # Update Yarn deps monthly for minor & patch; majors get their own PR immediately
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    versioning-strategy: auto
+    labels:
+      - "dependencies"
+      - "yarn"
+    groups:
+      all-minor-patch-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"

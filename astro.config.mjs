@@ -13,6 +13,9 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    define: {
+      "import.meta.env.GITHUB_BRANCH": JSON.stringify(process.env.GITHUB_BRANCH || ""),
+    },
   },
 
   build: {

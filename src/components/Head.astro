@@ -108,6 +108,7 @@ const isProd = !import.meta.env.DEV;
           telemetries: ["errors", "performance", "http"],
           allowCookies: true,
           enableXRay: false,
+          signing: true,
         }
       );
     `}

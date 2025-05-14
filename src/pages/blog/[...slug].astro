@@ -7,6 +7,7 @@ import gravatar from "src/assets/gravatar.jpeg";
 import { parseBlogPost } from "src/util";
 import { Temporal } from "temporal-polyfill";
 import TldrSection from "src/components/TldrSection.astro";
+import BugReportSection from "src/components/BugReportSection.astro";
 import { type WithContext, type BlogPosting } from "schema-dts";
 import headshot from "src/assets/headshot.png";
 
@@ -92,7 +93,15 @@ const jsonLd: WithContext<BlogPosting> = {
         <h1>{post.data.title}</h1>
         <div class="text-md flex items-center text-gray-400">
           Posted on {post.date.toLocaleString(undefined, { year: "numeric", month: "long", day: "numeric" })} by Ben Limmer
-          <Image src={gravatar} alt="Avatar image of Ben Limmer" width={20} height={20} class="mt-0 mb-0 ml-2" />
+          <Image
+            src={gravatar}
+            alt="Avatar image of Ben Limmer"
+            width={20}
+            height={20}
+            class="mt-0 mb-0 ml-2"
+            densities={[1, 2]}
+            quality={80}
+          />
         </div>
         {post.data.tldr && <TldrSection tldr={post.data.tldr} />}
         <Content />
@@ -151,8 +160,8 @@ const jsonLd: WithContext<BlogPosting> = {
           }
         </div>
       </nav>
+      <BugReportSection postTitle={post.data.title} postUrl={Astro.url.href} />
       <!-- TODO: add tags -->
-      <!-- TODO: add report bugs -->
     </main>
   </article>
 </Layout>

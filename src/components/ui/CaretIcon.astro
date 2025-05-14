@@ -1,0 +1,18 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<svg
+  class={`h-4 w-4 transition-transform group-hover:translate-x-1 ${className}`}
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  aria-hidden="true"
+>
+  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+</svg>

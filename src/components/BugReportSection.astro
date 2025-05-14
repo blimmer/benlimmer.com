@@ -1,0 +1,36 @@
+---
+interface Props {
+  postTitle: string;
+  postUrl: string;
+}
+
+const { postTitle, postUrl } = Astro.props;
+
+const gitHubUrl = new URL("https://github.com/blimmer/benlimmer.com/issues/new");
+gitHubUrl.searchParams.append("template", "blog-post-problem.yml");
+gitHubUrl.searchParams.append("title", `bug(blog): ${postTitle}`);
+gitHubUrl.searchParams.append("post-url", postUrl);
+---
+
+<div class="mt-8 border-t border-gray-800 pt-8">
+  <a
+    href={gitHubUrl.toString()}
+    class="group text-secondary relative inline-flex items-center gap-2"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+      ></path>
+    </svg>
+    Report a Problem
+    <span
+      class="absolute -top-8 left-1/2 -translate-x-1/2 rounded bg-gray-800 px-2 py-1 text-sm whitespace-nowrap text-gray-200 opacity-0 transition-opacity group-hover:opacity-100"
+    >
+      Find a problem? Let me know via GitHub.
+    </span>
+  </a>
+</div>

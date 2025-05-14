@@ -1,0 +1,38 @@
+name: Blog Post Problem
+description: Report a problem or error in a published blog post
+title: "bug(blog): "
+labels: [bug]
+body:
+  - type: input
+    id: post-url
+    attributes:
+      label: Blog Post URL
+      description: Link to the blog post where the issue appears.
+      placeholder: "https://benlimmer.com/blog/<post-slug>"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Describe the Problem
+      description: What's wrong with the blog post? Please describe the issue clearly.
+      placeholder: "The code snippet under the 'Usage' section throws an error..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Suggested Fix (Optional)
+      description: Do you have a suggested fix for the issue?
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How serious is this issue?
+      options:
+        - Low (Minor typo or formatting)
+        - Medium (Incorrect or outdated content)
+        - High (Broken code, major factual error)
