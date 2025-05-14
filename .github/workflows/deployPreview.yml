@@ -63,7 +63,7 @@ jobs:
             <!-- preview-link -->
             🧪 **Preview is Deployed!**
 
-            You can view this branch's preview environment at: [benlimmer.com/?preview=${{ env.BRANCH_NAME }}](https://benlimmer.com/?preview=${{ env.BRANCH_NAME }}){:target="_blank"}
+            You can view this branch's preview environment at: [benlimmer.com/?preview=${{ env.BRANCH_NAME }}](https://benlimmer.com/?preview=${{ env.BRANCH_NAME }})
 
   cleanup:
     if: github.event.action == 'closed'
