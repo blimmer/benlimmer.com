@@ -78,4 +78,4 @@ jobs:
           aws-region: us-east-1
       - name: Delete Preview Deployment from S3
         run: |
-          aws s3 rm --recursive ${{ secrets.S3_BUCKET_URL}}/${{ env.BRANCH_NAME }}
+          aws s3 rm --recursive ${{ secrets.S3_BUCKET_URL}}/_preview/${{ env.BRANCH_NAME }}
