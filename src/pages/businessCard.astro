@@ -16,6 +16,10 @@
           system-ui,
           -apple-system,
           sans-serif;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     </style>
   </head>
@@ -49,8 +53,10 @@
 
     <style>
       .business-card {
-        width: 1050px;
-        height: 600px;
+        width: 100vw;
+        height: 57.14vw; /* Maintains 3.5:2 aspect ratio (100/1.75) */
+        max-height: 100vh;
+        max-width: 175vh; /* Maintains aspect ratio when height-constrained */
         position: relative;
         overflow: hidden;
         background: #101623;
@@ -70,7 +76,7 @@
         background-image:
           linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
           linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-        background-size: 30px 30px;
+        background-size: 2.86vw 2.86vw; /* Responsive grid size */
       }
 
       .bg-gradient {
@@ -85,14 +91,14 @@
         position: relative;
         z-index: 10;
         height: 100%;
-        padding: 48px;
+        padding: 4.5vw; /* Responsive padding */
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        /* Safe area margins (48px = ~0.16" at 300dpi) */
-        margin: 48px 48px;
-        width: calc(100% - 96px);
-        height: calc(100% - 96px);
+        /* Safe area margins - responsive to card size */
+        margin: 4.5vw;
+        width: calc(100% - 9vw);
+        height: calc(100% - 9vw);
       }
 
       .name-section {
@@ -100,16 +106,16 @@
       }
 
       .name {
-        font-size: 3.5rem;
+        font-size: 6.15vw; /* Responsive to card width */
         font-weight: 700;
         color: #60a5fa;
-        margin: 0 0 8px 0;
+        margin: 0 0 0.8vw 0;
         line-height: 1;
         letter-spacing: -0.02em;
       }
 
       .title {
-        font-size: 1.125rem;
+        font-size: 2vw; /* Responsive to card width */
         font-weight: 500;
         color: rgba(255, 255, 255, 0.7);
         margin: 0;
@@ -119,28 +125,31 @@
       .contact-section {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 0.8vw;
         text-align: right;
+        margin-bottom: 2.4vw;
+        margin-right: 2.4vw;
       }
 
       .contact-item {
         display: flex;
         justify-content: flex-end;
         align-items: baseline;
-        gap: 12px;
+        gap: 1.2vw;
+        padding-right: 1.2vw;
       }
 
       .contact-label {
-        font-size: 0.875rem;
+        font-size: 1.4vw; /* Responsive to card width */
         font-weight: 500;
         color: rgba(255, 255, 255, 0.5);
         text-transform: uppercase;
         letter-spacing: 0.05em;
-        min-width: 40px;
+        min-width: 4vw;
       }
 
       .contact-value {
-        font-size: 1rem;
+        font-size: 1.7vw; /* Responsive to card width */
         font-weight: 600;
         color: rgba(255, 255, 255, 0.9);
         font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Consolas", monospace;
