@@ -1,0 +1,163 @@
+---
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ben Limmer - Business Card</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #101623;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="business-card">
+      <!-- Background with grid pattern (extends to bleed area) -->
+      <div class="business-card-bg">
+        <div class="hero-grid-bg"></div>
+        <div class="bg-gradient"></div>
+      </div>
+
+      <!-- Content within safe area -->
+      <div class="business-card-content">
+        <div class="name-section">
+          <h1 class="name">Ben Limmer</h1>
+          <p class="title">Freelance Architect and Engineer</p>
+        </div>
+
+        <div class="contact-section">
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">llc@benlimmer.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Web</span>
+            <span class="contact-value">benlimmer.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .business-card {
+        width: 1050px;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+        background: #101623;
+      }
+
+      .business-card-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hero-grid-bg {
+        width: 100%;
+        height: 100%;
+        background-color: #101623;
+        background-image:
+          linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+        background-size: 30px 30px;
+      }
+
+      .bg-gradient {
+        position: absolute;
+        bottom: 0;
+        height: 40%;
+        width: 100%;
+        background: linear-gradient(to top, #101623 0%, transparent 100%);
+      }
+
+      .business-card-content {
+        position: relative;
+        z-index: 10;
+        height: 100%;
+        padding: 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* Safe area margins (48px = ~0.16" at 300dpi) */
+        margin: 48px 48px;
+        width: calc(100% - 96px);
+        height: calc(100% - 96px);
+      }
+
+      .name-section {
+        text-align: left;
+      }
+
+      .name {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #60a5fa;
+        margin: 0 0 8px 0;
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+
+      .title {
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      .contact-section {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        text-align: right;
+      }
+
+      .contact-item {
+        display: flex;
+        justify-content: flex-end;
+        align-items: baseline;
+        gap: 12px;
+      }
+
+      .contact-label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        min-width: 40px;
+      }
+
+      .contact-value {
+        font-size: 1rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.9);
+        font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Consolas", monospace;
+      }
+
+      /* Print optimization */
+      @media print {
+        body {
+          margin: 0;
+          padding: 0;
+        }
+
+        .business-card {
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </body>
+</html>
