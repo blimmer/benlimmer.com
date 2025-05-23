@@ -28,7 +28,6 @@
       <!-- Background with grid pattern (extends to bleed area) -->
       <div class="business-card-bg">
         <div class="hero-grid-bg"></div>
-        <div class="bg-gradient"></div>
       </div>
 
       <!-- Content within safe area -->
@@ -36,18 +35,12 @@
         <div class="card-layout">
           <div class="main-content">
             <h1 class="name">Ben Limmer</h1>
-            <p class="title">Freelance Architect and Engineer</p>
+            <p class="title">AI / DevEx / DevOps Consultant</p>
           </div>
 
           <div class="contact-section">
-            <div class="contact-item">
-              <span class="contact-label">Email</span>
-              <span class="contact-value">llc@benlimmer.com</span>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">Web</span>
-              <span class="contact-value">benlimmer.com</span>
-            </div>
+            <div class="contact-item">hello@benlimmer.com</div>
+            <div class="contact-item">https://benlimmer.com</div>
           </div>
         </div>
       </div>
@@ -76,17 +69,9 @@
         height: 100%;
         background-color: #101623;
         background-image:
-          linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+          linear-gradient(to right, rgba(96, 165, 250, 0.15) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(96, 165, 250, 0.15) 1px, transparent 1px);
         background-size: 2.86vw 2.86vw; /* Responsive grid size */
-      }
-
-      .bg-gradient {
-        position: absolute;
-        bottom: 0;
-        height: 40%;
-        width: 100%;
-        background: linear-gradient(to top, #101623 0%, transparent 100%);
       }
 
       .business-card-content {
@@ -110,7 +95,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        gap: 3vw;
+        gap: 4vw;
         width: 100%;
         height: 100%;
       }
@@ -119,56 +104,42 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1vw;
+        gap: 1.5vw;
       }
 
       .name {
-        font-size: 6.3vw; /* Scaled up for better readability */
+        font-size: 11vw;
         font-weight: 700;
         color: #60a5fa;
         margin: 0;
-        line-height: 0.95;
+        line-height: 0.9;
         letter-spacing: -0.02em;
         text-align: center;
       }
 
       .title {
-        font-size: 2.1vw; /* Scaled up proportionally */
+        font-size: 3.7vw;
         font-weight: 500;
-        color: rgba(255, 255, 255, 0.7);
+        color: #a1a1aa;
         margin: 0;
-        line-height: 1.3;
+        line-height: 1.2;
         text-align: center;
       }
 
       .contact-section {
         display: flex;
         flex-direction: column;
-        gap: 0.6vw;
+        gap: 1vw;
         text-align: center;
         align-items: center;
       }
 
       .contact-item {
-        display: flex;
-        justify-content: center;
-        align-items: baseline;
-        gap: 1vw;
-      }
-
-      .contact-label {
-        font-size: 1.5vw; /* Scaled up proportionally */
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.5);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-
-      .contact-value {
-        font-size: 1.8vw; /* Scaled up proportionally */
+        font-size: 3.5vw;
         font-weight: 600;
-        color: rgba(255, 255, 255, 0.9);
+        color: #e5e7eb;
         font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Consolas", monospace;
+        text-align: center;
       }
 
       /* Print optimization */
