@@ -1,5 +1,5 @@
 ---
-
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -38,15 +38,11 @@
             <p class="title">AI / DevEx / DevOps Consultant</p>
           </div>
 
-          <div class="contact-section">
-            <div class="contact-prefix-column">
-              <span>hello@</span>
-              <span>https://</span>
-            </div>
-            <div class="contact-main-column">
-              <span>benlimmer.com</span>
-              <span>benlimmer.com</span>
-            </div>
+          <div class="divider"></div>
+
+          <div class="contact-section zinc-400">
+            <span>hello@benlimmer.com</span>
+            <span>benlimmer.com/freelance</span>
           </div>
         </div>
       </div>
@@ -70,16 +66,6 @@
         height: 100%;
       }
 
-      .hero-grid-bg {
-        width: 100%;
-        height: 100%;
-        background-color: #101623;
-        background-image:
-          linear-gradient(to right, rgba(96, 165, 250, 0.15) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(96, 165, 250, 0.15) 1px, transparent 1px);
-        background-size: 2.86vw 2.86vw; /* Responsive grid size */
-      }
-
       .business-card-content {
         position: absolute;
         width: 95.42857%; /* (3.34 / 3.5) * 100% */
@@ -98,10 +84,10 @@
       .card-layout {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch; /* Changed from center for more control */
         justify-content: center;
         text-align: center;
-        gap: 4vw;
+        gap: 3vw; /* Adjusted gap */
         width: 100%;
         height: 100%;
       }
@@ -111,6 +97,7 @@
         flex-direction: column;
         align-items: center;
         gap: 1.5vw;
+        align-self: center; /* Ensure main content remains centered */
       }
 
       .name {
@@ -121,49 +108,36 @@
         line-height: 0.9;
         letter-spacing: -0.02em;
         text-align: center;
+        font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Consolas", monospace; /* Added font */
       }
 
       .title {
         font-size: 3.7vw;
         font-weight: 500;
-        color: #a1a1aa; /* zinc-400 */
+        color: #e5e7eb; /* Changed color */
         margin: 0;
         line-height: 1.2;
         text-align: center;
+        font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Consolas", monospace; /* Added font */
+      }
+
+      .divider {
+        /* New style for the divider */
+        width: 60%;
+        height: 1px;
+        background-color: rgba(96, 165, 250, 0.25);
+        align-self: center;
       }
 
       .contact-section {
-        display: grid;
-        grid-template-columns: auto auto; /* prefix column, main content column */
-        column-gap: 4px; /* Gap between prefix and main text */
-        align-items: baseline; /* Align text baselines */
-        margin: 0 auto; /* Center the section if card-layout is wider */
-        width: fit-content; /* Make the grid only as wide as necessary */
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+        align-items: center;
+        align-self: center;
         font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Consolas", monospace;
         font-size: 3.5vw;
         font-weight: 600;
-      }
-
-      .contact-prefix-column {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end; /* Right-aligns prefixes */
-        gap: 1vw; /* Matches parent row-gap for consistent spacing */
-      }
-
-      .contact-prefix-column span {
-        color: #a1a1aa; /* zinc-400, same as title for visual hierarchy */
-      }
-
-      .contact-main-column {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Left-aligns main contact info */
-        gap: 1vw; /* Matches parent row-gap */
-      }
-
-      .contact-main-column span {
-        color: #e5e7eb; /* gray-200 */
       }
 
       /* Print optimization */
