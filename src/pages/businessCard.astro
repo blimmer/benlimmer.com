@@ -39,8 +39,14 @@
           </div>
 
           <div class="contact-section">
-            <div class="contact-item">hello@benlimmer.com</div>
-            <div class="contact-item">https://benlimmer.com</div>
+            <div class="contact-prefix-column">
+              <span>hello@</span>
+              <span>https://</span>
+            </div>
+            <div class="contact-main-column">
+              <span>benlimmer.com</span>
+              <span>benlimmer.com</span>
+            </div>
           </div>
         </div>
       </div>
@@ -75,18 +81,18 @@
       }
 
       .business-card-content {
-        position: relative;
+        position: absolute;
+        width: 95.42857%; /* (3.34 / 3.5) * 100% */
+        height: 92%; /* (1.84 / 2.0) * 100% */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 10;
-        height: 100%;
-        padding: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /* Safe area margins based on Moo specs: 3.34" x 1.84" safe area from 3.5" x 2" */
-        margin: 8.6vw 4.6vw; /* Top/bottom: (2-1.84)/2 = 0.08"/2" = 4% of height, Left/right: (3.5-3.34)/2 = 0.08"/3.5" = 2.3% of width */
-        width: calc(100% - 9.2vw);
-        height: calc(100% - 17.2vw);
+        /* Removed old margin, width, height, padding:0 remains implied default */
       }
 
       .card-layout {
@@ -120,26 +126,44 @@
       .title {
         font-size: 3.7vw;
         font-weight: 500;
-        color: #a1a1aa;
+        color: #a1a1aa; /* zinc-400 */
         margin: 0;
         line-height: 1.2;
         text-align: center;
       }
 
       .contact-section {
-        display: flex;
-        flex-direction: column;
-        gap: 1vw;
-        text-align: center;
-        align-items: center;
-      }
-
-      .contact-item {
+        display: grid;
+        grid-template-columns: auto auto; /* prefix column, main content column */
+        column-gap: 4px; /* Gap between prefix and main text */
+        align-items: baseline; /* Align text baselines */
+        margin: 0 auto; /* Center the section if card-layout is wider */
+        width: fit-content; /* Make the grid only as wide as necessary */
+        font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Consolas", monospace;
         font-size: 3.5vw;
         font-weight: 600;
-        color: #e5e7eb;
-        font-family: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Consolas", monospace;
-        text-align: center;
+      }
+
+      .contact-prefix-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end; /* Right-aligns prefixes */
+        gap: 1vw; /* Matches parent row-gap for consistent spacing */
+      }
+
+      .contact-prefix-column span {
+        color: #a1a1aa; /* zinc-400, same as title for visual hierarchy */
+      }
+
+      .contact-main-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Left-aligns main contact info */
+        gap: 1vw; /* Matches parent row-gap */
+      }
+
+      .contact-main-column span {
+        color: #e5e7eb; /* gray-200 */
       }
 
       /* Print optimization */
