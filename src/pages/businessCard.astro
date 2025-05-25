@@ -6,7 +6,7 @@ export interface Props {
   side?: "front" | "back";
 }
 
-const { side = "back" } = Astro.props;
+const { side = "front" } = Astro.props;
 ---
 
 <html lang="en">
@@ -143,7 +143,7 @@ const { side = "back" } = Astro.props;
         /* New style for the divider */
         width: 60%;
         height: 1px;
-        background-color: rgba(96, 165, 250, 0.25);
+        background-color: #4b5563;
         align-self: center;
       }
 
