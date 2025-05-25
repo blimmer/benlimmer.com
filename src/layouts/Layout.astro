@@ -10,9 +10,10 @@ interface Props {
   description: string;
   openGraphTags?: Record<string, string | string[]>;
   jsonLd?: WithContext<Thing>;
+  noIndex?: boolean;
 }
 
-const { title = [], description, openGraphTags, jsonLd } = Astro.props;
+const { title = [], description, openGraphTags, jsonLd, noIndex } = Astro.props;
 const titleString = [...title, "Ben Limmer"].join(" | ");
 const githubBranchName = import.meta.env.GITHUB_BRANCH;
 ---
@@ -20,7 +21,13 @@ const githubBranchName = import.meta.env.GITHUB_BRANCH;
 <!doctype html>
 <html lang="en" class="h-full">
   <head>
-    <Head title={titleString} description={description} openGraphTags={openGraphTags} jsonLd={jsonLd} />
+    <Head
+      title={titleString}
+      description={description}
+      openGraphTags={openGraphTags}
+      jsonLd={jsonLd}
+      noIndex={noIndex}
+    />
   </head>
   <body class="flex min-h-full flex-col">
     <Header currentPath={Astro.url.pathname} />

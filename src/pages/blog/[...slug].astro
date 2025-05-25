@@ -1,20 +1,21 @@
 ---
-import { getCollection, render, type CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 import MdxProse from "src/components/MdxProse.astro";
 import Layout from "src/layouts/Layout.astro";
 import { Image } from "astro:assets";
 import gravatar from "src/assets/gravatar.jpeg";
-import { parseBlogPost } from "src/util";
+import { getAllBlogPosts } from "src/util";
 import { Temporal } from "temporal-polyfill";
 import TldrSection from "src/components/TldrSection.astro";
 import BugReportSection from "src/components/BugReportSection.astro";
 import { type WithContext, type BlogPosting } from "schema-dts";
 import headshot from "src/assets/headshot.png";
+import ArchiveSection from "src/components/ArchiveSection.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getAllBlogPosts();
   return posts.map((post) => {
-    const { date, slug } = parseBlogPost(post);
+    const { date, slug } = post;
     return {
       params: { slug },
       props: { ...post, date },
@@ -22,9 +23,7 @@ export async function getStaticPaths() {
   });
 }
 
-const posts = (await getCollection("blog"))
-  .map((post) => parseBlogPost(post))
-  .sort((a, b) => Temporal.ZonedDateTime.compare(a.date, b.date));
+const posts = await getAllBlogPosts();
 
 function getNextPost() {
   let postIndex;
@@ -86,7 +85,13 @@ const jsonLd: WithContext<BlogPosting> = {
 };
 ---
 
-<Layout title={[post.data.title]} description={post.data.description} openGraphTags={openGraphTags} jsonLd={jsonLd}>
+<Layout
+  title={[post.data.title]}
+  description={post.data.description}
+  openGraphTags={openGraphTags}
+  jsonLd={jsonLd}
+  noIndex={post.data.archive ?? false}
+>
   <article>
     <main class="mx-auto max-w-4xl px-4 py-12">
       <MdxProse>
@@ -103,6 +108,7 @@ const jsonLd: WithContext<BlogPosting> = {
             quality={80}
           />
         </div>
+        {post.data.archive && <ArchiveSection />}
         {post.data.tldr && <TldrSection tldr={post.data.tldr} />}
         <Content />
       </MdxProse>

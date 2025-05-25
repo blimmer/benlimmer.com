@@ -22,6 +22,7 @@ export default defineConfig({
     assets: "_assets",
   },
 
+  // TODO: filter archived posts
   integrations: [expressiveCode(), mdx(), sitemap()],
 
   markdown: {
