@@ -1,0 +1,91 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getAllBlogPosts } from "src/util";
+
+interface Props {
+  currentPost: CollectionEntry<"blog">;
+  slug: string;
+}
+
+const { currentPost, slug } = Astro.props;
+const isArchived = currentPost.data.archive;
+const posts = await getAllBlogPosts();
+
+function getNextPost() {
+  let postIndex;
+  for (const post of posts) {
+    if (post.slug === slug) {
+      postIndex = posts.indexOf(post);
+      return posts[postIndex + 1];
+    }
+  }
+}
+
+function getPrevPost() {
+  let postIndex;
+  for (const post of posts) {
+    if (post.slug === slug) {
+      postIndex = posts.indexOf(post);
+      return posts[postIndex - 1];
+    }
+  }
+}
+
+const prevPost = isArchived ? undefined : getPrevPost();
+const nextPost = isArchived ? undefined : getNextPost();
+---
+
+{
+  !isArchived && (
+    <nav class="mt-12 flex items-center justify-between" aria-label="Post Pagination">
+      <div class="flex-1">
+        {prevPost ? (
+          <a
+            href={`/blog/${prevPost.slug}`}
+            class="group text-secondary hover:text-primary inline-flex items-center gap-1 text-sm font-medium transition-colors"
+            rel="prev"
+            aria-label={`Previous post: ${prevPost.data.title}`}
+          >
+            <svg
+              class="text-tertiary group-hover:text-primary h-4 w-4 transition-colors"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            Previous Post
+          </a>
+        ) : (
+          <span class="invisible text-sm select-none">Previous Post</span>
+        )}
+      </div>
+      <div class="flex-1 text-right">
+        {nextPost ? (
+          <a
+            href={`/blog/${nextPost.slug}`}
+            class="group text-secondary hover:text-primary ml-auto inline-flex items-center gap-1 text-sm font-medium transition-colors"
+            rel="next"
+            aria-label={`Next post: ${nextPost.data.title}`}
+          >
+            Next Post
+            <svg
+              class="text-tertiary group-hover:text-primary h-4 w-4 transition-colors"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        ) : (
+          <span class="invisible text-sm select-none">Next Post</span>
+        )}
+      </div>
+    </nav>
+  )
+}
