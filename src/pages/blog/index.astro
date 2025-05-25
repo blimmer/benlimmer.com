@@ -1,12 +1,8 @@
 ---
-import { getCollection } from "astro:content";
-import { Temporal } from "temporal-polyfill";
-import { parseBlogPost } from "src/util";
+import { getActiveBlogPosts } from "src/util";
 import Layout from "src/layouts/Layout.astro";
 
-const posts = (await getCollection("blog"))
-  .map((post) => parseBlogPost(post))
-  .sort((a, b) => Temporal.ZonedDateTime.compare(b.date, a.date));
+const posts = await getActiveBlogPosts();
 
 // Group posts by year
 const postsByYear = posts.reduce<Record<string, any[]>>((acc, post) => {

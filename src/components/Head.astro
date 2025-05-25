@@ -9,10 +9,11 @@ interface Props {
   description: string;
   openGraphTags?: Record<string, string | string[]>;
   jsonLd?: WithContext<Thing>;
+  noIndex?: boolean;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description, openGraphTags, jsonLd } = Astro.props;
+const { title, description, openGraphTags, jsonLd, noIndex = false } = Astro.props;
 
 const isProd = !import.meta.env.DEV;
 ---
@@ -22,6 +23,7 @@ const isProd = !import.meta.env.DEV;
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
 <meta name="author" content="Ben Limmer" />
+{noIndex && <meta name="robots" content="noindex" />}
 
 {/* Canonical URL */}
 <link rel="canonical" href={canonicalURL} />
