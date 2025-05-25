@@ -143,7 +143,7 @@ const { side = "front" } = Astro.props;
         /* New style for the divider */
         width: 60%;
         height: 1px;
-        background-color: #4b5563;
+        background-color: #6b7280;
         align-self: center;
       }
 
@@ -187,6 +187,25 @@ const { side = "front" } = Astro.props;
           margin: 0;
           box-shadow: none;
         }
+      }
+
+      /* Balance improvements for the back of the card */
+      .card-layout-back .name {
+        font-size: 8vw;
+      }
+
+      .card-layout-back .qr-code-container {
+        width: 36vw;
+        height: 36vw;
+      }
+
+      .card-layout-back {
+        gap: 2.5vw;
+      }
+
+      /* More prominent divider just for the back */
+      .card-layout-back .divider {
+        background-color: #9ca3af;
       }
     </style>
   </body>
