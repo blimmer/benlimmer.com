@@ -1,4 +1,3 @@
-// @ts-check
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
@@ -22,7 +21,6 @@ export default defineConfig({
     assets: "_assets",
   },
 
-  // TODO: filter archived posts
   integrations: [expressiveCode(), mdx(), sitemap()],
 
   markdown: {
