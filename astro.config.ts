@@ -41,7 +41,8 @@ export default defineConfig({
  * Filter out archived blog posts from the sitemap.
  *
  * It would be nice to use `getCollection` or our custom helpers here, but they're not accessible
- * during the vite build process.
+ * during the vite build process. See https://github.com/withastro/roadmap/discussions/1087 for
+ * the feature request.
  */
 function filterArchivedPostsFromSitemap(page: string): boolean {
   const isBlogPost = page.startsWith("https://benlimmer.com/blog/");
