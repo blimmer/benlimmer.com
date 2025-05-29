@@ -64,22 +64,49 @@ function filterArchivedPostsFromSitemap(page: string): boolean {
     return true;
   }
 
-  const directFilePath = path.join(process.cwd(), "src", "content", "blog", `${slug}.mdx`);
-  const indexFilePath = path.join(process.cwd(), "src", "content", "blog", slug, "index.mdx");
-
-  let filePathToUse: string | undefined;
-  if (fs.existsSync(directFilePath)) {
-    filePathToUse = directFilePath;
-  } else if (fs.existsSync(indexFilePath)) {
-    filePathToUse = indexFilePath;
-  } else {
-    throw new Error(
-      `Error: Could not find MDX file for blog post with slug '${slug}'.\nChecked: \n- ${directFilePath}\n- ${indexFilePath}`,
-    );
-  }
-
-  const fileContent = fs.readFileSync(filePathToUse, "utf8");
+  const fileContent = getBlogPostContent(slug);
   const { frontmatter } = parseFrontmatter(fileContent);
   const isArchived = frontmatter.archive === true;
   return !isArchived;
+}
+
+/**
+ * Get the content of a blog post file by slug.
+ * Handles case-insensitive file matching for cross-platform compatibility.
+ */
+function getBlogPostContent(slug: string): string {
+  const blogDir = path.join(process.cwd(), "src", "content", "blog");
+
+  // Try exact case matches first
+  const directPath = path.join(blogDir, `${slug}.mdx`);
+  if (fs.existsSync(directPath)) {
+    return fs.readFileSync(directPath, "utf8");
+  }
+
+  const indexPath = path.join(blogDir, slug, "index.mdx");
+  if (fs.existsSync(indexPath)) {
+    return fs.readFileSync(indexPath, "utf8");
+  }
+
+  // Fall back to case-insensitive search
+  const files = fs.readdirSync(blogDir, { withFileTypes: true });
+
+  // Check for direct .mdx files
+  for (const file of files) {
+    if (file.isFile() && file.name.toLowerCase() === `${slug.toLowerCase()}.mdx`) {
+      return fs.readFileSync(path.join(blogDir, file.name), "utf8");
+    }
+  }
+
+  // Check for directories with index.mdx
+  for (const file of files) {
+    if (file.isDirectory() && file.name.toLowerCase() === slug.toLowerCase()) {
+      const indexPath = path.join(blogDir, file.name, "index.mdx");
+      if (fs.existsSync(indexPath)) {
+        return fs.readFileSync(indexPath, "utf8");
+      }
+    }
+  }
+
+  throw new Error(`Could not find blog post with slug '${slug}'`);
 }
