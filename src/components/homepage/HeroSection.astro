@@ -70,6 +70,12 @@ import SectionDivider from "src/components/ui/SectionDivider.astro";
       }
     }
 
+    function cleanup() {
+      if (loopTimeout) {
+        clearTimeout(loopTimeout);
+      }
+    }
+
     if (typeof window !== "undefined") {
       window.addEventListener("DOMContentLoaded", () => {
         el = document.getElementById("typewriter");
@@ -79,6 +85,9 @@ import SectionDivider from "src/components/ui/SectionDivider.astro";
           typeLoop();
         }
       });
+
+      // Clean up timeout when page unloads
+      window.addEventListener("beforeunload", cleanup);
     }
   </script>
   <style>
