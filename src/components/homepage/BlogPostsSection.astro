@@ -2,7 +2,7 @@
 import { getActiveBlogPosts } from "src/util";
 import CaretIcon from "src/components/ui/CaretIcon.astro";
 
-const posts = (await getActiveBlogPosts()).slice(0, 3);
+const posts = (await getActiveBlogPosts()).slice(-3).reverse();
 ---
 
 <section class="bg-primary flex flex-col items-center px-4 py-10 text-white sm:px-6 lg:px-8" id="blog">
