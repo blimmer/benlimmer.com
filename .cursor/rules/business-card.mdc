@@ -1,0 +1,26 @@
+---
+description:
+globs: src/pages/businessCard.astro,src/pages/_businessCard.astro
+alwaysApply: false
+---
+This page is used to render the design for a physical business card.
+
+# Printer Information
+
+I use Moo.com as the printer for the card. Here are the [design guidelines](mdc:https:/www.moo.com/us/business-cards/design-guidelines) from the printer:
+
+Bleed Area: 3.66" x 2.16" - Make sure your background extends to fill the bleed area (to avoid nasty white edges!)
+Trim: 3.50" x 2.0" - This is where we aim to cut your cards.
+Safe Area: 3.34" x 1.84" - Make sure important aspects of your design (like text and logos) are inside the safe area (to avoid the chop!)
+
+As for text:
+- Keep all text at 8pt or higher.
+- Sharp lines need to be at 0.5pt or thicker.
+
+# Screen Capture
+
+I will use a high-quality screen capture from Google Chrome dev tools to produce the image I upload to the printer (e.g., via [this process](mdc:https:/davidaugustat.com/web/take-ultra-high-resolution-screenshots-in-chrome)). Therefore, don't design within the exact pixel dimensions above. Instead, use the equivalent aspect ratio. This will allow the design to scale up within the proporations defined.
+
+# Design Guidelines
+
+In general, the card should be inspired by the design of the rest of the site. However, make choices that will look good in print, even if it means it's slightly different than the site design.

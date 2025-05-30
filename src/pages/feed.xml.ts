@@ -1,10 +1,9 @@
 import rss from "@astrojs/rss";
 import type { AstroUserConfig } from "astro";
-import { getCollection } from "astro:content";
-import { parseBlogPost } from "src/util";
+import { getActiveBlogPosts } from "src/util";
 
 export async function GET(context: AstroUserConfig) {
-  const posts = (await getCollection("blog")).map(parseBlogPost);
+  const posts = await getActiveBlogPosts();
 
   return rss({
     title: "BenLimmer.com",

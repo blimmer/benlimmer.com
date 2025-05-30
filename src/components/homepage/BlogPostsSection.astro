@@ -1,13 +1,8 @@
 ---
-import { getCollection } from "astro:content";
-import { parseBlogPost } from "src/util";
-import { Temporal } from "temporal-polyfill";
+import { getActiveBlogPosts } from "src/util";
 import CaretIcon from "src/components/ui/CaretIcon.astro";
 
-const posts = (await getCollection("blog"))
-  .map((post) => parseBlogPost(post))
-  .sort((a, b) => Temporal.ZonedDateTime.compare(b.date, a.date))
-  .slice(0, 3);
+const posts = (await getActiveBlogPosts()).slice(-3).reverse();
 ---
 
 <section class="bg-primary flex flex-col items-center px-4 py-10 text-white sm:px-6 lg:px-8" id="blog">

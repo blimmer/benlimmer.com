@@ -1,12 +1,8 @@
 ---
-import { getCollection } from "astro:content";
-import { Temporal } from "temporal-polyfill";
-import { parseBlogPost } from "src/util";
+import { getActiveBlogPosts } from "src/util";
 import Layout from "src/layouts/Layout.astro";
 
-const posts = (await getCollection("blog"))
-  .map((post) => parseBlogPost(post))
-  .sort((a, b) => Temporal.ZonedDateTime.compare(b.date, a.date));
+const posts = await getActiveBlogPosts();
 
 // Group posts by year
 const postsByYear = posts.reduce<Record<string, any[]>>((acc, post) => {
@@ -43,7 +39,7 @@ const pageDescription = "Thoughts, insights, and tutorials on web development, d
                       {post.data.title}
                     </h3>
                     <span
-                      class="group-hover:text-primary ml-4 flex-shrink-0 text-2xl text-blue-400 transition-colors"
+                      class="group-hover:text-primary ml-4 hidden flex-shrink-0 text-2xl text-blue-400 transition-colors md:block"
                       aria-hidden="true"
                     >
                       &gt;
