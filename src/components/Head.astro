@@ -71,7 +71,7 @@ const isProd = !import.meta.env.DEV;
 }
 
 {/* JSON-LD */}
-{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+{jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
 {/* Twitter */}
 <meta name="twitter:card" content="summary" />
@@ -86,6 +86,7 @@ const isProd = !import.meta.env.DEV;
 {
   isProd && (
     <script
+      is:inline
       set:html={`
       (function (n, i, v, r, s, c, x, z) {
         x = window.AwsRumClient = { q: [], n: n, i: i, v: v, r: r, c: c };
@@ -122,8 +123,9 @@ const isProd = !import.meta.env.DEV;
 {
   isProd && (
     <>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPYG2J7ECC" />
+      <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ZPYG2J7ECC" />
       <script
+        is:inline
         set:html={`
       window.dataLayer = window.dataLayer || [];
       function gtag() {
