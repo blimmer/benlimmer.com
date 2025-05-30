@@ -20,4 +20,4 @@ jobs:
       - name: Bootstrap
         uses: ./.github/actions/bootstrap
       - name: Check site
-        run: yarn astro check
+        run: yarn astro check  --minimumFailingSeverity hint
