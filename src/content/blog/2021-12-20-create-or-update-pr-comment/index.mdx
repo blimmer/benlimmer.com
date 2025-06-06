@@ -51,6 +51,7 @@ So, when a request to the endpoint is received, I fetch existing comments on the
 query GetCommentsForPullRequest($url: URI!) {
   resource(url: $url) {
     ... on PullRequest {
+      id
       comments(first: 100) {
         nodes {
           id
