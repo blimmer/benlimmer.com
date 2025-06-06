@@ -25,6 +25,7 @@
     "temporal-polyfill": "^0.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.44.1",
     "@tailwindcss/typography": "^0.5.16",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/node": "^22.15.29",
@@ -39,9 +40,8 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-tailwindcss": "^0.6.12",
-    "typescript": "^5.8.3",
     "tsx": "^4.7.0",
-    "@playwright/test": "^1.44.1"
+    "typescript": "^5.8.3"
   },
   "lint-staged": {
     "*.{ts,tsx,astro,md,mdx}": "eslint --fix",
