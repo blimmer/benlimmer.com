@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint \"src/**/*.{ts,tsx,astro,mdx}\"",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "test": "tsx node --test tests/*.test.ts && playwright test"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -38,7 +39,9 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-tailwindcss": "^0.6.12",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "tsx": "^4.7.0",
+    "@playwright/test": "^1.44.1"
   },
   "lint-staged": {
     "*.{ts,tsx,astro,md,mdx}": "eslint --fix",

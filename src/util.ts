@@ -22,7 +22,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
   return posts;
 }
 
-function parseBlogPost(post: CollectionEntry<"blog">) {
+export function parseBlogPost(post: CollectionEntry<"blog">) {
   const [year, month, day, ...slugParts] = post.id.split("-");
   const dasherizedPostTitle = slugParts.join("-");
   const date = new Temporal.PlainDate(parseInt(year, 10), parseInt(month, 10), parseInt(day, 10));

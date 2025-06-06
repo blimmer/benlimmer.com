@@ -1,5 +1,5 @@
 import type { Root } from "mdast";
-import { execSync } from "node:child_process";
+import { execSync as defaultExecSync } from "node:child_process";
 import type { VFile } from "vfile";
 
 /**
@@ -17,13 +17,13 @@ export function remarkLastModifiedTime() {
   };
 }
 
-function getLastModified(frontmatter: Record<string, string>, filePath: string): string {
+export function getLastModified(frontmatter: Record<string, string>, filePath: string, exec = defaultExecSync): string {
   // If the overrideLastModified property is set, use it instead of the git log
   if (frontmatter.overrideLastModified) {
     return frontmatter.overrideLastModified;
   }
 
   // Otherwise, query `git` to see when the file was last modified
-  const result = execSync(`git log -1 --pretty="format:%cI" "${filePath}"`);
+  const result = exec(`git log -1 --pretty="format:%cI" "${filePath}"`);
   return result.toString();
 }
