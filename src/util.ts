@@ -17,7 +17,7 @@ export async function getActiveBlogPosts(): Promise<BlogPost[]> {
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   const posts = (await getCollection("blog"))
     .map((post) => parseBlogPost(post))
-    .sort((a, b) => Temporal.ZonedDateTime.compare(a.date, b.date));
+    .sort((a, b) => Temporal.ZonedDateTime.compare(b.date, a.date));
 
   return posts;
 }
