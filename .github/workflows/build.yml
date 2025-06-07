@@ -36,6 +36,15 @@ jobs:
     - name: Get Ubuntu version
       id: ubuntu-version
       run: echo "version=$(lsb_release -rs)" >> $GITHUB_OUTPUT
+    - name: Cache System Dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          /var/cache/apt
+          /var/lib/apt
+        key: ${{ runner.os }}-${{ steps.ubuntu-version.outputs.version }}-apt-deps-${{ hashFiles('playwright.config.ts') }}
+        restore-keys: |
+          ${{ runner.os }}-${{ steps.ubuntu-version.outputs.version }}-apt-deps-
     - name: Cache Playwright Browsers
       uses: actions/cache@v4
       with:
@@ -44,7 +53,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-${{ steps.ubuntu-version.outputs.version }}-playwright-browsers-${{ steps.playwright-version.outputs.version }}
     - name: Install Playwright Browsers
-      run: yarn playwright install --with-deps
+      run: yarn playwright install --with-deps chromium firefox webkit
     - name: Build site
       run: yarn build
     - name: Run Playwright tests
