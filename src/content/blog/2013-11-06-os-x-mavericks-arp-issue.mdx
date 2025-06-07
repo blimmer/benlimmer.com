@@ -51,7 +51,7 @@ Request timeout for icmp_seq 20
 64 bytes from 192.168.x.x: icmp_seq=23 ttl=62 time=87.913 ms
 ```
 
-Notice the the packet loss. This was incredibly unfortunate when we would SSH to our machines and have to wait while the
+Notice the packet loss. This was incredibly unfortunate when we would SSH to our machines and have to wait while the
 packets were retransmitted (causing at least a five second delay in transmission).
 
 After some digging, we discovered that other folks were having this issue, especially within corporate networks. We
