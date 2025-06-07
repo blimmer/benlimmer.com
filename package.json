@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint \"src/**/*.{ts,tsx,astro,mdx}\"",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -24,6 +25,7 @@
     "temporal-polyfill": "^0.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.52.0",
     "@tailwindcss/typography": "^0.5.16",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/node": "^22.15.29",
