@@ -9,4 +9,4 @@ Design Guidelines
 - The website should appear modern and polished
 - Prefer clean, minimal design
 - When suggesting colors, ensure they satisfy WCAG AA contrast requirements
-- When dealing with design, utilize the puppeteer MCP server to view your changes on localhost:4321. If the site is not available on localhost:4321, run `yarn dev` to start the dev server.
+- When dealing with design, utilize the puppeteer MCP server to view your changes on localhost:4321. If the site is not available on localhost:4321, run `yarn dev` to start the dev server. Do not start the server if localhost:4321 is already responding.

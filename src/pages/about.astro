@@ -11,14 +11,8 @@ import headshot from "src/assets/headshot.png";
   <main class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
     <article class="max-w-none">
       <div class="mb-12 flex flex-col md:flex-row md:items-start md:gap-8">
-        <div class="mb-8 h-48 w-48 shrink-0 md:mb-0">
-          <Image
-            src={headshot}
-            alt="Ben Limmer headshot"
-            class="h-full w-full rounded-lg object-cover"
-            width={192}
-            height={192}
-          />
+        <div class="mx-auto mb-8 w-80 max-w-full shrink-0 md:mx-0 md:mb-0 md:w-48">
+          <Image src={headshot} alt="Ben Limmer headshot" class="w-full rounded-lg" width={320} height={320} />
         </div>
         <div class="prose prose-lg">
           <h1 class="mb-8 text-5xl font-bold">About Me</h1>
