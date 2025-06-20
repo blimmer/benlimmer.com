@@ -1,35 +1,35 @@
 ---
-title: Adding Typescript Types to Github's GraphQL API
+title: Adding TypeScript Types to GitHub's GraphQL API
 tags:
   - github
   - github graphql api
   - graphql-codegen
 description: >-
-  A tutorial to generate Typescript types for Github GraphQL API v4 using graphql-codegen. Complete with example code
+  A tutorial to generate TypeScript types for GitHub GraphQL API v4 using graphql-codegen. Complete with example code
   and repository.
 overrideLastModified: "2023-07-12T10:55:50+02:00"
 ---
 
 import MdxImage from "src/components/MdxImage.astro";
-import TypescriptMissingVariable from "./assets/typescript-missing-variable.png";
+import TypeScriptMissingVariable from "./assets/typescript-missing-variable.png";
 
-[Github's GraphQL API](https://developer.github.com/v4/) is powerful, especially for implementing
+[GitHub's GraphQL API](https://developer.github.com/v4/) is powerful, especially for implementing
 [custom automation and developer tooling](/freelance). Check out the
 [Explorer](https://developer.github.com/v4/explorer/) to play around with some queries and mutations in their live
 [GraphiQL environment](https://github.com/graphql/graphiql) if you've never used it before.
 
-When interacting with the Github GraphQL API in [Typescript](https://www.typescriptlang.org/), it would be nice to
+When interacting with the GitHub GraphQL API in [TypeScript](https://www.typescriptlang.org/), it would be nice to
 leverage the power of types to understand the structure of queries, mutations, variables, and responses. Luckily, with a
-little glue code between [`graphql-codegen`](https://graphql-code-generator.com/) and Github's published schema
+little glue code between [`graphql-codegen`](https://graphql-code-generator.com/) and GitHub's published schema
 [`@octokit/graphql-schema`](https://github.com/octokit/graphql-schema), we can add types to all of our interactions with
 the API.
 
 If you're looking for the TLDR, the complete sample code is available
-[on Github](https://github.com/blimmer/github-graphql-schema-types).
+[on GitHub](https://github.com/blimmer/github-graphql-schema-types).
 
 ## Prerequisites
 
-If you don't already have a Typescript / GraphQL repository initialized, go ahead and create one.
+If you don't already have a TypeScript / GraphQL repository initialized, go ahead and create one.
 
 ```shell
 mkdir my-typescript-project
@@ -40,9 +40,9 @@ npm install --save-dev typescript ts-node
 npx tsc --init
 ```
 
-## Generating Types from the Github GraphQL Schema
+## Generating Types from the GitHub GraphQL Schema
 
-To start, we'll generate types from the Github GraphQL schema, provided by
+To start, we'll generate types from the GitHub GraphQL schema, provided by
 [`@octokit/graphql-schema`](https://github.com/octokit/graphql-schema). We'll need to install the schema package and
 [`graphql-codegen`](https://graphql-code-generator.com/).
 
@@ -148,7 +148,7 @@ import { schema } from "@octokit/graphql-schema";
 export default schema.json;
 ```
 
-This will load the schema up from the package published by Github,
+This will load the schema up from the package published by GitHub,
 [`@octokit/graphql-schema`](https://github.com/octokit/graphql-schema).
 
 Finally, you'll need to add `ts-node/register` to your `codegen.ts` file so the `github-schema-loader.ts` can be
@@ -184,7 +184,7 @@ npm run codegen
   ✔ Generate outputs
 ```
 
-Check out `src/generated/graphql.ts`. We've now got lots of Github-related types generated!
+Check out `src/generated/graphql.ts`. We've now got lots of GitHub-related types generated!
 
 ```ts
 <trimmed>
@@ -215,7 +215,7 @@ export type Repository = Node & ProjectOwner & RegistryPackageOwner & RegistryPa
 ### Checkpoint
 
 If you ran into any problems following the steps above view
-[Checkpoint #1 on Github](https://github.com/blimmer/github-graphql-schema-types/tree/checkpoint-1).
+[Checkpoint #1 on GitHub](https://github.com/blimmer/github-graphql-schema-types/tree/checkpoint-1).
 
 ## Writing Queries and Mutations
 
@@ -249,9 +249,9 @@ const config: CodegenConfig = {
 export default config;
 ```
 
-For the next steps, you'll also need a Classic Github Personal Access token with `repo` scope. If you don't already have
+For the next steps, you'll also need a Classic GitHub Personal Access token with `repo` scope. If you don't already have
 one, create one in your [settings](https://github.com/settings/tokens). For help doing this, check out this
-[Github support page](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
+[GitHub support page](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line).
 
 ### Create an Apollo Client
 
@@ -271,7 +271,7 @@ import fetch from "cross-fetch";
 export function githubClient(): ApolloClient<NormalizedCacheObject> {
   if (!process.env.GITHUB_TOKEN) {
     throw new Error(
-      "You need to provide a Github personal access token as `GITHUB_TOKEN` env variable. See README for more info.",
+      "You need to provide a GitHub personal access token as `GITHUB_TOKEN` env variable. See README for more info.",
     );
   }
 
@@ -289,13 +289,13 @@ export function githubClient(): ApolloClient<NormalizedCacheObject> {
 ```
 
 Don't worry about understanding this code if it's unfamiliar. All it's doing is setting up a GraphQL client to use when
-communicating with the Github GraphQL API. You can use any other network client you like.
+communicating with the GitHub GraphQL API. You can use any other network client you like.
 
-### GraphQL Codegen Typescript Operations
+### GraphQL Codegen TypeScript Operations
 
 To add types to our queries, mutations, and variables, let's add the
 [`@graphql-codegen/typescript-operations`](https://graphql-code-generator.com/docs/plugins/typescript-operations) plugin
-to generate Typescript classes from our `.graphql` files.
+to generate TypeScript classes from our `.graphql` files.
 
 ```shell
 npm install --save-dev @graphql-codegen/typescript-operations
@@ -328,7 +328,7 @@ query WhoAmI {
 }
 ```
 
-Since we have a new GraphQL query, run the codegen step to create create the appropriate Typescript types.
+Since we have a new GraphQL query, run the codegen step to create create the appropriate TypeScript types.
 
 ```bash
 npm run codegen
@@ -357,11 +357,11 @@ async function main() {
 main().catch((e) => console.error(e));
 ```
 
-By providing the `<WhoAmIQuery>` type, Typescript now understands the object that will be returned from the query. We
+By providing the `<WhoAmIQuery>` type, TypeScript now understands the object that will be returned from the query. We
 can also pass the query as `WhoAmI`, instead of writing our GraphQL statement in-line as a string.
 
 When we run this code, we should see our username written out to the console. To run the code, you'll need to provide
-your Github token generated above as the `GITHUB_TOKEN` environment variable. In your terminal, run:
+your GitHub token generated above as the `GITHUB_TOKEN` environment variable. In your terminal, run:
 
 ```bash
 GITHUB_TOKEN=PASTE_YOUR_GITHUB_TOKEN_HERE npx ts-node src/index.ts
@@ -375,7 +375,7 @@ and mutations.
 ### Checkpoint
 
 If you ran into any problems following the steps above view
-[Checkpoint #2 on Github](https://github.com/blimmer/github-graphql-schema-types/tree/checkpoint-2).
+[Checkpoint #2 on GitHub](https://github.com/blimmer/github-graphql-schema-types/tree/checkpoint-2).
 
 ### Writing a Mutation
 
@@ -446,16 +446,16 @@ main().catch((e) => console.error(e));
 ```
 
 Note that we've added the `starRepo` method that calls our new mutation. By passing
-`<AddStarMutation, AddStarMutationVariables>`, Typescript will now ensure that we're passing all the required variables
+`<AddStarMutation, AddStarMutationVariables>`, TypeScript will now ensure that we're passing all the required variables
 to the mutation, and that they're of the correct type. This is great because it will help catch bugs before we even call
-the Github API.
+the GitHub API.
 
 For example, if I don't pass the required `starrableId` variable, I get a handy warning in my editor.
 
-<MdxImage src={TypescriptMissingVariable} alt="an typescript error about a missing, expected variable" />
+<MdxImage src={TypeScriptMissingVariable} alt="an typescript error about a missing, expected variable" />
 
 As before, let's run this code. Note that, if you're using the code as-is, you'll add a star to the
-[`blimmer/benlimmer.com` public Github repository](https://github.com/blimmer/benlimmer.com).
+[`blimmer/benlimmer.com` public GitHub repository](https://github.com/blimmer/benlimmer.com).
 
 ```bash
 GITHUB_TOKEN=PASTE_YOUR_GITHUB_TOKEN_HERE ts-node src/index.ts
@@ -463,12 +463,12 @@ Your github username is blimmer
 The repository now has 7 stargazers!!
 ```
 
-Great! We just used the Github GraphQL API to add a star to my repository (thanks!)
+Great! We just used the GitHub GraphQL API to add a star to my repository (thanks!)
 
 ### Checkpoint
 
 If you ran into any problems following the steps above view
-[Checkpoint #3 on Github](https://github.com/blimmer/github-graphql-schema-types/tree/checkpoint-3).
+[Checkpoint #3 on GitHub](https://github.com/blimmer/github-graphql-schema-types/tree/checkpoint-3).
 
 ### Combining a Query and a Mutation
 
@@ -559,8 +559,8 @@ async function main() {
 main().catch((e) => console.error(e));
 ```
 
-Note that we're now calling `getBenLimmerDotComRepoId()` instead of hard-coding the value. Typescript is also helping us
-make sure we have a `null` check, in case the repository can't be found. That information from Typescript reminded us to
+Note that we're now calling `getBenLimmerDotComRepoId()` instead of hard-coding the value. TypeScript is also helping us
+make sure we have a `null` check, in case the repository can't be found. That information from TypeScript reminded us to
 add this block of code to ensure the repository could be found from the API call:
 
 ```ts
@@ -582,24 +582,24 @@ The output is the same, but we're now dynamically querying for the repository ID
 ### Checkpoint
 
 If you ran into any problems following the steps above view
-[Checkpoint #4 on Github](https://github.com/blimmer/github-graphql-schema-types/tree/checkpoint-4).
+[Checkpoint #4 on GitHub](https://github.com/blimmer/github-graphql-schema-types/tree/checkpoint-4).
 
 ## Conclusion
 
 As part of this tutorial, we created a project to interact with the
-[Github GraphQL API](https://developer.github.com/v4/). By using
-[`graphql-codegen`](https://graphql-code-generator.com/), we were able to add Typescript types to make interacting with
+[GitHub GraphQL API](https://developer.github.com/v4/). By using
+[`graphql-codegen`](https://graphql-code-generator.com/), we were able to add TypeScript types to make interacting with
 the API easier and safer.
 
 Because [`@octokit/graphql-schema`](https://github.com/octokit/graphql-schema) is
-[automatically updated](https://github.com/octokit/graphql-schema#graphql-schema) any time Github GraphQL schema is
-updated, we can simply update the package and ensure our Typescript still compiles.
+[automatically updated](https://github.com/octokit/graphql-schema#graphql-schema) any time GitHub GraphQL schema is
+updated, we can simply update the package and ensure our TypeScript still compiles.
 
 ```bash
 npm update @octokit/graphql-schema
 ```
 
-Without generating types from the schema, Github could change their schema in a way that breaks our code, and we
+Without generating types from the schema, GitHub could change their schema in a way that breaks our code, and we
 wouldn't know until runtime.
 
-I hope this walkthrough was helpful and helps your next integration with Github a little bit more fun!
+I hope this walkthrough was helpful and helps your next integration with GitHub a little bit more fun!
