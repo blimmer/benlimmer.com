@@ -72,7 +72,7 @@ test.describe("Blog Page", () => {
     );
 
     const ogImage = page.locator('meta[property="og:image"]');
-    await expect(ogImage).toHaveAttribute("content", /headshot\.png/);
+    await expect(ogImage).toHaveAttribute("content", /\/_assets\/headshot\.[A-Za-z0-9_-]+\.png/);
 
     // Check article tags
     const articleTags = page.locator('meta[property="article:tag"]');
@@ -109,7 +109,7 @@ test.describe("Blog Page", () => {
       name: "Ben Limmer",
       url: "https://benlimmer.com/about/",
     });
-    expect(structuredData.image).toMatch(/headshot\.png/);
+    expect(structuredData.image).toMatch(/\/_assets\/headshot\.[A-Za-z0-9_-]+\.png/);
     expect(structuredData.keywords).toEqual(["jest", "circleci", "circle-ci", "test", "cache"]);
     expect(structuredData.inLanguage).toBe("en-US");
     expect(structuredData.wordCount).toBe(528);
