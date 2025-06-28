@@ -66,7 +66,10 @@ test.describe("Blog Page", () => {
     await expect(ogSiteName).toHaveAttribute("content", "BenLimmer.com");
 
     const ogUrl = page.locator('meta[property="og:url"]');
-    await expect(ogUrl).toHaveAttribute("content", "https://benlimmer.com/blog/2021/01/29/circleci-jest-cache");
+    await expect(ogUrl).toHaveAttribute(
+      "content",
+      /https:\/\/benlimmer\.com\/blog\/2021\/01\/29\/circleci-jest-cache\/?/,
+    );
 
     const ogImage = page.locator('meta[property="og:image"]');
     await expect(ogImage).toHaveAttribute("content", /headshot\.png/);

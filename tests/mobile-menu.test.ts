@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 // Only run these tests on mobile projects
 test.describe("Mobile Menu", () => {
-  test.skip(({ context }) => {
+  test.skip(() => {
     const projectName = test.info().project.name;
     return !projectName.includes("Mobile");
   }, "Mobile menu tests only run on mobile projects");
