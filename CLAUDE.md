@@ -13,6 +13,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Run tests in headed mode**: `yarn test:e2e --headed`
 - **Install dependencies**: `yarn install`
 
+Always use `yarn` instead of `npm` or `npx`.
+
 ## Architecture Overview
 
 This is Ben Limmer's personal website built with **Astro 5** using:

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(yarn:*)",
+      "Bash(ls:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": []
+  }
+}
