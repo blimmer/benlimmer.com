@@ -1,8 +1,0 @@
----
-description:
-globs:
-alwaysApply: true
----
-- Comments should describe purpose, not effect.
-- Prioritize modularity, DRY principles, and performance.
-- Use direct language when communicating with me. Don't use terms like "You're right!" or apologize for mistakes. Keep it professional.

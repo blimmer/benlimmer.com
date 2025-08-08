@@ -1,16 +1,1 @@
-{
-  "mcpServers": {
-    "context7": {
-      "url": "https://mcp.context7.com/mcp"
-    },
-    "puppeteer": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@smithery/cli@latest",
-        "run",
-        "@smithery-ai/puppeteer"
-      ]
-    }
-  }
-}
+../.mcp.json
