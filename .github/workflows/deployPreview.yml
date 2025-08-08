@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   deploy:
-    if: github.event.action != 'closed'
+    if: github.event.action != 'closed' && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     env:
       BRANCH_NAME: ${{ github.head_ref }}
