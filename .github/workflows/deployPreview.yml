@@ -28,7 +28,7 @@ jobs:
       - name: Build Site
         run: GITHUB_BRANCH=${{ env.BRANCH_NAME }} yarn build
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v5
         with:
           role-to-assume: ${{ secrets.PREVIEW_DEPLOYMENT_ROLE_ARN }}
           aws-region: us-east-1
@@ -72,7 +72,7 @@ jobs:
       BRANCH_NAME: ${{ github.head_ref }}
     steps:
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v5
         with:
           role-to-assume: ${{ secrets.PREVIEW_DEPLOYMENT_ROLE_ARN }}
           aws-region: us-east-1
