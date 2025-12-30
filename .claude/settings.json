@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": ["Bash(yarn:*)", "Bash(curl:*)", "WebFetch(domain:github.com)"],
+    "deny": []
+  },
+  "enabledMcpjsonServers": ["Astro docs", "context7", "chrome-devtools"]
+}

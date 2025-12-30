@@ -5,16 +5,13 @@
       "url": "https://mcp.docs.astro.build/mcp"
     },
     "context7": {
+      "type": "http",
       "url": "https://mcp.context7.com/mcp"
     },
-    "puppeteer": {
+    "chrome-devtools": {
+      "type": "stdio",
       "command": "npx",
-      "args": [
-        "-y",
-        "@smithery/cli@latest",
-        "run",
-        "@smithery-ai/puppeteer"
-      ]
+      "args": ["chrome-devtools-mcp@latest"]
     }
   }
 }
