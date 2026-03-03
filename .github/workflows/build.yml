@@ -49,7 +49,7 @@ jobs:
       run: yarn build
     - name: Run Playwright tests
       run: yarn playwright test
-    - uses: actions/upload-artifact@v6
+    - uses: actions/upload-artifact@v7
       if: ${{ !cancelled() }}
       with:
         name: playwright-report
