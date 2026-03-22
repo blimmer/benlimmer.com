@@ -13,12 +13,12 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.6",
-    "@astrojs/mdx": "4.3.13",
-    "@astrojs/rss": "4.0.15",
-    "@astrojs/sitemap": "3.7.0",
+    "@astrojs/check": "0.9.8",
+    "@astrojs/mdx": "5.0.2",
+    "@astrojs/rss": "4.0.17",
+    "@astrojs/sitemap": "3.7.1",
     "@tailwindcss/vite": "^4.2.1",
-    "astro": "5.18.0",
+    "astro": "6.0.8",
     "astro-expressive-code": "^0.41.7",
     "schema-dts": "^1.1.5",
     "tailwindcss": "^4.1.18",
