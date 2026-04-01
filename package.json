@@ -38,7 +38,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-organize-imports": "^4.3.0",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   },
   "lint-staged": {
     "*.{ts,tsx,astro,md,mdx}": "eslint --fix",
