@@ -20,7 +20,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.0.8",
     "astro-expressive-code": "^0.41.7",
-    "schema-dts": "^1.1.5",
+    "schema-dts": "^2.0.0",
     "tailwindcss": "^4.2.2",
     "temporal-polyfill": "^0.3.2"
   },
