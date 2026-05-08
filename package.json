@@ -27,7 +27,7 @@
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@tailwindcss/typography": "^0.5.19",
-    "@types/node": "^24.10.9",
+    "@types/node": "^25.5.0",
     "@typescript-eslint/parser": "^8.57.1",
     "eslint": "^10.1.0",
     "eslint-plugin-astro": "^1.6.0",
