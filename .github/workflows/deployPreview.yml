@@ -20,7 +20,7 @@ jobs:
       BRANCH_NAME: ${{ github.head_ref }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0 # required for blog post last modified timestamps via git
       - name: Bootstrap
