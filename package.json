@@ -14,12 +14,13 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
-    "@astrojs/mdx": "^5.0.2",
+    "@astrojs/markdown-remark": "7.2.1",
+    "@astrojs/mdx": "^7.0.0",
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.1",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^7.1.1",
-    "astro-expressive-code": "^0.41.7",
+    "astro-expressive-code": "^0.44.2",
     "schema-dts": "^1.1.5",
     "tailwindcss": "^4.2.2",
     "temporal-polyfill": "^0.3.2"
