@@ -37,7 +37,7 @@ jobs:
       id: ubuntu-version
       run: echo "version=$(lsb_release -rs)" >> $GITHUB_OUTPUT
     - name: Cache Playwright Browsers
-      uses: actions/cache@v5
+      uses: actions/cache@v6
       with:
         path: /home/runner/.cache/ms-playwright
         key: ${{ runner.os }}-${{ steps.ubuntu-version.outputs.version }}-playwright-browsers-${{ steps.playwright-version.outputs.version }}-${{ hashFiles('playwright.config.ts') }}
