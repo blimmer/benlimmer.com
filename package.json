@@ -18,7 +18,7 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.3.2",
-    "astro": "^6.0.8",
+    "astro": "^7.2.8",
     "astro-expressive-code": "^0.44.0",
     "schema-dts": "^1.1.5",
     "tailwindcss": "^4.2.2",
