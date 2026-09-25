@@ -19,8 +19,9 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
-  /* Use multiple workers on CI for better performance */
-  workers: process.env.CI ? 4 : undefined,
+  /* Prioritize stability and reproducibility on CI */
+  workers: process.env.CI ? 1 : undefined,
+  globalTimeout: process.env.CI ? 10 * 60 * 1000 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: process.env.CI ? [["github"], ["html", { open: "never" }]] : [["html", { open: "never" }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -32,7 +33,7 @@ export default defineConfig({
   },
 
   webServer: {
-    command: "yarn astro preview",
+    command: "node node_modules/astro/bin/astro.mjs preview",
     url: "http://localhost:4321",
     timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,

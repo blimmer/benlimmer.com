@@ -1,0 +1,11 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+autoDedupe: true
+engineStrict: true
+minimumReleaseAge: 10080 # 7 days
+minimumReleaseAgeIgnoreMissingTime: false
+strictDepBuilds: true
+strictPeerDependencies: true
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 43200

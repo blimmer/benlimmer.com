@@ -4,14 +4,8 @@ description: "Common boilerplate setup for workflows"
 runs:
   using: "composite"
   steps:
-    - name: Enable corepack
-      shell: bash
-      run: corepack enable
-    - name: Set up Node.js
-      uses: actions/setup-node@v6
+    - name: Set up pnpm and Node.js
+      uses: pnpm/setup@v3
       with:
-        cache: yarn
-        node-version-file: .tool-versions
-    - name: Install dependencies
-      shell: bash
-      run: yarn install
+        cache: true
+        require-lockfile: true
