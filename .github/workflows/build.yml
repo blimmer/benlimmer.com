@@ -22,7 +22,7 @@ jobs:
       - name: Check site
         run: pnpm astro check --minimumFailingSeverity hint
   playwright:
-    timeout-minutes: 60
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
