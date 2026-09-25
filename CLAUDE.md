@@ -4,26 +4,26 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-- **Start development server**: `yarn dev` (runs on http://localhost:4321)
-- **Build for production**: `yarn build`
-- **Preview production build**: `yarn preview`
-- **Run linting**: `yarn lint`
-- **Run end-to-end tests**: `yarn test:e2e` (uses Playwright)
-- **Run single test file**: `yarn test:e2e tests/filename.test.ts`
-- **Run tests in headed mode**: `yarn test:e2e --headed`
-- **Install dependencies**: `yarn install`
+- **Start development server**: `pnpm dev` (runs on http://localhost:4321)
+- **Build for production**: `pnpm build`
+- **Preview production build**: `pnpm preview`
+- **Run linting**: `pnpm lint`
+- **Run end-to-end tests**: `pnpm test:e2e` (uses Playwright)
+- **Run single test file**: `pnpm test:e2e tests/filename.test.ts`
+- **Run tests in headed mode**: `pnpm test:e2e --headed`
+- **Install dependencies**: `pnpm install`
 
-IMPORTANT: Always use `yarn` instead of `npm` or `npx` if you're running scripts or NPM packages.
+IMPORTANT: Always use `pnpm` instead of `npm` or `npx` when running scripts or npm packages.
 
 ## Architecture Overview
 
-This is Ben Limmer's personal website built with **Astro 5** using:
+This is Ben Limmer's personal website built with **Astro 6** using:
 
 - **Static site generation** with TypeScript
 - **TailwindCSS 4** for styling
 - **MDX** for content (blog posts and portfolio)
 - **Playwright** for end-to-end testing
-- **Yarn 4** as package manager
+- **pnpm 12** as package manager
 
 The end result is a static website deployed via an S3 + CloudFront setup. Builds and deployments automatically run in
 GitHub Actions.
@@ -57,7 +57,7 @@ Content can be either:
 
 End-to-end tests are run using Playwright.
 
-- Tests run against `yarn astro preview` server on localhost:4321
+- Tests run against `pnpm astro preview` server on localhost:4321
 - Supports multiple browsers (Chrome, Firefox, Safari) and mobile viewports
 - Uses GitHub reporter in CI, HTML reporter locally
 - Automatically starts/stops preview server for tests
@@ -106,7 +106,7 @@ End-to-end tests are run using Playwright.
 #### Testing Designs
 
 - When dealing with design, utilize the puppeteer MCP server to view your changes on localhost:4321
-- If the site is not available on localhost:4321, run `yarn dev` to start the dev server. Do not start the server if
+- If the site is not available on localhost:4321, run `pnpm dev` to start the dev server. Do not start the server if
   localhost:4321 is already responding
 - Ensure that the design looks correct on all the TailwindCSS breakpoints:
   - sm: 40rem (640px)

@@ -19,7 +19,7 @@ jobs:
       - name: Bootstrap
         uses: ./.github/actions/bootstrap
       - name: Build Site
-        run: yarn build
+        run: pnpm build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
