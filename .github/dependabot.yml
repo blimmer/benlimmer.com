@@ -21,6 +21,10 @@ updates:
       semver-minor-days: 7
       semver-patch-days: 7
     versioning-strategy: auto
+    ignore:
+      # Keep in sync with the Node.js major in .tool-versions
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
     labels:
       - "dependencies"
       - "pnpm"
