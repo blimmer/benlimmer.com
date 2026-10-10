@@ -36,7 +36,6 @@
     "eslint": "^10.12.0",
     "eslint-plugin-astro": "^3.2.1",
     "husky": "^9.1.7",
-    "imageoptim-cli": "^4.0.0",
     "lint-staged": "^17.6.0",
     "prettier": "^3.9.9",
     "prettier-plugin-astro": "^1.1.0",
@@ -45,11 +44,7 @@
     "typescript": "^5.9.3",
     "vfile": "^6.0.3"
   },
-  "lint-staged": {
-    "*.{ts,tsx,astro,md,mdx}": "eslint --fix",
-    "*.{ts,tsx,astro,css,md,mdx}": "prettier --write",
-    "*.{jpg,jpeg,png}": "imageoptim",
-    "*.js": "eslint --fix",
-    "*.{js,css,md}": "prettier --write"
+  "optionalDependencies": {
+    "imageoptim-cli": "^4.0.0"
   }
 }
