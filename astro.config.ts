@@ -25,6 +25,11 @@ export default defineConfig({
     assets: "_assets",
   },
 
+  image: {
+    layout: "constrained",
+    responsiveStyles: true,
+  },
+
   integrations: [
     expressiveCode({ themes: ["github-dark"] }),
     mdx(),

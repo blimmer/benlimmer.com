@@ -210,6 +210,19 @@ test.describe("Blog Page", () => {
     expect(tokenColors).toBeGreaterThan(1);
   });
 
+  test("content images are responsive", async ({ page }) => {
+    await page.goto("/blog/2020/10/16/how-to-fix-circleci-dockerhub-too-many-requests-errors");
+
+    const image = page.getByAltText("create a new access token on hub.docker.com");
+    await expect(image).toHaveAttribute("sizes", /.+/);
+    const widths = (await image.getAttribute("srcset"))?.match(/\s\d+w/g) ?? [];
+    expect(widths.length).toBeGreaterThan(1);
+    await expect(image).toHaveCSS("object-fit", "contain");
+
+    const avatar = page.getByAltText("Avatar image of Ben Limmer");
+    await expect(avatar).toHaveAttribute("srcset", /\s(2x|40w)(,|$)/);
+  });
+
   test("archived posts show archive notice and no pagination", async ({ page }) => {
     // Test with an older post that should be archived
     await page.goto("/blog/2011/03/12/long-time-no-talk");
