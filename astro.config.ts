@@ -13,6 +13,7 @@ import { lastModifiedTimePlugin } from "./src/mdast/lastModifiedTime";
 export default defineConfig({
   site: "https://benlimmer.com",
   output: "static",
+  prefetch: { prefetchAll: true },
 
   vite: {
     plugins: [tailwindcss()],
