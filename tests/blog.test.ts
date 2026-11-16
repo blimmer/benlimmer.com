@@ -194,6 +194,22 @@ test.describe("Blog Page", () => {
     await expect(nextPost).toHaveCSS("color", "rgb(255, 255, 255)");
   });
 
+  test("code blocks are syntax highlighted with a dark theme", async ({ page }) => {
+    await page.emulateMedia({ colorScheme: "light" });
+    await page.goto("/blog/2021/01/29/circleci-jest-cache");
+
+    const codeBlock = page.locator(".expressive-code pre").first();
+    await expect(codeBlock).toBeVisible();
+
+    const { luminance, tokenColors } = await codeBlock.evaluate((pre) => {
+      const [r, g, b] = getComputedStyle(pre).backgroundColor.match(/\d+/g)!.map(Number);
+      const colors = new Set([...pre.querySelectorAll("span")].map((span) => getComputedStyle(span).color));
+      return { luminance: (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255, tokenColors: colors.size };
+    });
+    expect(luminance).toBeLessThan(0.2);
+    expect(tokenColors).toBeGreaterThan(1);
+  });
+
   test("archived posts show archive notice and no pagination", async ({ page }) => {
     // Test with an older post that should be archived
     await page.goto("/blog/2011/03/12/long-time-no-talk");

@@ -25,7 +25,7 @@ export default defineConfig({
   },
 
   integrations: [
-    expressiveCode(),
+    expressiveCode({ themes: ["github-dark"] }),
     mdx(),
     sitemap({
       filter: filterArchivedPostsFromSitemap,
