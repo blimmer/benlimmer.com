@@ -1,0 +1,37 @@
+---
+description: A description of Ben Limmer's role building PlanBridge at ContextBridge.
+title: PlanBridge
+---
+
+import MdxImage from "src/components/MdxImage.astro";
+import screenshot from "./assets/planbridge-screenshot.png";
+
+[PlanBridge](https://plan.contextbridge.ai) is an open-source tool for reviewing an AI coding agent's plan before it
+writes any code. When [Claude Code](https://www.anthropic.com/claude-code) or
+[Codex](https://developers.openai.com/codex/cli) produces a plan, PlanBridge opens it in the browser, where engineers
+highlight lines, leave comments, and approve the plan or send it back. The agent revises the plan with that feedback
+before it starts on the code. The plan is the cheapest place to catch a bad approach, and reviewing it in a terminal is
+awkward.
+
+The idea came from a plan-review prototype one of my co-founders built. As an AI-native team, we took it from that
+prototype to a public launch in about two weeks, and open-sourced it shortly after. I'm one of its maintainers.
+
+PlanBridge runs entirely on the engineer's machine, with no account or API keys, so plans never leave it. Each release
+is signed and tied to the commit that built it, so anyone can check that the binary they installed matches the source.
+
+<MdxImage
+  src={screenshot}
+  alt="PlanBridge showing a Claude Code plan in the browser with an inline comment on one step."
+  caption="Leaving an inline comment on a Claude Code plan."
+/>
+
+## Key Skills
+
+- Rapid Prototyping
+- Claude Code and Codex Integrations
+- Local-First Developer Tools
+- Open Source Release Automation
+- Web UI Development
+
+For more information on PlanBridge, visit [plan.contextbridge.ai](https://plan.contextbridge.ai) or read the
+[launch post](https://contextbridge.ai/blog/fix-bad-plans-with-planbridge).

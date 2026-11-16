@@ -1,0 +1,48 @@
+---
+description: A description of Ben Limmer's role building PatchWave at ContextBridge.
+title: PatchWave
+---
+
+import MdxImage from "src/components/MdxImage.astro";
+import analysis from "./assets/analysis-needs-action.png";
+import inbox from "./assets/inbox-across-repositories.png";
+
+[PatchWave](https://patchwave.ai) is a GitHub app that analyzes, fixes, and merges Dependabot pull requests. Dependabot
+opens a pull request for every dependency update, but it can't tell you whether an update affects your code. So, someone
+on the team still has to read the changelog, check whether the breaking changes touch anything they use, and fix the
+build when it fails. PatchWave does that work. It reads the upstream changes, checks how your code uses the package, and
+links every conclusion to its source. When an update breaks the build, it writes a fix for a person to review, and it
+merges the updates your team's policy allows.
+
+At [ContextBridge](https://contextbridge.ai), I share the engineering on PatchWave with my co-founders and work across
+the whole product, from the AI agents and web app to the AWS infrastructure underneath. We're an AI-native team, so we
+use agents throughout our own development. That let us go from the decision to build PatchWave to a public launch in 16
+weeks, with evals for the AI agents running in CI within the first two weeks.
+
+Since PatchWave runs AI agents against customer source code, keeping that code contained was a priority from day one.
+Each analysis runs in its own isolated environment that's thrown away when the run ends, and the models run inside AWS
+with zero data retention.
+
+<MdxImage
+  src={analysis}
+  alt="A PatchWave analysis of a TypeScript major update that needs a code fix, listing affected files and recommended actions."
+  caption="An analysis of a major TypeScript update that breaks the repository's lint setup."
+  width="3/4"
+/>
+
+<MdxImage
+  src={inbox}
+  alt="The PatchWave inbox, grouping dependency pull requests across repositories by the action they need."
+  caption="The inbox groups pull requests from every repository by the action they need."
+/>
+
+## Key Skills
+
+- AI Agent Development and Evaluation
+- Securely Running AI Agents on Customer Code
+- AWS Architecture and Infrastructure as Code
+- GitHub App Development
+- Full-Stack Web Development
+- Usage-Based Billing
+
+For more information on PatchWave, visit [patchwave.ai](https://patchwave.ai).
