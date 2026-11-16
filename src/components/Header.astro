@@ -18,23 +18,26 @@ const { currentPath } = Astro.props;
   <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3" aria-label="Main navigation">
     <div class="flex items-center gap-8">
       <span class="text-primary text-xl font-bold">
-        <a href="/" aria-label="home page">Ben Limmer</a>
+        <a href="/" aria-label="home page">
+          Ben Limmer
+        </a>
       </span>
       <ul class="text-secondary hidden gap-6 text-base font-medium md:flex" role="menubar">
-        {
-          menuItems.map((item) => (
-            <li role="none">
-              <a
-                href={item.path}
-                role="menuitem"
-                class={`hover:text-primary transition-colors${currentPath.startsWith(item.path) ? "text-primary font-bold" : ""}`}
-                aria-current={currentPath.startsWith(item.path) ? "page" : undefined}
-              >
-                {item.text}
-              </a>
-            </li>
-          ))
-        }
+        {menuItems.map((item) => (
+          <li role="none">
+            <a
+              href={item.path}
+              role="menuitem"
+              class:list={[
+                "hover:text-primary transition-colors",
+                { "text-primary font-bold": currentPath.startsWith(item.path) },
+              ]}
+              aria-current={currentPath.startsWith(item.path) ? "page" : undefined}
+            >
+              {item.text}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
 
@@ -63,20 +66,21 @@ const { currentPath } = Astro.props;
         class="bg-header border-light absolute right-0 mt-2 w-48 rounded-md border p-2 shadow-lg"
         role="menu"
       >
-        {
-          menuItems.map((item) => (
-            <li role="none">
-              <a
-                href={item.path}
-                class={`block px-4 py-2 transition-colors hover:bg-gray-700 hover:text-white${currentPath.startsWith(item.path) ? "bg-gray-700 text-white" : ""}`}
-                role="menuitem"
-                aria-current={currentPath.startsWith(item.path) ? "page" : undefined}
-              >
-                {item.text}
-              </a>
-            </li>
-          ))
-        }
+        {menuItems.map((item) => (
+          <li role="none">
+            <a
+              href={item.path}
+              class:list={[
+                "block px-4 py-2 transition-colors hover:bg-gray-700 hover:text-white",
+                { "bg-gray-700 text-white": currentPath.startsWith(item.path) },
+              ]}
+              role="menuitem"
+              aria-current={currentPath.startsWith(item.path) ? "page" : undefined}
+            >
+              {item.text}
+            </a>
+          </li>
+        ))}
       </ul>
     </details>
   </nav>

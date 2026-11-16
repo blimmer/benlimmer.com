@@ -21,31 +21,31 @@ body {
   scroll-margin-top: 4rem; /* Offset for sticky header */
 }
 
-.bg-primary {
+@utility bg-primary {
   background-color: var(--color-bg-primary);
 }
 
-.bg-secondary {
+@utility bg-secondary {
   background-color: var(--color-bg-secondary);
 }
 
-.bg-header {
+@utility bg-header {
   background-color: var(--color-bg-header);
 }
 
-.text-primary {
+@utility text-primary {
   color: var(--color-text-primary);
 }
 
-.text-secondary {
+@utility text-secondary {
   color: var(--color-text-secondary);
 }
 
-.text-tertiary {
+@utility text-tertiary {
   color: var(--color-text-tertiary);
 }
 
-.border-light {
+@utility border-light {
   border-color: var(--color-border);
 }
 

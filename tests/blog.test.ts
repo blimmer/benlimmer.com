@@ -164,6 +164,29 @@ test.describe("Blog Page", () => {
     await expect(nextHeading).toHaveText("Specifying the aws-sdk version in aws-cdk NodejsFunction");
   });
 
+  test("blog index highlights a post title on hover", async ({ page, isMobile }) => {
+    test.skip(isMobile, "Hover styles only apply to devices that support hover");
+    await page.goto("/blog");
+
+    const card = page.getByRole("listitem").filter({ hasText: "Restoring the Jest cache in Circle CI" });
+    const title = card.getByRole("heading", { level: 3 });
+    await expect(title).not.toHaveCSS("color", "rgb(255, 255, 255)");
+
+    await card.hover();
+    await expect(title).toHaveCSS("color", "rgb(255, 255, 255)");
+  });
+
+  test("pagination links highlight on hover", async ({ page, isMobile }) => {
+    test.skip(isMobile, "Hover styles only apply to devices that support hover");
+    await page.goto("/blog/2021/01/29/circleci-jest-cache");
+
+    const nextPost = page.locator("a[rel='next']");
+    await expect(nextPost).toHaveCSS("color", "rgba(255, 255, 255, 0.8)");
+
+    await nextPost.hover();
+    await expect(nextPost).toHaveCSS("color", "rgb(255, 255, 255)");
+  });
+
   test("archived posts show archive notice and no pagination", async ({ page }) => {
     // Test with an older post that should be archived
     await page.goto("/blog/2011/03/12/long-time-no-talk");
