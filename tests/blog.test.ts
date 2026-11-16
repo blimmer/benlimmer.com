@@ -122,9 +122,7 @@ test.describe("Blog Page", () => {
     expect(structuredData.keywords).toEqual(["jest", "circleci", "circle-ci", "test", "cache"]);
     expect(structuredData.inLanguage).toBe("en-US");
     expect(structuredData.wordCount).toBe(528);
-    expect(structuredData.articleBody).toContain("[Jest](https://jestjs.io/) is a great testing framework");
-    expect(structuredData.articleBody).toContain("CircleCI orb");
-    expect(structuredData.articleBody).toContain("## Final Thoughts");
+    expect(structuredData).not.toHaveProperty("articleBody");
   });
 
   test("pagination between blog posts works correctly", async ({ page }) => {

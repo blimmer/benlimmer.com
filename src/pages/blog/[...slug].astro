@@ -55,10 +55,7 @@ const jsonLd: WithContext<BlogPosting> = {
   image: new URL(headshot.src, Astro.site).toString(),
   keywords: post.data.tags ?? [],
   inLanguage: "en-US",
-  ...(post.body && {
-    wordCount: post.body.split(" ").length,
-    articleBody: post.body,
-  }),
+  ...(post.body && { wordCount: post.body.split(" ").length }),
 };
 ---
 
