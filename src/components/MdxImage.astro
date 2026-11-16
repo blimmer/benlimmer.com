@@ -20,14 +20,14 @@ const widthClasses = {
 };
 
 const figureClass = `${widthClasses[widthParam]} m-auto`;
-const imgClass = `w-full max-h-[94vh] object-contain`;
+const imgClass = `w-full max-h-[94vh]`;
 ---
 
 <figure class={figureClass}>
   {caption ? (
     <>
       <a href={src.src} target="_blank" rel="noopener noreferrer">
-        <Image class={imgClass} src={src} alt={alt} />
+        <Image class={imgClass} src={src} alt={alt} fit="contain" />
       </a>
       <figcaption>
         <Fragment set:html={caption} />
@@ -35,7 +35,7 @@ const imgClass = `w-full max-h-[94vh] object-contain`;
     </>
   ) : (
     <a href={src.src} target="_blank" rel="noopener noreferrer">
-      <Image class={imgClass} src={src} alt={alt} />
+      <Image class={imgClass} src={src} alt={alt} fit="contain" />
     </a>
   )}
 </figure>
