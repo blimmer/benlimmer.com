@@ -29,3 +29,12 @@ test.describe("Header navigation", () => {
     await expect(current).not.toHaveCSS("background-color", TRANSPARENT);
   });
 });
+
+test("prefetches internal pages on hover", async ({ page, isMobile }) => {
+  test.skip(isMobile, "Hover prefetching only applies to devices that support hover");
+  await page.goto("/");
+
+  const prefetch = page.waitForRequest((request) => new URL(request.url()).pathname.replace(/\/$/, "") === "/blog");
+  await page.locator('nav ul.md\\:flex a[href="/blog"]').hover();
+  await prefetch;
+});
