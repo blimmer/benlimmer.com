@@ -1,10 +1,8 @@
 import process from "node:process";
 
 const config = {
-  "*.{ts,tsx,astro,md,mdx}": "eslint --fix",
-  "*.{ts,tsx,astro,css,md,mdx}": "prettier --write",
-  "*.js": "eslint --fix",
-  "*.{js,css,md}": "prettier --write",
+  "*.{js,ts,tsx,astro}": "eslint --fix",
+  "*.{js,ts,tsx,astro,css,md,mdx}": "prettier --write",
 };
 
 if (process.platform === "darwin") {

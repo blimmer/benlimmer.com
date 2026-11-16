@@ -23,6 +23,8 @@ jobs:
         run: pnpm astro check --minimumFailingSeverity hint
       - name: Check formatting
         run: pnpm exec prettier --check .
+      - name: Lint
+        run: pnpm lint
       - name: Run unit tests
         run: pnpm test:unit
   playwright:
