@@ -11,6 +11,7 @@ tldr: >-
   casting your client to <code><a
   href="https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-smithy-types/TypeAlias/NodeJsClient/">NodeJsClient</a></code>.
   This forces the SDK to type-check against Node-specific stream APIs, reducing the need for manual type-narrowing code.
+overrideLastModified: "2025-05-09T11:52:04-06:00"
 ---
 
 AWS SDK v3 made working with streams in Node.js a lot more difficult than it was in v2. This article shows you how to
@@ -24,8 +25,7 @@ is used to represent streams that can be returned in both browser _and_ Node.js 
 
 ```ts
 type StreamingBlobPayloadOutputTypes =
-  | NodeJsRuntimeStreamingBlobPayloadOutputTypes
-  | BrowserRuntimeStreamingBlobPayloadOutputTypes;
+  NodeJsRuntimeStreamingBlobPayloadOutputTypes | BrowserRuntimeStreamingBlobPayloadOutputTypes;
 ```
 
 When you're working in an application that will only be run in Node.js, this union type is painful to deal with.

@@ -21,6 +21,8 @@ jobs:
         uses: ./.github/actions/bootstrap
       - name: Check site
         run: pnpm astro check --minimumFailingSeverity hint
+      - name: Check formatting
+        run: pnpm exec prettier --check .
   playwright:
     timeout-minutes: 15
     runs-on: ubuntu-latest

@@ -13,6 +13,8 @@ test.describe("Contact Form", () => {
     const heading = page.getByRole("heading", { level: 1, name: "Contact" });
     await expect(heading).toBeVisible();
 
+    await expect(page.locator(".prose").first()).toContainText("or, alternatively, send me an email.");
+
     // Check form exists
     const form = page.locator("#contact-form");
     await expect(form).toBeVisible();

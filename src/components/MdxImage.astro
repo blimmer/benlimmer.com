@@ -24,20 +24,18 @@ const imgClass = `w-full max-h-[94vh] object-contain`;
 ---
 
 <figure class={figureClass}>
-  {
-    caption ? (
-      <>
-        <a href={src.src} target="_blank" rel="noopener noreferrer">
-          <Image class={imgClass} src={src} alt={alt} />
-        </a>
-        <figcaption>
-          <Fragment set:html={caption} />
-        </figcaption>
-      </>
-    ) : (
+  {caption ? (
+    <>
       <a href={src.src} target="_blank" rel="noopener noreferrer">
         <Image class={imgClass} src={src} alt={alt} />
       </a>
-    )
-  }
+      <figcaption>
+        <Fragment set:html={caption} />
+      </figcaption>
+    </>
+  ) : (
+    <a href={src.src} target="_blank" rel="noopener noreferrer">
+      <Image class={imgClass} src={src} alt={alt} />
+    </a>
+  )}
 </figure>

@@ -10,18 +10,24 @@ import Layout from "src/layouts/Layout.astro";
     <h1 class="mb-8 text-center text-5xl font-bold">Contact</h1>
     <div class="mx-auto max-w-lg rounded-lg p-6 shadow-lg">
       <div class="prose mb-4">
-        Please fill out the form or, alternatively,
+        Please fill out the form or, alternatively,{" "}
         <a href="mailto:hello@benlimmer.com?subject=Freelance%20Services">send me an email</a>. I'm looking forward to
         connecting with you!
       </div>
       <form id="contact-form" class="space-y-6" novalidate>
         <div>
-          <label for="name-input" class="form-label">Your Name<span class="ml-1 text-red-400">*</span></label>
+          <label for="name-input" class="form-label">
+            Your Name<span class="ml-1 text-red-400">*</span>
+          </label>
           <input id="name-input" name="name" type="text" required class="form-input" autocomplete="name" />
-          <small id="name-error" class="mt-1 block hidden text-red-400">Please enter your name.</small>
+          <small id="name-error" class="mt-1 block hidden text-red-400">
+            Please enter your name.
+          </small>
         </div>
         <div>
-          <label for="email-input" class="form-label">Your Email Address<span class="ml-1 text-red-400">*</span></label>
+          <label for="email-input" class="form-label">
+            Your Email Address<span class="ml-1 text-red-400">*</span>
+          </label>
           <input
             id="email-input"
             name="email"
@@ -31,24 +37,35 @@ import Layout from "src/layouts/Layout.astro";
             class="form-input"
             autocomplete="email"
           />
-          <small id="email-help" class="mt-1 block text-zinc-400">I'll never share your email with anyone else.</small>
-          <small id="email-error" class="mt-1 block hidden text-red-400">Please enter a valid email address.</small>
+          <small id="email-help" class="mt-1 block text-zinc-400">
+            I'll never share your email with anyone else.
+          </small>
+          <small id="email-error" class="mt-1 block hidden text-red-400">
+            Please enter a valid email address.
+          </small>
         </div>
         <div>
-          <label for="message-input" class="form-label">Message<span class="ml-1 text-red-400">*</span></label>
+          <label for="message-input" class="form-label">
+            Message<span class="ml-1 text-red-400">*</span>
+          </label>
           <textarea
             id="message-input"
             name="message"
             rows="4"
             required
             aria-describedby="message-help"
-            class="form-input"></textarea>
+            class="form-input"
+          ></textarea>
           <small id="message-help" class="mt-1 block text-zinc-400">
             Introduce yourself and share some information about your needs.
           </small>
-          <small id="message-error" class="mt-1 block hidden text-red-400">Please enter a message.</small>
+          <small id="message-error" class="mt-1 block hidden text-red-400">
+            Please enter a message.
+          </small>
         </div>
-        <button type="submit" id="submit-btn" class="btn-primary w-full" disabled aria-disabled="true">Submit</button>
+        <button type="submit" id="submit-btn" class="btn-primary w-full" disabled aria-disabled="true">
+          Submit
+        </button>
       </form>
       <div class="mt-5 space-y-2">
         <div
