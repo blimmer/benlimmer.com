@@ -30,6 +30,7 @@ const {
   Content,
   remarkPluginFrontmatter: { lastModified },
 } = await render(post);
+const publishedOn = post.date.toLocaleString(undefined, { year: "numeric", month: "long", day: "numeric" });
 
 const openGraphTags = {
   "og:type": "article",
@@ -73,8 +74,7 @@ const jsonLd: WithContext<BlogPosting> = {
       <MdxProse>
         <h1>{post.data.title}</h1>
         <div class="flex items-center text-gray-400">
-          Posted on {post.date.toLocaleString(undefined, { year: "numeric", month: "long", day: "numeric" })} by Ben
-          Limmer
+          Posted on {publishedOn} by Ben Limmer
           <Image
             src={gravatar}
             alt="Avatar image of Ben Limmer"
