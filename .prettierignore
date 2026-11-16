@@ -1,3 +1,4 @@
 src/assets/scripts/*.js
 pnpm-lock.yaml
 .claude/settings.local.json
+.agents/
