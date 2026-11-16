@@ -214,7 +214,7 @@ test.describe("Contact Form", () => {
   });
 
   test("sends correct POST data to API", async ({ page }) => {
-    let requestBody: any;
+    let requestBody: unknown;
 
     // Intercept and capture the API request
     await page.route("https://api.benlimmer.com/contact", async (route) => {

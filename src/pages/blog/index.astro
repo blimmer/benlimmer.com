@@ -4,13 +4,7 @@ import Layout from "src/layouts/Layout.astro";
 
 const posts = await getActiveBlogPosts();
 
-// Group posts by year
-const postsByYear = posts.reduce<Record<string, any[]>>((acc, post) => {
-  acc[post.year] = acc[post.year] || [];
-  acc[post.year].push(post);
-  return acc;
-}, {});
-const years: string[] = Object.keys(postsByYear).sort((a, b) => b.localeCompare(a));
+const postsByYear = Map.groupBy(posts, (post) => post.year);
 
 const pageTitle = ["Blog"];
 const pageDescription = "Thoughts, insights, and tutorials on web development, design, and technology by Ben Limmer.";
@@ -20,13 +14,13 @@ const pageDescription = "Thoughts, insights, and tutorials on web development, d
   <main class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
     <h1 class="mb-8 text-5xl font-bold text-white">Blog</h1>
     <section aria-label="Blog posts list">
-      {years.map((year) => (
+      {[...postsByYear].map(([year, yearPosts]) => (
         <section class="mb-12" aria-labelledby={`year-${year}`}>
           <h2 id={`year-${year}`} class="mb-6 border-b border-white/10 pb-2 text-3xl font-bold text-blue-200">
             {year}
           </h2>
           <ul class="grid grid-cols-1 gap-8">
-            {postsByYear[year].map((post: any) => (
+            {yearPosts.map((post) => (
               <li class="group relative flex flex-col rounded-lg border border-white/10 bg-white/5 p-6 transition-shadow focus-within:ring-2 focus-within:ring-blue-400 hover:bg-white/10 hover:shadow-lg">
                 <a
                   href={`/blog/${post.slug}`}

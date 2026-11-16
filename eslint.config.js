@@ -1,11 +1,9 @@
 import eslintPluginAstro from "eslint-plugin-astro";
+import { defineConfig, globalIgnores } from "eslint/config";
+import tseslint from "typescript-eslint";
 
-export default [
-  ...eslintPluginAstro.configs.recommended,
-  {
-    rules: {},
-  },
-  {
-    ignores: [".astro/*", "_legacy/*"],
-  },
-];
+export default defineConfig([
+  globalIgnores([".agents/", ".astro/", "dist/", "playwright-report/", "test-results/", "src/assets/scripts/"]),
+  tseslint.configs.recommended,
+  eslintPluginAstro.configs.recommended,
+]);

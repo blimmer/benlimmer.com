@@ -1,8 +1,8 @@
 import rss from "@astrojs/rss";
-import type { AstroUserConfig } from "astro";
+import type { APIContext } from "astro";
 import { getActiveBlogPosts } from "src/util";
 
-export async function GET(context: AstroUserConfig) {
+export async function GET(context: APIContext) {
   const posts = await getActiveBlogPosts();
 
   return rss({

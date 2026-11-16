@@ -176,7 +176,7 @@ import Layout from "src/layouts/Layout.astro";
           successDiv.classList.remove("hidden");
           successDiv.focus();
           Array.from(form.elements).forEach((el) => (el.disabled = true));
-        } catch (err) {
+        } catch {
           errorDiv.classList.remove("hidden");
           errorDiv.focus();
           submitBtn.disabled = false;

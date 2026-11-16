@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint \"src/**/*.{ts,tsx,astro,mdx}\"",
+    "lint": "eslint .",
     "prepare": "husky",
     "test:e2e": "playwright test",
     "test:unit": "node --test 'src/**/*.test.ts'"
@@ -33,7 +33,6 @@
     "@playwright/test": "^1.65.0",
     "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^24.19.2",
-    "@typescript-eslint/parser": "^8.72.1",
     "eslint": "^10.14.0",
     "eslint-plugin-astro": "^3.2.1",
     "husky": "^9.1.7",
@@ -42,7 +41,8 @@
     "prettier-plugin-astro": "^1.1.2",
     "prettier-plugin-organize-imports": "^4.3.0",
     "prettier-plugin-tailwindcss": "^0.8.1",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.2"
   },
   "optionalDependencies": {
     "imageoptim-cli": "^4.0.0"
