@@ -72,7 +72,10 @@ test.describe("Blog Page", () => {
     );
 
     const ogImage = page.locator('meta[property="og:image"]');
-    await expect(ogImage).toHaveAttribute("content", /\/_assets\/headshot\.[A-Za-z0-9_-]+\.png/);
+    await expect(ogImage).toHaveAttribute(
+      "content",
+      /^https:\/\/benlimmer\.com\/_assets\/headshot\.[A-Za-z0-9_-]+\.png$/,
+    );
 
     // Check article tags
     const articleTags = page.locator('meta[property="article:tag"]');
@@ -87,6 +90,12 @@ test.describe("Blog Page", () => {
 
     const twitterSite = page.locator('meta[name="twitter:site"]');
     await expect(twitterSite).toHaveAttribute("content", "@l1m5");
+
+    const twitterImage = page.locator('meta[name="twitter:image"]');
+    await expect(twitterImage).toHaveAttribute(
+      "content",
+      /^https:\/\/benlimmer\.com\/_assets\/headshot\.[A-Za-z0-9_-]+\.png$/,
+    );
 
     // Validate complete JSON-LD structured data
     const jsonLd = page.locator('script[type="application/ld+json"]');
@@ -109,7 +118,7 @@ test.describe("Blog Page", () => {
       name: "Ben Limmer",
       url: "https://benlimmer.com/about/",
     });
-    expect(structuredData.image).toMatch(/\/_assets\/headshot\.[A-Za-z0-9_-]+\.png/);
+    expect(structuredData.image).toMatch(/^https:\/\/benlimmer\.com\/_assets\/headshot\.[A-Za-z0-9_-]+\.png$/);
     expect(structuredData.keywords).toEqual(["jest", "circleci", "circle-ci", "test", "cache"]);
     expect(structuredData.inLanguage).toBe("en-US");
     expect(structuredData.wordCount).toBe(528);

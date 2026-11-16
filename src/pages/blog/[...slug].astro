@@ -52,7 +52,7 @@ const jsonLd: WithContext<BlogPosting> = {
     name: "Ben Limmer",
     url: "https://benlimmer.com/about/",
   },
-  image: headshot.src,
+  image: new URL(headshot.src, Astro.site).toString(),
   keywords: post.data.tags ?? [],
   inLanguage: "en-US",
   ...(post.body && {
