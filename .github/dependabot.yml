@@ -22,7 +22,7 @@ updates:
       semver-patch-days: 7
     versioning-strategy: auto
     ignore:
-      # Keep in sync with the Node.js major in .tool-versions
+      # Keep in sync with the Node.js major in mise.toml
       - dependency-name: "@types/node"
         update-types: ["version-update:semver-major"]
     labels:
