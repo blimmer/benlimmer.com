@@ -1,12 +1,13 @@
-import { parseFrontmatter } from "@astrojs/markdown-remark";
+import { satteri } from "@astrojs/markdown-satteri";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import expressiveCode from "astro-expressive-code";
 import { defineConfig } from "astro/config";
+import { parseFrontmatter } from "astro/markdown";
 import fs from "node:fs";
 import path from "node:path";
-import { remarkLastModifiedTime } from "./src/remark/lastModifiedTime";
+import { lastModifiedTimePlugin } from "./src/mdast/lastModifiedTime";
 
 // https://astro.build/config
 export default defineConfig({
@@ -33,7 +34,7 @@ export default defineConfig({
   ],
 
   markdown: {
-    remarkPlugins: [remarkLastModifiedTime],
+    processor: satteri({ mdastPlugins: [lastModifiedTimePlugin] }),
   },
 });
 
