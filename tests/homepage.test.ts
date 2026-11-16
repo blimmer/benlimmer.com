@@ -46,3 +46,7 @@ test("lists recent blog posts from newest to oldest and navigates to the post", 
   const pageTitle = page.getByRole("heading", { level: 1, name: postTitle });
   await expect(pageTitle).toBeVisible();
 });
+
+test("hero heading keeps a space between the greeting and the name", async ({ page }) => {
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(/^Hi, I'm \S/);
+});

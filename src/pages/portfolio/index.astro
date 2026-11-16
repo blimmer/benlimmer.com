@@ -215,78 +215,76 @@ const portfolioSections = [
   <main class="mx-auto max-w-4xl px-4 py-12 sm:py-16">
     <h1 class="mb-8 text-5xl font-bold">Portfolio</h1>
     <div class="max-w-none text-white">
-      {
-        portfolioSections.map((section) => (
-          <section class="prose prose-lg mb-12">
-            <h2 id={section.id} class="mb-4 text-3xl font-semibold">
-              {section.title}
-            </h2>
+      {portfolioSections.map((section) => (
+        <section class="prose prose-lg mb-12">
+          <h2 id={section.id} class="mb-4 text-3xl font-semibold">
+            {section.title}
+          </h2>
 
-            {section.subsections ? (
-              section.subsections.map((subsection) => (
-                <>
-                  <h3 class="mt-6 mb-2 text-xl font-bold">{subsection.heading}</h3>
-                  <ul>
-                    {subsection.items.map((item: PortfolioItem) =>
-                      item.href ? (
-                        <li>
-                          <a href={item.href}>{item.text}</a>
-                        </li>
-                      ) : (
-                        <li>{item.text}</li>
-                      ),
-                    )}
-                  </ul>
-                </>
-              ))
-            ) : (
-              <ul>
-                {section.items.map((item: PortfolioItem) =>
-                  item.href ? (
-                    <li>
-                      <a href={item.href}>{item.text}</a>
-                    </li>
-                  ) : (
-                    <li>{item.text}</li>
-                  ),
-                )}
-              </ul>
-            )}
+          {section.subsections ? (
+            section.subsections.map((subsection) => (
+              <>
+                <h3 class="mt-6 mb-2 text-xl font-bold">{subsection.heading}</h3>
+                <ul>
+                  {subsection.items.map((item: PortfolioItem) =>
+                    item.href ? (
+                      <li>
+                        <a href={item.href}>{item.text}</a>
+                      </li>
+                    ) : (
+                      <li>{item.text}</li>
+                    ),
+                  )}
+                </ul>
+              </>
+            ))
+          ) : (
+            <ul>
+              {section.items.map((item: PortfolioItem) =>
+                item.href ? (
+                  <li>
+                    <a href={item.href}>{item.text}</a>
+                  </li>
+                ) : (
+                  <li>{item.text}</li>
+                ),
+              )}
+            </ul>
+          )}
 
-            {/* Render the callout if it exists for the section */}
-            {section.callout && (
-              <div class="flex justify-center">
-                <aside class="mx-8 mt-6 flex w-full max-w-2xl items-center gap-3 rounded-lg border border-slate-600 bg-slate-700/80 px-6 py-4 shadow-lg">
-                  <span aria-hidden="true" class="flex items-center justify-center">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <text
-                        x="14"
-                        y="21"
-                        text-anchor="middle"
-                        font-size="22"
-                        font-family="sans-serif"
-                        fill="#FFFFFF"
-                        font-weight="bold"
-                      >
-                        ?
-                      </text>
-                    </svg>
-                  </span>
-                  <span class="text-base text-slate-100">
-                    {section.callout.text}
-                    <a
-                      href={section.callout.linkHref}
-                      class="rounded font-semibold text-slate-200 underline underline-offset-2 transition-colors hover:text-white focus:ring-2 focus:ring-slate-400 focus:outline-none"
+          {/* Render the callout if it exists for the section */}
+          {section.callout && (
+            <div class="flex justify-center">
+              <aside class="mx-8 mt-6 flex w-full max-w-2xl items-center gap-3 rounded-lg border border-slate-600 bg-slate-700/80 px-6 py-4 shadow-lg">
+                <span aria-hidden="true" class="flex items-center justify-center">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text
+                      x="14"
+                      y="21"
+                      text-anchor="middle"
+                      font-size="22"
+                      font-family="sans-serif"
+                      fill="#FFFFFF"
+                      font-weight="bold"
                     >
-                      {section.callout.linkText}
-                    </a>
-                  </span>
-                </aside>
-              </div>
-            )}
-          </section>
-        ))
-      }
+                      ?
+                    </text>
+                  </svg>
+                </span>
+                <span class="text-base text-slate-100">
+                  {section.callout.text}
+                  <a
+                    href={section.callout.linkHref}
+                    class="rounded font-semibold text-slate-200 underline underline-offset-2 transition-colors hover:text-white focus:ring-2 focus:ring-slate-400 focus:outline-none"
+                  >
+                    {section.callout.linkText}
+                  </a>
+                </span>
+              </aside>
+            </div>
+          )}
+        </section>
+      ))}
 
       <ContactSection />
     </div>

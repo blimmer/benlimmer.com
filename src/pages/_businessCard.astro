@@ -33,26 +33,24 @@ const { side = "front" } = Astro.props;
   <body>
     <div class="business-card">
       <div class="business-card-content">
-        {
-          side === "front" ? (
-            <div class="card-layout">
-              <div class="main-content">
-                <h1 class="name">Ben Limmer</h1>
-                <p class="title">AI / DevEx / DevOps Consultant</p>
-              </div>
-              <div class="divider" />
-              <div class="contact-section">
-                <span>benlimmer.com</span>
-              </div>
+        {side === "front" ? (
+          <div class="card-layout">
+            <div class="main-content">
+              <h1 class="name">Ben Limmer</h1>
+              <p class="title">AI / DevEx / DevOps Consultant</p>
             </div>
-          ) : (
-            <div class="card-layout-back">
-              <div class="qr-code-container">
-                <QRCode />
-              </div>
+            <div class="divider" />
+            <div class="contact-section">
+              <span>benlimmer.com</span>
             </div>
-          )
-        }
+          </div>
+        ) : (
+          <div class="card-layout-back">
+            <div class="qr-code-container">
+              <QRCode />
+            </div>
+          </div>
+        )}
       </div>
     </div>
 

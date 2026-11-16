@@ -24,8 +24,7 @@ is used to represent streams that can be returned in both browser _and_ Node.js 
 
 ```ts
 type StreamingBlobPayloadOutputTypes =
-  | NodeJsRuntimeStreamingBlobPayloadOutputTypes
-  | BrowserRuntimeStreamingBlobPayloadOutputTypes;
+  NodeJsRuntimeStreamingBlobPayloadOutputTypes | BrowserRuntimeStreamingBlobPayloadOutputTypes;
 ```
 
 When you're working in an application that will only be run in Node.js, this union type is painful to deal with.
