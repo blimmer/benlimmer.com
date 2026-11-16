@@ -1,0 +1,41 @@
+---
+description: A description of Ben Limmer's role building LLMonade at ContextBridge.
+title: LLMonade
+---
+
+import MdxImage from "src/components/MdxImage.astro";
+import pitch from "./assets/llmonade-pitch.png";
+
+[LLMonade](https://llmonade.ai) is a software factory that runs coding agents like Claude Code and Codex in a company's
+own AWS account. Developers keep using the tools they already know, and the company controls what the agents can reach,
+which models they use, and how much they spend. Each agent session runs on an isolated MicroVM with no credentials on
+it. Gateways in the customer's account hold the keys for AI providers, tools, and GitHub, and they block requests to
+anything the company hasn't approved.
+
+LLMonade also improves the agents over time, which is where
+[compound engineering](https://every.to/guides/compound-engineering) comes in. Every session's trace is saved to one
+store in the customer's account, and insights mined from those traces become new skills that every agent picks up. Evals
+built from the team's own sessions show which model handles each kind of task, so the AI gateway can send routine work
+to cheaper models and enforce team budgets.
+
+LLMonade is the newest product at [ContextBridge](https://contextbridge.ai). With three of us running the company, my
+work on it covers both engineering and the business side. I set up the AWS accounts and deployment infrastructure it
+runs on, helped build the marketing site, and moved the prototype into a monorepo with shared CI and tooling. I also
+help run customer demos. As an AI-native team, we had a working demo 19 days after the initial concept, and the landing
+page went live two days after our first inbound request.
+
+<MdxImage
+  src={pitch}
+  alt="LLMonade: Your coding agents. Your cloud. A list of agent sessions showing a running Claude Code task, an opened pull request, a blocked request to an unapproved host, and a team budget warning."
+  width="2/3"
+/>
+
+## Key Skills
+
+- AWS Multi-Account Architecture
+- Coding Agent Infrastructure
+- Monorepo and CI/CD Tooling
+- Marketing Site Development
+- Customer Demos
+
+For more information on LLMonade, visit [llmonade.ai](https://llmonade.ai).

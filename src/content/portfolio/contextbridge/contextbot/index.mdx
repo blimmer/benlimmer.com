@@ -1,0 +1,31 @@
+---
+description: A description of Ben Limmer's role building ContextBot at ContextBridge.
+title: ContextBot
+---
+
+ContextBot is a GitHub app that automates a core part of
+[compound engineering](https://every.to/guides/compound-engineering): turning a team's code review feedback into updates
+to the context files, like `AGENTS.md` and `CLAUDE.md`, that their AI coding agents follow. Reviewers tend to leave the
+same comments on agent-written code week after week, while the files that should teach the agent those conventions go
+stale. Each week, ContextBot reads a team's pull requests and review comments, works out which conventions matter, and
+opens a pull request that updates the context files for the team to review.
+
+At [ContextBridge](https://contextbridge.ai), I shared the engineering on ContextBot with my co-founders. As an
+AI-native team, we went from a strategy document to a release for early users in 28 days, including a production GitHub
+app and the durable workflows behind it. My work spanned the backend and the AWS infrastructure, with a focus on
+security. ContextBot's agents read comments that anyone with access to a repository can write, so I built safeguards
+against prompt injection. The agents run without any credentials they could leak, and each run can only reach the data
+for the repository it's working on.
+
+ContextBridge retired ContextBot in 2026 to focus on its other products.
+
+## Key Skills
+
+- AI Agent Orchestration
+- Prompt Injection Defense
+- Serverless AWS Architecture
+- GitHub App Development
+- Rapid Product Development
+
+For more information on ContextBot, read the
+[launch post](https://contextbridge.ai/blog/contextbot-stops-the-context-rot).
