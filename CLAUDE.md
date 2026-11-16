@@ -8,6 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Build for production**: `pnpm build`
 - **Preview production build**: `pnpm preview`
 - **Run linting**: `pnpm lint`
+- **Run unit tests**: `pnpm test:unit` (uses Node's built-in test runner; tests live next to source as `*.test.ts`)
 - **Run end-to-end tests**: `pnpm test:e2e` (uses Playwright)
 - **Run single test file**: `pnpm test:e2e tests/filename.test.ts`
 - **Run tests in headed mode**: `pnpm test:e2e --headed`
