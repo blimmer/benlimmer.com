@@ -14,20 +14,17 @@ const menuItems: MenuItem[] = [
 const { currentPath } = Astro.props;
 ---
 
-<header class="bg-header border-light sticky top-0 z-50 w-full border-b" role="banner">
+<header class="bg-header border-light sticky top-0 z-50 w-full border-b">
   <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3" aria-label="Main navigation">
     <div class="flex items-center gap-8">
       <span class="text-primary text-xl font-bold">
-        <a href="/" aria-label="home page">
-          Ben Limmer
-        </a>
+        <a href="/">Ben Limmer</a>
       </span>
-      <ul class="text-secondary hidden gap-6 text-base font-medium md:flex" role="menubar">
+      <ul class="text-secondary hidden gap-6 text-base font-medium md:flex">
         {menuItems.map((item) => (
-          <li role="none">
+          <li>
             <a
               href={item.path}
-              role="menuitem"
               class:list={[
                 "hover:text-primary transition-colors",
                 { "text-primary font-bold": currentPath.startsWith(item.path) },
@@ -61,20 +58,15 @@ const { currentPath } = Astro.props;
         </svg>
         <span class="sr-only">Open main menu</span>
       </summary>
-      <ul
-        id="mobile-menu"
-        class="bg-header border-light absolute right-0 mt-2 w-48 rounded-md border p-2 shadow-lg"
-        role="menu"
-      >
+      <ul id="mobile-menu" class="bg-header border-light absolute right-0 mt-2 w-48 rounded-md border p-2 shadow-lg">
         {menuItems.map((item) => (
-          <li role="none">
+          <li>
             <a
               href={item.path}
               class:list={[
                 "block px-4 py-2 transition-colors hover:bg-gray-700 hover:text-white",
                 { "bg-gray-700 text-white": currentPath.startsWith(item.path) },
               ]}
-              role="menuitem"
               aria-current={currentPath.startsWith(item.path) ? "page" : undefined}
             >
               {item.text}

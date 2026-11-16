@@ -67,24 +67,16 @@ test.describe("Mobile Menu", () => {
     ];
 
     for (const expectedLink of expectedLinks) {
-      const link = mobileMenu.locator(`a[href="${expectedLink.href}"]`);
+      const link = mobileMenu.getByRole("link", { name: expectedLink.text });
       await expect(link).toBeVisible();
-      await expect(link).toHaveText(expectedLink.text);
-      await expect(link).toHaveAttribute("role", "menuitem");
+      await expect(link).toHaveAttribute("href", expectedLink.href);
     }
 
-    // Verify the menu has the correct role and structure
-    await expect(mobileMenu).toHaveAttribute("role", "menu");
-    await expect(mobileMenu).toHaveAttribute("id", "mobile-menu");
-
-    // Check that all menu items are list items with correct role
-    const menuItems = mobileMenu.locator("li");
-    await expect(menuItems).toHaveCount(4);
-
-    for (let i = 0; i < 4; i++) {
-      const menuItem = menuItems.nth(i);
-      await expect(menuItem).toHaveAttribute("role", "none");
-    }
+    // Site navigation is a plain list of links, not an application menu
+    await expect(mobileMenu).toHaveRole("list");
+    await expect(mobileMenu.getByRole("listitem")).toHaveCount(4);
+    await expect(page.getByRole("menu")).toHaveCount(0);
+    await expect(page.getByRole("menuitem")).toHaveCount(0);
   });
 
   test("closes mobile menu when hamburger icon is clicked again", async ({ page }) => {

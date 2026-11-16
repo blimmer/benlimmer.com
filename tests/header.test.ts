@@ -4,6 +4,18 @@ const WHITE = "rgb(255, 255, 255)";
 const TRANSPARENT = "rgba(0, 0, 0, 0)";
 
 test.describe("Header navigation", () => {
+  test("uses plain links for site navigation", async ({ page, isMobile }) => {
+    test.skip(isMobile, "Desktop nav is hidden on mobile");
+    await page.goto("/");
+
+    const nav = page.getByRole("navigation", { name: "Main navigation" });
+    await expect(nav.getByRole("link", { name: "Ben Limmer", exact: true })).toHaveAttribute("href", "/");
+    for (const name of ["About", "Freelance", "Blog", "Portfolio"]) {
+      await expect(nav.getByRole("link", { name, exact: true })).toBeVisible();
+    }
+    await expect(page.getByRole("menubar")).toHaveCount(0);
+  });
+
   test("highlights the current section in the desktop nav", async ({ page, isMobile }) => {
     test.skip(isMobile, "Desktop nav is hidden on mobile");
     await page.goto("/blog");
